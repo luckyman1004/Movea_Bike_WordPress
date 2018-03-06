@@ -13,6 +13,7 @@
  */
 
 get_header(); ?>
+ddd
 <?php if ( has_post_thumbnail() ) : ?>
 <section style="background: url( <?php echo esc_url( get_the_post_thumbnail_url() ); ?> ); background-size: cover; background-position: center center" class="banner">
 	<div class="container">
