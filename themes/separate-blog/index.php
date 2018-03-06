@@ -12,7 +12,6 @@
  * @package Separate_Blog
  */
 get_header(); ?>
-aaaa
   <?php separate_blog_banner(); ?>
   <section class="separate-posts no-padding-top">
     <div class="container">
