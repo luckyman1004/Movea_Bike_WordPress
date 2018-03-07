@@ -286,7 +286,7 @@ function create_post_type() {
 		'supports'           => array( 'title','revisions','editor','thumbnail','excerpt' )
 	);
 
-	register_post_type( 'resource', $args );
+	register_post_type( 'product', $args );
 }
 /**
  * Add image size
