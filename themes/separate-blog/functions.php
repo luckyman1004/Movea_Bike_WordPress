@@ -247,7 +247,47 @@ function separate_blog_post_categories( $post , $limit = false ){
 	}
 	echo implode( ' , ', $cats );
 }
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+	/**
+	 * Product Post Type Resources
+	 */
+	$labels = array(
+		'name'               => __( 'Products', 'tt' ),
+		'singular_name'      => __( 'Products', 'tt' ),
+		'menu_name'          => __( 'Products', 'tt' ),
+		'name_admin_bar'     => __( 'Products', 'tt' ),
+		'add_new'            => __( 'Add New', 'tt' ),
+		'add_new_item'       => __( 'Add New Product', 'tt' ),
+		'new_item'           => __( 'New Product', 'tt' ),
+		'edit_item'          => __( 'Edit Product', 'tt' ),
+		'view_item'          => __( 'View Product', 'tt' ),
+		'all_items'          => __( 'All Products', 'tt' ),
+		'search_items'       => __( 'Search Products', 'tt' ),
+		'parent_item_colon'  => __( 'Parent Product:', 'tt' ),
+		'not_found'          => __( 'No Products found.', 'tt' ),
+		'not_found_in_trash' => __( 'No Products found in Trash.', 'tt' )
+	);
 
+	$args = array(
+		'labels'             => $labels,
+		'description'        => __( 'Description.', 'tt' ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'product' ),
+		'capability_type'    => 'post',
+		'has_archive'        => false,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+    	'menu_icon'          => 'dashicons-admin-multisite',
+		'supports'           => array( 'title','revisions','editor','thumbnail','excerpt' )
+	);
+
+	register_post_type( 'resource', $args );
+}
 /**
  * Add image size
  */
