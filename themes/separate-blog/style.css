@@ -277,9 +277,9 @@ i[class*="icon-"] {
   padding: 100px 0;
 }
 
-.btn {
+/* .btn {
   border-radius: 0 !important;
-}
+} */
 
 .badge {
   font-weight: 300;
@@ -1628,7 +1628,7 @@ blockquote.blockquote p {
 .btn {
   font-weight: normal;
   border: 1px solid transparent;
-  padding: 0.5rem 1rem;
+  /* padding: 0.5rem 1rem; */
   font-size: 1rem;
   line-height: 1.25;
   border-radius: 0.25rem;
@@ -3120,6 +3120,7 @@ cursor: -moz-grabbing;
   font-size: 13px;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   float: right;
+  padding: 0;
 }
 .moveaSpot .info .priceAndInfo .btn {
   position: absolute;
@@ -3139,6 +3140,7 @@ cursor: -moz-grabbing;
   margin: 0;
 }
 .moveaSpot .btn .left {
+  background-image: url('./assets/images/beobasket_black.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 20px 20px;
@@ -3354,6 +3356,7 @@ cursor: -moz-grabbing;
   transition: opacity .2s ease-out 0s;
   margin: 20px 0 0 0;
   color: #000;
+  padding: 0;
 }
 .moveaSplitProduct .text .btn .left, .moveaTextspot .btn .left, .moveaApp .btn .left {
   float: left;
@@ -3365,6 +3368,9 @@ cursor: -moz-grabbing;
   background-position: center top;
   margin: 4px 10px 0 15px;
   overflow: hidden;
+}
+.moveaApp .btn .left {
+  background-image: url('./assets/images/experience_black.png');
 }
 .moveaSplitProduct .text .btn .right, .moveaTextspot .btn .right, .moveaApp .btn .right {
   display: inline-block;

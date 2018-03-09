@@ -11,78 +11,81 @@ get_header(); ?>
 
     <div class="main-container">
         <div id="videoSection">
-            <div class="container moveaVideo" data-astop="true">
+            <div class="container-movea moveaVideo" data-astop="true">
                 <div class="text textCenter">
-                    <div class="toptext">Movea Category</div>
+                    <div class="toptext"><?php echo get_option_tree('top_text');?></div>
                     <div class="titletext">
                         <p>
-                            <a href="#">Lady</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#">Men</a>
+                            <a href="#"><?php echo get_option_tree('category_1');?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="#"><?php echo get_option_tree('category_2');?></a>
                         </p>
                     </div>
                 </div>
                 <div class="mobiletextWrapper">
                     <div class="mobiletext">
                         <div class="toptext">
-                            Movea Category
+                            <?php echo get_option_tree('top_text');?>
                         </div>
                         <div class="titletext">
                             <p>
-                                <a href="#">Lady</a>
-                                <a href="#">Men</a>
+                                <a href="#"><?php echo get_option_tree('category_1');?></a>
+                                <a href="#"><?php echo get_option_tree('category_2');?></a>
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="moveaVideoPlayer center fadeIn" id='moveaVideoPlayer'>
-                    <div class="playBtn">
+                    <div class="playBtn" data-youtube_id="<?php echo get_option_tree('banner_youtube_video_id');?>">
                         <div class="playIcon"></div>
                     </div>
-                    <video class="moveaVideoThumbnail" id="moveaVideoThumbnail" preload="auto" loop autoplay>
-                        <source type="video/mp4" src="./assets/videos/loop.mp4">
+                    <video class="moveaVideoThumbnail" id="moveaVideoThumbnail" preload="auto" loop autoplay muted>
+                        <source type="video/mp4" src="<?php echo get_option_tree('banner_video');?>">
                     </video>
                 </div>
             </div>
         </div>
         <div id="TextSpot2Column">
             <div class="moveaSplitText" >
-                <h2>Movea design</h2>
+                <h2><?php echo get_option_tree('title_movea_design');?></h2>
                 <div class="paragraphWrap">
-                    <p>Our aim is to keep Movea bikes clean and simple but highly functional.  To do this, we’ve incorporated practical rack as a cargo solutions.</p>
-        
-                    <p>In our search for an simple and beautiful solution for an E bicycle system, we found an hub that have the motor, the batteri, the sencors build  the E hub. It’s light and and fit’s the simple design.</p>
+                    <?php echo get_option_tree('left_block_movea_design');?>
+                    <?php echo get_option_tree('right_block_movea_design');?>
                 </div>
-                <h3><a href="#headphones" style="color: inherit;">See all Movea design</a></h3>
+                <h3><a href="#headphones" style="color: inherit;"><?php echo get_option_tree('bottom_link_movea_design');?></a></h3>
             </div>
         </div>
         <div class="nextgenspots">
+            <?php for( $i = 1; $i < 4; $i ++) { 
+                $post_id = get_option_tree($i.'_product_featured');
+                $product = get_post($post_id);
+            ?>
             <div class="moveaSpot multiple" style="background-color: #D9DADC;">
                 <div class="linkImg">
-                    <div class="carousel_container" id="first">       
+                    <div class="carousel_container" id="featured_product_<?php echo $post_id;?>">       
                         <div class="carousel_items">        
                             <ul>
-                                <li class="carousel_item" id="item_0"><img src="./assets/images/featured_products/movea-model-e-20-men-1.png" /></li>
-                                <li class="carousel_item" id="item_1"><img src="./assets/images/featured_products/movea-model-e-20-men-2.png" /></li>
+                                <li class="carousel_item" id="item_0"><img src="<?php echo the_field('image1', $post_id);?>" /></li>
+                                <li class="carousel_item" id="item_1"><img src="<?php echo the_field('image2', $post_id);?>" /></li>
                             </ul>
                         </div>
                         <div class="nav_dots"></div>
                     </div>
                 </div>
                 <div class="info">
-                    <h4 style="color:#000;">Movea Model E 20" Men</h4>
+                    <h4 style="color:#000;"><?php echo $product->post_title;?></h4>
                     <div class="priceAndInfo" style="color:#000;">
-                        <p>Easy to storage every where, faster accelaération and maneuverable your bike </p>
+                        <p><?php echo $product->post_excerpt;?></p>
                         <ul>
-                            <li>Weight: 12 kg</li>
-                            <li>Motor: 250 W </li>
-                            <li>Batteri: 30 V L-ion 160Wh </li>
-                            <li>Max speed: 25 km/h max</li>
+                            <li>Weight: <?php echo the_field('weight', $post_id);?></li>
+                            <li>Motor: <?php echo the_field('motor', $post_id);?></li>
+                            <li>Batteri: <?php echo the_field('batteri', $post_id);?></li>
+                            <li>Max speed: <?php echo the_field('max_speed', $post_id);?></li>
                         </ul>
                         <div class="price" style="color:#000;">
-                            <span class="currency">USD</span><span class="amount">299</span>
+                            <span class="currency">USD</span><span class="amount"><?php echo the_field('price', $post_id);?></span>
                         </div>
-                        <a href="/en/products/beoplayh4" class="btn">
-                            <div class="left" style="background-image: url('./assets/images/beobasket_black.png');"></div>
+                        <a href="<?php echo esc_url(get_page_link($post_id));?>" class="btn">
+                            <div class="left"></div>
                             <div class="right" style="color: #000;">
                                 Buy Bike
                             </div>
@@ -90,7 +93,8 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-            <div class="moveaSpot multiple" style="background-color: #A6A9AA;">
+            <?php }?>
+            <!-- <div class="moveaSpot multiple" style="background-color: #A6A9AA;">
                 <div class="linkImg">
                     <div class="carousel_container"  id="second">       
                         <div class="carousel_items">        
@@ -157,16 +161,14 @@ get_header(); ?>
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div id="TextSpot2Column">
             <div class="moveaSplitText" >
-                <h2>Like no one else</h2>
+                <h2><?php echo get_option_tree('title_like');?></h2>
                 <div class="paragraphWrap">
-                    <p>Danish designer Anders Hermansen, formerly a designer for Bang and Olufsen, worked with us to create a bicycle with the perfect balance of comfort, style, performance, quality and affordability.</p>
-        
-                    <p>All our bikes are crafted with high quality components. This is ridecomfort with no restrictions in timeless design. Let Movea take you to places you never gone before. 
-                            Ride and storage your bike everywhere you want, it’s small and compact.</p>
+                    <p><?php echo get_option_tree('left_block_like');?></p>
+                    <p><?php echo get_option_tree('right_block_like');?></p>
                 </div>
                 <!-- <h3><a href="#headphones" style="color: inherit;">Compare headphones</a></h3> -->
             </div>
@@ -248,33 +250,49 @@ get_header(); ?>
             <div class="product-category">
                 <div class="relationspotlist">
                     <div class="spots packed">
-                        <div class="moveaSpot multiple ">
-                            <div class="linkImg">
-                                <div class="carousel_container" id="spot1">       
-                                    <div class="carousel_items">        
-                                        <ul>
-                                            <li class="carousel_item" id="item_0"><img src="./assets/images/featured_products/movea-model-e-20-men-1.png" /></li>
-                                            <li class="carousel_item" id="item_1"><img src="./assets/images/featured_products/movea-model-e-20-men-2.png" /></li>
-                                        </ul>
-                                    </div>
-                                    <div class="nav_dots"></div>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <h4>Movea Model E 20" Men</h4>
-                                <div class="priceAndInfo">
-                                    <p>Geometry like a normal 700C bike, just more compact with the small wheels. </p>
-                                    <a href="#" class="btn" style="background-color:#FFFFFF;">
-                                        <div class="left" style="background-image: url('./assets/images/beobasket_black.png');"></div>
-                                        <div class="right" style="color: #666;">
-                                            <span class="currency">USD</span><span class="amount">399</span>
+                        <?php 
+                            $product_args = array(
+                                'post_type' => 'product'
+                              );
+                
+                            $product_query = new WP_Query( $product_args );
+                            if ( $product_query->have_posts() ) :
+                                while ( $product_query->have_posts() ) : $product_query->the_post();
+                                    $post = get_post();
+                                    $post_id = $post->ID;
+                        ?>
+                            <div class="moveaSpot multiple ">
+                                <div class="linkImg">
+                                    <div class="carousel_container" id="spot_<?php echo $post_id;?>">       
+                                        <div class="carousel_items">        
+                                            <ul>
+                                                <li class="carousel_item" id="item_0"><img src="<?php echo the_field('image1', $post_id);?>" /></li>
+                                                <li class="carousel_item" id="item_1"><img src="<?php echo the_field('image1', $post_id);?>" /></li>
+                                            </ul>
                                         </div>
-                                    </a>
+                                        <div class="nav_dots"></div>
+                                    </div>
                                 </div>
+                                <div class="info">
+                                    <h4><?php the_title();?></h4>
+                                    <div class="priceAndInfo">
+                                        <p><?php the_excerpt();?></p>
+                                        <a href="<?php echo esc_url(get_page_link($post_id));?>" class="btn" style="background-color:#FFFFFF;">
+                                            <div class="left"></div>
+                                            <div class="right" style="color: #666;">
+                                                <span class="currency">USD</span><span class="amount"><?php echo the_field('price', $post_id);?></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <h2><?php echo the_field('model_type', $post_id);?></h2>
                             </div>
-                            <h2>E</h2>
-                        </div>
-                        <div class="moveaSpot multiple ">
+                        <?php
+                                endwhile;
+                            endif;
+                        ?>
+                        
+                        <!-- <div class="moveaSpot multiple ">
                             <div class="linkImg">
                                 <div class="carousel_container" id="spot2">       
                                     <div class="carousel_items">        
@@ -455,21 +473,21 @@ get_header(); ?>
                                 </div>
                             </div>
                             <h2>8 speed</h2>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
         <div class="moveaApp">
             <div class="imgWrapper">
-                <img class="" src="./assets/images/movea_app.jpg">
+                <img class="" src="<?php echo get_option_tree('app_image_app');?>">
             </div>
             <div class="txtWrapper">
                 <div class="txtBlock">
-                    <h2 class="title">Download Zehus App</h2>
-                    <h5 class="content">Download your Zehus app for the Movea  Model E All in One hub</h5>
+                    <h2 class="title"><?php echo get_option_tree('title_app');?></h2>
+                    <h5 class="content"><?php echo get_option_tree('sub_title_app');?></h5>
                     <a href="#" class="btn">
-                        <div class="left" style="background-image: url('./assets/images/experience_black.png');"></div>
+                        <div class="left"></div>
                         <div class="right">Learn more</div>
                     </a>
                 </div>
