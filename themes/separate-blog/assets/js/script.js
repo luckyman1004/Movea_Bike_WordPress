@@ -135,7 +135,7 @@ if (typeof jQuery === 'undefined') {
             var videoTween = new TimelineLite()
 
             videoTween.to(body, 0, {overflowX: 'hidden'})
-            videoTween.to(videoThumbnail, 0, {top: 0, zIndex: 4})
+            videoTween.to(videoThumbnail, 0, {top: 0, zIndex: 9999})
             videoTween.to(videoThumbnail, 2, {scale: 1.5})
             body.append(youtube)
             body.append(videoCloseBtnHtml);
@@ -154,7 +154,7 @@ if (typeof jQuery === 'undefined') {
             closeTween.to(videoCloseBtnCross, 0, {transformOrigin: '21px 21px 0', rotation: 45 })
             closeTween.to(videoCloseBtnla, 0, {backgroundColor: '#fff'})
             closeTween.to(videoCloseBtnlb, 0, {backgroundColor: '#fff'})
-            closeTween.to(videoCloseBtn, 2, {opacity: 1, scale: 1, zIndex: 102, autoAlpha: 1, delay: 2, onComplete: function(){
+            closeTween.to(videoCloseBtn, 2, {opacity: 1, scale: 1, zIndex: 10000, autoAlpha: 1, delay: 2, onComplete: function(){
                 
             }})
            
@@ -226,7 +226,7 @@ if (typeof jQuery === 'undefined') {
             var videoTween = new TimelineLite()
 
             videoTween.to(body, 0, {overflowX: 'hidden'})
-            videoTween.to(videoThumbnail, 0, {top: 0, zIndex: 4})
+            videoTween.to(videoThumbnail, 0, {top: 0, zIndex: 9999})
             videoTween.to(videoThumbnail, 2, {scale: 1.5})
             videoWrapper.append(youtube)
             videoWrapper.append(videoCloseBtnHtml);
