@@ -47,7 +47,7 @@
 				<?php 
 				wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_class' => 'navbar-nav ml-auto', 'container' => 'ul' , 'walker' => new Separate_Blog_Walker_Nav_Menu() ) ); 
 				?>
-				<div class="navbar-text"><a href="javascript:;" class="search-btn"><i class="fa fa-search"></i></a></div>
+				<!-- <div class="navbar-text"><a href="javascript:;" class="search-btn"><i class="fa fa-search"></i></a></div> -->
 			</div>
 		</div>
 	</nav>

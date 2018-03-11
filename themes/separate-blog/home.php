@@ -64,8 +64,8 @@ get_header(); ?>
                     <div class="carousel_container" id="featured_product_<?php echo $post_id;?>">       
                         <div class="carousel_items">        
                             <ul>
-                                <li class="carousel_item" id="item_0"><img src="<?php echo the_field('image1', $post_id);?>" /></li>
-                                <li class="carousel_item" id="item_1"><img src="<?php echo the_field('image2', $post_id);?>" /></li>
+                                <li class="carousel_item" id="item_0"><img class="lazy" src="<?php the_field('image1', $post_id);?>" /></li>
+                                <li class="carousel_item" id="item_1"><img class="lazy" src="<?php the_field('image2', $post_id);?>" /></li>
                             </ul>
                         </div>
                         <div class="nav_dots"></div>
@@ -76,13 +76,13 @@ get_header(); ?>
                     <div class="priceAndInfo" style="color:#000;">
                         <p><?php echo $product->post_excerpt;?></p>
                         <ul>
-                            <li>Weight: <?php echo the_field('weight', $post_id);?></li>
-                            <li>Motor: <?php echo the_field('motor', $post_id);?></li>
-                            <li>Batteri: <?php echo the_field('batteri', $post_id);?></li>
-                            <li>Max speed: <?php echo the_field('max_speed', $post_id);?></li>
+                            <li>Weight: <?php the_field('weight', $post_id);?></li>
+                            <li>Motor: <?php the_field('motor', $post_id);?></li>
+                            <li>Batteri: <?php the_field('batteri', $post_id);?></li>
+                            <li>Max speed: <?php the_field('max_speed', $post_id);?></li>
                         </ul>
                         <div class="price" style="color:#000;">
-                            <span class="currency">USD</span><span class="amount"><?php echo the_field('price', $post_id);?></span>
+                            <span class="currency">USD</span><span class="amount"><?php the_field('price', $post_id);?></span>
                         </div>
                         <a href="<?php echo esc_url(get_page_link($post_id));?>" class="btn">
                             <div class="left"></div>
@@ -173,12 +173,12 @@ get_header(); ?>
                 <!-- <h3><a href="#headphones" style="color: inherit;">Compare headphones</a></h3> -->
             </div>
         </div>
-        <div class="moveaSplitProduct moveaSplit inview" id="split1" data-valign="top">
+        <!-- <div class="moveaSplitProduct moveaSplit inview" id="split1" data-valign="top">
             <div class="block">
-                <img class="bgImg desktopOnly" src="./assets/images/split/h9i_split_1.jpg">
+                <img class="bgImg desktopOnly lazy" src="./assets/images/split/h9i_split_1.jpg">
             </div>
             <div class="block">
-                <img class="bgImg desktopOnly" src="./assets/images/split/h9i_split_2.jpg">
+                <img class="bgImg desktopOnly lazy" src="./assets/images/split/h9i_split_2.jpg">
             </div>
             <div class="text titles right" style="color:#fff;">
                 <h2>Beoplay</h2>
@@ -196,7 +196,6 @@ get_header(); ?>
                 <p>Premium, Active Noise Cancelling over-ear headphones offering uncompromising wireless sound. Turn on the sound and feel the silence. With Beoplay H9i, the focus is on the music. So you can enjoy all the power and precision of authentic Bang &amp; Olufsen Signature Sound and move freely. Exclusive, carefully selected materials guarantee absolute comfort and style.</p>
                 <p></p>
             </div>
-            <!-- <div class="BeoVideoPlayer center"></div> -->
         </div>
         <div class="moveaSplitProduct moveaSplit marginAbove marginBelow inview" id="split2" data-valign="top">
             <div class="block">
@@ -245,7 +244,7 @@ get_header(); ?>
                 <p>Premium, Active Noise Cancelling over-ear headphones offering uncompromising wireless sound. Turn on the sound and feel the silence. With Beoplay H9i, the focus is on the music. So you can enjoy all the power and precision of authentic Bang &amp; Olufsen Signature Sound and move freely. Exclusive, carefully selected materials guarantee absolute comfort and style.</p>
                 <p></p>
             </div>
-        </div>
+        </div> -->
         <div class="productindex-introcontainer">
             <div class="product-category">
                 <div class="relationspotlist">
@@ -266,8 +265,8 @@ get_header(); ?>
                                     <div class="carousel_container" id="spot_<?php echo $post_id;?>">       
                                         <div class="carousel_items">        
                                             <ul>
-                                                <li class="carousel_item" id="item_0"><img src="<?php echo the_field('image1', $post_id);?>" /></li>
-                                                <li class="carousel_item" id="item_1"><img src="<?php echo the_field('image1', $post_id);?>" /></li>
+                                                <li class="carousel_item" id="item_0"><img class="lazy" src="<?php the_field('image1', $post_id);?>" /></li>
+                                                <li class="carousel_item" id="item_1"><img class="lazy" src="<?php the_field('image2', $post_id);?>" /></li>
                                             </ul>
                                         </div>
                                         <div class="nav_dots"></div>
@@ -276,11 +275,11 @@ get_header(); ?>
                                 <div class="info">
                                     <h4><?php the_title();?></h4>
                                     <div class="priceAndInfo">
-                                        <p><?php the_excerpt();?></p>
+                                        <p><?php echo $post->post_excerpt;?></p>
                                         <a href="<?php echo esc_url(get_page_link($post_id));?>" class="btn" style="background-color:#FFFFFF;">
                                             <div class="left"></div>
                                             <div class="right" style="color: #666;">
-                                                <span class="currency">USD</span><span class="amount"><?php echo the_field('price', $post_id);?></span>
+                                                <span class="currency">USD</span><span class="amount"><?php the_field('price', $post_id);?></span>
                                             </div>
                                         </a>
                                     </div>
@@ -480,7 +479,7 @@ get_header(); ?>
         </div>
         <div class="moveaApp">
             <div class="imgWrapper">
-                <img class="" src="<?php echo get_option_tree('app_image_app');?>">
+                <img class="lazy" class="" src="<?php echo get_option_tree('app_image_app');?>">
             </div>
             <div class="txtWrapper">
                 <div class="txtBlock">
