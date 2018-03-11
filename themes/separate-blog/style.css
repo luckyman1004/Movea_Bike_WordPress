@@ -3796,6 +3796,7 @@ cursor: -moz-grabbing;
       -webkit-transition: max-width .2s;
       transition: max-width .2s;
       max-width: 34.063rem;
+      margin-top: 60px;
   }
   .ecom-buy-module-sidebar {
       float: left;
