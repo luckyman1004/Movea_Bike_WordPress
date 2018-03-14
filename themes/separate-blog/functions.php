@@ -114,6 +114,16 @@ function separate_blog_widgets_init() {
 		'before_title'  => '<header><h3 class="h6">',
 		'after_title'   => '</h3></header>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar Newsletter', 'separate-blog' ),
+		'id'            => 'newsletter',
+		'description'   => esc_html__( 'Add widgets here.', 'separate-blog' ),
+		'before_widget' => '<div class="widget newsletter">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<header><h3 class="h6">',
+		'after_title'   => '</h3></header>',
+	) );
 }
 add_action( 'widgets_init', 'separate_blog_widgets_init' );
 

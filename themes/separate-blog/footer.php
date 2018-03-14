@@ -64,15 +64,7 @@
 			</div>
 			<div class="col-md-4">
 				<div class="latest-posts">
-					<?php
-					$recent_posts = wp_get_recent_posts( array( 'numberposts' => 3 ) );
-					foreach( $recent_posts as $recent ) {
-						echo '<a href="' . esc_url( get_permalink( $recent['ID'] ) ) . '">
-						<div class="post d-flex align-items-center">
-							<div class="image">' . get_the_post_thumbnail( $recent['ID'], 'separate-blog-recent-thumbnail' ) . '</div>
-							<div class="title"><strong>' . esc_html( get_the_title( $recent['ID'] ) ) . '</strong><span class="date last-meta">' . esc_html( get_the_time( get_option( 'date_format' ), $recent['ID'] ) ) . '</span></div>
-						</div></a>';
-					}	?>
+				<?php dynamic_sidebar( 'newsletter' );?>
 				</div>
 			</div>
 		</div>
