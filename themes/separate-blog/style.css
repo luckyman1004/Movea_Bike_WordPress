@@ -4379,3 +4379,23 @@ cursor: -moz-grabbing;
 .detail-template .productindex-introcontainer {
   margin-top: 0px;
 }
+
+.newsletter-landing .form-wrapper {
+  margin: 15% 0;
+  color: #fff;
+}
+.newsletter-landing .form-wrapper h1 {
+  text-align: center;
+  text-transform: none;
+}
+.newsletter-landing .form-wrapper h3 {
+  text-align: center;
+  margin: 30px 0;
+  text-transform: none;
+}
+.newsletter-landing .form-wrapper h4 {
+  text-align: center;
+  text-transform: none;
+  max-width: 350px;
+  margin: 0 auto;
+}
