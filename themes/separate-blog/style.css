@@ -4399,3 +4399,19 @@ cursor: -moz-grabbing;
   max-width: 350px;
   margin: 0 auto;
 }
+.newsletter-landing .form-wrapper p{
+  margin-top: 40px;
+}
+.newsletter-landing .form-wrapper .tnp-field.tnp-field-firstname {
+  display: none;
+}
+.coming-soon {
+  height: 100%;
+  overflow: hidden;
+}
+.coming-soon .form-wrapper {
+  margin: 30% 0;
+}
+.coming-soon .form-wrapper h1 {
+  line-height: 60px;
+}

@@ -9,6 +9,9 @@
 * @package Separate_Blog
 */
 ?>
+<?php 
+
+if ( basename( get_page_template() ) != 'page-coming.php') {?>
 <footer class="main-footer">
 	<div class="container">
 		<div class="row">
@@ -80,6 +83,7 @@
 		</div>
 	</footer>
 </div><!-- #content -->
+<?php } ?>
 <?php wp_footer(); ?>
 </body>
 </html>

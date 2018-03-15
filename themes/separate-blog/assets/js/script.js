@@ -987,6 +987,7 @@ $(function () {
     $('.moveaSupportVideo').each(function(){
         $(this).SupportVideoSection()
     })
+    $('.coming-soon').css('height', $(window).height());
 })
 
 jQuery(document).ready(function ( $ ) {
