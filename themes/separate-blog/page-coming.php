@@ -39,7 +39,7 @@ get_header(); ?>
 					endwhile;
                 ?>
                 <div class="copyright">
-                    Copyright &copy; 2018 &nbsp;&nbsp;&middot;&nbsp;&nbsp;movea bikes more low on teh site
+                    Copyright &copy; 2018 &nbsp;&nbsp;&middot;&nbsp;&nbsp;movea bikes
                 </div>
 			</div>
 		</div>
