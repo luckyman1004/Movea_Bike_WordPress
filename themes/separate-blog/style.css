@@ -4413,7 +4413,8 @@ cursor: -moz-grabbing;
   /* margin: 30% 0; */
 }
 .coming-soon .form-wrapper h1 {
-  line-height: 60px;
+  line-height: 50px;
+  font-size: 40px;
 }
 .coming-soon .form-wrapper h4 {
   text-transform: uppercase;
