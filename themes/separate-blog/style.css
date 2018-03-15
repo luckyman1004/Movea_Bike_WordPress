@@ -4456,6 +4456,7 @@ cursor: -moz-grabbing;
 .logo-section .social-links li a:hover {
   color: #fff;
 }
+
 @media (max-width: 767.5px) {
   .coming-soon {
     height: 725px!important;
