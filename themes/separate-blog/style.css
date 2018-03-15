@@ -4407,7 +4407,7 @@ cursor: -moz-grabbing;
 }
 .coming-soon {
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .coming-soon .form-wrapper {
   /* margin: 30% 0; */
