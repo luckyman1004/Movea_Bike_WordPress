@@ -19,7 +19,7 @@ get_header(); ?>
     <img src="http://movea.bike/wp-content/uploads/2018/03/logo_white_small.png"  />
     <div class="social-links" style="text-align: right; width: 100%;">
         <ul>
-            <li><a href="https://business.facebook.com/MoveaBikes/?business_id=1603184779693683" target="_blank">Facebook</a></li>
+            <li><a href="https://www.facebook.com/MoveaBikes/" target="_blank">Facebook</a></li>
             <li><a href="https://www.instagram.com/moveabikes/" target="_blank">Instagram</a></li>
         </ul>
     </div>
