@@ -4382,7 +4382,7 @@ cursor: -moz-grabbing;
 
 .newsletter-landing .form-wrapper {
   margin: 15% 0;
-  color: #fff;
+  color: #dcdee0;
 }
 .newsletter-landing .form-wrapper h1 {
   text-align: center;
@@ -4403,15 +4403,76 @@ cursor: -moz-grabbing;
   margin-top: 40px;
 }
 .newsletter-landing .form-wrapper .tnp-field.tnp-field-firstname {
-  display: none;
+  /* display: none; */
 }
 .coming-soon {
   height: 100%;
   overflow: hidden;
 }
 .coming-soon .form-wrapper {
-  margin: 30% 0;
+  /* margin: 30% 0; */
 }
 .coming-soon .form-wrapper h1 {
   line-height: 60px;
+}
+.coming-soon .form-wrapper h4 {
+  text-transform: uppercase;
+}
+.coming-soon .copyright {
+  margin-top: 70px;
+  text-align: center;
+}
+.coming-soon .form-wrapper .tnp-subscription {
+  max-width: 300px;
+}
+.coming-soon .form-wrapper .tnp-subscription .tnp-field input[type="submit"]{
+  width: 100%;
+  padding: 15px 10px;
+}
+.logo-section {
+  width: 100%;
+  position: absolute;
+  display: flex;
+}
+.logo-section img {
+  height: 100px;
+  margin: 30px;
+  justify-content: left;
+}
+
+.logo-section .social-links {
+  text-align: right;
+  width: 100%;
+}
+.logo-section .social-links ul {
+  display: inline-flex;
+  margin: 20px;
+  /* width: 100%; */
+  float: right;
+}
+.logo-section .social-links li {
+  margin: 10px;
+}
+.logo-section .social-links li a:hover {
+  color: #fff;
+}
+@media (max-width: 767.5px) {
+  .coming-soon {
+    height: 725px!important;
+    overflow: visible;
+  }
+  .logo-section .social-links ul {
+    display: block;
+    margin: 0;
+  }
+  .newsletter-landing .form-wrapper {
+    margin-top: 100px;
+  }
+  .coming-soon .form-wrapper h4 {
+    font-size: 14px;
+  }
+  .coming-soon .form-wrapper h1 {
+      line-height: 40px;
+      margin-top: 30px;
+  }
 }

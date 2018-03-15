@@ -11,7 +11,7 @@
 ?>
 <?php 
 
-if ( basename( get_page_template() ) != 'page-coming.php') {?>
+if ( basename( get_page_template() ) != 'page-coming.php' && basename( get_page_template() ) != 'page-newsletter.php' ) {?>
 <footer class="main-footer">
 	<div class="container">
 		<div class="row">
