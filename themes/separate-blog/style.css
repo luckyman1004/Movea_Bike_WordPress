@@ -4474,7 +4474,8 @@ cursor: -moz-grabbing;
     font-size: 14px;
   }
   .coming-soon .form-wrapper h1 {
-      line-height: 40px;
+      line-height: 26px;
+      font-size: 22px;
       margin-top: 30px;
   }
 }
