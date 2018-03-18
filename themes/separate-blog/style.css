@@ -4562,6 +4562,7 @@ cursor: -moz-grabbing;
   user-select: none;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   pointer-events: auto;
+  padding: 30px 0;
 }
 
 .moveaGallery .SevenGrid, .moveaGallery .FiveGrid {
@@ -4581,7 +4582,6 @@ cursor: -moz-grabbing;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  border: 1px solid #e6e6e6;
 }
 .moveaGallery .FiveGrid .galImg {
   transform: scale(1);
@@ -4593,12 +4593,27 @@ cursor: -moz-grabbing;
 .moveaGallery .FiveGrid .spot1 {
   width: 40%;
   height: 100%;
+  border: 1px solid #e6e6e6;
 }
 .moveaGallery .FiveGrid .spot2 {
   width: 40%;
+  border-top: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+.moveaGallery .FiveGrid .spot3 {
+  border-top: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+.moveaGallery .FiveGrid .spot4 {
+  border-right: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
 }
 .moveaGallery .FiveGrid .spot5 {
   width: 40%;
+  border-right: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
 }
 .moveaGallery .overlayText h4 {
   font-size: 34px;
