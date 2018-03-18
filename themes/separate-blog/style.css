@@ -3554,7 +3554,7 @@ cursor: -moz-grabbing;
 }
 @media (min-width: 600px) {
   .spots {
-      padding-bottom: 6.25rem;
+      padding-bottom: 0;
   }
 }
 .moveaApp {
