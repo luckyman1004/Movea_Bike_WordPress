@@ -633,7 +633,7 @@ get_header(); ?>
                                         <a href="<?php echo esc_url(get_page_link($post_id));?>" class="btn" style="background-color:#FFFFFF;">
                                             <div class="left"></div>
                                             <div class="right" style="color: #666;">
-                                                <span class="currency">USD</span><span class="amount"><?php the_field('price', $like_post_id);?></span>
+                                                <span class="amount">Buy at Indiegogo</span>
                                             </div>
                                         </a>
                                     </div>
