@@ -163,6 +163,48 @@ get_header(); ?>
                 </div>
             </div> -->
         </div>
+        <!-- Lifestyle picture grid -->
+        <div class="moveaGallery " data-anchor="gallery" data-bg="transparent" data-animin="fade" data-animfullscreen="fade" data-interval="no" data-load="instant" data-pan="yes" >
+            <div class="FiveGrid">
+                <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle1.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle1.jpg" data-labelcolor="0" class="spot spot1" >                    
+                    <a class="overlayText" href="">
+                        <h4></h4>
+                        <p></p>
+                    </a>
+                    <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle1.jpg"></div>
+                </div>
+                <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle2.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle2.jpg" data-labelcolor="0" class="spot spot2" >
+                    <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle2.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                </div>
+                <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle3.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle3.jpg" data-labelcolor="0" class="spot spot3" >
+                    <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle3.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                </div>
+                <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle4.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle4.jpg" data-labelcolor="0" class="spot spot4" >
+                    <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle4.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                </div>
+                <div data-w="1500" data-h="1010" data-color="#000000" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle5.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle5.jpg" data-labelcolor="0" class="spot spot5" >
+                    <div class="galImg" style="background-color: rgb(0, 0, 0);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle5.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                </div>
+            </div>
+            <div class="MobileGrid">
+                <div class="carousel_container" id="lifestyle_images_mobile_slider">       
+                    <div class="carousel_items">        
+                        <ul>
+                            <li class="carousel_item" id="lifestyle_item_0"><img class="lazy" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle-mobile-1.jpg" /></li>
+                            <li class="carousel_item" id="lifestyle_item_1"><img class="lazy" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle-mobile-2.jpg" /></li>
+                            <li class="carousel_item" id="lifestyle_item_2"><img class="lazy" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle-mobile-3.jpg" /></li>
+                            <li class="carousel_item" id="lifestyle_item_3"><img class="lazy" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle-mobile-4.jpg" /></li>
+                            <li class="carousel_item" id="lifestyle_item_4"><img class="lazy" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle-mobile-5.jpg" /></li>
+                        </ul>
+                    </div>
+                    <div class="nav_dots"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- end Lifestyle picture grid -->
+
+
         <div id="TextSpot2Column">
             <div class="moveaSplitText" >
                 <h2><?php echo get_option_tree('title_like');?></h2>
@@ -290,189 +332,6 @@ get_header(); ?>
                                 endwhile;
                             endif;
                         ?>
-                        
-                        <!-- <div class="moveaSpot multiple ">
-                            <div class="linkImg">
-                                <div class="carousel_container" id="spot2">       
-                                    <div class="carousel_items">        
-                                        <ul>
-                                            <li class="carousel_item" id="item_0"><img src="./assets/images/featured_products/movea-model-e-20-lady-1.png" /></li>
-                                            <li class="carousel_item" id="item_1"><img src="./assets/images/featured_products/movea-model-e-20-lady-2.png" /></li>
-                                        </ul>
-                                    </div>
-                                    <div class="nav_dots"></div>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <h4>Movea Model E 20" Lady</h4>
-                                <div class="priceAndInfo">
-                                    <p>Easy to storage every where, faster accelaération and maneuverable your bike. </p>
-                                    <a href="#" class="btn" style="background-color:#FFFFFF;">
-                                        <div class="left" style="background-image: url('./assets/images/beobasket_black.png'); display: none;"></div>
-                                        <div class="right standalone" style="color: #666;">
-                                            <span class="currency" style="display: none;">USD</span><span class="amount">Notify Me</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <h2>E</h2>
-                        </div>
-                        <div class="moveaSpot multiple ">
-                            <div class="linkImg">
-                                <div class="carousel_container" id="spot3">       
-                                    <div class="carousel_items">        
-                                        <ul>
-                                            <li class="carousel_item" id="item_0"><img src="./assets/images/featured_products/movea-model-e-24-men-1.png" /></li>
-                                            <li class="carousel_item" id="item_1"><img src="./assets/images/featured_products/movea-model-e-24-men-2.png" /></li>
-                                        </ul>
-                                    </div>
-                                    <div class="nav_dots"></div>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <h4>Movea Model E 24" Men</h4>
-                                <div class="priceAndInfo">
-                                    <p>Geometry like a normal 700C bike, just more compact with the 24” wheels.</p>
-                                    <a href="#" class="btn" style="background-color:#FFFFFF;">
-                                        <div class="left" style="background-image: url('./assets/images/beobasket_black.png');"></div>
-                                        <div class="right" style="color: #666;">
-                                            <span class="currency">USD</span><span class="amount">399</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <h2>E</h2>
-                        </div>
-                        <div class="moveaSpot multiple ">
-                            <div class="linkImg">
-                                <div class="carousel_container" id="spot4">       
-                                    <div class="carousel_items">        
-                                        <ul>
-                                            <li class="carousel_item" id="item_0"><img src="./assets/images/featured_products/movea-model-e-24-lady-1.png" /></li>
-                                            <li class="carousel_item" id="item_1"><img src="./assets/images/featured_products/movea-model-e-24-lady-2.png" /></li>
-                                        </ul>
-                                    </div>
-                                    <div class="nav_dots"></div>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <h4>Movea Model E 24" Lady</h4>
-                                <div class="priceAndInfo">
-                                    <p>Easy to storage every where, faster accelaération and maneuverable your bike.</p>
-                                    <a href="#" class="btn" style="background-color:#FFFFFF;">
-                                        <div class="left" style="background-image: url('./assets/images/beobasket_black.png');"></div>
-                                        <div class="right" style="color: #666;">
-                                            <span class="currency">USD</span><span class="amount">399</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <h2>E</h2>
-                        </div>
-                        <div class="moveaSpot multiple ">
-                            <div class="linkImg">
-                                <div class="carousel_container" id="spot5">       
-                                    <div class="carousel_items">        
-                                        <ul>
-                                            <li class="carousel_item" id="item_0"><img src="./assets/images/featured_products/movea-model-8-speed-20-men-1.png" /></li>
-                                            <li class="carousel_item" id="item_1"><img src="./assets/images/featured_products/movea-model-8-speed-20-men-2.png" /></li>
-                                        </ul>
-                                    </div>
-                                    <div class="nav_dots"></div>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <h4>Movea Model 8 speed 20" Men</h4>
-                                <div class="priceAndInfo">
-                                    <p>Movea’s small 20” wheels are specially designed for riding in traffic.  </p>
-                                    <a href="#" class="btn" style="background-color:#FFFFFF;">
-                                        <div class="left" style="background-image: url('./assets/images/beobasket_black.png');"></div>
-                                        <div class="right" style="color: #666;">
-                                            <span class="currency">USD</span><span class="amount">399</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <h2>8 speed</h2>
-                        </div>
-                        <div class="moveaSpot multiple ">
-                            <div class="linkImg">
-                                <div class="carousel_container" id="spot6">       
-                                    <div class="carousel_items">        
-                                        <ul>
-                                            <li class="carousel_item" id="item_0"><img src="./assets/images/featured_products/movea-model-8-speed-20-lady-1.png" /></li>
-                                            <li class="carousel_item" id="item_1"><img src="./assets/images/featured_products/movea-model-8-speed-20-lady-2.png" /></li>
-                                        </ul>
-                                    </div>
-                                    <div class="nav_dots"></div>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <h4>Movea Model 8 speed  20" Lady</h4>
-                                <div class="priceAndInfo">
-                                    <p>The 8 speed gives you a full range of gear to use where ever you ride. </p>
-                                    <a href="#" class="btn" style="background-color:#FFFFFF;">
-                                        <div class="left" style="background-image: url('./assets/images/beobasket_black.png');"></div>
-                                        <div class="right" style="color: #666;">
-                                            <span class="currency">USD</span><span class="amount">399</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <h2>8 speed</h2>
-                        </div>
-                        <div class="moveaSpot multiple ">
-                            <div class="linkImg">
-                                <div class="carousel_container" id="spot7">       
-                                    <div class="carousel_items">        
-                                        <ul>
-                                            <li class="carousel_item" id="item_0"><img src="./assets/images/featured_products/movea-model-8-speed-24-men-1.png" /></li>
-                                            <li class="carousel_item" id="item_1"><img src="./assets/images/featured_products/movea-model-8-speed-24-men-2.png" /></li>
-                                        </ul>
-                                    </div>
-                                    <div class="nav_dots"></div>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <h4>Movea Model 8 speed  24" Men</h4>
-                                <div class="priceAndInfo">
-                                    <p>Movea’s small 24” wheels are specially designed for riding in traffic.</p>
-                                    <a href="#" class="btn" style="background-color:#FFFFFF;">
-                                        <div class="left" style="background-image: url('./assets/images/beobasket_black.png');"></div>
-                                        <div class="right" style="color: #666;">
-                                            <span class="currency">USD</span><span class="amount">399</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <h2>8 speed</h2>
-                        </div>
-                        <div class="moveaSpot multiple ">
-                            <div class="linkImg">
-                                <div class="carousel_container" id="spot8">       
-                                    <div class="carousel_items">        
-                                        <ul>
-                                            <li class="carousel_item" id="item_0"><img src="./assets/images/featured_products/movea-model-8-speed-24-lady-1.png" /></li>
-                                            <li class="carousel_item" id="item_1"><img src="./assets/images/featured_products/movea-model-8-speed-24-lady-2.png" /></li>
-                                        </ul>
-                                    </div>
-                                    <div class="nav_dots"></div>
-                                </div>
-                            </div>
-                            <div class="info">
-                                <h4>Movea Model 8 speed  24" Lady</h4>
-                                <div class="priceAndInfo">
-                                    <p>The 8 speed gives you a full range of gear to use where ever you ride. </p>
-                                    <a href="#" class="btn" style="background-color:#FFFFFF;">
-                                        <div class="left" style="background-image: url('./assets/images/beobasket_black.png');"></div>
-                                        <div class="right" style="color: #666;">
-                                            <span class="currency">USD</span><span class="amount">399</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <h2>8 speed</h2>
-                        </div> -->
                     </div>
                 </div>
             </div>
