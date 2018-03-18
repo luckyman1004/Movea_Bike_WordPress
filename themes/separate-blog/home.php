@@ -59,7 +59,7 @@ get_header(); ?>
                 $post_id = get_option_tree($i.'_product_featured');
                 $product = get_post($post_id);
             ?>
-            <div class="moveaSpot multiple" style="background-color: #D9DADC;">
+            <div class="moveaSpot multiple" style="background-color: #D9DADC;" data-link="<?php echo esc_url(get_page_link($post_id));?>">
                 <div class="linkImg">
                     <div class="carousel_container" id="featured_product_<?php echo $post_id;?>">       
                         <div class="carousel_items">        
@@ -81,9 +81,9 @@ get_header(); ?>
                             <li>Batteri: <?php the_field('batteri', $post_id);?></li>
                             <li>Max speed: <?php the_field('max_speed', $post_id);?></li>
                         </ul>
-                        <div class="price" style="color:#000;">
+                        <!-- <div class="price" style="color:#000;">
                             <span class="currency">USD</span><span class="amount"><?php the_field('price', $post_id);?></span>
-                        </div>
+                        </div> -->
                         <a href="<?php echo esc_url(get_page_link($post_id));?>" class="btn">
                             <div class="left"></div>
                             <div class="right" style="color: #000;">

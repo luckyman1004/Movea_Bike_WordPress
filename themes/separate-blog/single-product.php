@@ -589,7 +589,7 @@ get_header(); ?>
 									$like_post_id = $like_post->ID;
 						?>
 							<?php if (get_field('model_type', $like_post_id) == $post_type && $like_post_id != $current_post_id) {?>
-                            <div class="moveaSpot multiple ">
+                            <div class="moveaSpot multiple " data-link="<?php echo esc_url(get_page_link($like_post_id));?>" >
                                 <div class="linkImg">
                                     <div class="carousel_container" id="spot_<?php echo $like_post_id;?>">       
                                         <div class="carousel_items">        
