@@ -63,15 +63,15 @@ get_header(); ?>
                                     <div class="ecom-buy-module-sidebar-row with-border ecom-buy-module-sidebar-prices space-large clearfix js-total-prices">
                                         <div class="inner">
                                             <div class="cols">
-                                                <div class="col">
+                                                <!-- <div class="col">
                                                     <div class="ecom-buy-module-price js-normal-price">
                                                         <span class="currency">USD</span>
                                                         <span class="price"><?php the_field('price', $post_id);?></span>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <div class="col">
                                                     <!-- button-purchase (green version) -->
-                                                    <a href="<?php the_field('indiegogo_url', $post_id);?>" class="button button-primary js-buy-button">Add to cart</a>
+                                                    <a href="<?php the_field('indiegogo_url', $post_id);?>" class="button button-primary js-buy-button">Buy at Indiegogo</a>
                                                 </div>
                                             </div>
                                         </div>
