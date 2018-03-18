@@ -293,7 +293,8 @@ get_header(); ?>
                     <div class="spots packed">
                         <?php 
                             $product_args = array(
-                                'post_type' => 'product'
+                                'post_type' => 'product',
+                                'order' => 'ASC',
                               );
                 
                             $product_query = new WP_Query( $product_args );
@@ -302,7 +303,7 @@ get_header(); ?>
                                     $post = get_post();
                                     $post_id = $post->ID;
                         ?>
-                            <div class="moveaSpot multiple ">
+                            <div class="moveaSpot multiple " data-link="<?php echo esc_url(get_page_link($post_id));?>">
                                 <div class="linkImg">
                                     <div class="carousel_container" id="spot_<?php echo $post_id;?>">       
                                         <div class="carousel_items">        
@@ -321,7 +322,7 @@ get_header(); ?>
                                         <a href="<?php echo esc_url(get_page_link($post_id));?>" class="btn" style="background-color:#FFFFFF;">
                                             <div class="left"></div>
                                             <div class="right" style="color: #666;">
-                                                <span class="currency">USD</span><span class="amount"><?php the_field('price', $post_id);?></span>
+                                                <span class="amount">Buy at Indiegogo</span>
                                             </div>
                                         </a>
                                     </div>

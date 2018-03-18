@@ -15,9 +15,28 @@ if ( basename( get_page_template() ) != 'page-coming.php' && basename( get_page_
 <footer class="main-footer">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4">
-				<div class="logo">
-					<h6 class="text-white"><?php esc_html_e( 'Address', 'separate-blog' ); ?></h6>
+			<div class="col-md-3">
+				<h6 class="text-black"><?php esc_html_e( 'CUSTOMER CARE', 'separate-blog' ); ?></h6>
+				<div class="menus d-flex">
+					<?php wp_nav_menu( array( 'theme_location' => 'footer1', 'container' => 'ul', 'menu_class' => 'list-unstyled' ) ); ?>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<h6 class="text-black"><?php esc_html_e( 'OUR POLICIES', 'separate-blog' ); ?></h6>
+				<div class="menus d-flex">
+					<?php wp_nav_menu( array( 'theme_location' => 'footer2', 'container' => 'ul', 'menu_class' => 'list-unstyled' ) ); ?>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<h6 class="text-black"><?php esc_html_e( 'OUR COMPANY', 'separate-blog' ); ?></h6>
+				<div class="menus d-flex">
+					<?php wp_nav_menu( array( 'theme_location' => 'footer3', 'container' => 'ul', 'menu_class' => 'list-unstyled' ) ); ?>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<h6 class="text-black"><?php esc_html_e( 'FOLLOW US', 'separate-blog' ); ?></h6>
+				<div class="menus d-flex">
+					<?php wp_nav_menu( array( 'theme_location' => 'footer4', 'container' => 'ul', 'menu_class' => 'list-unstyled' ) ); ?>
 				</div>
 				<div class="contact-details">
 					<?php echo esc_textarea( wpautop( get_theme_mod( 'separate_blog_address' ), true ) ); ?>
@@ -60,16 +79,7 @@ if ( basename( get_page_template() ) != 'page-coming.php' && basename( get_page_
 					</ul>
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="menus d-flex">
-					<?php wp_nav_menu( array( 'theme_location' => 'footer', 'container' => 'ul', 'menu_class' => 'list-unstyled' ) ); ?>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="latest-posts">
-				<?php dynamic_sidebar( 'newsletter' );?>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 		<div class="copyrights">

@@ -44,7 +44,11 @@ if ( ! function_exists( 'separate_blog_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'separate-blog' ),
-			'footer' => esc_html__( 'Footer', 'separate-blog' )
+			'footer' => esc_html__( 'Footer', 'separate-blog' ),
+			'footer1' => esc_html__( 'Footer1', 'separate-blog' ),
+			'footer2' => esc_html__( 'Footer2', 'separate-blog' ),
+			'footer3' => esc_html__( 'Footer3', 'separate-blog' ),
+			'footer4' => esc_html__( 'Footer4', 'separate-blog' )
 		) );
 
 		/*

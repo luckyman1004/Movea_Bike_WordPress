@@ -995,7 +995,7 @@ section.latest-posts header {
 * ==========================================================
 */
 footer.main-footer {
-  background: #0e0e0e;
+  background: #fff;
   padding: 100px 0 0;
   color: #fff;
 }
@@ -1028,8 +1028,12 @@ footer.main-footer ul {
 
 footer.main-footer .list-unstyled a {
   font-size: 0.95em;
+  font-weight: bold;
+  color: #000;
 }
-
+footer.main-footer .list-unstyled a:hover {
+  opacity: .8;
+}
 footer.main-footer .latest-posts .image {
   max-width: 50px;
   padding: 4px;
@@ -1057,9 +1061,10 @@ footer.main-footer .latest-posts .date {
 }
 
 footer.main-footer .copyrights {
-  background: #090909;
-  margin-top: 100px;
-  padding: 20px 0;
+  background: #f1f1f1;
+  margin: 30px;
+  height: 120px;
+  /* padding: 20px 30px; */
   font-size: 0.9em;
 }
 
@@ -1078,6 +1083,14 @@ footer.main-footer .social-menu li {
 footer.main-footer .date::after,
 footer.main-footer .title::after {
   display: none !important;
+}
+.main-footer .text-black {
+  color: #666;
+  font-size: 1.3em;
+}
+.main-footer .fa {
+  color: #000;
+  font-size: 2rem;
 }
 
 /* Footer Media Query ------------------------------------- */
@@ -3191,6 +3204,7 @@ cursor: -moz-grabbing;
   }
   .nextgenspots .moveaSpot.multiple .linkImg {
       height: 370px;
+      bottom: 20px;
   }
   .nav_dots {
       bottom: 10px;
@@ -3237,6 +3251,7 @@ cursor: -moz-grabbing;
   }
   .nextgenspots .moveaSpot.multiple .linkImg {
       height: 340px;
+      bottom: 20px;
   }
 }
 
@@ -3462,10 +3477,13 @@ cursor: -moz-grabbing;
   text-transform: none;
 }
 .productindex-introcontainer .carousel_items {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 .productindex-introcontainer .moveaSpot.multiple {
   background-color: rgb(214, 214, 214);;
+}
+.productindex-introcontainer .moveaSpot.multiple:hover {
+  cursor: pointer;
 }
 .productindex-introcontainer .nav_dots {
   bottom: 0;
@@ -3482,6 +3500,9 @@ cursor: -moz-grabbing;
 }
 .productindex-introcontainer .moveaSpot {
   margin-bottom: 20px;
+}
+.productindex-introcontainer .moveaSpot.multiple .tapLink {
+  display: block;
 }
 @media (min-width: 1399.5px) {
   .relationspotlist {
@@ -3670,6 +3691,18 @@ cursor: -moz-grabbing;
   transition: width .7s;
   text-align: center;
   margin-bottom: 1.875rem;
+}
+.ecom-buy-module-image .ind-image {
+  margin-top: 100px;
+}
+.ecom-buy-module-image .ind-image img{
+  width: 100%;
+}
+.ecom-buy-module-image .view-gallery {
+  text-decoration: underline;
+}
+.ecom-buy-module-image .view-gallery:hover {
+  cursor: pointer;
 }
 .ecom-buy-module-image .image-holder {
   position: relative;
@@ -4067,16 +4100,16 @@ cursor: -moz-grabbing;
   width: 16px;
   height: 2px;
   background-color: #FFF;
-  left: -8px;
-  top: -1px;
+  left: -9px;
+  top: -2px;
 }
 .moveausp .roundBtn .cross .b {
   position: absolute;
   width: 2px;
   height: 16px;
   background-color: #FFF;
-  left: -1px;
-  top: -8px;
+  left: -2px;
+  top: -9px;
 }
 .moveausp .roundBtn.rotated {
   left: auto!important;
@@ -4273,7 +4306,28 @@ cursor: -moz-grabbing;
   padding-bottom: 50px;
 }
 .moveaTechSpec .techImgWrapper {
+  /* text-align: center; */
+  display: flex;
+}
+
+.moveaTechSpec .techImgWrapper .img_wrapper, .moveaTechSpec .techImgWrapper .txt_wrapper{
+  width: 50%;
+}
+.moveaTechSpec .techImgWrapper .img_wrapper {
   text-align: center;
+}
+.moveaTechSpec .techImgWrapper .txt_wrapper{
+  padding: 30px;
+}
+.moveaTechSpec .techImgWrapper .txt_wrapper .txt_block {
+  padding-top: 15px;
+}
+.moveaTechSpec .techImgWrapper .txt_wrapper .txt_block .title{
+  font-size: 30px;
+  font-weight: bold;
+}
+.moveaTechSpec .techImgWrapper .txt_wrapper .txt_block ul {
+  margin-left: 15px;
 }
 .moveaTechSpec .specContent {
   width: 100%;
@@ -4319,6 +4373,14 @@ cursor: -moz-grabbing;
 .moveaTechSpec .specContentMobile .carousel_container table {
   width: 300px;
 }
+@media (max-width: 991px) {
+  .moveaTechSpec .techImgWrapper {
+    display: block;
+  }
+  .moveaTechSpec .techImgWrapper .img_wrapper, .moveaTechSpec .techImgWrapper .txt_wrapper{
+    width: 100%;
+  }
+}
 @media (max-width: 767.5px) {
   .moveaTechSpec .specContent {
       display: none;
@@ -4327,7 +4389,7 @@ cursor: -moz-grabbing;
       display: block;
   }
   .moveaTechSpec .techImgWrapper img {
-      width: 300px;
+      width: 100%;
   }
   .moveaTechSpec .specContentMobile .nav_dots {
       bottom: 2px;
@@ -4357,7 +4419,8 @@ cursor: -moz-grabbing;
 }
 
 .moveaSupportVideo .moveaVideoPlayer {
-  width: 768px;
+  width: 100%;
+  max-width: 768px;
   position: relative;
   border: 3px solid rgb(128, 128, 128);
   margin: 0 auto;
@@ -4525,7 +4588,7 @@ cursor: -moz-grabbing;
   transition: transform 1s ease-out;
 }
 .moveaGallery .FiveGrid .galImg:hover {
-  transform: scale(1.3);
+  transform: scale(1.1);
 }
 .moveaGallery .FiveGrid .spot1 {
   width: 40%;
@@ -4581,6 +4644,9 @@ cursor: -moz-grabbing;
   
 }
 @media (max-width: 991px) {
+  .moveaGallery {
+    height: auto;
+  }
   .moveaGallery .FiveGrid {
     display: none;
   }
@@ -4588,7 +4654,78 @@ cursor: -moz-grabbing;
     display: block;
     position: relative;
     width: 100%;
-    height: 400px;
     overflow: hidden;
+  }
+  .moveaGallery .MobileGrid  .carousel_container {
+    width: 100%; 
+  }
+  .moveaGallery .MobileGrid  .carousel_container .nav_dots {
+    bottom: 40px;
+  }
+}
+
+.ind-gallery {
+  position: fixed;
+  z-index: 100000;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: #b5b5b5;
+}
+.ind-close {
+  color: #fff;
+  font-size: 50px;
+  right: 30px;
+  top: 10px;
+  position: fixed;
+  cursor: pointer;
+  pointer-events: all;
+  z-index: 100001;
+}
+@media (max-width: 768px) {
+  .ind-gallery {
+    position: fixed;
+    z-index: 100000;
+    width: 100%;
+    height: 100%;
+    background: #b5b5b5;
+  }
+  .ind-gallery .gallery-container {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    overflow: hidden;
+  }
+  .ind-gallery  .carousel_container {
+    width: 700px; 
+  }
+  .ind-gallery .carousel_container .nav_dots {
+    bottom: 10px;
+  }
+  .ecom-buy-module-image .ind-image {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 699px) {
+  .ind-gallery  .carousel_container {
+    width: 600px; 
+  }
+}
+@media (max-width: 599px) {
+  .ind-gallery  .carousel_container {
+    width: 500px; 
+  }
+}
+@media (max-width: 499px) {
+  .ind-gallery  .carousel_container {
+    width: 400px; 
+  }
+}
+@media (max-width: 399px) {
+  .ind-gallery  .carousel_container {
+    width: 300px; 
   }
 }

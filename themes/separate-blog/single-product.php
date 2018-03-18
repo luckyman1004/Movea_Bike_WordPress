@@ -24,17 +24,10 @@ get_header(); ?>
                         </div>
                         <div class="ecom-buy-module-container clearfix">
                             <div class="ecom-buy-module-image js-product-image">
-                                <figure class="image-holder">
-                                    <div class="carousel_container" id="product">       
-                                        <div class="carousel_items">        
-                                            <ul>
-                                                <li class="carousel_item" id="item_0"><img src="<?php the_field('image1', $post_id);?>" /></li>
-                                                <li class="carousel_item" id="item_1"><img src="<?php the_field('image2', $post_id);?>" /></li>
-                                            </ul>
-                                        </div>
-                                        <div class="nav_dots"></div>
-                                    </div>
-                                </figure>
+                                <div class="ind-image">
+                                    <img src="<?php the_field('image1', $post_id);?>" />
+                                </div>
+                                <div class="view-gallery" id="view_gallery">View gallery</div>
                             </div>
                             <aside class="ecom-buy-module-sidebar animation-fade-in">
                                 <span class="desktop-only" role="heading" aria-level="1"><?php the_title();?></span>
@@ -166,9 +159,35 @@ get_header(); ?>
             </div>
             <div class="moveaTechSpec">
                 <div class="techImgWrapper">
-                    <img class="" src="<?php echo get_option_tree('background_image_geometry');?>" >
+                    <div class="img_wrapper">
+                        <img class="" src="<?php echo get_option_tree('background_image_geometry');?>" >
+                    </div>
+                    <div class="txt_wrapper">
+                        <div class="txt_block">
+                            <div class="title">Geometry Men 20" 24"</div>
+                            <ul>
+                                <li>A) Seat tube angle</li>
+                                <li>B) Top-tube length</li>
+                                <li>C) Seat-tube length</li>
+                                <li>D) Wheel base</li>
+                                <li>E) Head-tube length</li>
+                                <li>F) Stand over high</li>
+                            </ul>
+                        </div>
+                        <div class="txt_block">
+                            <div class="title">Geometry Lady 20" 24"</div>
+                            <ul>
+                                <li>A) Seat tube angle</li>
+                                <li>B) Top-tube length</li>
+                                <li>C) Seat-tube length</li>
+                                <li>D) Wheel base</li>
+                                <li>E) Head-tube length</li>
+                                <li>F) Stand over high</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="specContent">
+                <!-- <div class="specContent">
                     <table>
                         <thead>
                             <th></th>
@@ -528,7 +547,7 @@ get_header(); ?>
                         </div>
                         <div class="nav_dots"></div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <!-- End Tech Section -->
             <!-- Designer Slider -->
@@ -606,5 +625,29 @@ get_header(); ?>
             </div>
         </div>
             <!-- End Also Like Section -->
+        </div>
+        <div class="ind-gallery" id="ind_gallery" style="display: none;">
+            <div class="ind-close">&times;</div>
+            <div class="gallery-container">
+                <div class="carousel_container" id="product">       
+                    <div class="carousel_items">        
+                        <ul>
+                            <?php if(get_field('image1', $post_id) != '') { ?>
+                            <li class="carousel_item" id="item_0"><img src="<?php the_field('image1', $post_id);?>" /></li>
+                            <?php }?>
+                            <?php if(get_field('image2', $post_id) != '') { ?>
+                            <li class="carousel_item" id="item_1"><img src="<?php the_field('image2', $post_id);?>" /></li>
+                            <?php }?>
+                            <?php if(get_field('image3', $post_id) != '') { ?>
+                            <li class="carousel_item" id="item_2"><img src="<?php the_field('image3', $post_id);?>" /></li>
+                            <?php }?>
+                            <?php if(get_field('image4', $post_id) != '') { ?>
+                            <li class="carousel_item" id="item_3"><img src="<?php the_field('image4', $post_id);?>" /></li>
+                            <?php }?>
+                        </ul>
+                    </div>
+                    <div class="nav_dots"></div>
+                </div>
+            </div>
         </div>
 <?php get_footer();
