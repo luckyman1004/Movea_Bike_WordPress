@@ -4683,6 +4683,9 @@ cursor: -moz-grabbing;
   pointer-events: all;
   z-index: 100001;
 }
+.ind-gallery .gallery-container {
+  margin-top: 10%;
+}
 @media (max-width: 768px) {
   .ind-gallery {
     position: fixed;

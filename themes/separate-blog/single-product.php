@@ -8,6 +8,31 @@
  */
 
 get_header(); ?>
+    <div class="ind-gallery" id="ind_gallery" style="display: none;">
+        <?php $post_id = get_the_ID();?>
+            <div class="ind-close">&times;</div>
+            <div class="gallery-container">
+                <div class="carousel_container" id="product">       
+                    <div class="carousel_items">        
+                        <ul>
+                            <?php if(get_field('image1', $post_id) != '') { ?>
+                            <li class="carousel_item" id="item_0"><img src="<?php the_field('image1', $post_id);?>" /></li>
+                            <?php }?>
+                            <?php if(get_field('image2', $post_id) != '') { ?>
+                            <li class="carousel_item" id="item_1"><img src="<?php the_field('image2', $post_id);?>" /></li>
+                            <?php }?>
+                            <?php if(get_field('image3', $post_id) != '') { ?>
+                            <li class="carousel_item" id="item_2"><img src="<?php the_field('image3', $post_id);?>" /></li>
+                            <?php }?>
+                            <?php if(get_field('image4', $post_id) != '') { ?>
+                            <li class="carousel_item" id="item_3"><img src="<?php the_field('image4', $post_id);?>" /></li>
+                            <?php }?>
+                        </ul>
+                    </div>
+                    <div class="nav_dots"></div>
+                </div>
+            </div>
+        </div>
 	<div class="main-container detail-template post-<?php the_ID(); ?>">
             <div class="buyModule">
 			<?php
@@ -626,28 +651,5 @@ get_header(); ?>
         </div>
             <!-- End Also Like Section -->
         </div>
-        <div class="ind-gallery" id="ind_gallery" style="display: none;">
-            <div class="ind-close">&times;</div>
-            <div class="gallery-container">
-                <div class="carousel_container" id="product">       
-                    <div class="carousel_items">        
-                        <ul>
-                            <?php if(get_field('image1', $post_id) != '') { ?>
-                            <li class="carousel_item" id="item_0"><img src="<?php the_field('image1', $post_id);?>" /></li>
-                            <?php }?>
-                            <?php if(get_field('image2', $post_id) != '') { ?>
-                            <li class="carousel_item" id="item_1"><img src="<?php the_field('image2', $post_id);?>" /></li>
-                            <?php }?>
-                            <?php if(get_field('image3', $post_id) != '') { ?>
-                            <li class="carousel_item" id="item_2"><img src="<?php the_field('image3', $post_id);?>" /></li>
-                            <?php }?>
-                            <?php if(get_field('image4', $post_id) != '') { ?>
-                            <li class="carousel_item" id="item_3"><img src="<?php the_field('image4', $post_id);?>" /></li>
-                            <?php }?>
-                        </ul>
-                    </div>
-                    <div class="nav_dots"></div>
-                </div>
-            </div>
-        </div>
+        
 <?php get_footer();
