@@ -302,10 +302,7 @@ final class FLBuilderAJAXLayout {
 					$node_type 			= $node->type;
 					$partial_refresh 	= self::node_modules_support_partial_refresh( $node );
 				}
-			}
-
-			// Clear the node data if we're not doing a partial refresh.
-			if ( ! $partial_refresh ) {
+			} else {
 				$node_id 	= null;
 				$node 	 	= null;
 				$node_type 	= null;

@@ -86,7 +86,10 @@
 				FLBuilderConfig.pluginUrl,
 				'fl-theme-builder',
 				'/wp-includes/',
-				'/wp-admin/'
+				'/wp-admin/',
+				'admin-bar-inline-css',
+				'ace-tm',
+				'ace_editor.css'
 			] );
 
 			// Reparse stylesheets that match these paths on each update.
@@ -94,7 +97,9 @@
 				FLBuilderConfig.postId + '-layout-draft.css?',
 				FLBuilderConfig.postId + '-layout-draft-partial.css?',
 				FLBuilderConfig.postId + '-layout-preview.css?',
-				FLBuilderConfig.postId + '-layout-preview-partial.css?'
+				FLBuilderConfig.postId + '-layout-preview-partial.css?',
+				'fl-builder-global-css',
+				'fl-builder-layout-css'
 			] );
 		},
 
@@ -107,7 +112,8 @@
 		 */
 		_switchTo: function( mode, callback )
 		{
-			var body        = $( 'body' ),
+			var html		= $( 'html' ),
+				body        = $( 'body' ),
 				content     = $( FLBuilder._contentClass ),
 				preview     = $( '.fl-responsive-preview' ),
 				mask        = $( '.fl-responsive-preview-mask' ),
@@ -124,12 +130,14 @@
 					return;
 				}
 
+				html.removeClass( 'fl-responsive-preview-enabled' );
 				placeholder.after( content );
 				placeholder.remove();
 				preview.remove();
 				mask.remove();
 			}
 			else if ( 0 === preview.length ) {
+				html.addClass( 'fl-responsive-preview-enabled' );
 				content.after( '<div class="fl-content-placeholder"></div>' );
 				body.prepend( wp.template( 'fl-responsive-preview' )() );
 				$( '.fl-responsive-preview' ).addClass( 'fl-preview-' + mode );
@@ -142,7 +150,7 @@
 
 			// Set the content width and apply media queries.
 			if ( 'responsive' == mode ) {
-				width = FLBuilderConfig.global.responsive_breakpoint >= 320 ? 320 : FLBuilderConfig.global.responsive_breakpoint;
+				width = FLBuilderConfig.global.responsive_breakpoint >= 360 ? 360 : FLBuilderConfig.global.responsive_breakpoint;
 				content.width( width );
 				FLBuilderSimulateMediaQuery.update( width, callback );
 			}
@@ -477,7 +485,7 @@
 			} );
 
 			// Set the global values
-			configPrefix         = type + '_' + name + ( 'margin' == name ? 's' : '' );
+			configPrefix         = type + '_' + name + ( 'margin' === name ? 's' : '' );
 			defaultGlobalVal     = config[ configPrefix ];
 			mediumGlobalVal      = config[ configPrefix + '_medium' ];
 			responsiveGlobalVal  = config[ configPrefix + '_responsive' ];
@@ -493,46 +501,46 @@
 					moduleResponsiveVal  = null;
 
 				// Medium value
-				if ( '' == mediumGlobalVal ) {
+				if ( '' === mediumGlobalVal ) {
 
-					if ( '' != defaultVal ) {
+					if ( '' !== defaultVal ) {
 						fields.medium.eq( i ).attr( 'placeholder', defaultVal );
 					}
-					else if ( '' != defaultGlobalVal ) {
+					else if ( '' !== defaultGlobalVal ) {
 						fields.medium.eq( i ).attr( 'placeholder', defaultGlobalVal );
 					}
 				}
 
 				// Responsive value
-				if ( '' == responsiveGlobalVal ) {
+				if ( '' === responsiveGlobalVal ) {
 
-					if ( 'module' == type && Number( config.auto_spacing ) ) {
+					if ( 'module' === type && Number( config.auto_spacing ) ) {
 
-						moduleGlobalVal     = '' == mediumGlobalVal ? Number( defaultGlobalVal ) : mediumGlobalVal;
-						moduleResponsiveVal = '' == mediumVal ? Number( defaultVal ) : mediumVal;
+						moduleGlobalVal     = '' === mediumGlobalVal ? Number( defaultGlobalVal ) : mediumGlobalVal;
+						moduleResponsiveVal = '' === mediumVal ? Number( defaultVal ) : mediumVal;
 
-						if ( '' != moduleResponsiveVal && ( moduleResponsiveVal > moduleGlobalVal || moduleResponsiveVal < 0 ) ) {
+						if ( '' !== moduleResponsiveVal && ( moduleResponsiveVal > moduleGlobalVal || moduleResponsiveVal < 0 ) ) {
 							fields.responsive.eq( i ).attr( 'placeholder', moduleGlobalVal );
 						}
-						else if ( '' != moduleResponsiveVal ) {
+						else if ( '' !== moduleResponsiveVal ) {
 							fields.responsive.eq( i ).attr( 'placeholder', moduleResponsiveVal );
 						}
 						else {
 							fields.responsive.eq( i ).attr( 'placeholder', moduleGlobalVal );
 						}
 					}
-					else if ( ! Number( config.auto_spacing ) || ( 'padding' == name && 'top|bottom'.indexOf( dimension ) > -1 ) ) {
+					else if ( ! Number( config.auto_spacing ) || ( 'padding' === name && 'top|bottom'.indexOf( dimension ) > -1 ) ) {
 
-						if ( '' != mediumVal ) {
+						if ( '' !== mediumVal ) {
 							fields.responsive.eq( i ).attr( 'placeholder', mediumVal );
 						}
-						else if ( '' != mediumGlobalVal ) {
+						else if ( '' !== mediumGlobalVal ) {
 							fields.responsive.eq( i ).attr( 'placeholder', mediumGlobalVal );
 						}
-						else if ( '' != defaultVal ) {
+						else if ( '' !== defaultVal ) {
 							fields.responsive.eq( i ).attr( 'placeholder', defaultVal );
 						}
-						else if ( '' != defaultGlobalVal ) {
+						else if ( '' !== defaultGlobalVal ) {
 							fields.responsive.eq( i ).attr( 'placeholder', defaultGlobalVal );
 						}
 					}

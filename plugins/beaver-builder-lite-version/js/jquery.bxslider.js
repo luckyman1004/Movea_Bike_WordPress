@@ -8,6 +8,9 @@
  /*
  Patched to fix issue #960
  See: https://github.com/stevenwanderski/bxslider-4/pull/1133/commits/c32dd309ef6801fd294c631a2ecb889084e713d5
+
+ Patched to fix https://bitbucket.org/fastlinemedia/beaver-builder-plugin/issues/1292/bx-slider-bug-with-links-in-firefox-59
+ Ref: https://github.com/stevenwanderski/bxslider-4/issues/1188
  */
 ;(function($) {
 
@@ -1123,7 +1126,9 @@
 
         if (slider.viewport.get(0).setPointerCapture) {
           slider.pointerId = orig.pointerId;
-          slider.viewport.get(0).setPointerCapture(slider.pointerId);
+					if(slider.pointerId === 1) {
+          	slider.viewport.get(0).setPointerCapture(slider.pointerId);
+					}
         }
         // bind a "touchmove" event to the viewport
         slider.viewport.bind('touchmove MSPointerMove pointermove', onTouchMove);

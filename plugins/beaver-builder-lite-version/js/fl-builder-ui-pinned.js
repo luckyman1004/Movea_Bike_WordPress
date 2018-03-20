@@ -108,7 +108,9 @@
 			var panel  = $( '.fl-builder--content-library-panel' ),
 				pinned = this.isPinned();
 
-			if ( window.innerWidth <= 500 ) {
+			if ( panel.hasClass( 'fl-builder-ui-pinned-hidden' ) ) {
+				return;
+			} else if ( window.innerWidth <= 500 ) {
 				if ( pinned ) {
 					this.unpin( false );
 				}
@@ -154,6 +156,7 @@
 				panel.addClass( 'fl-builder-ui-pinned-hidden' );
 				panel.hide();
 				body.css( 'margin', '' );
+				FLBuilder._resizeLayout();
 			}
 		},
 

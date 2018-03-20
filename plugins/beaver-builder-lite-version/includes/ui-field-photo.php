@@ -42,7 +42,7 @@ if ( ! data.value || ! photo ) {
 			</div>
 			<br />
 			<a class="fl-photo-edit" href="javascript:void(0);" onclick="return false;"><?php _e( 'Edit', 'fl-builder' ); ?></a>
-			<# if ( data.show_remove ) { #>
+			<# if ( data.field.show_remove ) { #>
 			<a class="fl-photo-remove" href="javascript:void(0);" onclick="return false;"><?php _e( 'Remove', 'fl-builder' ); ?></a>
 			<# } else { #>
 			<a class="fl-photo-replace" href="javascript:void(0);" onclick="return false;"><?php _e( 'Replace', 'fl-builder' ); ?></a>

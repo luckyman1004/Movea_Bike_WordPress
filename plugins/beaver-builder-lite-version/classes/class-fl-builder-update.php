@@ -187,7 +187,7 @@ final class FLBuilderUpdate {
 			$data->meta     = $meta;
 
 			// Save the backup.
-			file_put_contents( $cache_dir['path'] . 'backup.dat', serialize( $data ) );
+			fl_builder_filesystem()->file_put_contents( $cache_dir['path'] . 'backup.dat', serialize( $data ) );
 		}
 	}
 
@@ -301,10 +301,10 @@ final class FLBuilderUpdate {
 			$js  = glob( $cache_dir['path'] . '*.js' );
 
 			if ( is_array( $css ) ) {
-				array_map( 'unlink', $css );
+				array_map( array( fl_builder_filesystem(), 'unlink' ), $css );
 			}
 			if ( is_array( $js ) ) {
-				array_map( 'unlink', $js );
+				array_map( array( fl_builder_filesystem(), 'unlink' ), $js );
 			}
 		}// End if().
 	}
@@ -406,12 +406,11 @@ final class FLBuilderUpdate {
 	 */
 	static private function v_1_4_6() {
 		// Remove the old fl-builder uploads folder.
-		$filesystem  = FLBuilderUtils::get_filesystem();
 		$upload_dir  = wp_upload_dir();
 		$path        = trailingslashit( $upload_dir['basedir'] ) . 'fl-builder';
 
 		if ( file_exists( $path ) ) {
-			$filesystem->rmdir( $path, true );
+			fl_builder_filesystem()->rmdir( $path, true );
 		}
 	}
 

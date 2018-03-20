@@ -37,6 +37,7 @@ echo 'FLBuilderConfig = ' . json_encode( apply_filters('fl_builder_ui_js_config'
 	'brandingIcon' 					=> FLBuilderModel::get_branding_icon(),
 	'url'							=> get_permalink(),
 	'editUrl'						=> add_query_arg( 'fl_builder', '', get_permalink() ),
+	'previewUrl'					=> add_query_arg( 'fl_builder_preview', '', get_permalink() ),
 	'layoutHasDraftedChanges'		=> FLBuilderModel::layout_has_drafted_changes(),
 	'panelData'						=> FLBuilderUIContentPanel::get_panel_data(),
 	'contentItems'					=> FLBuilderUIContentPanel::get_content_elements(),

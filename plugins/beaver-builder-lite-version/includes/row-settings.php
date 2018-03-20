@@ -171,6 +171,7 @@ FLBuilder::register_settings_form('row', array(
 					'fields'        => array(
 						'bg_image'      => array(
 							'type'          => 'photo',
+							'show_remove'   => true,
 							'label'         => __( 'Photo', 'fl-builder' ),
 							'preview'         => array(
 								'type'            => 'none',
@@ -325,6 +326,7 @@ FLBuilder::register_settings_form('row', array(
 						),
 						'bg_video_fallback' => array(
 							'type'          => 'photo',
+							'show_remove'   => true,
 							'label'         => __( 'Fallback Photo', 'fl-builder' ),
 							'help'          => __( 'A photo that will be displayed if the video fails to load.', 'fl-builder' ),
 							'preview'         => array(
@@ -434,6 +436,7 @@ FLBuilder::register_settings_form('row', array(
 					'fields'        => array(
 						'bg_parallax_image' => array(
 							'type'          => 'photo',
+							'show_remove'   => true,
 							'label'         => __( 'Photo', 'fl-builder' ),
 							'preview'         => array(
 								'type'            => 'none',

@@ -414,7 +414,6 @@ final class FLBuilderAdminSettings {
 				return;
 			}
 
-			$filesystem	   = FLBuilderUtils::get_filesystem();
 			$enabled_icons = array();
 
 			// Sanitize the enabled icons.
@@ -436,7 +435,7 @@ final class FLBuilderAdminSettings {
 					unset( $enabled_icons[ $index ] );
 				}
 				if ( isset( $sets[ $key ] ) ) {
-					$filesystem->rmdir( $sets[ $key ]['path'], true );
+					fl_builder_filesystem()->rmdir( $sets[ $key ]['path'], true );
 					FLBuilderIcons::remove_set( $key );
 				}
 			}
@@ -448,6 +447,11 @@ final class FLBuilderAdminSettings {
 				$id			 = (int) $_POST['fl-new-icon-set'];
 				$path		 = get_attached_file( $id );
 				$new_path	 = $dir['path'] . 'icon-' . time() . '/';
+
+				if ( ! function_exists( 'unzip_file' ) ) {
+					fl_builder_filesystem()->get_filesystem();
+				}
+
 				$unzipped	 = unzip_file( $path, $new_path );
 
 				// Unzip failed.
@@ -457,7 +461,7 @@ final class FLBuilderAdminSettings {
 				}
 
 				// Move files if unzipped into a subfolder.
-				$files = $filesystem->dirlist( $new_path );
+				$files = fl_builder_filesystem()->dirlist( $new_path );
 
 				if ( 1 == count( $files ) ) {
 
@@ -465,36 +469,36 @@ final class FLBuilderAdminSettings {
 					$subfolder_info = array_shift( $values );
 					$subfolder		= $new_path . $subfolder_info['name'] . '/';
 
-					if ( file_exists( $subfolder ) && is_dir( $subfolder ) ) {
+					if ( fl_builder_filesystem()->file_exists( $subfolder ) && fl_builder_filesystem()->is_dir( $subfolder ) ) {
 
-						$files = $filesystem->dirlist( $subfolder );
+						$files = fl_builder_filesystem()->dirlist( $subfolder );
 
 						if ( $files ) {
 							foreach ( $files as $file ) {
-								$filesystem->move( $subfolder . $file['name'], $new_path . $file['name'] );
+								fl_builder_filesystem()->move( $subfolder . $file['name'], $new_path . $file['name'] );
 							}
 						}
 
-						$filesystem->rmdir( $subfolder );
+						fl_builder_filesystem()->rmdir( $subfolder );
 					}
 				}
 
 				// Check for supported sets.
-				$is_icomoon	 = file_exists( $new_path . 'selection.json' );
-				$is_fontello = file_exists( $new_path . 'config.json' );
+				$is_icomoon	 = fl_builder_filesystem()->file_exists( $new_path . 'selection.json' );
+				$is_fontello = fl_builder_filesystem()->file_exists( $new_path . 'config.json' );
 
 				// Show an error if we don't have a supported icon set.
 				if ( ! $is_icomoon && ! $is_fontello ) {
-					$filesystem->rmdir( $new_path, true );
+					fl_builder_filesystem()->rmdir( $new_path, true );
 					self::add_error( __( 'Error! Please upload an icon set from either Icomoon or Fontello.', 'fl-builder' ) );
 					return;
 				}
 
 				// check for valid Icomoon
 				if ( $is_icomoon ) {
-					$data = json_decode( file_get_contents( $new_path . 'selection.json' ) );
+					$data = json_decode( fl_builder_filesystem()->file_get_contents( $new_path . 'selection.json' ) );
 					if ( ! isset( $data->metadata ) ) {
-						$filesystem->rmdir( $new_path, true );
+						fl_builder_filesystem()->rmdir( $new_path, true );
 						self::add_error( __( 'Error! When downloading from Icomoon, be sure to click the Download Font button and not Generate SVG.', 'fl-builder' ) );
 						return;
 					}

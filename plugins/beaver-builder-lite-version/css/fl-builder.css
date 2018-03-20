@@ -110,11 +110,11 @@ html.fl-builder-show-admin-bar #wpadminbar {
 /* @group Responsive Utilities
 ------------------------------------------------------ */
 
-.fl-builder-content-editing .fl-visible-desktop,
-.fl-builder-content-editing .fl-visible-desktop-medium,
-.fl-builder-content-editing .fl-visible-medium,
-.fl-builder-content-editing .fl-visible-medium-mobile,
-.fl-builder-content-editing .fl-visible-mobile {
+html:not(.fl-responsive-preview-enabled) .fl-builder-content-editing .fl-visible-desktop,
+html:not(.fl-responsive-preview-enabled) .fl-builder-content-editing .fl-visible-desktop-medium,
+html:not(.fl-responsive-preview-enabled) .fl-builder-content-editing .fl-visible-medium,
+html:not(.fl-responsive-preview-enabled) .fl-builder-content-editing .fl-visible-medium-mobile,
+html:not(.fl-responsive-preview-enabled) .fl-builder-content-editing .fl-visible-mobile {
 	display: block !important;
 }
 /* @endgroup Responsive Utilities */
@@ -137,6 +137,7 @@ html.fl-builder-show-admin-bar #wpadminbar {
 	position: absolute;
 	right: 0;
 	top: 0;
+	margin-top: 50px;
 	z-index: 100000;
 }
 .fl-builder-preview .fl-responsive-preview {
@@ -165,6 +166,35 @@ html.fl-builder-show-admin-bar #wpadminbar {
     max-width: 100%;
 }
 /* @endgroup Responsive Editing */
+
+/* @group Responsive Iframe Preview
+------------------------------------------------------ */
+
+#fl-builder-preview-mask {
+	background: #F7F7F7 url(../img/ajax-loader.svg) center center no-repeat;
+	bottom: 0;
+    height: 100%;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+    width: 100%;
+	z-index: 99999;
+}
+#fl-builder-preview-frame {
+	bottom: 0;
+    height: 100%;
+	left: 50%;
+	position: fixed;
+	right: 0;
+	top: 0;
+	transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+    width: 100%;
+	z-index: 100000;
+}
+/* @endgroup Responsive Iframe Preview */
 
 /* @group Buttons
 ------------------------------------------------------ */
@@ -3403,19 +3433,19 @@ body .fl-lightbox-has-tab-overflow .fl-builder-settings-tabs-more {
 }
 .fl-builder-settings-fields ::-webkit-input-placeholder { /* WebKit browsers */
 	color: #999 !important;
-	font-size: 12px;
+	font-size: 13px;
 }
 .fl-builder-settings-fields input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
 	color: #999;
-	font-size: 12px;
+	font-size: 13px;
 }
 .fl-builder-settings-fields ::-moz-placeholder { /* Mozilla Firefox 19+ */
 	color: #999 !important;
-	font-size: 12px;
+	font-size: 13px;
 }
 .fl-builder-settings-fields input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	color: #999;
-	font-size: 12px;
+	font-size: 13px;
 }
 .fl-builder-settings-fields label {
 	display: inline-block;

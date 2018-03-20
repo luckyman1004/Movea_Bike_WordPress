@@ -48,7 +48,11 @@ final class FL_Debug {
 		$plugins_data = get_plugins();
 
 		foreach ( $plugins_data as $plugin_path => $plugin ) {
-			$plugins[] = sprintf( '%s - version %s by %s. [%s]', $plugin['Name'], $plugin['Version'], $plugin['Author'], ( is_plugin_active( $plugin_path ) ? __( 'Enabled' ) : __( 'Disabled' ) ) );
+			if ( is_plugin_active( $plugin_path ) ) {
+				$plugins['active'][] = sprintf( '%s - version %s by %s.', $plugin['Name'], $plugin['Version'], $plugin['Author'] );
+			} else {
+				$plugins['deactive'][] = sprintf( '%s - version %s by %s.', $plugin['Name'], $plugin['Version'], $plugin['Author'] );
+			}
 		}
 		return $plugins;
 	}
@@ -129,6 +133,18 @@ final class FL_Debug {
 		);
 		self::register( 'is_multi', $args );
 
+		$args = array(
+			'name' => 'WordPress memory limit',
+			'data' => WP_MAX_MEMORY_LIMIT,
+		);
+		self::register( 'wp_max_mem', $args );
+
+		$args = array(
+			'name' => 'Themes',
+			'data' => self::divider(),
+		);
+		self::register( 'themes', $args );
+
 		$theme = wp_get_theme();
 		$args = array(
 			'name' => 'Active Theme',
@@ -140,10 +156,10 @@ final class FL_Debug {
 		self::register( 'active_theme', $args );
 
 		$args = array(
-			'name' => 'WordPress memory limit',
-			'data' => WP_MAX_MEMORY_LIMIT,
+			'name' => 'Plugins',
+			'data' => self::divider(),
 		);
-		self::register( 'wp_max_mem', $args );
+		self::register( 'plugins', $args );
 
 		$args = array(
 			'name' => 'Plugins',
@@ -151,17 +167,24 @@ final class FL_Debug {
 		);
 		self::register( 'wp_plugins', $args );
 
+		$plugins = self::get_plugins();
+		$args = array(
+			'name' => 'Active Plugins',
+			'data' => $plugins['active'],
+		);
+		self::register( 'wp_plugins', $args );
+
+		$args = array(
+			'name' => 'Unactive Plugins',
+			'data' => $plugins['deactive'],
+		);
+		self::register( 'wp_plugins_deactive', $args );
+
 		$args = array(
 			'name' => 'Must-Use Plugins',
 			'data' => self::get_mu_plugins(),
 		);
 		self::register( 'mu_plugins', $args );
-
-		$args = array(
-			'name' => 'Plugins',
-			'data' => self::get_plugins(),
-		);
-		self::register( 'wp_plugins', $args );
 
 		$args = array(
 			'name' => 'PHP',

@@ -63,14 +63,14 @@ final class FLBuilderServiceMailPoet extends FLBuilderService {
 		$lists = array();
 
 		try {
-			// Mailpoet 2+
+			// MailPoet 2+
 			if ( class_exists( 'WYSIJA' ) ) {
 				$list_model         = WYSIJA::get( 'list', 'model' );
 				$lists              = $list_model->get( array( 'name', 'list_id' ), array(
 					'is_enabled' => 1,
 				) );
 
-				// Mailpoet 3.0
+				// MailPoet 3.0
 			} elseif ( defined( 'MAILPOET_INITIALIZED' ) && true === MAILPOET_INITIALIZED ) {
 
 				$listing = new MailPoet\Listing\Handler( '\MailPoet\Models\Segment' );
@@ -157,7 +157,7 @@ final class FLBuilderServiceMailPoet extends FLBuilderService {
 				$names = explode( ' ', $name );
 			}
 
-			// Mailpoet 2+
+			// MailPoet 2+
 			if ( class_exists( 'WYSIJA' ) ) {
 
 				if ( $names && isset( $names[0] ) ) {
@@ -176,7 +176,7 @@ final class FLBuilderServiceMailPoet extends FLBuilderService {
 					),
 				));
 
-				// Mailpoet 3.0
+				// MailPoet 3.0
 			} elseif ( defined( 'MAILPOET_INITIALIZED' ) && true === MAILPOET_INITIALIZED ) {
 				$subscriber = new MailPoet\Models\Subscriber();
 
@@ -191,7 +191,7 @@ final class FLBuilderServiceMailPoet extends FLBuilderService {
 				$errors = $subscribed->getErrors();
 
 				if ( false !== $errors ) {
-					$response['error'] = sprintf( __( 'There was an error subscribing to Mailpoet. %s', 'fl-builder' ), $errors[0] );
+					$response['error'] = sprintf( __( 'There was an error subscribing to MailPoet. %s', 'fl-builder' ), $errors[0] );
 				}
 			}// End if().
 		}// End if().

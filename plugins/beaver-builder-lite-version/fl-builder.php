@@ -3,7 +3,7 @@
  * Plugin Name: Beaver Builder Plugin (Lite Version)
  * Plugin URI: https://www.wpbeaverbuilder.com/?utm_medium=bb&utm_source=plugins-admin-page&utm_campaign=plugins-admin-uri
  * Description: A drag and drop frontend WordPress page builder plugin that works with almost any theme!
- * Version: 2.0.5
+ * Version: 2.0.6.3
  * Author: The Beaver Builder Team
  * Author URI: https://www.wpbeaverbuilder.com/?utm_medium=bb&utm_source=plugins-admin-page&utm_campaign=plugins-admin-author
  * Copyright: (c) 2014 Beaver Builder

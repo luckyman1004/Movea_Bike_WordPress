@@ -49,5 +49,5 @@
 
 	#>
 	<a class="fl-form-field-edit" href="javascript:void(0);" onclick="return false;" data-type="{{data.field.form}}">{{{label}}}</a>
-	<input name="{{data.name}}" type="hidden" value='{{{data.value}}}' />
+	<input name="{{data.name}}" type="hidden" value='{{data.value}}' />
 </div>

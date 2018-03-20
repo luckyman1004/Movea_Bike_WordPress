@@ -229,7 +229,7 @@ final class FLBuilderFonts {
 	 */
 	static public function add_font( $font ) {
 
-		if ( 'Default' != $font['family'] ) {
+		if ( is_array( $font ) && 'Default' != $font['family'] ) {
 
 			$system_fonts = apply_filters( 'fl_builder_font_families_system', FLBuilderFontFamilies::$system );
 

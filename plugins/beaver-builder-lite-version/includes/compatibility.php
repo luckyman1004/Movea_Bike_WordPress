@@ -99,7 +99,7 @@ add_action( 'after_setup_theme', 'fl_builder_option_tree_support' );
  * @since 1.10.2
  */
 function fl_admin_ssl_upload_fix() {
-	if ( defined( 'FORCE_SSL_ADMIN' ) && ! is_ssl() && is_admin() && defined( 'DOING_AJAX' ) && DOING_AJAX ) {
+	if ( defined( 'FORCE_SSL_ADMIN' ) && ! is_ssl() && is_admin() && FLBuilderAJAX::doing_ajax() ) {
 		if ( isset( $_POST['action'] ) && 'upload-attachment' === $_POST['action'] && true === apply_filters( 'fl_admin_ssl_upload_fix', true ) ) {
 			force_ssl_admin( false );
 		}
@@ -292,5 +292,34 @@ add_action( 'plugins_loaded', 'fl_fix_sg_cache', 9 );
 function fl_fix_sg_cache() {
 	if ( isset( $_GET['fl_builder_load_settings_config'] ) ) {
 		remove_action( 'plugins_loaded', 'sg_cachepress_start' );
+	}
+}
+
+/**
+ * Remove Activemember360 shortcodes from saved post content to stop them rendering twice.
+ * @since 2.0.6
+ */
+add_filter( 'fl_builder_editor_content', 'fl_activemember_shortcode_fix' );
+function fl_activemember_shortcode_fix( $content ) {
+	return preg_replace( '#\[mbr.*?\]#', '', $content );
+}
+
+/**
+ * Remove iMember360 shortcodes from saved post content to stop them rendering twice.
+ * @since 2.0.6
+ */
+add_filter( 'fl_builder_editor_content', 'fl_imember_shortcode_fix' );
+function fl_imember_shortcode_fix( $content ) {
+	return preg_replace( '#\[i4w.*?\]#', '', $content );
+}
+
+/**
+ * Fix javascript issue caused by nextgen gallery when adding modules in the builder.
+ * @since 2.0.6
+ */
+add_action( 'plugins_loaded', 'fl_fix_nextgen_gallery' );
+function fl_fix_nextgen_gallery() {
+	if ( isset( $_GET['fl_builder'] ) || isset( $_POST['fl_builder_data'] ) || FLBuilderAJAX::doing_ajax() ) {
+		define( 'NGG_DISABLE_RESOURCE_MANAGER', true );
 	}
 }

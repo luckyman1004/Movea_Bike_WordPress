@@ -603,6 +603,7 @@
             FLBuilder._removeEmptyColHighlights();
             FLBuilder._removeColHighlightGuides();
             FLBuilder.triggerHook('didBeginPreview');
+			FLBuilderResponsivePreview.enter();
         },
 
         /**
@@ -613,6 +614,7 @@
             this.isPreviewing = false;
             this.show();
             FLBuilder._highlightEmptyCols();
+			FLBuilderResponsivePreview.exit();
             $('html').removeClass('fl-builder-preview');
             $('html, body').addClass('fl-builder-edit');
         },
@@ -654,7 +656,7 @@
         */
         onDeviceIconClick: function(e) {
             var mode = $(e.target).data('mode');
-            FLBuilderResponsiveEditing._switchTo(mode);
+            FLBuilderResponsivePreview.switchTo(mode);
         },
 
         /**

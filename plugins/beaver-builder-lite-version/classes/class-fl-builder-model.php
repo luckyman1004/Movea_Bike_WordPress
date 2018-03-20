@@ -472,6 +472,11 @@ final class FLBuilderModel {
 	static public function is_builder_enabled( $post_id = null ) {
 		global $wp_the_query;
 
+		// If in iframe preview return true as the post might not be a draft yet.
+		if ( isset( $_GET['fl_builder_preview'] ) ) {
+			return true;
+		}
+
 		$query_id = ( isset( $wp_the_query->post->ID ) ) ? $wp_the_query->post->ID : false;
 		$post_id  = $post_id ? $post_id : self::get_post_id();
 
@@ -550,7 +555,8 @@ final class FLBuilderModel {
 	 * @return string
 	 */
 	static public function get_node_status() {
-		return self::is_builder_active() ? 'draft' : 'published';
+		$status = self::is_builder_active() ? 'draft' : 'published';
+		return apply_filters( 'fl_builder_node_status', $status );
 	}
 
 	/**
@@ -643,13 +649,13 @@ final class FLBuilderModel {
 		);
 
 		// Create the upload dir if it doesn't exist.
-		if ( ! file_exists( $dir_info['path'] ) ) {
+		if ( ! fl_builder_filesystem()->file_exists( $dir_info['path'] ) ) {
 
 			// Create the directory.
-			mkdir( $dir_info['path'] );
+			fl_builder_filesystem()->mkdir( $dir_info['path'] );
 
 			// Add an index file for security.
-			file_put_contents( $dir_info['path'] . 'index.html', '' );
+			fl_builder_filesystem()->file_put_contents( $dir_info['path'] . 'index.html', '' );
 		}
 
 		return apply_filters( 'fl_builder_get_upload_dir', $dir_info );
@@ -679,13 +685,13 @@ final class FLBuilderModel {
 		);
 
 		// Create the cache dir if it doesn't exist.
-		if ( ! file_exists( $dir_info['path'] ) ) {
+		if ( ! fl_builder_filesystem()->file_exists( $dir_info['path'] ) ) {
 
 			// Create the directory.
-			mkdir( $dir_info['path'] );
+			fl_builder_filesystem()->mkdir( $dir_info['path'] );
 
 			// Add an index file for security.
-			file_put_contents( $dir_info['path'] . 'index.html', '' );
+			fl_builder_filesystem()->file_put_contents( $dir_info['path'] . 'index.html', '' );
 		}
 
 		return apply_filters( 'fl_builder_get_cache_dir', $dir_info );
@@ -760,8 +766,8 @@ final class FLBuilderModel {
 
 		foreach ( $types as $type ) {
 
-			if ( isset( $info[ $type ] ) && file_exists( $info[ $type ] ) ) {
-				unlink( $info[ $type ] );
+			if ( isset( $info[ $type ] ) && fl_builder_filesystem()->file_exists( $info[ $type ] ) ) {
+				fl_builder_filesystem()->unlink( $info[ $type ] );
 			}
 		}
 	}
@@ -797,8 +803,8 @@ final class FLBuilderModel {
 			);
 
 			foreach ( $paths as $path ) {
-				if ( file_exists( $path ) ) {
-					unlink( $path );
+				if ( fl_builder_filesystem()->file_exists( $path ) ) {
+					fl_builder_filesystem()->unlink( $path );
 				}
 			}
 		}
@@ -834,10 +840,10 @@ final class FLBuilderModel {
 		$js	 		= glob( $cache_dir['path'] . '*.js' );
 
 		if ( is_array( $css ) ) {
-			array_map( 'unlink', $css );
+			array_map( array( fl_builder_filesystem(), 'unlink' ), $css );
 		}
 		if ( is_array( $js ) ) {
-			array_map( 'unlink', $js );
+			array_map( array( fl_builder_filesystem(), 'unlink' ), $js );
 		}
 	}
 
@@ -1220,10 +1226,12 @@ final class FLBuilderModel {
 	 * default or preview settings.
 	 *
 	 * @since 1.0
-	 * @param object $node A node object.
+	 * @param object|string $node A node object or node ID.
+	 * @param bool $filter Whether to filter the settings or not.
 	 * @return object
 	 */
-	static public function get_node_settings( $node ) {
+	static public function get_node_settings( $node, $filter = true ) {
+		$node = is_object( $node ) ? $node : self::get_node( $node );
 		$post_data = self::get_post_data();
 
 		// Get the node settings for a node template's root node?
@@ -1254,7 +1262,7 @@ final class FLBuilderModel {
 			}
 		}
 
-		return apply_filters( 'fl_builder_node_settings', $settings, $node );
+		return ! $filter ? $settings : apply_filters( 'fl_builder_node_settings', $settings, $node );
 	}
 
 	/**
@@ -4206,6 +4214,9 @@ final class FLBuilderModel {
 			'post_content'	=> $editor_content,
 		));
 
+		// Rerender the assets for this layout.
+		FLBuilder::render_assets();
+
 		// Fire the after action.
 		do_action( 'fl_builder_after_save_layout', $post_id, $publish, $data, $settings );
 	}
@@ -4803,9 +4814,9 @@ final class FLBuilderModel {
 				return false;
 			}
 
-			self::$node_template_post_ids[ $template_id ] = $posts[0]->ID;
-
-			return $posts[0]->ID;
+			$post_id = apply_filters( 'fl_builder_node_template_post_id', $posts[0]->ID );
+			self::$node_template_post_ids[ $template_id ] = $post_id;
+			return $post_id;
 		}
 	}
 
@@ -6034,8 +6045,7 @@ final class FLBuilderModel {
 
 			// Delete uploaded files and folders.
 			$upload_dir	 = self::get_upload_dir();
-			$filesystem	 = FLBuilderUtils::get_filesystem();
-			$filesystem->rmdir( $upload_dir['path'], true );
+			fl_builder_filesystem()->rmdir( $upload_dir['path'], true );
 
 			// Deactivate and delete the plugin.
 			if ( ! function_exists( 'deactivate_plugins' ) ) {

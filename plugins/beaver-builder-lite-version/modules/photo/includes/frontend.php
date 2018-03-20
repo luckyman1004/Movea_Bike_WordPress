@@ -7,7 +7,7 @@ $link     = $module->get_link();
 $alt      = $module->get_alt();
 $attrs    = $module->get_attributes();
 $filetype = pathinfo( $src, PATHINFO_EXTENSION );
-$rel      = ( ! empty( $link ) && '_blank' == $settings->link_target ) ? ' rel="noopener"' : '';
+$rel      = $module->get_rel();
 
 ?>
 <div class="fl-photo<?php if ( ! empty( $settings->crop ) ) { echo ' fl-photo-crop-' . $settings->crop ;} ?> fl-photo-align-<?php echo $settings->align; ?>" itemscope itemtype="https://schema.org/ImageObject">

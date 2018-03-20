@@ -12,29 +12,25 @@ final class FLBuilderUtils {
 	 * Get an instance of WP_Filesystem_Direct.
 	 *
 	 * @since 1.4.6
+	 * @deprecated 2.0.6
 	 * @return object A WP_Filesystem_Direct instance.
 	 */
 	static public function get_filesystem() {
-		global $wp_filesystem;
 
-		require_once ABSPATH . '/wp-admin/includes/file.php';
+		_deprecated_function( __METHOD__, '2.0.6', 'fl_builder_filesystem()->get_filesystem()' );
 
-		add_filter( 'filesystem_method', 'FLBuilderUtils::filesystem_method' );
-
-		WP_Filesystem();
-
-		remove_filter( 'filesystem_method', 'FLBuilderUtils::filesystem_method' );
-
-		return $wp_filesystem;
+		return fl_builder_filesystem()->get_filesystem();
 	}
 
 	/**
 	 * Sets the filesystem method to direct.
 	 *
 	 * @since 1.4.6
+	 * @deprecated 2.0.6
 	 * @return string
 	 */
 	static public function filesystem_method() {
+		_deprecated_function( __METHOD__, '2.0.6', 'fl_builder_filesystem()->filesystem_method()' );
 		return 'direct';
 	}
 
@@ -204,6 +200,19 @@ final class FLBuilderUtils {
 			return mb_strtolower( $text, $encoding );
 		}
 		return strtolower( $text );
+	}
+
+	/**
+	 * Sanitize a value for js
+	 * @since 2.0.7
+	 */
+	static public function sanitize_number( $value ) {
+
+		if ( is_numeric( $value ) ) {
+			return $value;
+		}
+
+		return 0;
 	}
 
 }

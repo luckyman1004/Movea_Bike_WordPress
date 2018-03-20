@@ -223,7 +223,7 @@ class FLBuilderUISettingsForms {
 			if ( ! is_object( $node ) || ! isset( $node->settings ) || ! is_object( $node->settings ) ) {
 				continue;
 			}
-			$node_settings[ $node_id ] = $node->settings;
+			$node_settings[ $node_id ] = FLBuilderModel::get_node_settings( $node, false );
 		}
 
 		return $node_settings;

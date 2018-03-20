@@ -534,13 +534,13 @@ final class FLBuilder {
 		}
 
 		// Render if the file doesn't exist.
-		if ( ! in_array( $path, self::$rendered_assets ) && ( ! file_exists( $path ) || $rerender || self::is_debug() ) ) {
+		if ( ! in_array( $path, self::$rendered_assets ) && ( ! fl_builder_filesystem()->file_exists( $path ) || $rerender || self::is_debug() ) ) {
 			call_user_func_array( array( 'FLBuilder', 'render_' . $type ), array( $global ) );
 			self::$rendered_assets[] = $path;
 		}
 
 		// Don't enqueue if we don't have a file after trying to render.
-		if ( ! file_exists( $path ) || 0 === filesize( $path ) ) {
+		if ( ! fl_builder_filesystem()->file_exists( $path ) || 0 === fl_builder_filesystem()->filesize( $path ) ) {
 			return;
 		}
 
@@ -655,6 +655,7 @@ final class FLBuilder {
 				wp_enqueue_script( 'fl-builder-preview',     			$js_url . 'fl-builder-preview.js', array(), $ver );
 				wp_enqueue_script( 'fl-builder-simulate-media-query', 	$js_url . 'fl-builder-simulate-media-query.js', array(), $ver );
 				wp_enqueue_script( 'fl-builder-responsive-editing', 	$js_url . 'fl-builder-responsive-editing.js', array(), $ver );
+				wp_enqueue_script( 'fl-builder-responsive-preview', 	$js_url . 'fl-builder-responsive-preview.js', array(), $ver );
 				wp_enqueue_script( 'fl-builder-services',    			$js_url . 'fl-builder-services.js', array(), $ver );
 				wp_enqueue_script( 'fl-builder-tour',        			$js_url . 'fl-builder-tour.js', array(), $ver );
 				wp_enqueue_script( 'fl-builder-ui',						$js_url . 'fl-builder-ui.js', array( 'fl-builder', 'mousetrap' ), $ver );
@@ -819,7 +820,7 @@ final class FLBuilder {
 	 */
 	static public function init_ui() {
 		// Enable editing if the builder is active.
-		if ( FLBuilderModel::is_builder_active() && ! defined( 'DOING_AJAX' ) ) {
+		if ( FLBuilderModel::is_builder_active() && ! FLBuilderAJAX::doing_ajax() ) {
 
 			// Tell W3TC not to minify while the builder is active.
 			define( 'DONOTMINIFY', true );
@@ -1350,7 +1351,9 @@ final class FLBuilder {
 				self::enqueue_layout_styles_scripts_by_id( $query_post->ID );
 
 				// Print the styles since we are outside of the head tag.
-				wp_print_styles();
+				if ( ! did_action( 'wp_enqueue_scripts' ) ) {
+					wp_print_styles();
+				}
 
 				// Render the builder content.
 				FLBuilder::render_content_by_id( $query_post->ID );
@@ -1641,9 +1644,6 @@ final class FLBuilder {
 
 		// Remove empty lines.
 		$content = preg_replace( '/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/', "\n", $content );
-
-		// Strip shortcodes since some plugins parse them early causing them to be parsed twice.
-		$content = preg_replace( '/\[.*\]/', '', $content );
 
 		return apply_filters( 'fl_builder_editor_content', $content );
 	}
@@ -2048,7 +2048,11 @@ final class FLBuilder {
 		// Shorthand reference to the module's id.
 		$id = $module->node;
 
-		include $module->dir . 'includes/frontend.php';
+		do_action( 'fl_builder_render_module_html_before', $type, $settings, $module );
+
+		include apply_filters( 'fl_builder_render_module_html', $module->dir . 'includes/frontend.php', $type, $settings, $module );
+
+		do_action( 'fl_builder_render_module_html_after', $type, $settings, $module );
 	}
 
 	/**
@@ -2113,6 +2117,7 @@ final class FLBuilder {
 		$global_settings = FLBuilderModel::get_global_settings();
 		$defaults = FLBuilderModel::get_module_defaults( $type );
 		$settings = (object) array_merge( (array) $defaults, (array) $settings );
+		$settings = apply_filters( 'fl_builder_render_module_css_settings', $settings, $id, $type );
 
 		// Module
 		$class = get_class( FLBuilderModel::$modules[ $type ] );
@@ -2233,14 +2238,14 @@ final class FLBuilder {
 				self::$enqueued_global_assets[] = $module->settings->type . '-module-css';
 
 				// Get the standard module css.
-				if ( file_exists( $file ) ) {
-					$css .= file_get_contents( $file );
+				if ( fl_builder_filesystem()->file_exists( $file ) ) {
+					$css .= fl_builder_filesystem()->file_get_contents( $file );
 				}
 
 				// Get the responsive module css.
-				if ( $global_settings->responsive_enabled && file_exists( $file_responsive ) ) {
+				if ( $global_settings->responsive_enabled && fl_builder_filesystem()->file_exists( $file_responsive ) ) {
 					$css .= '@media (max-width: ' . $global_settings->responsive_breakpoint . 'px) { ';
-					$css .= file_get_contents( $file_responsive );
+					$css .= fl_builder_filesystem()->file_get_contents( $file_responsive );
 					$css .= ' }';
 				}
 			}
@@ -2250,7 +2255,7 @@ final class FLBuilder {
 			$settings   = $module->settings;
 			$id         = $module->node;
 
-			if ( file_exists( $file ) ) {
+			if ( fl_builder_filesystem()->file_exists( $file ) ) {
 				ob_start();
 				include $file;
 				$css .= ob_get_clean();
@@ -2285,11 +2290,7 @@ final class FLBuilder {
 			$css = str_replace( array( "\r\n", "\r", "\n", "\t", '  ', '    ', '    ' ), '', $css );
 		}
 
-		file_put_contents( $path, $css );
-
-		// @codingStandardsIgnoreStart
-		@chmod( $path, 0644 );
-		// @codingStandardsIgnoreEnd
+		fl_builder_filesystem()->file_put_contents( $path, $css );
 
 		do_action( 'fl_builder_after_render_css' );
 
@@ -2307,16 +2308,16 @@ final class FLBuilder {
 		$global_settings = FLBuilderModel::get_global_settings();
 
 		// Core layout css
-		$css = file_get_contents( FL_BUILDER_DIR . '/css/fl-builder-layout.css' );
+		$css = fl_builder_filesystem()->file_get_contents( FL_BUILDER_DIR . '/css/fl-builder-layout.css' );
 
 		// Core button defaults
 		if ( ! defined( 'FL_THEME_VERSION' ) ) {
-			$css .= file_get_contents( FL_BUILDER_DIR . '/css/fl-builder-layout-button-defaults.css' );
+			$css .= fl_builder_filesystem()->file_get_contents( FL_BUILDER_DIR . '/css/fl-builder-layout-button-defaults.css' );
 		}
 
 		// Core layout RTL css
 		if ( is_rtl() ) {
-			$css .= file_get_contents( FL_BUILDER_DIR . '/css/fl-builder-layout-rtl.css' );
+			$css .= fl_builder_filesystem()->file_get_contents( FL_BUILDER_DIR . '/css/fl-builder-layout-rtl.css' );
 		}
 
 		// Global node css
@@ -2340,7 +2341,7 @@ final class FLBuilder {
 			$css .= '@media (max-width: ' . $global_settings->medium_breakpoint . 'px) { ';
 
 				// Core medium layout css
-				$css .= file_get_contents( FL_BUILDER_DIR . '/css/fl-builder-layout-medium.css' );
+				$css .= fl_builder_filesystem()->file_get_contents( FL_BUILDER_DIR . '/css/fl-builder-layout-medium.css' );
 
 				// Global node medium css
 			foreach ( array(
@@ -2361,11 +2362,11 @@ final class FLBuilder {
 			$css .= '@media (max-width: ' . $global_settings->responsive_breakpoint . 'px) { ';
 
 				// Core responsive layout css
-				$css .= file_get_contents( FL_BUILDER_DIR . '/css/fl-builder-layout-responsive.css' );
+				$css .= fl_builder_filesystem()->file_get_contents( FL_BUILDER_DIR . '/css/fl-builder-layout-responsive.css' );
 
 				// Auto spacing
 			if ( ! isset( $global_settings->auto_spacing ) || $global_settings->auto_spacing ) {
-				$css .= file_get_contents( FL_BUILDER_DIR . '/css/fl-builder-layout-auto-spacing.css' );
+				$css .= fl_builder_filesystem()->file_get_contents( FL_BUILDER_DIR . '/css/fl-builder-layout-auto-spacing.css' );
 			}
 
 				// Global node responsive css
@@ -2722,11 +2723,7 @@ final class FLBuilder {
 				}
 			}
 
-			file_put_contents( $path, $js );
-
-			// @codingStandardsIgnoreStart
-			@chmod( $path, 0644 );
-			// @codingStandardsIgnoreEnd
+			fl_builder_filesystem()->file_put_contents( $path, $js );
 
 			do_action( 'fl_builder_after_render_js' );
 		}
@@ -2754,7 +2751,7 @@ final class FLBuilder {
 		$js .= ob_get_clean();
 
 		// Core layout JS.
-		$js .= file_get_contents( FL_BUILDER_DIR . 'js/fl-builder-layout.js' );
+		$js .= fl_builder_filesystem()->file_get_contents( FL_BUILDER_DIR . 'js/fl-builder-layout.js' );
 
 		// Add the global settings JS.
 		$js .= $global_settings->js;
@@ -2849,8 +2846,8 @@ final class FLBuilder {
 		// Global module JS
 		$file = $module->dir . 'js/frontend.js';
 
-		if ( file_exists( $file ) && ! in_array( $module->settings->type . '-module-js', self::$enqueued_global_assets ) ) {
-			$js .= "\n" . file_get_contents( $file );
+		if ( fl_builder_filesystem()->file_exists( $file ) && ! in_array( $module->settings->type . '-module-js', self::$enqueued_global_assets ) ) {
+			$js .= "\n" . fl_builder_filesystem()->file_get_contents( $file );
 			self::$enqueued_global_assets[] = $module->settings->type . '-module-js';
 		}
 
@@ -2859,7 +2856,7 @@ final class FLBuilder {
 		$settings   = $module->settings;
 		$id         = $module->node;
 
-		if ( file_exists( $file ) ) {
+		if ( fl_builder_filesystem()->file_exists( $file ) ) {
 			ob_start();
 			include $file;
 			$js .= ob_get_clean();

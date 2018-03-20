@@ -4905,7 +4905,7 @@
 		 */
 		_moduleCopyClicked: function(e)
 		{
-			var module   = $( this ).closest( '.fl-module' )
+			var module   = $( this ).closest( '.fl-module' ),
 				nodeId   = module.attr( 'data-node' ),
 				position = module.index() + 1,
 				clone    = module.clone(),
@@ -5036,7 +5036,7 @@
 				attrs     : 'data-node="' + data.nodeId + '" data-parent="' + data.parentId + '" data-type="' + data.type + '"',
 				buttons   : ! data.global && ! FLBuilderConfig.lite && ! FLBuilderConfig.simpleUi ? ['save-as'] : [],
 				badges    : data.global ? [ FLBuilderStrings.global ] : [],
-				settings  : settings ? settings : FLBuilderSettingsConfig.defaults.modules[ data.type ],
+				settings  : settings,
 				legacy    : data.legacy,
 				helper    : FLBuilder._moduleHelpers[ data.type ],
 				rules     : FLBuilder._moduleHelpers[ data.type ] ? FLBuilder._moduleHelpers[ data.type ].rules : null,
@@ -5141,6 +5141,11 @@
 			if ( data.layout ) {
 				data.layout.nodeParent 	 = FLBuilder._newModuleParent;
 				data.layout.nodePosition = FLBuilder._newModulePosition;
+			}
+
+			// Make sure we have settings before rendering the form.
+			if ( ! data.settings ) {
+				data.settings = FLBuilderSettingsConfig.defaults.modules[ data.type ];
 			}
 
 			// Render the module if a settings form is already open.
@@ -6056,6 +6061,14 @@
 				}
 			}
 
+			// In the case of multi-select or checkboxes we need to put the blank setting back in.
+			$.each( form.find( '[name]' ), function( key, input ) {
+				var name = $( input ).attr( 'name' ).replace( /\[(.*)\]/, '' );
+				if ( ! ( name in settings ) ) {
+					settings[ name ] = '';
+				}
+			});
+
 			// Merge in the original settings in case legacy fields haven't rendered yet.
 			settings = $.extend( {}, FLBuilder._getOriginalSettings( form ), settings );
 
@@ -6090,13 +6103,19 @@
 		 */
 		_getOriginalSettings: function( form, all )
 		{
-			var original = form.find( '.fl-builder-settings-json' ),
+			var formJSON = form.find( '.fl-builder-settings-json' ),
+				nodeId	 = form.data( 'node' ),
+				config   = FLBuilderSettingsConfig.nodes,
+				original = null,
 				settings = {};
 
-			if ( original.length ) {
+			if ( nodeId && config[ nodeId ] ) {
+				original = config[ nodeId ];
+			} else if ( formJSON.length ) {
+				original = JSON.parse( formJSON.val().replace( /&#39;/g, "'" ) );
+			}
 
-				original = JSON.parse( original.val().replace( /&#39;/g, "'" ) );
-
+			if ( original ) {
 				for ( key in original ) {
 					if ( $( '#fl-field-' + key ).length || all ) {
 						settings[ key ] = original[ key ];

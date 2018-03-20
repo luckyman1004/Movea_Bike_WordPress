@@ -145,6 +145,7 @@ FLBuilder::register_settings_form('col', array(
 					'fields'        => array(
 						'bg_image'      => array(
 							'type'          => 'photo',
+							'show_remove'   => true,
 							'label'         => __( 'Photo', 'fl-builder' ),
 							'preview'         => array(
 								'type'            => 'none',

@@ -114,6 +114,7 @@ FLBuilder::register_module('FLVideoModule', array(
 					),
 					'poster'         => array(
 						'type'          => 'photo',
+						'show_remove'   => true,
 						'label'         => _x( 'Poster', 'Video preview/fallback image.', 'fl-builder' ),
 					),
 					'autoplay'       => array(

@@ -1969,6 +1969,73 @@
   "regular"
  ]
 }, {
+ "IBM Plex Mono": [
+  "100",
+  "100italic",
+  "200",
+  "200italic",
+  "300",
+  "300italic",
+  "regular",
+  "italic",
+  "500",
+  "500italic",
+  "600",
+  "600italic",
+  "700",
+  "700italic"
+ ]
+}, {
+ "IBM Plex Sans": [
+  "100",
+  "100italic",
+  "200",
+  "200italic",
+  "300",
+  "300italic",
+  "regular",
+  "italic",
+  "500",
+  "500italic",
+  "600",
+  "600italic",
+  "700",
+  "700italic"
+ ]
+}, {
+ "IBM Plex Sans Condensed": [
+  "100",
+  "100italic",
+  "200",
+  "200italic",
+  "300",
+  "300italic",
+  "regular",
+  "italic",
+  "500",
+  "500italic",
+  "600",
+  "600italic",
+  "700",
+  "700italic"
+ ]
+}, {
+ "IBM Plex Serif": [
+  "100",
+  "100italic",
+  "200",
+  "200italic",
+  "300",
+  "300italic",
+  "regular",
+  "italic",
+  "500",
+  "500italic",
+  "600",
+  "600italic",
+  "700italic"
+ ]
+}, {
  "IM Fell DW Pica": [
   "regular",
   "italic"
@@ -2746,6 +2813,11 @@
 }, {
  "Miltonian Tattoo": [
   "regular"
+ ]
+}, {
+ "Mina": [
+  "regular",
+  "700"
  ]
 }, {
  "Miniver": [

@@ -82,6 +82,7 @@ final class FLBuilderAJAX {
 	static private function add_actions() {
 
 		// FLBuilderModel
+		self::add_action( 'get_node_settings', 'FLBuilderModel::get_node_settings', array( 'node_id' ) );
 		self::add_action( 'delete_node', 'FLBuilderModel::delete_node', array( 'node_id' ) );
 		self::add_action( 'delete_col', 'FLBuilderModel::delete_col', array( 'node_id', 'new_width' ) );
 		self::add_action( 'reorder_node', 'FLBuilderModel::reorder_node', array( 'node_id', 'position' ) );
@@ -243,6 +244,21 @@ final class FLBuilderAJAX {
 		}
 
 		return true;
+	}
+
+	/**
+	 * Is this an AJAX response?
+	 * @since 2.0.7
+	 * @return bool
+	 */
+	static public function doing_ajax() {
+		if ( function_exists( 'wp_doing_ajax' ) ) {
+			return wp_doing_ajax();
+		}
+		if ( defined( 'DOING_AJAX' ) ) {
+			return DOING_AJAX;
+		}
+		return false;
 	}
 }
 

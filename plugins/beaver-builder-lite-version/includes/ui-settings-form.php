@@ -111,6 +111,6 @@
 			</div>
 		</div>
 		<# var settings = FLBuilder._getSettingsJSONForHTML( data.settings ); #>
-		<input class="fl-builder-settings-json" type="hidden" value='{{{settings}}}' />
+		<input class="fl-builder-settings-json" type="hidden" value='{{settings}}' />
 	</form>
 </script>

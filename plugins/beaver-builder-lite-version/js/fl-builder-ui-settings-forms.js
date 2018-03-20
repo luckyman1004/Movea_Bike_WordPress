@@ -79,6 +79,12 @@
 					helper 	  : null
 				};
 
+			// Load settings from the server if we have a node but no settings.
+			if ( config.nodeId && ! config.settings ) {
+				this.loadNodeSettings( config, callback );
+				return;
+			}
+
 			// Merge the config into the defaults and make sure we have a callback.
 			config   = $.extend( defaults, config );
 			callback = undefined === callback ? function(){} : callback;
@@ -107,6 +113,29 @@
 					this.showLightboxLoader();
 				}
 			}
+		},
+
+		/**
+		 * Loads node settings for a form if they do not exist in
+		 * the settings config cache.
+		 *
+		 * @since 2.1
+		 * @method loadNodeSettings
+		 * @param {Object} config
+		 * @param {Function} callback
+		 * @return {Boolean}
+		 */
+		loadNodeSettings: function( config, callback ) {
+			FLBuilder.showAjaxLoader();
+			FLBuilder.ajax( {
+				action 	 : 'get_node_settings',
+				node_id  : config.nodeId,
+			}, function( response ) {
+				config.settings = JSON.parse( response );
+				FLBuilderSettingsConfig.nodes[ config.nodeId ] = config.settings;
+				FLBuilderSettingsForms.render( config, callback );
+				FLBuilder.hideAjaxLoader();
+			} );
 		},
 
 		/**
