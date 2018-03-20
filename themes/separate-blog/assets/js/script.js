@@ -1074,4 +1074,34 @@ jQuery(document).ready(function ( $ ) {
     $('.moveaSpot.multiple').on('click', function(){
         window.location = $(this).data('link');
     })
+
+    // scroll down for # link
+    var urlHash = window.location.href.split("#")[1];
+	
+	if (typeof urlHash != 'undefined'){
+		if(jQuery('#' + urlHash).length > 0){
+			var fixed_header_offset = jQuery(".navbar").height();
+			var distance = jQuery('#' + urlHash).offset().top - (+fixed_header_offset) - 50
+			jQuery('html, body').animate({
+				scrollTop: distance
+			}, 500);
+		}
+    }
+    $('a[href*="#"]')
+    // Remove links that don't actually link to anything
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .click(function(event) {
+        var urlHash = window.location.href.split("#")[1];
+        
+        if (typeof urlHash != 'undefined'){
+            if(jQuery('#' + urlHash).length > 0){
+                var fixed_header_offset = jQuery(".navbar").height();
+                var distance = jQuery('#' + urlHash).offset().top - (+fixed_header_offset) - 50
+                jQuery('html, body').animate({
+                    scrollTop: distance
+                }, 500);
+            }
+        }
+    });
 });

@@ -209,8 +209,8 @@ get_header(); ?>
             <div class="moveaSplitText" >
                 <h2><?php echo get_option_tree('title_like');?></h2>
                 <div class="paragraphWrap">
-                    <p><?php echo get_option_tree('left_block_like');?></p>
-                    <p><?php echo get_option_tree('right_block_like');?></p>
+                    <?php echo get_option_tree('left_block_like');?>
+                    <?php echo get_option_tree('right_block_like');?>
                 </div>
                 <!-- <h3><a href="#headphones" style="color: inherit;">Compare headphones</a></h3> -->
             </div>
@@ -287,7 +287,7 @@ get_header(); ?>
                 <p></p>
             </div>
         </div> -->
-        <div class="productindex-introcontainer">
+        <div class="productindex-introcontainer" id="products">
             <div class="product-category">
                 <div class="relationspotlist">
                     <div class="spots packed">
