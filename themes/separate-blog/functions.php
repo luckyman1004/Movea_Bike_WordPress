@@ -312,7 +312,7 @@ add_image_size( 'separate-blog-letest-thumbnail', 60, 60, true );
 /**
  * Remove admin bar
  */
-add_filter('show_admin_bar', '__return_false');
+//add_filter('show_admin_bar', '__return_false');
 /**
  * Custom template tags for this theme.
  */
