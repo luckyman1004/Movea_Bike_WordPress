@@ -4753,8 +4753,8 @@ cursor: -moz-grabbing;
   width: 100%;
 }
 .abount-content p{
-  font-size: 20px;
-  margin: 0 0 20px;
+  font-size: 18px;
+  margin: 0 0 18px;
 }
 @media (max-width: 767px) {
   .abount-content p{
