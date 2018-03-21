@@ -4747,3 +4747,18 @@ cursor: -moz-grabbing;
     width: 300px; 
   }
 }
+
+/*** About us template ***/
+.about-thumbnail {
+  width: 100%;
+}
+.abount-content p{
+  font-size: 25px;
+  margin: 0 0 30px;
+}
+@media (max-width: 767px) {
+  .abount-content p{
+    font-size: 25px;
+    margin: 30px 0 30px;
+  }
+}
