@@ -4763,7 +4763,7 @@ cursor: -moz-grabbing;
   }
 }
 
-.page-template-default ul {
+.page-template-default .intro ul {
   display: block;
   list-style-type: disc;
   -webkit-margin-before: 1em;
