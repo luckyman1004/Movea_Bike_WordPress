@@ -10,29 +10,30 @@
 get_header(); ?>
     <div class="ind-gallery" id="ind_gallery" style="display: none;">
         <?php $post_id = get_the_ID();?>
-            <div class="ind-close">&times;</div>
-            <div class="gallery-container">
-                <div class="carousel_container" id="product">       
-                    <div class="carousel_items">        
-                        <ul>
-                            <?php if(get_field('image1', $post_id) != '') { ?>
-                            <li class="carousel_item" id="item_0"><img src="<?php the_field('image1', $post_id);?>" /></li>
-                            <?php }?>
-                            <?php if(get_field('image2', $post_id) != '') { ?>
-                            <li class="carousel_item" id="item_1"><img src="<?php the_field('image2', $post_id);?>" /></li>
-                            <?php }?>
-                            <?php if(get_field('image3', $post_id) != '') { ?>
-                            <li class="carousel_item" id="item_2"><img src="<?php the_field('image3', $post_id);?>" /></li>
-                            <?php }?>
-                            <?php if(get_field('image4', $post_id) != '') { ?>
-                            <li class="carousel_item" id="item_3"><img src="<?php the_field('image4', $post_id);?>" /></li>
-                            <?php }?>
-                        </ul>
-                    </div>
-                    <div class="nav_dots"></div>
+        <div class="ind-close">&times;</div>
+        <div class="gallery-container">
+            <div class="carousel_container fullscreen" id="product">       
+                <div class="carousel_items">        
+                    <ul>
+                        <?php if(get_field('image1', $post_id) != '') { ?>
+                        <li class="carousel_item" id="item_0"><img src="<?php the_field('image1', $post_id);?>" /></li>
+                        <?php }?>
+                        <?php if(get_field('image2', $post_id) != '') { ?>
+                        <li class="carousel_item" id="item_1"><img src="<?php the_field('image2', $post_id);?>" /></li>
+                        <?php }?>
+                        <?php if(get_field('image3', $post_id) != '') { ?>
+                        <li class="carousel_item" id="item_2"><img src="<?php the_field('image3', $post_id);?>" /></li>
+                        <?php }?>
+                        <?php if(get_field('image4', $post_id) != '') { ?>
+                        <li class="carousel_item" id="item_3"><img src="<?php the_field('image4', $post_id);?>" /></li>
+                        <?php }?>
+                    </ul>
                 </div>
+                <div class="nav_dots"></div>
             </div>
         </div>
+    </div>
+    <div class="lifestyle-gallery" id="lifestyle_gallery" style="display: none;"><div class="lifestyle-close">&times;</div></div>
 	<div class="main-container detail-template post-<?php the_ID(); ?>">
             <div class="buyModule">
 			<?php
@@ -188,16 +189,16 @@ get_header(); ?>
                             <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle1.jpg"></div>
                         </div>
                         <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle2.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle2.jpg" data-labelcolor="0" class="spot spot2" >
-                            <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle2.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                            <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle2.jpg" ></div>
                         </div>
                         <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle3.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle3.jpg" data-labelcolor="0" class="spot spot3" >
-                            <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle3.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                            <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle3.jpg" ></div>
                         </div>
                         <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle4.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle4.jpg" data-labelcolor="0" class="spot spot4" >
-                            <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle4.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                            <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle4.jpg" ></div>
                         </div>
                         <div data-w="1500" data-h="1010" data-color="#000000" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle5.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle5.jpg" data-labelcolor="0" class="spot spot5" >
-                            <div class="galImg" style="background-color: rgb(0, 0, 0);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle5.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                            <div class="galImg" style="background-color: rgb(0, 0, 0);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle5.jpg" ></div>
                         </div>
                     </div>
                     <div class="MobileGrid">
@@ -226,13 +227,13 @@ get_header(); ?>
                             <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle1.jpg"></div>
                         </div>
                         <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle2.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle2.jpg" data-labelcolor="0" class="spot spot2" >
-                            <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle2.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                            <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle2.jpg" ></div>
                         </div>
                         <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle3.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle3.jpg" data-labelcolor="0" class="spot spot3" >
-                            <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle3.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                            <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle3.jpg" ></div>
                         </div>
                         <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle4.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle4.jpg" data-labelcolor="0" class="spot spot4" >
-                            <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle4.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                            <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle4.jpg"></div>
                         </div>
                         <div data-w="1500" data-h="1010" data-color="#000000" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle5.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle5.jpg" data-labelcolor="0" class="spot spot5" >
                             <div class="galImg" style="background-color: rgb(0, 0, 0);">
@@ -701,8 +702,18 @@ get_header(); ?>
                                     <div class="carousel_container" id="spot_<?php echo $like_post_id;?>">       
                                         <div class="carousel_items">        
                                             <ul>
-                                                <li class="carousel_item" id="item_0"><img class="lazy" src="<?php the_field('image1', $like_post_id);?>" /></li>
-                                                <li class="carousel_item" id="item_1"><img class="lazy" src="<?php the_field('image2', $like_post_id);?>" /></li>
+                                                <?php if(get_field('image1', $post_id) != '') { ?>
+                                                <li class="carousel_item" id="item_0"><img src="<?php the_field('image1', $post_id);?>" /></li>
+                                                <?php }?>
+                                                <?php if(get_field('image2', $post_id) != '') { ?>
+                                                <li class="carousel_item" id="item_1"><img src="<?php the_field('image2', $post_id);?>" /></li>
+                                                <?php }?>
+                                                <?php if(get_field('image3', $post_id) != '') { ?>
+                                                <li class="carousel_item" id="item_2"><img src="<?php the_field('image3', $post_id);?>" /></li>
+                                                <?php }?>
+                                                <?php if(get_field('image4', $post_id) != '') { ?>
+                                                <li class="carousel_item" id="item_3"><img src="<?php the_field('image4', $post_id);?>" /></li>
+                                                <?php }?>
                                             </ul>
                                         </div>
                                         <div class="nav_dots"></div>

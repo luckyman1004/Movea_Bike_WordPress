@@ -975,6 +975,9 @@ if (typeof jQuery === 'undefined') {
 $(function () {
     $('#videoSection').VideoSection()
     $('.carousel_container').each(function () {
+        if($(this).hasClass('fullscreen')) {
+            $(this).css('width', $(window).width());
+        }
         $(this).SliderSection()
     })
     $('.moveaSplit').each(function () {
@@ -1059,6 +1062,9 @@ jQuery(document).ready(function ( $ ) {
     var windowWidth = $(window).width();
     var windowHeight = $(window).height();
 
+    // if($('#ind_gallery .carousel_container')) {
+    //     $('#ind_gallery .carousel_container').css('width', windowWidth);
+    // }
     $('#view_gallery').on('click', function(){
        
         TweenLite.to($('#ind_gallery'), 0.5, {display: 'block', width: windowWidth, height: windowHeight, top: 0, left: 0, ease: Power2.easeOut, delay: .5});
@@ -1103,5 +1109,24 @@ jQuery(document).ready(function ( $ ) {
                 }, 500);
             }
         }
+    });
+    // ---------------------------------------------- //
+    // life style image gallery
+    // ---------------------------------------------- //
+    $(".moveaGallery img.galImg").on('click', function(){
+        var itemSrc = $(this).attr('src');
+        var imgH = $(this).height();
+        var imgW = $(this).width();
+        $('#lifestyle_gallery').append('<img class="galImg" src="'+itemSrc+'" >');
+        TweenLite.to($('#lifestyle_gallery'), 0.5, {display: 'block', width: windowWidth, height: windowHeight, top: 0, left: 0, ease: Power2.easeOut, delay: .5});
+        TweenLite.to($('body'), 0, {overflow: 'hidden', ease: Power2.easeOut});
+        TweenLite.to($('#lifestyle_gallery img'), 0.5, {width: imgW, height: imgH, ease: Power2.easeOut, delay: .5});
+        
+    });
+    $("#lifestyle_gallery .lifestyle-close").on('click', function(){
+        TweenLite.to($('#lifestyle_gallery'), 0, {display: 'none'});
+        TweenLite.to($('#lifestyle_gallery'), 0.5, {width: 0, height: 0, top: '50%', left: '50%', ease: Power2.easeOut, delay: .5});
+        TweenLite.to($('body'), 0, {overflow: 'inherit', ease: Power2.easeOut});
+        $('#lifestyle_gallery img').remove();
     });
 });

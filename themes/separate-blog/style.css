@@ -4679,7 +4679,7 @@ cursor: -moz-grabbing;
   }
 }
 
-.ind-gallery {
+.ind-gallery, .lifestyle-gallery {
   position: fixed;
   z-index: 100000;
   top: 50%;
@@ -4688,7 +4688,7 @@ cursor: -moz-grabbing;
   height: 0;
   background: #b5b5b5;
 }
-.ind-close {
+.ind-close, .lifestyle-close {
   color: #fff;
   font-size: 50px;
   right: 30px;
@@ -4699,10 +4699,21 @@ cursor: -moz-grabbing;
   z-index: 100001;
 }
 .ind-gallery .gallery-container {
-  margin-top: 10%;
+  /* margin-top: 10%; */
+}
+.ind-gallery .gallery-container .nav_dots {
+  bottom: 70px;
+}
+.lifestyle-gallery img {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
 }
 @media (max-width: 768px) {
-  .ind-gallery {
+  .ind-gallery, .lifestyle-gallery {
     position: fixed;
     z-index: 100000;
     width: 100%;
