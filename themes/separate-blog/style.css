@@ -2953,10 +2953,18 @@ cursor: -moz-grabbing;
   display: inline-block;
   border: 0;
   vertical-align: top;
-  float: left
+  float: left;
+  background-color: #D9DADC;
+}
+.nextgenspots .moveaSpot.multiple:nth-of-type(2n) {
+  background-color: #A6A9AA;
+}
+.nextgenspots .moveaSpot.multiple:nth-of-type(2n) .info, .nextgenspots .moveaSpot.multiple:nth-of-type(3n) .info {
+  color: #fff!important;
 }
 .nextgenspots .moveaSpot.multiple:nth-of-type(3n) {
   width: 34%;
+  background-color: #313234;
 }
 .moveaSpot .linkImg {
   position: relative;
@@ -3045,7 +3053,6 @@ cursor: -moz-grabbing;
 .nextgenspots .moveaSpot.multiple .info h4 {
   position: absolute;
   font-size: 16px;
-  color: #000;
   font-family: ProximaRegular;
   font-weight: normal;
   margin: 0 0 20px 0;
@@ -3062,7 +3069,6 @@ cursor: -moz-grabbing;
   position: relative;
   width: 100%;
   font-size: 16px;
-  color: #000;
   font-weight: normal;
   display: block;
   height: 100%;

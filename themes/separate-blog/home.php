@@ -59,7 +59,7 @@ get_header(); ?>
                 $post_id = get_option_tree($i.'_product_featured');
                 $product = get_post($post_id);
             ?>
-            <div class="moveaSpot multiple" style="background-color: #D9DADC;" data-link="<?php echo esc_url(get_page_link($post_id));?>">
+            <div class="moveaSpot multiple" data-link="<?php echo esc_url(get_page_link($post_id));?>">
                 <div class="linkImg">
                     <div class="carousel_container" id="featured_product_<?php echo $post_id;?>">       
                         <div class="carousel_items">        
@@ -82,8 +82,8 @@ get_header(); ?>
                     </div>
                 </div>
                 <div class="info">
-                    <h4 style="color:#000;"><?php echo $product->post_title;?></h4>
-                    <div class="priceAndInfo" style="color:#000;">
+                    <h4><?php echo $product->post_title;?></h4>
+                    <div class="priceAndInfo">
                         <p><?php echo $product->post_excerpt;?></p>
                         <ul>
                             <li>Weight: <?php the_field('weight', $post_id);?></li>
