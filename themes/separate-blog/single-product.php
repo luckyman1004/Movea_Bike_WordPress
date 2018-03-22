@@ -73,6 +73,7 @@ get_header(); ?>
                                                 <div class="col">
                                                     <!-- button-purchase (green version) -->
                                                     <a href="<?php the_field('indiegogo_url', $post_id);?>" class="button button-primary js-buy-button">Buy at Indiegogo</a>
+                                                    <span class="size-guide">Rider’s height (cm) <?php the_field('rider_height', $post_id);?></span>
                                                 </div>
                                             </div>
                                         </div>

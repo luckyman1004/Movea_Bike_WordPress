@@ -3884,7 +3884,15 @@ cursor: -moz-grabbing;
   .ecom-buy-module-sidebar-row .ecom-buy-module-price {
       line-height: 1.1;
   }
+  .ecom-buy-module-sidebar-row .col .size-guide {
+    float: right;
+    font-family: 'ProximaThin',sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+  }
 }
+
 @media (max-width: 768.5px){
   .desktop-only {
       display: none!important;
