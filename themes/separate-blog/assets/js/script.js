@@ -976,7 +976,11 @@ $(function () {
     $('#videoSection').VideoSection()
     $('.carousel_container').each(function () {
         if($(this).hasClass('fullscreen')) {
-            $(this).css('width', $(window).width());
+            if($(window).width() > 768) {
+                $(this).css('width', $(window).width()*0.7);
+            } else {
+                $(this).css('width', $(window).width());
+            }
         }
         $(this).SliderSection()
     })
