@@ -16,8 +16,8 @@ get_header(); ?>
                     <div class="toptext"><?php echo get_option_tree('top_text');?></div>
                     <div class="titletext">
                         <p>
-                            <a href="#"><?php echo get_option_tree('category_1');?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#"><?php echo get_option_tree('category_2');?></a>
+                            <a href="#products"><?php echo get_option_tree('category_1');?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="#products"><?php echo get_option_tree('category_2');?></a>
                         </p>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ get_header(); ?>
                     <?php echo get_option_tree('left_block_movea_design');?>
                     <?php echo get_option_tree('right_block_movea_design');?>
                 </div>
-                <h3><a href="#headphones" style="color: inherit;"><?php echo get_option_tree('bottom_link_movea_design');?></a></h3>
+                <h3><a href="#products" style="color: inherit;"><?php echo get_option_tree('bottom_link_movea_design');?></a></h3>
             </div>
         </div>
         <div class="nextgenspots">
