@@ -365,7 +365,7 @@ get_header(); ?>
                 <div class="txtBlock">
                     <h2 class="title"><?php echo get_option_tree('title_app');?></h2>
                     <h5 class="content"><?php echo get_option_tree('sub_title_app');?></h5>
-                    <a href="https://itunes.apple.com/us/app/bitride/id1021902781?mt=8" class="btn">
+                    <a target="_blank" href="https://itunes.apple.com/us/app/bitride/id1021902781?mt=8" class="btn">
                         <div class="left"></div>
                         <div class="right">Learn more</div>
                     </a>
