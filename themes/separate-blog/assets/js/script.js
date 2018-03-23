@@ -1123,8 +1123,12 @@ jQuery(document).ready(function ( $ ) {
     // ---------------------------------------------- //
     $(".moveaGallery img.galImg").on('click', function(){
         var itemSrc = $(this).attr('src');
-        var imgH = $(this).height();
-        var imgW = $(this).width();
+        var theImage = new Image();
+        theImage.src = itemSrc;
+        
+        // Get accurate measurements from that.
+        var imgW = theImage.width;
+        var imgH = theImage.height;
         $('#lifestyle_gallery').append('<img class="galImg" src="'+itemSrc+'" >');
         TweenLite.to($('#lifestyle_gallery'), 0.5, {display: 'block', width: windowWidth, height: windowHeight, top: 0, left: 0, ease: Power2.easeOut, delay: .5});
         TweenLite.to($('body'), 0, {overflow: 'hidden', ease: Power2.easeOut});

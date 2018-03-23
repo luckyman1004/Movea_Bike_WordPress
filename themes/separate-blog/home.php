@@ -8,7 +8,7 @@
  * @package Separate_Blog
  */
 get_header(); ?>
-
+    <div class="lifestyle-gallery" id="lifestyle_gallery" style="display: none;"><div class="lifestyle-close">&times;</div></div>
     <div class="main-container">
         <div id="videoSection">
             <div class="container-movea moveaVideo" data-astop="true">
