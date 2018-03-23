@@ -287,99 +287,11 @@ get_header(); ?>
             <div id="TextSpot2Column">
                 <div class="moveaSplitText" >
                     <h2><?php echo get_option_tree('title_geometry');?></h2>
-                    <h3><a href="#headphones" style="color: inherit;"><?php echo get_option_tree('sub_title_geometry');?></a></h3>
+                    <!-- <h3><a href="#headphones" style="color: inherit;"><?php echo get_option_tree('sub_title_geometry');?></a></h3> -->
                 </div>
             </div>
             <div class="moveaTechSpec">
-                <div class="techImgWrapper">
-                    <div class="img_wrapper" style="display: none;">
-                        <img class="" src="<?php echo get_option_tree('background_image_geometry');?>" >
-                    </div>
-                    <div class="txt_wrapper">
-                        <div class="txt_block">
-                            <table>
-                                <thead>
-                                    <th>Men</th>
-                                    <th>20"</th>
-                                    <th>24"</th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>A) Seat tube angle</td>
-                                        <td>73 degree</td>
-                                        <td>73 degree</td>
-                                    </tr>
-                                    <tr>
-                                        <td>B) Top-tube length</td>
-                                        <td>56cm</td>
-                                        <td>58cm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>C) Seat-tube length</td>
-                                        <td>37cm</td>
-                                        <td>46cm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>D) Wheel base</td>
-                                        <td>102cm</td>
-                                        <td>104cm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>E) Head-tube length</td>
-                                        <td>28cm</td>
-                                        <td>26cm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>F) Stand over high</td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="txt_block">
-                            <table>
-                                <thead>
-                                    <th>Women</th>
-                                    <th>20"</th>
-                                    <th>24"</th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>A) Seat tube angle</td>
-                                        <td>73 degree</td>
-                                        <td>73 degree</td>
-                                    </tr>
-                                    <tr>
-                                        <td>B) Top-tube length</td>
-                                        <td>56cm</td>
-                                        <td>58cm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>C) Seat-tube length</td>
-                                        <td>37cm</td>
-                                        <td>46cm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>D) Wheel base</td>
-                                        <td>102cm</td>
-                                        <td>104cm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>E) Head-tube length</td>
-                                        <td>30cm</td>
-                                        <td>26cm</td>
-                                    </tr>
-                                    <tr>
-                                        <td>F) Stand over high</td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- Tech Specification -->
                 <div class="specContent">
                     <div class="container">
@@ -785,6 +697,95 @@ get_header(); ?>
                     </div>
                 </div>
                 <!-- end Tech Specification -->
+                <div class="techImgWrapper">
+                    <div class="img_wrapper" style="display: none;">
+                        <img class="" src="<?php echo get_option_tree('background_image_geometry');?>" >
+                    </div>
+                    <div class="txt_wrapper">
+                        <div class="txt_block">
+                            <table>
+                                <thead>
+                                    <th>Men</th>
+                                    <th>20"</th>
+                                    <th>24"</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>A) Seat tube angle</td>
+                                        <td>73 degree</td>
+                                        <td>73 degree</td>
+                                    </tr>
+                                    <tr>
+                                        <td>B) Top-tube length</td>
+                                        <td>56cm</td>
+                                        <td>58cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>C) Seat-tube length</td>
+                                        <td>37cm</td>
+                                        <td>46cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>D) Wheel base</td>
+                                        <td>102cm</td>
+                                        <td>104cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>E) Head-tube length</td>
+                                        <td>28cm</td>
+                                        <td>26cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>F) Stand over high</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="txt_block">
+                            <table>
+                                <thead>
+                                    <th>Women</th>
+                                    <th>20"</th>
+                                    <th>24"</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>A) Seat tube angle</td>
+                                        <td>73 degree</td>
+                                        <td>73 degree</td>
+                                    </tr>
+                                    <tr>
+                                        <td>B) Top-tube length</td>
+                                        <td>56cm</td>
+                                        <td>58cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>C) Seat-tube length</td>
+                                        <td>37cm</td>
+                                        <td>46cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>D) Wheel base</td>
+                                        <td>102cm</td>
+                                        <td>104cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>E) Head-tube length</td>
+                                        <td>30cm</td>
+                                        <td>26cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>F) Stand over high</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
                 <!-- <div class="specContent">
                     <table>
                         <thead>
