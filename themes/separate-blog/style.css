@@ -4324,6 +4324,7 @@ cursor: -moz-grabbing;
 .moveaTechSpec .techImgWrapper {
   /* text-align: center; */
   display: flex;
+  justify-content: center;
 }
 
 .moveaTechSpec .techImgWrapper .img_wrapper, .moveaTechSpec .techImgWrapper .txt_wrapper{
@@ -4345,10 +4346,37 @@ cursor: -moz-grabbing;
 .moveaTechSpec .techImgWrapper .txt_wrapper .txt_block ul {
   margin-left: 15px;
 }
+.moveaTechSpec .techImgWrapper table {
+  width: 100%;
+}
 .moveaTechSpec .specContent {
   width: 100%;
-  background-color: rgb(128, 128, 128);
+  background-color: #515256;
   padding: 30px 0 50px;
+  color: rgb(241, 241, 241);
+}
+.moveaTechSpec .specContent .tech-header, .moveaTechSpec .specContentMobile .tech-header {
+  margin-bottom: 30px;
+}
+.moveaTechSpec .specContentMobile .tech-header {
+  margin-left: 20px;
+}
+.moveaTechSpec .specContent .tech-header .top, .moveaTechSpec .specContentMobile .tech-header .top{
+  font-weight: bold;
+}
+.moveaTechSpec .specContent .tech-header .title, .moveaTechSpec .specContentMobile .tech-header .title {
+  font-weight: bold;
+  font-size: 30px;
+}
+.moveaTechSpec .specContent .spec-item {
+  margin-bottom: 10px;
+}
+.moveaTechSpec .specContent .spec-item .title {
+  font-weight: bold;
+}
+.moveaTechSpec .specContent .spec-item .content {
+  font-size: 14px;
+  margin-left: 3px;
 }
 .moveaTechSpec .specContent table, .moveaTechSpec .specContentMobile table {
   margin: 0 auto;
@@ -4380,14 +4408,25 @@ cursor: -moz-grabbing;
   width: 100%;
   margin: 0 auto;
   display: none;
-  background-color: rgb(128, 128, 128);
+  background-color: #515256;
   padding: 30px 0 50px;
+  color: rgb(241, 241, 241);
 }
 .moveaTechSpec .specContentMobile .carousel_container {
   width: 300px;
 }
-.moveaTechSpec .specContentMobile .carousel_container table {
+.moveaTechSpec .specContentMobile .carousel_container .specMobile {
   width: 300px;
+}
+.moveaTechSpec .specContentMobile .carousel_container .specMobile .spec-item {
+  margin-bottom: 10px;
+}
+.moveaTechSpec .specContentMobile .carousel_container .specMobile .spec-item .title {
+  font-weight: bold;
+}
+.moveaTechSpec .specContentMobile .carousel_container .specMobile .spec-item .content {
+  font-size: 14px;
+  margin-left: 3px;
 }
 @media (max-width: 991px) {
   .moveaTechSpec .techImgWrapper {

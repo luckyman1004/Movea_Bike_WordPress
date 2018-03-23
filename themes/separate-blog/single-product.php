@@ -61,6 +61,10 @@ get_header(); ?>
                                     <div class="ecom-buy-module-short-description desktop-only v-standard">
 										<?php the_content(); ?>										
                                     </div>
+                                    <div style="padding: 15px 0;     font-family: 'ProximaThin',sans-serif;    color: #666; font-weight: 400;">
+                                        Fenders and bongee code are included<br>
+                                        Size Guide: Rider's height (cm) <?php the_field('rider_height', $post_id);?>
+                                    </div>
                                     <div class="ecom-buy-module-sidebar-row with-border ecom-buy-module-sidebar-prices space-large clearfix js-total-prices">
                                         <div class="inner">
                                             <div class="cols">
@@ -73,7 +77,7 @@ get_header(); ?>
                                                 <div class="col">
                                                     <!-- button-purchase (green version) -->
                                                     <a href="<?php the_field('indiegogo_url', $post_id);?>" class="button button-primary js-buy-button">Buy at Indiegogo</a>
-                                                    <span class="size-guide">Rider’s height (cm) <?php the_field('rider_height', $post_id);?></span>
+                                                    <span class="size-guide">1st of May. Safe up to 40%</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -288,34 +292,499 @@ get_header(); ?>
             </div>
             <div class="moveaTechSpec">
                 <div class="techImgWrapper">
-                    <div class="img_wrapper">
+                    <div class="img_wrapper" style="display: none;">
                         <img class="" src="<?php echo get_option_tree('background_image_geometry');?>" >
                     </div>
                     <div class="txt_wrapper">
                         <div class="txt_block">
-                            <div class="title">Geometry Men 20" 24"</div>
-                            <ul>
-                                <li>A) Seat tube angle</li>
-                                <li>B) Top-tube length</li>
-                                <li>C) Seat-tube length</li>
-                                <li>D) Wheel base</li>
-                                <li>E) Head-tube length</li>
-                                <li>F) Stand over high</li>
-                            </ul>
+                            <table>
+                                <thead>
+                                    <th>Men</th>
+                                    <th>20"</th>
+                                    <th>24"</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>A) Seat tube angle</td>
+                                        <td>73 degree</td>
+                                        <td>73 degree</td>
+                                    </tr>
+                                    <tr>
+                                        <td>B) Top-tube length</td>
+                                        <td>56cm</td>
+                                        <td>58cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>C) Seat-tube length</td>
+                                        <td>37cm</td>
+                                        <td>46cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>D) Wheel base</td>
+                                        <td>102cm</td>
+                                        <td>104cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>E) Head-tube length</td>
+                                        <td>28cm</td>
+                                        <td>26cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>F) Stand over high</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         <div class="txt_block">
-                            <div class="title">Geometry Lady 20" 24"</div>
-                            <ul>
-                                <li>A) Seat tube angle</li>
-                                <li>B) Top-tube length</li>
-                                <li>C) Seat-tube length</li>
-                                <li>D) Wheel base</li>
-                                <li>E) Head-tube length</li>
-                                <li>F) Stand over high</li>
-                            </ul>
+                            <table>
+                                <thead>
+                                    <th>Women</th>
+                                    <th>20"</th>
+                                    <th>24"</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>A) Seat tube angle</td>
+                                        <td>73 degree</td>
+                                        <td>73 degree</td>
+                                    </tr>
+                                    <tr>
+                                        <td>B) Top-tube length</td>
+                                        <td>56cm</td>
+                                        <td>58cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>C) Seat-tube length</td>
+                                        <td>37cm</td>
+                                        <td>46cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>D) Wheel base</td>
+                                        <td>102cm</td>
+                                        <td>104cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>E) Head-tube length</td>
+                                        <td>30cm</td>
+                                        <td>26cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>F) Stand over high</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
+                <!-- Tech Specification -->
+                <div class="specContent">
+                    <div class="container">
+                        <div class="tech-header">
+                            <div class="top">Technical</div>
+                            <div class="title">Specifications</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="spec-item">
+                                    <div class="title">Frame</div>
+                                    <div class="content"><?php the_field('frame', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Stem</div>
+                                    <div class="content"><?php the_field('stem', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Rear brake</div>
+                                    <div class="content"><?php the_field('rear_brake', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Rear Derailleur</div>
+                                    <div class="content"><?php the_field('rear_derailleur', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Crankset</div>
+                                    <div class="content"><?php the_field('crankset', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Rims</div>
+                                    <div class="content"><?php the_field('rims', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Tires</div>
+                                    <div class="content"><?php the_field('tires', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Colors</div>
+                                    <div class="content"><?php the_field('colors', $post_id);?></div>
+                                </div>
+                                <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                <div class="spec-item">
+                                    <div class="title">Motor</div>
+                                    <div class="content"><?php the_field('motor', $post_id);?></div>
+                                </div>
+                                <?php } ?>
+                                <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                <div class="spec-item">
+                                    <div class="title">Max speed</div>
+                                    <div class="content"><?php the_field('max_speed', $post_id);?></div>
+                                </div>
+                                <?php } ?>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="spec-item">
+                                    <div class="title">Front rack</div>
+                                    <div class="content"><?php the_field('front_rack', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Handlebar</div>
+                                    <div class="content"><?php the_field('handlebar', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Brake Levels</div>
+                                    <div class="content"><?php the_field('brake_levels', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Shift Levers</div>
+                                    <div class="content"><?php the_field('shift_levers', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Chainring</div>
+                                    <div class="content"><?php the_field('chainring', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Front hub</div>
+                                    <div class="content"><?php the_field('front_hub', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Saddle</div>
+                                    <div class="content"><?php the_field('saddle', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Size</div>
+                                    <div class="content"><?php the_field('size', $post_id);?></div>
+                                </div>
+                                <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                <div class="spec-item">
+                                    <div class="title">Batteri</div>
+                                    <div class="content"><?php the_field('batteri', $post_id);?></div>
+                                </div>
+                                <?php } ?>
+                                <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                <div class="spec-item">
+                                    <div class="title">BATTERY LIFE CYCLE</div>
+                                    <div class="content"><?php the_field('battery_life_cycle', $post_id);?></div>
+                                </div>
+                                <?php } ?>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="spec-item">
+                                    <div class="title">Fork</div>
+                                    <div class="content"><?php the_field('fork', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Grips</div>
+                                    <div class="content"><?php the_field('grips', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Belt drive spoket</div>
+                                    <div class="content"><?php the_field('belt_drive_spoket', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Cassette</div>
+                                    <div class="content"><?php the_field('cassette', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Bottom bracket</div>
+                                    <div class="content"><?php the_field('bottom_bracket', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Rear hub</div>
+                                    <div class="content"><?php the_field('rear_hub', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Seatpost</div>
+                                    <div class="content"><?php the_field('seatpost', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Weight</div>
+                                    <div class="content"><?php the_field('weight', $post_id);?></div>
+                                </div>
+                                <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                <div class="spec-item">
+                                    <div class="title">Hub</div>
+                                    <div class="content"><?php the_field('hub', $post_id);?></div>
+                                </div>
+                                <?php } ?>
+                                <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                <div class="spec-item">
+                                    <div class="title">Range</div>
+                                    <div class="content"><?php the_field('range', $post_id);?></div>
+                                </div>
+                                <?php } ?>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="spec-item">
+                                    <div class="title">Headset</div>
+                                    <div class="content"><?php the_field('headset', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Front brake</div>
+                                    <div class="content"><?php the_field('front_brake', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Beltdrive</div>
+                                    <div class="content"><?php the_field('beltdrive', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Chain</div>
+                                    <div class="content"><?php the_field('chain', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Pedals</div>
+                                    <div class="content"><?php the_field('pedals', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Spokes</div>
+                                    <div class="content"><?php the_field('spokes', $post_id);?></div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="title">Fender</div>
+                                    <div class="content"><?php the_field('fender', $post_id);?></div>
+                                </div>
+                                <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                <div class="spec-item">
+                                    <div class="title">Hub</div>
+                                    <div class="content"><?php the_field('hub', $post_id);?></div>
+                                </div>
+                                <?php } ?>
+                                <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                <div class="spec-item">
+                                    <div class="title">Charging time</div>
+                                    <div class="content"><?php the_field('charging_time', $post_id);?></div>
+                                </div>
+                                <?php } ?>
+                                <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                <div class="spec-item">
+                                    <div class="title">Rider’s height</div>
+                                    <div class="content"><?php the_field('rider_height', $post_id);?></div>
+                                </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="specContentMobile">
+                    <div class="tech-header">
+                        <div class="top">Technical</div>
+                        <div class="title">Specifications</div>
+                    </div>
+                    <div class="carousel_container" id="spec_table">       
+                        <div class="carousel_items">        
+                            <ul>
+                                <li class="carousel_item" id="tb_item_0">
+                                    <div class="specMobile">
+                                        <div class="spec-item">
+                                            <div class="title">Frame</div>
+                                            <div class="content"><?php the_field('frame', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Stem</div>
+                                            <div class="content"><?php the_field('stem', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Rear brake</div>
+                                            <div class="content"><?php the_field('rear_brake', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Rear Derailleur</div>
+                                            <div class="content"><?php the_field('rear_derailleur', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Crankset</div>
+                                            <div class="content"><?php the_field('crankset', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Rims</div>
+                                            <div class="content"><?php the_field('rims', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Tires</div>
+                                            <div class="content"><?php the_field('tires', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Colors</div>
+                                            <div class="content"><?php the_field('colors', $post_id);?></div>
+                                        </div>
+                                        <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                        <div class="spec-item">
+                                            <div class="title">Motor</div>
+                                            <div class="content"><?php the_field('motor', $post_id);?></div>
+                                        </div>
+                                        <?php } ?>
+                                        <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                        <div class="spec-item">
+                                            <div class="title">Max speed</div>
+                                            <div class="content"><?php the_field('max_speed', $post_id);?></div>
+                                        </div>
+                                        <?php } ?>
+                                    </div>
+                                </li>
+                                <li class="carousel_item" id="tb_item_1">
+                                    <div class="specMobile">
+                                        <div class="spec-item">
+                                            <div class="title">Front rack</div>
+                                            <div class="content"><?php the_field('front_rack', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Handlebar</div>
+                                            <div class="content"><?php the_field('handlebar', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Brake Levels</div>
+                                            <div class="content"><?php the_field('brake_levels', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Shift Levers</div>
+                                            <div class="content"><?php the_field('shift_levers', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Chainring</div>
+                                            <div class="content"><?php the_field('chainring', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Front hub</div>
+                                            <div class="content"><?php the_field('front_hub', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Saddle</div>
+                                            <div class="content"><?php the_field('saddle', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Size</div>
+                                            <div class="content"><?php the_field('size', $post_id);?></div>
+                                        </div>
+                                        <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                        <div class="spec-item">
+                                            <div class="title">Batteri</div>
+                                            <div class="content"><?php the_field('batteri', $post_id);?></div>
+                                        </div>
+                                        <?php } ?>
+                                        <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                        <div class="spec-item">
+                                            <div class="title">BATTERY LIFE CYCLE</div>
+                                            <div class="content"><?php the_field('battery_life_cycle', $post_id);?></div>
+                                        </div>
+                                        <?php } ?>
+                                    </div>
+                                </li>
+                                <li class="carousel_item" id="tb_item_2">
+                                    <div class="specMobile">
+                                        <div class="spec-item">
+                                            <div class="title">Fork</div>
+                                            <div class="content"><?php the_field('fork', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Grips</div>
+                                            <div class="content"><?php the_field('grips', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Belt drive spoket</div>
+                                            <div class="content"><?php the_field('belt_drive_spoket', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Cassette</div>
+                                            <div class="content"><?php the_field('cassette', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Bottom bracket</div>
+                                            <div class="content"><?php the_field('bottom_bracket', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Rear hub</div>
+                                            <div class="content"><?php the_field('rear_hub', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Seatpost</div>
+                                            <div class="content"><?php the_field('seatpost', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Weight</div>
+                                            <div class="content"><?php the_field('weight', $post_id);?></div>
+                                        </div>
+                                        <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                        <div class="spec-item">
+                                            <div class="title">Hub</div>
+                                            <div class="content"><?php the_field('hub', $post_id);?></div>
+                                        </div>
+                                        <?php } ?>
+                                        <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                        <div class="spec-item">
+                                            <div class="title">Range</div>
+                                            <div class="content"><?php the_field('range', $post_id);?></div>
+                                        </div>
+                                        <?php } ?>
+                                    </div>
+                                </li>
+                                <li class="carousel_item" id="tb_item_3">
+                                    <div class="specMobile">
+                                        <div class="spec-item">
+                                            <div class="title">Headset</div>
+                                            <div class="content"><?php the_field('headset', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Front brake</div>
+                                            <div class="content"><?php the_field('front_brake', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Beltdrive</div>
+                                            <div class="content"><?php the_field('beltdrive', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Chain</div>
+                                            <div class="content"><?php the_field('chain', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Pedals</div>
+                                            <div class="content"><?php the_field('pedals', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Spokes</div>
+                                            <div class="content"><?php the_field('spokes', $post_id);?></div>
+                                        </div>
+                                        <div class="spec-item">
+                                            <div class="title">Fender</div>
+                                            <div class="content"><?php the_field('fender', $post_id);?></div>
+                                        </div>
+                                        <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                        <div class="spec-item">
+                                            <div class="title">Hub</div>
+                                            <div class="content"><?php the_field('hub', $post_id);?></div>
+                                        </div>
+                                        <?php } ?>
+                                        <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                        <div class="spec-item">
+                                            <div class="title">Charging time</div>
+                                            <div class="content"><?php the_field('charging_time', $post_id);?></div>
+                                        </div>
+                                        <?php } ?>
+                                        <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                        <div class="spec-item">
+                                            <div class="title">Rider’s height</div>
+                                            <div class="content"><?php the_field('rider_height', $post_id);?></div>
+                                        </div>
+                                        <?php } ?>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="nav_dots"></div>
+                    </div>
+                </div>
+                <!-- end Tech Specification -->
                 <!-- <div class="specContent">
                     <table>
                         <thead>
