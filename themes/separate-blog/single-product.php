@@ -284,12 +284,7 @@ get_header(); ?>
             <?php } ?>
         <!-- end Lifestyle picture grid -->
             <!-- Tech Section -->
-            <div id="TextSpot2Column">
-                <div class="moveaSplitText" >
-                    <h2><?php echo get_option_tree('title_geometry');?></h2>
-                    <!-- <h3><a href="#headphones" style="color: inherit;"><?php echo get_option_tree('sub_title_geometry');?></a></h3> -->
-                </div>
-            </div>
+            
             <div class="moveaTechSpec">
                 
                 <!-- Tech Specification -->
@@ -697,6 +692,12 @@ get_header(); ?>
                     </div>
                 </div>
                 <!-- end Tech Specification -->
+                <div id="TextSpot2Column">
+                    <div class="moveaSplitText" >
+                        <!-- <h2><?php echo get_option_tree('title_geometry');?></h2> -->
+                        <h3><a href="#geo" style="color: inherit;"><?php echo get_option_tree('title_geometry');?></a></h3> 
+                    </div>
+                </div>
                 <div class="techImgWrapper">
                     <div class="img_wrapper" style="display: none;">
                         <img class="" src="<?php echo get_option_tree('background_image_geometry');?>" >

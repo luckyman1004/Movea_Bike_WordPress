@@ -4449,6 +4449,9 @@ cursor: -moz-grabbing;
   .moveaTechSpec .specContentMobile .nav_dots {
       bottom: 2px;
   }
+  .moveaTechSpec .techImgWrapper .txt_wrapper {
+    padding: 0 30px 30px 30px;
+  }
 }
 
 .moveaSupportVideo {
