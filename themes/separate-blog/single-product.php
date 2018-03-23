@@ -96,7 +96,7 @@ get_header(); ?>
 				<?php for( $i = 1; $i < 5; $i ++) { ?>
                     <?php
                         $src = get_option_tree($i.'_slider_image_e_model');
-                        if(get_option_tree($i.'_slider_title_e_model') == 'Size') {
+                        if(get_option_tree($i.'_slider_top_text_e_model') == 'Size') {
                             if(get_field('size', $post_id) == '20') {
                                 $src = 'http://movea.bike/wp-content/uploads/2018/03/size-bike-custom.jpg';
                             } else {
@@ -152,7 +152,7 @@ get_header(); ?>
 				<?php for( $i = 1; $i < 4; $i ++) { ?>
                     <?php
                         $src = get_option_tree($i.'_slider_image_8_speed');
-                        if(get_option_tree($i.'_slider_title_8_speed') == 'Size') {
+                        if(get_option_tree($i.'_slider_top_text_8_speed') == 'Size') {
                             if(get_field('size', $post_id) == '20') {
                                 $src = 'http://movea.bike/wp-content/uploads/2018/03/size-bike-custom.jpg';
                             } else {
