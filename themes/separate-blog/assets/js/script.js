@@ -995,10 +995,14 @@ $(function () {
         $(this).SupportVideoSection()
     })
     $('.coming-soon').css('height', $(window).height());
+
+   
 })
 
 jQuery(document).ready(function ( $ ) {
     'use strict';
+
+    // $('[data-toggle="tooltip"]').tooltip();
 
     // ------------------------------------------------------- //
     // Equalixe height

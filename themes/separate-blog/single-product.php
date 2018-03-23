@@ -94,7 +94,17 @@ get_header(); ?>
             <div class="moveausp marginBelow" id="moveausp1" data-anchor="usp"  data-bgimg="<?php echo get_option_tree('background_image_e_model');?>" data-mbgimg="<?php echo get_option_tree('background_image_mobile_e_model');?>">
 				<div class="bg mainbg"></div>
 				<?php for( $i = 1; $i < 5; $i ++) { ?>
-                <div class="block" data-theme="0" data-bg="#8daebd"  data-bgimg="<?php echo get_option_tree($i.'_slider_image_e_model');?>" data-mbgimg="<?php echo get_option_tree($i.'_slider_image_mobile_e_model');?>">
+                    <?php
+                        $src = get_option_tree($i.'_slider_image_e_model');
+                        if(get_option_tree($i.'_slider_title_e_model') == 'Size') {
+                            if(get_field('size', $post_id) == '20') {
+                                $src = 'http://movea.bike/wp-content/uploads/2018/03/size-bike-custom.jpg';
+                            } else {
+                                $src = 'http://movea.bike/wp-content/uploads/2018/03/size-bike-custom-1.jpg';
+                            }
+                        }
+                    ?>
+                <div class="block" data-theme="0" data-bg="#8daebd"  data-bgimg="<?php echo $src;?>" data-mbgimg="<?php echo $src;?>">
                     <div class="overlay"></div>
                     <!-- Front content -->
                     <div class="label"><?php echo get_option_tree($i.'_slider_top_text_e_model');?></div>
@@ -140,7 +150,17 @@ get_header(); ?>
             <div class="moveausp marginBelow" id="moveausp2" data-anchor="usp"  data-bgimg="<?php echo get_option_tree('background_image_8_speed');?>" data-mbgimg="<?php echo get_option_tree('background_image_mobile_8_speed');?>">
 				<div class="bg mainbg"></div>
 				<?php for( $i = 1; $i < 4; $i ++) { ?>
-                <div class="block" data-theme="0" data-bg="#8daebd"  data-bgimg="<?php echo get_option_tree($i.'_slider_image_8_speed');?>" data-mbgimg="<?php echo get_option_tree($i.'_slider_image_mobile_8_speed');?>">
+                    <?php
+                        $src = get_option_tree($i.'_slider_image_8_speed');
+                        if(get_option_tree($i.'_slider_title_8_speed') == 'Size') {
+                            if(get_field('size', $post_id) == '20') {
+                                $src = 'http://movea.bike/wp-content/uploads/2018/03/size-bike-custom.jpg';
+                            } else {
+                                $src = 'http://movea.bike/wp-content/uploads/2018/03/size-bike-custom-1.jpg';
+                            }
+                        }
+                    ?>
+                <div class="block" data-theme="0" data-bg="#8daebd"  data-bgimg="<?php echo $src;?>" data-mbgimg="<?php echo $src;?>">
                     <div class="overlay"></div>
                     <!-- Front content -->
                     <div class="label"><?php echo get_option_tree($i.'_slider_top_text_8_speed');?></div>

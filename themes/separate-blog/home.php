@@ -94,10 +94,10 @@ get_header(); ?>
                         <!-- <div class="price" style="color:#000;">
                             <span class="currency">USD</span><span class="amount"><?php the_field('price', $post_id);?></span>
                         </div> -->
-                        <a href="<?php echo esc_url(get_page_link($post_id));?>" class="btn">
+                        <a href="<?php echo esc_url(get_page_link($post_id));?>" class="btn" data-toggle="tooltip" data-placement="top" title="Buy 1st of May on Indiegogo   Safe up to 40%" >
                             <div class="left"></div>
                             <div class="right" style="color: #000;">
-                                Buy Bike
+                                Buy at Indiegogo
                             </div>
                         </a>
                     </div>
