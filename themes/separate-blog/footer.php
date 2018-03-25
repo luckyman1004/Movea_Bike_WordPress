@@ -40,7 +40,7 @@ if ( basename( get_page_template() ) != 'page-coming.php') {?>
 				</div>
 				<div class="contact-details">
 					<?php echo esc_textarea( wpautop( get_theme_mod( 'separate_blog_address' ), true ) ); ?>
-					<p><?php echo sprintf( 'Email: %s', separate_blog_admin_email() ); ?></p>
+					<!-- <p><?php echo sprintf( 'Email: %s', separate_blog_admin_email() ); ?></p> -->
 					<ul class="social-menu">
 						<?php if ( get_theme_mod( 'separate_blog_facebook' ) ): ?>
 							<li class="list-inline-item">
