@@ -4841,3 +4841,21 @@ cursor: -moz-grabbing;
   -webkit-margin-end: 0px;
   -webkit-padding-start: 40px;
 }
+
+#newsletterPopup {
+  z-index: 105000;
+}
+#newsletterPopup .close {
+  color: #fff;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  font-size: 50px;
+}
+#newsletterPopup .modal-content {
+  background: unset;
+  color: #dcdee0;
+}
+#newsletterPopup .modal-content h1, #newsletterPopup .modal-content h3, #newsletterPopup .modal-content h4 {
+  text-align: center;
+}

@@ -373,4 +373,21 @@ get_header(); ?>
             </div>
         </div>
     </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="newsletterPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="background: url(http://localhost/movea-wp/wp-content/uploads/2018/03/front-new.jpg); background-size: cover; background-position: center center">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h1>New danish designed E bikes</h1>
+                <h3>Get up to 50%</h3>
+                <h4>The New Movea bike will soon launch on Indiegogo</h4>
+                <?php echo do_shortcode("[newsletter]"); ?>
+            </div>
+        </div>
+    </div>
+    </div>
 <?php get_footer();
