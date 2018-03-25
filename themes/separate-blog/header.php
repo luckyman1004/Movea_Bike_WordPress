@@ -20,7 +20,7 @@
 <body <?php body_class(); ?>>
 <?php 
 
-if ( basename( get_page_template() ) != 'page-coming.php' && basename( get_page_template() ) != 'page-newsletter.php' ) {?>
+if ( basename( get_page_template() ) != 'page-coming.php') {?>
 	<header class="header">
 		<nav class="navbar navbar-expand-lg">
 			<div class="search-area">
