@@ -375,7 +375,7 @@ get_header(); ?>
     </div>
     
     <!-- Modal -->
-    <div class="modal fade" id="newsletterPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="background: url(http://localhost/movea-wp/wp-content/uploads/2018/03/front-new.jpg); background-size: cover; background-position: center center">
+    <div class="modal fade" id="newsletterPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="background: url(http://movea.bike/wp-content/uploads/2018/03/front-new.jpg); background-size: cover; background-position: center center">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
     <span aria-hidden="true">&times;</span>
     </button>
