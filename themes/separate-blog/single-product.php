@@ -36,11 +36,14 @@ get_header(); ?>
     <div class="lifestyle-gallery" id="lifestyle_gallery" style="display: none;"><div class="lifestyle-close">&times;</div></div>
 	<div class="main-container detail-template post-<?php the_ID(); ?>">
             <div class="buyModule">
+            <div style="display: none;">
 			<?php
-				$post_id = get_the_ID();
+				the_post();
+				$post_id = the_ID();
 				$current_post_id = $post->ID;
 				$post_type = get_field('model_type', $post_id);
-			?>
+            ?>
+            </div>
                 <section class="ecom-buy-module js-ecom standard-view">
                     <div class="content-container">
                         <div class="ecom-buy-module-header mobile-only">
