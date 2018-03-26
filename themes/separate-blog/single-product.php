@@ -37,8 +37,7 @@ get_header(); ?>
 	<div class="main-container detail-template post-<?php the_ID(); ?>">
             <div class="buyModule">
 			<?php
-				the_post();
-				$post_id = the_ID();
+				$post_id = get_the_ID();
 				$current_post_id = $post->ID;
 				$post_type = get_field('model_type', $post_id);
 			?>
