@@ -4861,6 +4861,7 @@ cursor: -moz-grabbing;
 
 #newsletterPopup {
   z-index: 105000;
+  width: 100%;
 }
 #newsletterPopup .close {
   color: #fff;
