@@ -1149,9 +1149,9 @@ jQuery(document).ready(function ( $ ) {
     });
     if(sessionStorage.getItem('moveaNewsletterPopState') != 'shown'){
         $('#newsletterPopup').modal('show');
-        
+        $('#newsletterPopup').css('opacity', '0');
         setTimeout(function(){ 
-            $('#newsletterPopup').css('opacity', 1);
+            $('#newsletterPopup').css('opacity', '1');
             sessionStorage.setItem('moveaNewsletterPopState','shown')
         }, 6000);
     }
