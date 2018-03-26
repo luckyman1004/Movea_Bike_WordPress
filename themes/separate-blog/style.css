@@ -4876,3 +4876,8 @@ cursor: -moz-grabbing;
 #newsletterPopup .modal-content h1, #newsletterPopup .modal-content h3, #newsletterPopup .modal-content h4 {
   text-align: center;
 }
+@media (max-width: 767px) {
+  #newsletterPopup .close {
+    top: 5px;
+  }
+}
