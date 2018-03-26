@@ -3846,7 +3846,6 @@ cursor: -moz-grabbing;
   }
   .ecom-buy-module-header {
       padding-top: 3.75rem;
-      margin-top: 20px;
   }
   .mobile-only {
       display: none;
@@ -3922,6 +3921,9 @@ cursor: -moz-grabbing;
 @media (max-width: 768.5px){
   .desktop-only {
       display: none!important;
+  }
+  .ecom-buy-module-header {
+    margin-top: 20px;
   }
 }
 @media (max-width: 600px) {
