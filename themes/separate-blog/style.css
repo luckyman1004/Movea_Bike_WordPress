@@ -4881,5 +4881,6 @@ cursor: -moz-grabbing;
   #newsletterPopup .close {
     top: 5px;
     right: 5px;
+    pointer-events: all;
   }
 }
