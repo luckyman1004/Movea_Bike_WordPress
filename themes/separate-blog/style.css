@@ -3252,16 +3252,33 @@ cursor: -moz-grabbing;
       font-size: 12px;
   }
 }
+@media (max-width: 767px) {
+  .nextgenspots {
+      height: 550px;
+  }
+  .nextgenspots .moveaSpot.multiple .linkImg {
+      height: 340px;
+      bottom: 0px;
+  }
+}
 @media (max-width: 499px) {
   .nextgenspots {
       height: 550px;
   }
   .nextgenspots .moveaSpot.multiple .linkImg {
       height: 340px;
-      bottom: 20px;
+      bottom: -20px;
   }
 }
-
+@media (max-width: 320px) {
+  .nextgenspots {
+      height: 550px;
+  }
+  .nextgenspots .moveaSpot.multiple .linkImg {
+      height: 300px;
+      bottom: -20px;
+  }
+}
 /** Home Page Split Section */
 
 .moveaSplit {
