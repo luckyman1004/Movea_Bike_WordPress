@@ -1148,8 +1148,10 @@ jQuery(document).ready(function ( $ ) {
         $('#lifestyle_gallery img').remove();
     });
     if(sessionStorage.getItem('moveaNewsletterPopState') != 'shown'){
+        $('#newsletterPopup').modal('show');
+        
         setTimeout(function(){ 
-            $('#newsletterPopup').modal('show'); 
+            $('#newsletterPopup').css('opacity', 1);
             sessionStorage.setItem('moveaNewsletterPopState','shown')
         }, 6000);
     }
