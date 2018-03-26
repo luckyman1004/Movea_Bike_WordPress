@@ -4882,5 +4882,6 @@ cursor: -moz-grabbing;
     top: 5px;
     right: 5px;
     pointer-events: all;
+    z-index: 105001;
   }
 }
