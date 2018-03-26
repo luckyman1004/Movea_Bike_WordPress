@@ -4879,5 +4879,6 @@ cursor: -moz-grabbing;
 @media (max-width: 767px) {
   #newsletterPopup .close {
     top: 5px;
+    right: 5px;
   }
 }
