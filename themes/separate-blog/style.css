@@ -3846,6 +3846,7 @@ cursor: -moz-grabbing;
   }
   .ecom-buy-module-header {
       padding-top: 3.75rem;
+      margin-top: 20px;
   }
   .mobile-only {
       display: none;
