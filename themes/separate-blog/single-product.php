@@ -1155,7 +1155,7 @@ get_header(); ?>
             <!-- Designer Slider -->
             <!-- End Designer Slider -->
             <!-- Support Video Section -->
-            <div class="moveaSupportVideo" id="supportVideo1" data-videoId="<?php echo get_option_tree('youtube_video_id_support_video');?>" >
+            <div class="moveaSupportVideo" id="supportVideo1" data-videoId="<?php echo get_option_tree('youtube_video_id_support_video');?>" style="display: none;">
                 <div class="text textCenter">
                     <div class="toptext"><?php echo get_option_tree('top_text_support_video');?></div>
                     <div class="titletext "><?php echo get_option_tree('title_support_video');?></div>
