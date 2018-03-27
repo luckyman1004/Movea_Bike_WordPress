@@ -160,7 +160,7 @@ if (typeof jQuery === 'undefined') {
             closeTween.to(videoCloseBtnCross, 0, {transformOrigin: '21px 21px 0', rotation: 45 })
             closeTween.to(videoCloseBtnla, 0, {backgroundColor: '#fff'})
             closeTween.to(videoCloseBtnlb, 0, {backgroundColor: '#fff'})
-            closeTween.to(videoCloseBtn, 2, {opacity: 1, scale: 1, zIndex: 10000, autoAlpha: 1, delay: 2, onComplete: function(){
+            closeTween.to(videoCloseBtn, 2, {opacity: 1, scale: 1, zIndex: 60001, autoAlpha: 1, delay: 2, onComplete: function(){
                 
             }})
            
