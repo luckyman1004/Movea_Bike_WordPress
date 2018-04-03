@@ -70,7 +70,11 @@ if ( basename( get_page_template() ) != 'page-coming.php') {?>
 				<?php 
 				wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_class' => 'navbar-nav ml-auto', 'container' => 'ul' , 'walker' => new Separate_Blog_Walker_Nav_Menu() ) ); 
 				?>
-				<!-- <div class="navbar-text"><a href="javascript:;" class="search-btn"><i class="fa fa-search"></i></a></div> -->
+				<div class="navbar-text">
+					<a href="https://www.facebook.com/MoveaBikes/" target="_blank" class="nav-link main-menu-link"><i class="fa fa-facebook"></i></a>
+					<a href="https://twitter.com/designbote" target="_blank" class="nav-link main-menu-link"><i class="fa fa-twitter"></i></a>
+					<a href="https://www.instagram.com/moveabikes/" target="_blank" class="nav-link main-menu-link"><i class="fa fa-instagram"></i></a>
+				</div>
 			</div>
 		</div>
 	</nav>

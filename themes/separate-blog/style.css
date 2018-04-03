@@ -4888,3 +4888,18 @@ cursor: -moz-grabbing;
     z-index: 105001;
   }
 }
+.navbar-text {
+  padding: 0;
+  display: flex;
+}
+.navbar-text a {
+  padding: 0;
+}
+.navbar-text a:hover {
+  opacity: 0.5;
+}
+.navbar-text a i{
+  color: #000;
+  font-size: 1.5rem;
+  margin-top: 5px;
+}
