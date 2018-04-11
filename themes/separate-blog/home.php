@@ -97,7 +97,7 @@ get_header(); ?>
                         <a href="<?php echo esc_url(get_page_link($post_id));?>" class="btn" data-toggle="tooltip" data-placement="top" title="Buy 1st of May on Indiegogo   Safe up to 40%" >
                             <div class="left"></div>
                             <div class="right" style="color: #000;">
-                                Buy at Indiegogo
+                                May 1st. Save up to 40%<br> Buy at Indiegogo
                             </div>
                         </a>
                     </div>
@@ -383,7 +383,7 @@ get_header(); ?>
         <div class="modal-content">
             <div class="modal-body">
                 <h1>New danish designed E bikes</h1>
-                <h3>Get up to 40%</h3>
+                <h3>Save up to 40%</h3>
                 <h4>The New Movea bike will soon launch on Indiegogo</h4>
                 <?php echo do_shortcode("[newsletter]"); ?>
             </div>

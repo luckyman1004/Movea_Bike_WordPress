@@ -78,8 +78,8 @@ get_header(); ?>
                                                 </div> -->
                                                 <div class="col">
                                                     <!-- button-purchase (green version) -->
-                                                    <a href="<?php the_field('indiegogo_url', $post_id);?>" class="button button-primary js-buy-button">Buy at Indiegogo</a>
-                                                    <span class="size-guide">1st of May. Safe up to 40%</span>
+                                                    <!-- <a href="<?php the_field('indiegogo_url', $post_id);?>" class="button button-primary js-buy-button">Buy at Indiegogo</a> -->
+                                                    <span class="size-guide" style="float: left;">Buy at Indiegogo May 1st. Save up to 40%</span>
                                                 </div>
                                             </div>
                                         </div>
