@@ -48,7 +48,7 @@ get_header(); ?>
                     <div class="content-container">
                         <div class="ecom-buy-module-header mobile-only">
                             <h1><?php the_title();?></h1>
-                            <p><?php the_excerpt();?></p>
+                            <p><?php the_content();?></p>
                         </div>
                         <div class="ecom-buy-module-container clearfix">
                             <div class="ecom-buy-module-image js-product-image">
