@@ -209,7 +209,7 @@ if (typeof jQuery === 'undefined') {
         var playButtonCanvas = this.$element.find(".playIcon")[0]
         var videoWrapperWidth = $(window).width()
         var videoWrapperHeight = $(window).width() * 1.25
-        var imgHtml = '<img class="moveaVideoThumbnail fastFade" src="./assets/images/newtopm.jpg ">'        
+        var imgHtml = '<img class="moveaVideoThumbnail fastFade" src="http://movea.bike/wp-content/themes/separate-blog/assets/images/newtopm.jpg ">'        
         var videoCloseBtnHtml = '<div class="moveaVideoCloseBtn""><div class="closeBtnGrx"><div class="closeBtnBorder"></div><div class="closeBtnFill"></div><div class="closeBtnCross"><div class="la"></div><div class="lb"></div></div></div></div>'
         
         $("#moveaVideoThumbnail").remove();
