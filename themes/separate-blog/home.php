@@ -342,7 +342,8 @@ get_header(); ?>
                                         <a href="<?php echo esc_url(get_page_link($post_id));?>" class="btn" style="background-color:#FFFFFF;">
                                             <div class="left"></div>
                                             <div class="right" style="color: #666;">
-                                                <span class="amount">Buy at Indiegogo</span>
+                                                <!-- <span class="amount">Buy at Indiegogo</span> -->
+                                                May 1st. Save up to 40%<br> Buy at Indiegogo
                                             </div>
                                         </a>
                                     </div>
