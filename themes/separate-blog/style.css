@@ -4875,6 +4875,7 @@ cursor: -moz-grabbing;
   right: 30px;
   top: 30px;
   font-size: 50px;
+  opacity: 1;
 }
 #newsletterPopup .modal-content {
   background: unset;
@@ -4890,6 +4891,13 @@ cursor: -moz-grabbing;
     pointer-events: all;
     z-index: 105001;
   }
+  #newsletterPopup .modal-content h1 {
+    font-size: 35px;
+  }
+  #newsletterPopup .modal-content h3, #newsletterPopup .modal-content h4 {
+    font-size: 1.25rem;
+  }
+  
 }
 .navbar-text {
   padding: 0;
