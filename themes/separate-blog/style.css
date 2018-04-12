@@ -276,7 +276,10 @@ i[class*="icon-"] {
 .padding-small {
   padding: 100px 0;
 }
-
+.custom-logo {
+  height: 38px;
+  width: auto;
+}
 /* .btn {
   border-radius: 0 !important;
 } */
@@ -3175,7 +3178,7 @@ cursor: -moz-grabbing;
 .moveaSpot .btn .right {
   display: table-cell;
   text-transform: uppercase;
-  padding: 0 14px 6px 10px;
+  padding: 2px 14px 2px 10px;
   border-left: 1px solid rgba(190,190,190,0.5);
   white-space: nowrap;
   vertical-align: bottom;
