@@ -177,10 +177,10 @@ get_header(); ?>
         <div class="moveaGallery " data-anchor="gallery" data-bg="transparent" data-animin="fade" data-animfullscreen="fade" data-interval="no" data-load="instant" data-pan="yes" >
             <div class="FiveGrid">
                 <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/04/lifestyle11.jpg" data-img="http://movea.bike/wp-content/uploads/2018/04/lifestyle11.jpg" data-labelcolor="0" class="spot spot1" >                    
-                    <a class="overlayText" href="">
+                    <!-- <a class="overlayText" href="">
                         <h4></h4>
                         <p></p>
-                    </a>
+                    </a> -->
                     <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/04/lifestyle11.jpg"></div>
                 </div>
                 <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/04/lifestyle21.jpg" data-img="http://movea.bike/wp-content/uploads/2018/04/lifestyle21.jpg" data-labelcolor="0" class="spot spot2" >
