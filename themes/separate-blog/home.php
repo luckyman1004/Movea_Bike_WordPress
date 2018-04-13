@@ -176,35 +176,35 @@ get_header(); ?>
         <!-- Lifestyle picture grid -->
         <div class="moveaGallery " data-anchor="gallery" data-bg="transparent" data-animin="fade" data-animfullscreen="fade" data-interval="no" data-load="instant" data-pan="yes" >
             <div class="FiveGrid">
-                <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle1.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle1.jpg" data-labelcolor="0" class="spot spot1" >                    
+                <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/04/lifestyle11.jpg" data-img="http://movea.bike/wp-content/uploads/2018/04/lifestyle11.jpg" data-labelcolor="0" class="spot spot1" >                    
                     <a class="overlayText" href="">
                         <h4></h4>
                         <p></p>
                     </a>
-                    <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle1.jpg"></div>
+                    <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/04/lifestyle11.jpg"></div>
                 </div>
-                <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle2.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle2.jpg" data-labelcolor="0" class="spot spot2" >
-                    <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle2.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/04/lifestyle21.jpg" data-img="http://movea.bike/wp-content/uploads/2018/04/lifestyle21.jpg" data-labelcolor="0" class="spot spot2" >
+                    <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/04/lifestyle21.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
                 </div>
-                <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle3.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle3.jpg" data-labelcolor="0" class="spot spot3" >
-                    <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle3.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/04/lifestyle31.jpg" data-img="http://movea.bike/wp-content/uploads/2018/04/lifestyle31.jpg" data-labelcolor="0" class="spot spot3" >
+                    <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/04/lifestyle31.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
                 </div>
-                <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle4.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle4.jpg" data-labelcolor="0" class="spot spot4" >
-                    <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle4.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/04/lifestyle41.jpg" data-img="http://movea.bike/wp-content/uploads/2018/04/lifestyle41.jpg" data-labelcolor="0" class="spot spot4" >
+                    <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/04/lifestyle41.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
                 </div>
-                <div data-w="1500" data-h="1010" data-color="#000000" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle5.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle5.jpg" data-labelcolor="0" class="spot spot5" >
-                    <div class="galImg" style="background-color: rgb(0, 0, 0);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle5.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                <div data-w="1500" data-h="1010" data-color="#000000" data-low="http://movea.bike/wp-content/uploads/2018/04/lifestyle51.jpg" data-img="http://movea.bike/wp-content/uploads/2018/04/lifestyle51.jpg" data-labelcolor="0" class="spot spot5" >
+                    <div class="galImg" style="background-color: rgb(0, 0, 0);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/04/lifestyle51.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
                 </div>
             </div>
             <div class="MobileGrid">
                 <div class="carousel_container" id="lifestyle_images_mobile_slider">       
                     <div class="carousel_items">        
                         <ul>
-                            <li class="carousel_item" id="lifestyle_item_0"><img class="lazy" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle-mobile-1.jpg" /></li>
-                            <li class="carousel_item" id="lifestyle_item_1"><img class="lazy" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle-mobile-2.jpg" /></li>
-                            <li class="carousel_item" id="lifestyle_item_2"><img class="lazy" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle-mobile-3.jpg" /></li>
-                            <li class="carousel_item" id="lifestyle_item_3"><img class="lazy" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle-mobile-4.jpg" /></li>
-                            <li class="carousel_item" id="lifestyle_item_4"><img class="lazy" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle-mobile-5.jpg" /></li>
+                            <li class="carousel_item" id="lifestyle_item_0"><img class="lazy" src="http://movea.bike/wp-content/uploads/2018/04/lifestyle-mobile-11.jpg" /></li>
+                            <li class="carousel_item" id="lifestyle_item_1"><img class="lazy" src="http://movea.bike/wp-content/uploads/2018/04/lifestyle-mobile-21.jpg" /></li>
+                            <li class="carousel_item" id="lifestyle_item_2"><img class="lazy" src="http://movea.bike/wp-content/uploads/2018/04/lifestyle-mobile-31.jpg" /></li>
+                            <li class="carousel_item" id="lifestyle_item_3"><img class="lazy" src="http://movea.bike/wp-content/uploads/2018/04/lifestyle-mobile-41.jpg" /></li>
+                            <li class="carousel_item" id="lifestyle_item_4"><img class="lazy" src="http://movea.bike/wp-content/uploads/2018/04/lifestyle-mobile-51.jpg" /></li>
                         </ul>
                     </div>
                     <div class="nav_dots"></div>
