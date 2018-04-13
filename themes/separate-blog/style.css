@@ -2674,7 +2674,8 @@ h1 {
       margin-top: 10px;
   }
   .moveaVideo[data-asTop="true"] .mobiletext, .moveaVideo[data-asTop="true"] .bodytext {
-      padding: 0!important;
+      padding: 10px!important;
+      background: #00000087;
   }
   .moveaVideo[data-asTop="true"] .mobiletextWrapper {
       width: 100%;
