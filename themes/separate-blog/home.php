@@ -189,8 +189,8 @@ get_header(); ?>
                 <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/04/lifestyle31.jpg" data-img="http://movea.bike/wp-content/uploads/2018/04/lifestyle31.jpg" data-labelcolor="0" class="spot spot3" >
                     <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/04/lifestyle31.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
                 </div>
-                <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/03/lifestyle41.jpg" data-img="http://movea.bike/wp-content/uploads/2018/03/lifestyle41.jpg" data-labelcolor="0" class="spot spot4" >
-                    <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/03/lifestyle41.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
+                <div data-w="1500" data-h="1010" data-color="#FFFFFF" data-low="http://movea.bike/wp-content/uploads/2018/04/lifestyle41.jpg" data-img="http://movea.bike/wp-content/uploads/2018/04/lifestyle41.jpg" data-labelcolor="0" class="spot spot4" >
+                    <div class="galImg" style="background-color: rgb(255, 255, 255);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/04/lifestyle41.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
                 </div>
                 <div data-w="1500" data-h="1010" data-color="#000000" data-low="http://movea.bike/wp-content/uploads/2018/04/lifestyle51.jpg" data-img="http://movea.bike/wp-content/uploads/2018/04/lifestyle51.jpg" data-labelcolor="0" class="spot spot5" >
                     <div class="galImg" style="background-color: rgb(0, 0, 0);"><img class="galImg" src="http://movea.bike/wp-content/uploads/2018/04/lifestyle51.jpg" style="transform: matrix(1, 0, 0, 1, 0, 0);"></div>
