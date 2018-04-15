@@ -76,6 +76,15 @@ get_header(); ?>
                                 <?php if(get_field('image4', $post_id) != '') { ?>
                                 <li class="carousel_item" id="item_3"><img src="<?php the_field('image4', $post_id);?>" /></li>
                                 <?php }?>
+                                <?php if(get_field('image4', $post_id) != '') { ?>
+                                <li class="carousel_item" id="item_4"><img src="<?php the_field('image5', $post_id);?>" /></li>
+                                <?php }?>
+                                <?php if(get_field('image4', $post_id) != '') { ?>
+                                <li class="carousel_item" id="item_5"><img src="<?php the_field('image6', $post_id);?>" /></li>
+                                <?php }?>
+                                <?php if(get_field('image4', $post_id) != '') { ?>
+                                <li class="carousel_item" id="item_6"><img src="<?php the_field('image7', $post_id);?>" /></li>
+                                <?php }?>
                             </ul>
                         </div>
                         <div class="nav_dots"></div>
