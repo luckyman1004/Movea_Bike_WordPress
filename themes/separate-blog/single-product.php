@@ -27,6 +27,15 @@ get_header(); ?>
                         <?php if(get_field('image4', $post_id) != '') { ?>
                         <li class="carousel_item" id="item_3"><img src="<?php the_field('image4', $post_id);?>" /></li>
                         <?php }?>
+                        <?php if(get_field('image4', $post_id) != '') { ?>
+                        <li class="carousel_item" id="item_4"><img src="<?php the_field('image5', $post_id);?>" /></li>
+                        <?php }?>
+                        <?php if(get_field('image4', $post_id) != '') { ?>
+                        <li class="carousel_item" id="item_5"><img src="<?php the_field('image6', $post_id);?>" /></li>
+                        <?php }?>
+                        <?php if(get_field('image4', $post_id) != '') { ?>
+                        <li class="carousel_item" id="item_6"><img src="<?php the_field('image7', $post_id);?>" /></li>
+                        <?php }?>
                     </ul>
                 </div>
                 <div class="nav_dots"></div>
@@ -1197,16 +1206,25 @@ get_header(); ?>
                                         <div class="carousel_items">        
                                             <ul>
                                                 <?php if(get_field('image1', $post_id) != '') { ?>
-                                                <li class="carousel_item" id="item_0"><img src="<?php the_field('image1', $post_id);?>" /></li>
+                                                <li class="carousel_item" id="item_0"><img src="<?php the_field('image1', $like_post_id);?>" /></li>
                                                 <?php }?>
                                                 <?php if(get_field('image2', $post_id) != '') { ?>
-                                                <li class="carousel_item" id="item_1"><img src="<?php the_field('image2', $post_id);?>" /></li>
+                                                <li class="carousel_item" id="item_1"><img src="<?php the_field('image2', $like_post_id);?>" /></li>
                                                 <?php }?>
                                                 <?php if(get_field('image3', $post_id) != '') { ?>
-                                                <li class="carousel_item" id="item_2"><img src="<?php the_field('image3', $post_id);?>" /></li>
+                                                <li class="carousel_item" id="item_2"><img src="<?php the_field('image3', $like_post_id);?>" /></li>
                                                 <?php }?>
                                                 <?php if(get_field('image4', $post_id) != '') { ?>
-                                                <li class="carousel_item" id="item_3"><img src="<?php the_field('image4', $post_id);?>" /></li>
+                                                <li class="carousel_item" id="item_3"><img src="<?php the_field('image4', $like_post_id);?>" /></li>
+                                                <?php }?>
+                                                <?php if(get_field('image4', $post_id) != '') { ?>
+                                                <li class="carousel_item" id="item_4"><img src="<?php the_field('image5', $like_post_id);?>" /></li>
+                                                <?php }?>
+                                                <?php if(get_field('image4', $post_id) != '') { ?>
+                                                <li class="carousel_item" id="item_5"><img src="<?php the_field('image6', $like_post_id);?>" /></li>
+                                                <?php }?>
+                                                <?php if(get_field('image4', $post_id) != '') { ?>
+                                                <li class="carousel_item" id="item_6"><img src="<?php the_field('image7', $like_post_id);?>" /></li>
                                                 <?php }?>
                                             </ul>
                                         </div>
