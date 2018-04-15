@@ -3157,7 +3157,7 @@ cursor: -moz-grabbing;
 .nextgenspots .moveaSpot.multiple .info .priceAndInfo .btn {
   right: auto;
   left: 50%;
-  bottom: 30px;
+  bottom: 0px;
   transform: translateX(-50%);
   background-color: #FFF;
   float: none;
