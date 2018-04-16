@@ -4850,7 +4850,7 @@ cursor: -moz-grabbing;
   margin-top: 50px;
 }
 .about-thumbnail {
-  width: 70%;
+  width: 50%;
 }
 .abount-content p{
   font-size: 16px;
@@ -4863,6 +4863,9 @@ cursor: -moz-grabbing;
   }
   .page-template-page-about .img-wrapper {
     margin-top: 50px;
+  }
+  .about-thumbnail {
+    width: 70%;
   }
 }
 
