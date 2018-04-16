@@ -4842,8 +4842,11 @@ cursor: -moz-grabbing;
 }
 
 /*** About us template ***/
+.page-template-page-about .img-wrapper {
+  text-align: center;
+}
 .about-thumbnail {
-  width: 100%;
+  width: 70%;
 }
 .abount-content p{
   font-size: 16px;

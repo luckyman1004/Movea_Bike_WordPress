@@ -25,7 +25,7 @@ get_header(); ?>
             </div>
         </div>
 		<div class="row">
-            <div class="col-lg-6 col-sm-12 col-md-6 col-xs-12">
+            <div class="col-lg-6 col-sm-12 col-md-6 col-xs-12 img-wrapper">
                 <img class="about-thumbnail" src="<?php echo esc_url( get_the_post_thumbnail_url() ); ?>"/>
             </div>
 			<div class="col-lg-6 col-sm-12 col-md-6 col-xs-12">
