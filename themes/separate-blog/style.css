@@ -3929,6 +3929,9 @@ cursor: -moz-grabbing;
   .ecom-buy-module-header {
     margin-top: 20px;
   }
+  .ecom-buy-module-header  h1 {
+    font-size: 24px;
+  }
 }
 @media (max-width: 600px) {
   .ecom-buy-module-sidebar-prices {
