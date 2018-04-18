@@ -49,10 +49,7 @@ class NF_FormBlock {
 		wp_enqueue_script( 'ninja-forms-block' );
 
 		$forms = array();
-		$forms[] = array (
-			'value' => '',
-			'label' => '-- Select a Form --',
-		);
+
 		foreach( Ninja_Forms()->form()->get_forms() as $form ){
 			$forms[] = array (
 				'value' => $form->get_id(),
@@ -61,7 +58,7 @@ class NF_FormBlock {
 		}
 
 		$block_logo = NF_PLUGIN_URL . 'assets/img/nf-logo-dashboard.png';
-+		$thumbnail_logo = NF_PLUGIN_URL . 'assets/img/ninja-forms-app-header-logo.png';
+		$thumbnail_logo = NF_PLUGIN_URL . 'assets/img/ninja-forms-app-header-logo.png';
 
 		wp_localize_script( 'ninja-forms-block', 'ninjaFormsBlock', array(
 			'forms' => $forms,

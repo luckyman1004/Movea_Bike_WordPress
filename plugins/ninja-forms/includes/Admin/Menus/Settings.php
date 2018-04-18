@@ -135,14 +135,31 @@ final class NF_Admin_Menus_Settings extends NF_Abstracts_Submenu
             );
         }
 
+	    $forms = Ninja_Forms()->form()->get_forms();
+	    $form_options = array();
+	    foreach( $forms as $form ){
+		    $form_options[] = array( 'id' => $form->get_id(),
+			    'title' => $form->get_setting( 'title' ) );
+	    }
+	    $form_options = apply_filters( 'ninja_forms_submission_filter_form_options', $form_options );
+	    asort($form_options);
+
+	    wp_enqueue_script( 'jBox', Ninja_Forms::$url . 'assets/js/lib/jBox.min.js', array( 'jquery' ) );
+
+	    wp_enqueue_style( 'nf-combobox', Ninja_Forms::$url . 'assets/css/combobox.css' );
+	    wp_enqueue_style( 'jBox', Ninja_Forms::$url . 'assets/css/jBox.css' );
         wp_register_script( 'ninja_forms_admin_menu_settings', Ninja_Forms::$url . 'assets/js/admin-settings.js', array( 'jquery' ), FALSE, TRUE );
         wp_localize_script( 'ninja_forms_admin_menu_settings', 'nf_settings', array(
             'ajax_url' => admin_url( 'admin-ajax.php' ),
+            'forms'    => $form_options,
+            'nf_nuke_title' => __( 'Remove ALL Ninja Forms data upon uninstall?', 'ninja-forms' ),
             'nonce'    => wp_create_nonce( "ninja_forms_settings_nonce" ),
             'i18n'     => array(
                 'rollbackConfirm' => __( 'Are you sure you want to rollback?', 'ninja-forms' )
             )
         ));
+
+
         wp_enqueue_script( 'ninja_forms_admin_menu_settings' );
 
         Ninja_Forms::template( 'admin-menu-settings.html.php', compact( 'tabs', 'active_tab', 'groups', 'grouped_settings', 'save_button_text', 'errors' ) );

@@ -10,9 +10,11 @@ return apply_filters( 'ninja_forms_plugin_settings_advanced', array(
 
     'delete_on_uninstall' => array(
         'id'    => 'delete_on_uninstall',
-        'type'  => 'checkbox',
+        'type'  => 'html',
+        'html'  => '<button type="button" id="delete_on_uninstall" href="" class="button">' .
+                   __(	'Delete All Data', 'ninja-forms' ) . '</button>',
         'label' => __( 'Remove ALL Ninja Forms data upon uninstall?', 'ninja-forms' ),
-        'desc'  => sprintf( __( 'If this box is checked, ALL Ninja Forms data will be removed from the database upon deletion. %sAll form and submission data will be unrecoverable.%s', 'ninja-forms' ), '<span class="nf-nuke-warning">', '</span>' ),
+        'desc'  => sprintf( __( 'If this button is checked, ALL Ninja Forms data will be removed from the database and the Ninja Forms plug-in will be deactivated. %sAll form and submission data will be unrecoverable.%s', 'ninja-forms' ), '<span class="nf-nuke-warning">', '</span>' ),
     ),
 
     /*
@@ -25,9 +27,6 @@ return apply_filters( 'ninja_forms_plugin_settings_advanced', array(
         'id'    => 'delete_prompt',
         'type'  => 'prompt',
         'desc'  => __( 'This setting will COMPLETELY remove anything Ninja Forms related upon plugin deletion. This includes SUBMISSIONS and FORMS. It cannot be undone.', 'ninja-forms' ),
-        'deps'  => array(
-            'delete_on_uninstall' => 'checked'
-        )
     ),
 
     /*

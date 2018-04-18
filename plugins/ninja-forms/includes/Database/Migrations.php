@@ -123,11 +123,11 @@ class NF_Database_Migrations
         global $wpdb;
 
         /* Drop Deprecated Tables (v2.9.x) */
-        $wpdb->query( "DROP TABLE `{$wpdb->prefix}nf_objectmeta`" );
-        $wpdb->query( "DROP TABLE `{$wpdb->prefix}nf_objects`" );
-        $wpdb->query( "DROP TABLE `{$wpdb->prefix}nf_relationships`" );
-        $wpdb->query( "DROP TABLE `{$wpdb->prefix}ninja_forms_fav_fields`" );
-        $wpdb->query( "DROP TABLE `{$wpdb->prefix}ninja_forms_fields`" );
+        $wpdb->query( "DROP TABLE IF EXISTS `{$wpdb->prefix}nf_objectmeta`" );
+        $wpdb->query( "DROP TABLE IF EXISTS `{$wpdb->prefix}nf_objects`" );
+        $wpdb->query( "DROP TABLE IF EXISTS `{$wpdb->prefix}nf_relationships`" );
+        $wpdb->query( "DROP TABLE IF EXISTS `{$wpdb->prefix}ninja_forms_fav_fields`" );
+        $wpdb->query( "DROP TABLE IF EXISTS `{$wpdb->prefix}ninja_forms_fields`" );
 
         /* Delete Deprecated Options (v2.9.x) */
         delete_option( 'nf_upgrade_notice' );

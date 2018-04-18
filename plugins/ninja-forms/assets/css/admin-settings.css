@@ -35,3 +35,8 @@
     border-bottom: 1px solid black;
     margin-bottom: 0;
 }
+
+.alignleft.actions input[type=text] {
+    height: 28px;
+    border-radius: 4px;
+}

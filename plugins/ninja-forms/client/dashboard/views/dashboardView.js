@@ -81,6 +81,18 @@ define( [ 'views/sections/widgets.js', 'views/sections/apps.js', 'views/sections
                     var childView = new WidgetView();
             }
             this.showChildView('content', childView );
+            // If form telemetry is defined...
+            // AND if we should run it...
+            if ( 'undefined' !== typeof nfAdmin.formTelemetry && 1 == nfAdmin.formTelemetry ) {
+                console.log( 'got here' );
+                // Make our AJAX call.
+                var data = {
+                    action: 'nf_form_telemetry',
+                    security: nfAdmin.ajaxNonce
+                }
+                // Make our AJAX call.
+                jQuery.post( ajaxurl, data );
+            }
         },
         
         templateContext: function() {

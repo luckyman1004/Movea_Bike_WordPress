@@ -91,6 +91,83 @@ final class NF_Dispatcher
 
         $this->send( 'update_environment_vars', $environment );
     }
+    
+    /**
+     * Package up our form data and send it to our API endpoint.
+     * 
+     * @since 3.2
+     * @return void
+     */
+    public function form_data() {
+        global $wpdb;
+        
+        // If we have not finished the process...
+        if ( ! get_option( 'nf_form_tel_sent' ) || 'false' == get_option( 'nf_form_tel_sent' ) ) {
+            // Get our list of already processed forms (if it exists).
+            $forms_ref = get_option( 'nf_form_tel_data' );
+            // Get a list of Forms on this site.
+            $sql = "SELECT id FROM `" . $wpdb->prefix . "nf3_forms`";
+            $forms = $wpdb->get_results( $sql, 'ARRAY_A' );
+            // If our list of processed forms already exists...
+            if ( ! empty( $forms_ref ) ) {
+                // Break those into an array.
+                $forms_ref = explode( ',', $forms_ref );
+            } // Otherwise...
+            else {
+                // Make sure we have an array.
+                $forms_ref = array();
+            }
+            $match_found = false;
+            // For each form...
+            foreach ( $forms as $form ) {
+                // If the current form is not in our list of sent values...
+                if ( ! in_array( $form[ 'id' ], $forms_ref ) ) {
+                    // Set our target ID.
+                    $id = $form[ 'id' ];
+                    // Record that we found a match.
+                    $match_found = true;
+                }
+            }
+            // If we didn't find a match.
+            if ( ! $match_found ) {
+                // Record that we're done.
+                update_option( 'nf_form_tel_sent', 'true', false );
+                // Exit.
+                return false;
+            }// Otherwise... (We did find a match.)
+            // Get our form.
+            $form_data = Ninja_Forms()->form( intval( $id ) )->get();
+            // Setup our data value.
+            $data = array();
+            // Set the form title.
+            $data[ 'title' ] = $form_data->get_setting( 'title' );
+            $sql = "SELECT COUNT(meta_id) AS total FROM `" . $wpdb->prefix . "postmeta` WHERE meta_key = '_form_id' AND meta_value = '" . intval( $id ) . "'";
+            $result = $wpdb->get_results( $sql, 'ARRAY_A' );
+            // Set the number of submissions.
+            $data[ 'subs' ] = $result[ 0 ][ 'total' ];
+            // Get our fields.
+            $field_data = Ninja_Forms()->form( intval( $id ) )->get_fields();
+            $data[ 'fields' ] = array();
+            // For each field on the form...
+            foreach ( $field_data as $field ) {
+                // Add that data to our array.
+                $data[ 'fields' ][] = $field->get_setting( 'type' );
+            }
+            // Get our actions.
+            $action_data = Ninja_Forms()->form( intval( $id ) )->get_actions();
+            $data[ 'actions' ] = array();
+            // For each action on the form...
+            foreach ( $action_data as $action ) {
+                // Add that data to our array.
+                $data[ 'actions' ][] = $action->get_setting( 'type' );
+            }
+            // Add this form ID to our option.
+            $forms_ref[] = $id;
+            // Update our option.
+            update_option( 'nf_form_tel_data', implode( ',', $forms_ref ), false );
+            $this->send( 'form_data', $data );
+        }
+    }
 
     /**
      * Sends a campaign slug and data to our API endpoint.

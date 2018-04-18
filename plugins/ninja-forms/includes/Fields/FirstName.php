@@ -23,6 +23,8 @@ class NF_Fields_FirstName extends NF_Abstracts_UserInfo
         parent::__construct();
 
         $this->_nicename = __( 'First Name', 'ninja-forms' );
+
+	    $this->_settings[ 'custom_name_attribute' ][ 'value' ] = 'fname';
     }
 
     public function filter_default_value( $default_value, $field_class, $settings )

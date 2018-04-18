@@ -11,11 +11,9 @@
 	                <td style="width:30%;">
 		                <select name="nf_export_form" id="nf_export_form" class="">
 			                <?php foreach( $forms as $form ): ?>
-				                <option value="<?php echo intval(
-				                		$form->get_id() ); ?>"><?php echo
-						                $form->get_setting( 'title' ) . " ( ID: " . $form->get_id() . " )";
-				                		?>
-				                </option>
+				                <option value="<?php echo
+				                		$form['id']; ?>"<?php echo $form[ 'selected' ];?>><?php echo $form['title'] . " ( ID: " .
+						                $form['id'] . " )"; ?></option>
 			                <?php endforeach; ?>
 		                </select>
 	                </td>
@@ -29,11 +27,12 @@
 			                <ul class="widefat" id="nf_form_export_options">
 				                <?php foreach( $forms as $form ): ?>
 				                <li class="nf-form-option"
-				                    data-val="<?php echo intval( $form->get_id() ); ?>">
+				                    data-val="<?php echo intval( $form[ 'id' ] );
+				                    ?>">
 					                <span class="nf-form-option-item"><?php echo
-							                $form->get_setting( 'title' )
+							                $form[ 'title' ]
 							                    . " ( ID: "
-							                    . $form->get_id() . " )"; ?>
+							                    . $form[ 'id' ] . " )"; ?>
 					                </span>
 				                </li>
 				                <?php endforeach; ?>

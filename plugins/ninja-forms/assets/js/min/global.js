@@ -66,6 +66,7 @@ var nfRecaptcha = Marionette.Object.extend( {
 		 * We haven't rendered our form view, so hook into the view render radio message, and then render.
 		 */
 		this.listenTo( nfRadio.channel( 'form' ), 'render:view', this.renderCaptcha );
+        this.listenTo( nfRadio.channel( 'captcha' ), 'reset', this.renderCaptcha );
 	},
 
 	renderCaptcha: function() {

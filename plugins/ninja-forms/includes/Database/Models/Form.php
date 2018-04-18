@@ -43,8 +43,70 @@ final class NF_Database_Models_Form extends NF_Abstracts_Model
             $action->delete();
         }
 
+	    $chunked_option_flag = 'nf_form_' . $this->_id . '_chunks';
+        $chunked_option_value = get_option( $chunked_option_flag );
+	    // if there is nf_form_x_chunks option, we need to delete those
+	    if( $chunked_option_value ) {
+		    // if we have chunk'd it, get the list of chunks
+		    $form_chunks = explode( ',', $chunked_option_value );
+
+		    //get the option value of each chunk and concat them into the form
+		    foreach( $form_chunks as $chunk ){
+			    delete_option( $chunk );
+		    }
+
+		    delete_option( $chunked_option_flag );
+	    }
+
+	    $this->delete_submissions();
+
         delete_option( 'nf_form_' . $this->_id );
     }
+
+    private function delete_submissions( ) {
+	    global $wpdb;
+	    $total_subs_deleted = 0;
+	    $post_result = 0;
+	    $max_cnt = 250;
+
+	    // SQL for getting 250 subs at a time
+	    $sub_sql = "SELECT id FROM `" . $wpdb->prefix . "posts` AS p
+			LEFT JOIN `" . $wpdb->prefix . "postmeta` AS m ON p.id = m.post_id
+			WHERE p.post_type = 'nf_sub' AND m.meta_key = '_form_id'
+			AND m.meta_value = %s LIMIT " . $max_cnt;
+
+	    while ($post_result <= $max_cnt ) {
+		    $subs = $wpdb->get_col( $wpdb->prepare( $sub_sql, $this->_id ),0 );
+		    // if we are out of subs, then stop
+		    if( 0 === count( $subs ) ) break;
+		    // otherwise, let's delete the postmeta as well
+		    $delete_meta_query = "DELETE FROM `" . $wpdb->prefix . "postmeta` WHERE post_id IN ( [IN] )";
+		    $delete_meta_query = $this->prepare_in( $delete_meta_query, $subs );
+		    $meta_result       = $wpdb->query( $delete_meta_query );
+		    if ( $meta_result > 0 ) {
+			    // now we actually delete the posts(nf_sub)
+			    $delete_post_query = "DELETE FROM `" . $wpdb->prefix . "posts` WHERE id IN ( [IN] )";
+			    $delete_post_query = $this->prepare_in( $delete_post_query, $subs );
+			    $post_result       = $wpdb->query( $delete_post_query );
+			    $total_subs_deleted = $total_subs_deleted + $post_result;
+
+		    }
+	    }
+    }
+
+	private function prepare_in( $sql, $vals ) {
+		global $wpdb;
+		$not_in_count = substr_count( $sql, '[IN]' );
+		if ( $not_in_count > 0 ) {
+			$args = array( str_replace( '[IN]', implode( ', ', array_fill( 0, count( $vals ), '%d' ) ), str_replace( '%', '%%', $sql ) ) );
+			// This will populate ALL the [IN]'s with the $vals, assuming you have more than one [IN] in the sql
+			for ( $i=0; $i < substr_count( $sql, '[IN]' ); $i++ ) {
+				$args = array_merge( $args, $vals );
+			}
+			$sql = call_user_func_array( array( $wpdb, 'prepare' ), array_merge( $args ) );
+		}
+		return $sql;
+	}
 
     public static function get_next_sub_seq( $form_id )
     {
@@ -95,6 +157,7 @@ final class NF_Database_Models_Form extends NF_Abstracts_Model
             if( $is_conversion ) {
                 $field_id = $settings[ 'id' ];
                 $field = Ninja_Forms()->form($form_id)->field( $field_id )->get();
+                $field->save();
             } else {
                 unset( $settings[ 'id' ] );
                 $settings[ 'created_at' ] = current_time( 'mysql' );

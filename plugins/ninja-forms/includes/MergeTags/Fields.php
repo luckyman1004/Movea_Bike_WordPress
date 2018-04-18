@@ -256,7 +256,8 @@ final class NF_MergeTags_Fields extends NF_Abstracts_MergeTags
 
     public function pre_parse_calc_settings( $eq )
     {
-        return preg_replace_callback( '/{field:([a-z0-9]|_)*}/', array( $this, 'force_field_calc_tags' ), $eq );
+        return preg_replace_callback( '/{field:([a-z0-9]|_|-)*}/',
+	        array( $this, 'force_field_calc_tags' ), $eq );
     }
 
     private function force_field_calc_tags( $matches )

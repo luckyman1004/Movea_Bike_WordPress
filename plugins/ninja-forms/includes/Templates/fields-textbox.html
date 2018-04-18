@@ -8,9 +8,9 @@
 			{{{ data.maybeInputLimit() }}}
 
 			id="nf-field-{{{ data.id }}}"
-			<# if( ! data.disable_browser_autocomplete && -1 < [ 'address', 'city', 'zip' ].indexOf( data.type ) ){ #>
+			<# if( ! data.disable_browser_autocomplete && -1 < [ 'city', 'zip' ].indexOf( data.type ) ){ #>
 				name="{{ data.custom_name_attribute || 'nf-field-' + data.id + '-' + data.type }}"
-				autocomplete="{{ data.custom_name_attribute || data.type }}"
+				autocomplete="on"
 			<# } else { #>
 				name="{{ data.custom_name_attribute || 'nf-field-' + data.id }}"
 				{{{ data.maybeDisableAutocomplete() }}}

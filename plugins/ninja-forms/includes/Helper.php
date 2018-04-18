@@ -9,6 +9,7 @@
  */
 final class WPN_Helper
 {
+
     /**
      * @param $value
      * @return array|string

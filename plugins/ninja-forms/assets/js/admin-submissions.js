@@ -43,7 +43,7 @@ jQuery( document ).ready( function( $ ) {
 		}
 	});
 
-	$( '.nf-form-option' ).off( 'click' ).on( 'click', function() { console.log('hello');
+	$( '.nf-form-option' ).off( 'click' ).on( 'click', function() {
 		// on click get the value of the input
 		var val = $( this ).data( 'val' );
 		// nf_export_form is now a hidden field instead of select element

@@ -7,36 +7,10 @@ final class NF_MergeTags_Deprecated extends NF_Abstracts_MergeTags
 {
     protected $id = 'deprecated';
 
-    /**
-     * @var array
-     * $post_meta[ $meta_key ] = $meta_value;
-     */
-    protected $post_meta = array();
-
     public function __construct()
     {
         parent::__construct();
         $this->merge_tags = Ninja_Forms()->config( 'MergeTagsDeprecated' );
-
-        // Setup merge tag data for each post in The Loop.
-        add_action( 'the_post', array( $this, 'init' ) );
-
-        // Setup merge tag data when Doing AJAX.
-        add_action( 'admin_init', array( $this, 'init' ) );
-    }
-
-    public function init()
-    {
-        global $post;
-
-        // If in the admin, only run on Ninja Forms pages.
-        if( is_admin() && ( ! isset( $_GET[ 'page' ] ) || 'ninja-forms' !== $_GET[ 'page' ] ) ) return;
-        
-        $post_id = $this->post_id();
-        
-        if ( ! empty( $post_id ) ) {
-            $this->setup_post_meta( $this->post_id() );
-        }
     }
 
     protected function post_id()
@@ -89,22 +63,6 @@ final class NF_MergeTags_Deprecated extends NF_Abstracts_MergeTags
         if( ! $post ) return '';
         $author = get_user_by( 'id', $post->post_author );
         return $author->user_email;
-    }
-
-    public function setup_post_meta( $post_id )
-    {
-        global $wpdb;
-
-        // Get ALL post meta for a given Post ID.
-        $results = $wpdb->get_results( $wpdb->prepare( "
-            SELECT `meta_key`, `meta_value`
-            FROM {$wpdb->postmeta}
-            WHERE `post_id` = %d
-        ", $post_id ) );
-
-        foreach( $results as $result ){
-            $this->post_meta[ $result->meta_key ] = $result->meta_value;
-        }
     }
 
     protected function user_id()

@@ -3,7 +3,7 @@ Contributors: wpninjasllc, kstover, jameslaws, kbjohnson90, klhall1987, krmoorho
 Tags: form, forms, contact form, custom form, form builder, form creator, form manager, form creation, contact forms, custom forms, forms builder, forms creator, forms manager, forms creation, form administration,
 Requires at least: 4.7
 Tested up to: 4.9
-Stable tag: 3.2.16
+Stable tag: 3.2.21
 License: GPLv2 or later
 
 Drag and drop fields in an intuitive UI to create contact forms, email subscription forms, order forms, payment forms, send emails and more!
@@ -111,26 +111,75 @@ For help and video tutorials, please visit our website: [Ninja Forms Documentati
 
 == Upgrade Notice ==
 
-= 3.2.16 (27 February 2018) =
-
-*Security:*
-
-* Patched a potential parameter tampering vulnerability.
+= 3.2.21 (6 April 2018) =
 
 *Bugs:*
 
-* Fixed an issue that was sometimes causing decimal place values to not be honored in calculations after submission.
-* Parts should now properly validate individually if the option is enabled in the Multi-part Forms add-on settings.
-* Resolved an issue that was causing the star rating field's label setting to be uneditable.
-* Fixed a bug that was sometimes causing no actions to fire upon form submission.
-* Resolved an issue that was causing hidden fields to be visible if they contained a calculated value.
+* Resolved an issue that was causing the save progress table settings to not display properly in the form builder.
+* Resolved a long-standing bug that rarely caused form submissions to fail.
+* Resolved a bug that was sometimes causing form submission to fail.
+* Resolved an issue with the automatic update process.
 
 *Changes:*
 
-* (Beta) Updated the Gutenberg block to output the selected form within the editor for display purposes.
-* Added a form filter to submissions and exports, allowing for more rapid selection of the intended form.
+* Added Akismet Anti-Spam integration.
+* Updated form deletion process to warn admins that all submissions for that form will also be deleted.
+* Users below PHP version 5.6 will now be seeing a notice, informing them of the outdated version.
 
 == Changelog ==
+
+= 3.2.21 (6 April 2018) =
+
+*Bugs:*
+
+* Resolved an issue with the automatic update process.
+
+= 3.2.20 (6 April 2018) =
+
+*Bugs:*
+
+* Resolved a bug that was sometimes causing form submission to fail.
+
+= 3.2.19 (5 April 2018) =
+
+*Bugs:*
+
+* Resolved an issue that was causing the save progress table settings to not display properly in the form builder.
+* Resolved a long-standing bug that rarely caused form submissions to fail.
+
+*Changes:*
+
+* Added Akismet Anti-Spam integration.
+* Updated form deletion process to warn admins that all submissions for that form will also be deleted.
+* Users below PHP version 5.6 will now be seeing a notice, informing them of the outdated version.
+
+= 3.2.18 (27 March 2018) =
+
+*Bugs:*
+
+* Resolved an issue that was preventing merge tags from being properly input into some settings.
+
+= 3.2.17 (26 March 2018) =
+
+*Bugs:*
+
+* Form data should now be properly deleted when rolling back to 2.9x and then re-upgrading.
+* Resolved an issue that was causing the first publish after upgrade to fail.
+* Forms set to clear but not hide after submission should now properly show reCaptcha fields after the clear.
+* Resolved an issue that sometimes caused long forms to not publish properly.
+* Removed a rogue plus sign that was causing php warnings in the post editor.
+* Resolved an issue that was sometimes causing calculation values to display as 0 in submissions.
+
+*Changes:*
+
+* Trashed submissions are now visible, allowing them to be deleted permanently before the typical expiration period for trashed posts.
+* Added a "Move to Trash" button to the edit submission screen.
+* Removed some legacy code in our merge tag system that was contributing to increased admin page load times.
+* The "Remove ALL Ninja Forms data upon uninstall" checkbox has been replaced with a button, which allows us to run a more efficient cleanup process.
+* Email fields should now do a better job of catching invalid values before submission.
+* Form autocomplete is here!
+* (Beta) Added filtering to the form selector in the Gutenberg block.
+* List values now have a more strict filter to prevent errors caused by special characters.
 
 = 3.2.16 (27 February 2018) =
 

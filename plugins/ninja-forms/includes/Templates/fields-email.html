@@ -5,8 +5,13 @@
 			class="{{{ data.renderClasses() }}} nf-element"
 
 			id="nf-field-{{{ data.id }}}"
-			name="nf-field-{{{ data.id }}}"
+			<# if( ! data.disable_browser_autocompletes ){ #>
+			name="{{ data.custom_name_attribute || 'nf-field-' + data.id + '-' + data.type }}"
 			autocomplete="email"
+			<# } else { #>
+			name="{{ data.custom_name_attribute || 'nf-field-' + data.id }}"
+			{{{ data.maybeDisableAutocomplete() }}}
+			<# } #>
 			{{{ data.renderPlaceholder() }}}
 			{{{ data.maybeDisabled() }}}
 

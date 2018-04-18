@@ -34,7 +34,15 @@ class NF_AJAX_Controllers_Submission extends NF_Abstracts_Controller
 
     public function submit()
     {
-        check_ajax_referer( 'ninja_forms_display_nonce', 'security' );
+    	$nonce_name = 'ninja_forms_display_nonce';
+    	/**
+	     * We've got to get the 'nonce_ts' to append to the nonce name to get
+	     * the unique nonce we created
+	     * */
+    	if( isset( $_REQUEST[ 'nonce_ts' ] ) && 0 < strlen( $_REQUEST[ 'nonce_ts' ] ) ) {
+    		$nonce_name = $nonce_name . "_" . $_REQUEST[ 'nonce_ts' ];
+	    }
+        check_ajax_referer( $nonce_name, 'security' );
 
         register_shutdown_function( array( $this, 'shutdown' ) );
 

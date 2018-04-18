@@ -58,5 +58,16 @@ return apply_filters( 'ninja_forms_i18n_dashboard', array(
                                                 __( 'Th', 'ninja-forms' ),
                                                 __( 'Fr', 'ninja-forms' ),
                                                 __( 'Sa', 'ninja-forms' )
-                                            )
+                                            ),
+    'deleteWarningA'                        => __( 'You are about to delete the form', 'ninja-forms' ),
+    'deleteWarningB'                        => __( 'Once deleted, it\'s fields and submissions cannot be recovered. Proceed with caution.',
+                                                   'ninja-forms' ),
+    'deleteConfirmA'                        => __( 'Type', 'ninja-forms' ),
+    'deleteConfirmB'                        => __( 'to confirm', 'ninja-forms' ),
+    'delete'                                => __( 'Delete', 'ninja-forms' ),
+    'cancel'                                => __( 'Cancel', 'ninja-forms' ),
+    'deleteTitle'                           => __( 'Confirm Delete', 'ninja-forms' ),
+    'deleteXForm'                           => __( 'Export Form', 'ninja-forms' ),
+    'deleteXSubs'                           => __( 'Export Submissions', 'ninja-forms' )
+    
 ));

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ninja Forms\n"
-"POT-Creation-Date: 2017-12-29 14:49-0500\n"
-"PO-Revision-Date: 2017-12-29 14:49-0500\n"
+"POT-Creation-Date: 2018-04-05 13:20-0400\n"
+"PO-Revision-Date: 2018-04-05 13:20-0400\n"
 "Last-Translator: \n"
 "Language-Team: WP Ninjas <info@wpninjas.com>\n"
 "Language: en\n"
@@ -13,35 +13,31 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: lang\n"
-"X-Poedit-SearchPathExcluded-1: assets\n"
-"X-Poedit-SearchPathExcluded-2: client\n"
-"X-Poedit-SearchPathExcluded-3: deprecated/assets\n"
-"X-Poedit-SearchPathExcluded-4: deprecated/css\n"
-"X-Poedit-SearchPathExcluded-5: deprecated/images\n"
-"X-Poedit-SearchPathExcluded-6: deprecated/js\n"
-"X-Poedit-SearchPathExcluded-7: deprecated/lang\n"
+"X-Poedit-SearchPath-0: includes\n"
+"X-Poedit-SearchPath-1: deprecated\n"
+"X-Poedit-SearchPath-2: lib\n"
+"X-Poedit-SearchPath-3: ninja-forms.php\n"
 
 #: deprecated/classes/add-form-modal.php:41
 #: deprecated/classes/add-form-modal.php:99 includes/Admin/AddFormModal.php:41
 msgid "Add Form"
 msgstr ""
 
-#: deprecated/classes/add-form-modal.php:72 includes/Admin/AddFormModal.php:55
+#: deprecated/classes/add-form-modal.php:72 includes/Admin/AddFormModal.php:54
+#: includes/Admin/AddFormModal.php:102
 msgid "Select a form or type to search"
 msgstr ""
 
 #: deprecated/classes/add-form-modal.php:89
 #: deprecated/includes/admin/pages/ninja-forms-settings/tabs/general-settings/general-settings.php:123
 #: deprecated/includes/admin/upgrades/convert-forms-reset.php:71
-#: deprecated/includes/fields/list.php:176
+#: deprecated/includes/fields/list.php:176 includes/Config/i18nDashboard.php:68
 #: includes/Templates/admin-menu-dashboard.html.php:168
 #: includes/Templates/ui-nf-header.html.php:12
 msgid "Cancel"
 msgstr ""
 
-#: deprecated/classes/add-form-modal.php:92
+#: deprecated/classes/add-form-modal.php:92 includes/Admin/AddFormModal.php:70
 msgid "Insert"
 msgstr ""
 
@@ -89,9 +85,10 @@ msgid "Learn More About Save Progress"
 msgstr ""
 
 #: deprecated/classes/notification-email.php:19 includes/Actions/Email.php:35
+#: includes/Config/ActionAkismetSettings.php:19
 #: includes/Database/MockData.php:81 includes/Database/MockData.php:262
 #: includes/Database/MockData.php:294 includes/Database/MockData.php:663
-#: includes/Fields/Email.php:26
+#: includes/Fields/Email.php:28
 msgid "Email"
 msgstr ""
 
@@ -175,7 +172,7 @@ msgstr ""
 
 #: deprecated/classes/notification-email.php:130
 #: includes/Config/ActionEmailSettings.php:139
-#: includes/Config/FieldSettings.php:409
+#: includes/Config/FieldSettings.php:424
 msgid "Format"
 msgstr ""
 
@@ -238,6 +235,7 @@ msgid "Location"
 msgstr ""
 
 #: deprecated/classes/notification-success-message.php:55
+#: includes/Config/ActionAkismetSettings.php:37
 #: includes/Config/ActionSuccessMessageSettings.php:13
 #: includes/Database/MockData.php:105
 msgid "Message"
@@ -275,6 +273,7 @@ msgstr ""
 #: deprecated/includes/admin/pages/ninja-forms/tabs/form-list/form-list.php:102
 #: deprecated/includes/admin/pages/ninja-forms/tabs/form-list/form-list.php:189
 #: includes/Admin/AllFormsTable.php:222 includes/Admin/Menus/Settings.php:132
+#: includes/Config/i18nDashboard.php:67
 #: includes/Templates/admin-menu-all-forms-column-title.html.php:15
 #: includes/Templates/admin-menu-dashboard.html.php:210
 #: includes/Templates/ui-item-controls.html.php:2
@@ -292,6 +291,7 @@ msgid "Duplicate"
 msgstr ""
 
 #: deprecated/classes/notifications-table.php:175
+#: includes/Config/ActionAkismetSettings.php:10
 #: includes/Database/MockData.php:66 includes/Database/MockData.php:255
 #: includes/Templates/admin-menu-new-form.html.php:178
 msgid "Name"
@@ -299,7 +299,7 @@ msgstr ""
 
 #: deprecated/classes/notifications-table.php:176
 #: deprecated/classes/notifications.php:259
-#: includes/Config/FieldSettings.php:834
+#: includes/Config/FieldSettings.php:849 includes/Config/i18nDashboard.php:65
 #: includes/Templates/admin-menu-new-form.html.php:179
 msgid "Type"
 msgstr ""
@@ -326,9 +326,9 @@ msgstr ""
 #: deprecated/classes/notifications.php:219
 #: deprecated/includes/admin/admin.php:6
 #: deprecated/includes/admin/admin.php:101
-#: deprecated/includes/fields/list.php:149 includes/Admin/CPT/Submission.php:59
+#: deprecated/includes/fields/list.php:149 includes/Admin/CPT/Submission.php:61
 #: includes/Admin/Menus/AddNew.php:20 includes/Config/FieldSettings.php:180
-#: includes/Config/FieldSettings.php:1039
+#: includes/Config/FieldSettings.php:1054
 #: includes/Config/FormCalculationSettings.php:12
 #: includes/Templates/admin-menu-dashboard.html.php:167
 msgid "Add New"
@@ -372,11 +372,11 @@ msgstr ""
 msgid "Insert All Fields"
 msgstr ""
 
-#: deprecated/classes/subs-cpt.php:103 includes/Admin/CPT/Submission.php:410
+#: deprecated/classes/subs-cpt.php:103 includes/Admin/CPT/Submission.php:429
 msgid "Please select a form to view submissions"
 msgstr ""
 
-#: deprecated/classes/subs-cpt.php:105 includes/Admin/CPT/Submission.php:412
+#: deprecated/classes/subs-cpt.php:105 includes/Admin/CPT/Submission.php:431
 msgid "No Submissions Found"
 msgstr ""
 
@@ -406,21 +406,21 @@ msgstr ""
 
 #: deprecated/classes/subs-cpt.php:195 deprecated/includes/admin/admin.php:120
 #: deprecated/includes/admin/pages/ninja-forms-impexp/tabs/impexp-subs/impexp-subs.php:6
-#: includes/Admin/CPT/Submission.php:54 includes/Admin/CPT/Submission.php:55
-#: includes/Admin/Menus/Submissions.php:58
+#: includes/Admin/CPT/Submission.php:56 includes/Admin/CPT/Submission.php:57
+#: includes/Admin/Menus/Submissions.php:108
 msgid "Submissions"
 msgstr ""
 
 #: deprecated/classes/subs-cpt.php:279 deprecated/classes/subs-cpt.php:996
-#: deprecated/classes/subs.php:174 includes/Admin/CPT/Submission.php:140
-#: includes/Admin/Menus/Submissions.php:86
+#: deprecated/classes/subs.php:174 includes/Admin/CPT/Submission.php:159
+#: includes/Admin/Menus/Submissions.php:147
 msgid "#"
 msgstr ""
 
 #: deprecated/classes/subs-cpt.php:315
 #: deprecated/includes/fields/textbox.php:175
-#: includes/Admin/CPT/Submission.php:164
-#: includes/Admin/Menus/Submissions.php:105
+#: includes/Admin/CPT/Submission.php:183
+#: includes/Admin/Menus/Submissions.php:166
 #: includes/Config/FieldSettings.php:241
 #: includes/Config/MergeTagsDeprecated.php:183
 #: includes/Config/MergeTagsOther.php:25 includes/Database/MockData.php:620
@@ -437,9 +437,9 @@ msgid "Export this item"
 msgstr ""
 
 #: deprecated/classes/subs-cpt.php:390 deprecated/classes/subs-cpt.php:694
-#: deprecated/classes/subs-cpt.php:695 includes/Admin/CPT/Submission.php:122
-#: includes/Admin/Menus/Submissions.php:252
-#: includes/Admin/Menus/Submissions.php:253
+#: deprecated/classes/subs-cpt.php:695 includes/Admin/CPT/Submission.php:141
+#: includes/Admin/Menus/Submissions.php:313
+#: includes/Admin/Menus/Submissions.php:314
 msgid "Export"
 msgstr ""
 
@@ -487,12 +487,12 @@ msgid "Select a form"
 msgstr ""
 
 #: deprecated/classes/subs-cpt.php:501
-#: includes/Templates/admin-menu-subs-filter.html.php:11
+#: includes/Templates/admin-menu-subs-filter.html.php:27
 msgid "Begin Date"
 msgstr ""
 
 #: deprecated/classes/subs-cpt.php:502
-#: includes/Templates/admin-menu-subs-filter.html.php:13
+#: includes/Templates/admin-menu-subs-filter.html.php:29
 msgid "End Date"
 msgstr ""
 
@@ -543,7 +543,7 @@ msgstr ""
 
 #: deprecated/classes/subs-cpt.php:712
 #: includes/Admin/CPT/DownloadAllSubmissions.php:160
-#: includes/Admin/Menus/Submissions.php:270
+#: includes/Admin/Menus/Submissions.php:331
 msgid "Download All Submissions"
 msgstr ""
 
@@ -551,7 +551,7 @@ msgstr ""
 msgid "Back to list"
 msgstr ""
 
-#: deprecated/classes/subs-cpt.php:868 includes/Admin/CPT/Submission.php:238
+#: deprecated/classes/subs-cpt.php:868 includes/Admin/CPT/Submission.php:257
 msgid "User Submitted Values"
 msgstr ""
 
@@ -568,7 +568,7 @@ msgstr ""
 
 #: deprecated/classes/subs-cpt.php:901 deprecated/includes/fields/list.php:103
 #: deprecated/includes/fields/list.php:588
-#: includes/Config/FieldSettings.php:196 includes/Config/FieldSettings.php:1054
+#: includes/Config/FieldSettings.php:196 includes/Config/FieldSettings.php:1069
 #: includes/Templates/admin-metabox-sub-fields.html.php:8
 msgid "Value"
 msgstr ""
@@ -598,7 +598,7 @@ msgstr ""
 
 #: deprecated/classes/subs-cpt.php:1038 deprecated/classes/subs-cpt.php:1039
 #: deprecated/upgrade/class-submenu.php:56
-#: includes/Templates/admin-metabox-sub-info.html.php:34
+#: includes/Templates/admin-metabox-sub-info.html.php:35
 msgid "Update"
 msgstr ""
 
@@ -677,7 +677,7 @@ msgstr ""
 #: deprecated/includes/admin/pages/ninja-forms/tabs/form-settings/form-settings.php:7
 #: deprecated/includes/admin/welcome.php:335
 #: includes/Admin/Menus/Settings.php:66 includes/Admin/Menus/Settings.php:77
-#: includes/Config/FieldSettings.php:843
+#: includes/Config/FieldSettings.php:858
 #: includes/Templates/admin-menu-settings.html.php:3
 #: includes/Templates/ui-nf-header.html.php:7
 #: includes/Templates/ui-nf-menu-drawer.html.php:8
@@ -718,7 +718,7 @@ msgid "Save Options"
 msgstr ""
 
 #: deprecated/includes/admin/edit-field/autocomplete-off.php:16
-#: includes/Config/FieldSettings.php:784
+#: includes/Config/FieldSettings.php:799
 msgid "Disable Browser Autocomplete"
 msgstr ""
 
@@ -757,8 +757,8 @@ msgstr ""
 #: deprecated/includes/fields/number.php:72
 #: deprecated/includes/fields/textbox.php:125
 #: deprecated/includes/fields/textbox.php:173 deprecated/includes/widget.php:96
-#: includes/Admin/Metaboxes/AppendAForm.php:58
-#: includes/Config/PluginSettingsAdvanced.php:71 includes/Widget.php:89
+#: includes/Admin/Metaboxes/AppendAForm.php:62
+#: includes/Config/PluginSettingsAdvanced.php:70 includes/Widget.php:89
 msgid "None"
 msgstr ""
 
@@ -813,7 +813,7 @@ msgstr ""
 #: deprecated/includes/admin/edit-field/help.php:37
 #: deprecated/includes/display/fields/help.php:26
 #: deprecated/includes/fields/calc.php:283
-#: includes/Config/FieldSettings.php:548
+#: includes/Config/FieldSettings.php:563
 msgid "Help Text"
 msgstr ""
 
@@ -922,7 +922,7 @@ msgid "- None"
 msgstr ""
 
 #: deprecated/includes/admin/edit-field/placeholder.php:19
-#: includes/Config/FieldSettings.php:342
+#: includes/Config/FieldSettings.php:357
 msgid "Placeholder"
 msgstr ""
 
@@ -945,7 +945,7 @@ msgid ""
 msgstr ""
 
 #: deprecated/includes/admin/edit-field/sub-settings.php:68
-#: includes/Config/FieldSettings.php:534
+#: includes/Config/FieldSettings.php:549
 msgid "Admin Label"
 msgstr ""
 
@@ -1090,7 +1090,7 @@ msgid "Favorite Fields"
 msgstr ""
 
 #: deprecated/includes/admin/pages/ninja-forms-impexp/tabs/impexp-fields/impexp-fields.php:23
-#: includes/Admin/Menus/ImportExport.php:162
+#: includes/Admin/Menus/ImportExport.php:169
 msgid "Import Favorite Fields"
 msgstr ""
 
@@ -1112,7 +1112,7 @@ msgid "No Favorite Fields Found"
 msgstr ""
 
 #: deprecated/includes/admin/pages/ninja-forms-impexp/tabs/impexp-fields/impexp-fields.php:63
-#: includes/Admin/Menus/ImportExport.php:169
+#: includes/Admin/Menus/ImportExport.php:176
 msgid "Export Favorite Fields"
 msgstr ""
 
@@ -1152,8 +1152,9 @@ msgstr ""
 
 #: deprecated/includes/admin/pages/ninja-forms-impexp/tabs/impexp-forms/impexp-forms.php:75
 #: deprecated/includes/admin/pages/ninja-forms-impexp/tabs/impexp-forms/impexp-forms.php:156
-#: includes/Templates/admin-metabox-import-export-forms-export.html.php:37
-#: includes/Templates/admin-metabox-import-export-forms-export.html.php:40
+#: includes/Config/i18nDashboard.php:70
+#: includes/Templates/admin-metabox-import-export-forms-export.html.php:61
+#: includes/Templates/admin-metabox-import-export-forms-export.html.php:64
 msgid "Export Form"
 msgstr ""
 
@@ -1243,12 +1244,12 @@ msgstr ""
 
 #: deprecated/includes/admin/pages/ninja-forms-settings/tabs/general-settings/general-settings.php:93
 #: deprecated/includes/admin/scripts.php:54
-#: includes/Config/PluginSettingsAdvanced.php:14
+#: includes/Admin/Menus/Settings.php:155
+#: includes/Config/PluginSettingsAdvanced.php:16
 msgid "Remove ALL Ninja Forms data upon uninstall?"
 msgstr ""
 
 #: deprecated/includes/admin/pages/ninja-forms-settings/tabs/general-settings/general-settings.php:94
-#: includes/Config/PluginSettingsAdvanced.php:15
 #, php-format
 msgid ""
 "If this box is checked, ALL Ninja Forms data will be removed from the "
@@ -1257,19 +1258,19 @@ msgid ""
 msgstr ""
 
 #: deprecated/includes/admin/pages/ninja-forms-settings/tabs/general-settings/general-settings.php:104
-#: includes/Config/PluginSettingsAdvanced.php:42
+#: includes/Config/PluginSettingsAdvanced.php:41
 msgid "Disable Admin Notices"
 msgstr ""
 
 #: deprecated/includes/admin/pages/ninja-forms-settings/tabs/general-settings/general-settings.php:105
-#: includes/Config/PluginSettingsAdvanced.php:43
+#: includes/Config/PluginSettingsAdvanced.php:42
 msgid ""
 "Never see an admin notice on the dashboard from Ninja Forms. Uncheck to see "
 "them again."
 msgstr ""
 
 #: deprecated/includes/admin/pages/ninja-forms-settings/tabs/general-settings/general-settings.php:119
-#: includes/Config/PluginSettingsAdvanced.php:27
+#: includes/Config/PluginSettingsAdvanced.php:29
 msgid ""
 "This setting will COMPLETELY remove anything Ninja Forms related upon plugin "
 "deletion. This includes SUBMISSIONS and FORMS. It cannot be undone."
@@ -1751,7 +1752,7 @@ msgstr ""
 
 #: deprecated/includes/admin/pages/system-status-html.php:81
 #: includes/Admin/Menus/SystemStatus.php:67
-#: includes/Config/FieldSettings.php:414
+#: includes/Config/FieldSettings.php:429
 msgid "Default"
 msgstr ""
 
@@ -1909,7 +1910,7 @@ msgstr ""
 msgid "Reset the form conversion process for v2.9+"
 msgstr ""
 
-#: deprecated/includes/admin/scripts.php:75 includes/Admin/Menus/Forms.php:229
+#: deprecated/includes/admin/scripts.php:75 includes/Admin/Menus/Forms.php:233
 msgid "Edit Form"
 msgstr ""
 
@@ -1932,7 +1933,7 @@ msgstr ""
 
 #: deprecated/includes/admin/step-processing.php:11
 #: deprecated/includes/admin/upgrades/upgrade-handler-page.html.php:29
-#: deprecated/ninja-forms.php:683 includes/Config/FieldSettings.php:909
+#: deprecated/ninja-forms.php:683 includes/Config/FieldSettings.php:924
 #: lib/StepProcessing/menu.php:11
 msgid "Processing"
 msgstr ""
@@ -2497,8 +2498,8 @@ msgstr ""
 #: deprecated/includes/fields/timed-submit.php:9
 #: deprecated/includes/fields/timed-submit.php:17
 #: includes/Config/FieldSettings.php:21 includes/Config/FieldSettings.php:191
-#: includes/Config/FieldSettings.php:707 includes/Config/FieldSettings.php:723
-#: includes/Config/FieldSettings.php:1049
+#: includes/Config/FieldSettings.php:722 includes/Config/FieldSettings.php:738
+#: includes/Config/FieldSettings.php:1064
 msgid "Label"
 msgstr ""
 
@@ -2578,7 +2579,7 @@ msgstr ""
 #: deprecated/includes/fields/number.php:83
 #: deprecated/includes/fields/textarea.php:11
 #: deprecated/includes/fields/textbox.php:122
-#: includes/Config/FieldSettings.php:129 includes/Config/FieldSettings.php:357
+#: includes/Config/FieldSettings.php:129 includes/Config/FieldSettings.php:372
 #: includes/Fields/ListCountry.php:30
 msgid "Default Value"
 msgstr ""
@@ -4086,12 +4087,12 @@ msgid "Default Country"
 msgstr ""
 
 #: deprecated/includes/fields/country.php:277
-#: includes/Config/FieldSettings.php:810
+#: includes/Config/FieldSettings.php:825
 msgid "Use a custom first option"
 msgstr ""
 
 #: deprecated/includes/fields/country.php:283
-#: includes/Config/FieldSettings.php:823
+#: includes/Config/FieldSettings.php:838
 msgid "Custom first option"
 msgstr ""
 
@@ -4348,7 +4349,7 @@ msgid "List Type"
 msgstr ""
 
 #: deprecated/includes/fields/list.php:145
-#: includes/Config/FieldSettings.php:651
+#: includes/Config/FieldSettings.php:666
 msgid "Multi-Select Box Size"
 msgstr ""
 
@@ -4443,12 +4444,12 @@ msgid "Passwords do not match"
 msgstr ""
 
 #: deprecated/includes/fields/rating.php:4 includes/Database/MockData.php:768
-#: includes/Fields/StarRating.php:36
+#: includes/Fields/StarRating.php:30
 msgid "Star Rating"
 msgstr ""
 
 #: deprecated/includes/fields/rating.php:13
-#: includes/Config/FieldSettings.php:771
+#: includes/Config/FieldSettings.php:786
 msgid "Number of stars"
 msgstr ""
 
@@ -4519,17 +4520,17 @@ msgid "Textarea"
 msgstr ""
 
 #: deprecated/includes/fields/textarea.php:18
-#: includes/Config/FieldSettings.php:866
+#: includes/Config/FieldSettings.php:881
 msgid "Show Rich Text Editor"
 msgstr ""
 
 #: deprecated/includes/fields/textarea.php:23
-#: includes/Config/FieldSettings.php:876
+#: includes/Config/FieldSettings.php:891
 msgid "Show Media Upload Button"
 msgstr ""
 
 #: deprecated/includes/fields/textarea.php:28
-#: includes/Config/FieldSettings.php:888
+#: includes/Config/FieldSettings.php:903
 msgid "Disable Rich Text Editor on Mobile"
 msgstr ""
 
@@ -4538,7 +4539,7 @@ msgid "Validate as an email address? (Field must be required)"
 msgstr ""
 
 #: deprecated/includes/fields/textbox.php:56
-#: includes/Config/FieldSettings.php:796
+#: includes/Config/FieldSettings.php:811
 msgid "Disable Input"
 msgstr ""
 
@@ -4579,7 +4580,7 @@ msgstr ""
 
 #: deprecated/includes/fields/timed-submit.php:18
 #: deprecated/includes/fields/timed-submit.php:69
-#: includes/Config/FieldSettings.php:725
+#: includes/Config/FieldSettings.php:740
 msgid "Please wait %n seconds"
 msgstr ""
 
@@ -4669,12 +4670,12 @@ msgstr ""
 msgid "Please update your add-ons before upgrading."
 msgstr ""
 
-#: includes/AJAX/Controllers/Form.php:25
+#: includes/AJAX/Controllers/Form.php:26
 msgid "Form Not Found"
 msgstr ""
 
 #: includes/AJAX/Controllers/FormEndpoints.php:65
-#: includes/Database/Models/Form.php:160
+#: includes/Database/Models/Form.php:223
 msgid "copy"
 msgstr ""
 
@@ -4684,17 +4685,30 @@ msgstr ""
 msgid "Field Not Found"
 msgstr ""
 
-#: includes/AJAX/Controllers/Submission.php:50
+#: includes/AJAX/Controllers/Submission.php:56
+msgid "Form does not exist."
+msgstr ""
+
+#: includes/AJAX/Controllers/Submission.php:65
 msgid "Preview does not exist."
 msgstr ""
 
-#: includes/AJAX/Controllers/Submission.php:433
+#: includes/AJAX/Controllers/Submission.php:454
 #: includes/AJAX/REST/Controller.php:85
 msgid "The server encountered an error during processing."
 msgstr ""
 
-#: includes/AJAX/Controllers/Submission.php:454
+#: includes/AJAX/Controllers/Submission.php:475
 msgid "An unexpected error occurred."
+msgstr ""
+
+#: includes/AJAX/REST/BatchProcess.php:24
+msgid "Request forbidden."
+msgstr ""
+
+#: includes/AJAX/REST/BatchProcess.php:38
+#: includes/AJAX/REST/BatchProcess.php:44
+msgid "Invalid request."
 msgstr ""
 
 #: includes/AJAX/REST/Controller.php:44
@@ -4743,11 +4757,19 @@ msgstr ""
 msgid "Submission Metabox"
 msgstr ""
 
-#: includes/Abstracts/UserInfo.php:25
+#: includes/Abstracts/UserInfo.php:36
 msgid "User Meta (if logged in)"
 msgstr ""
 
-#: includes/Actions/CollectPayment.php:40
+#: includes/Actions/Akismet.php:38
+msgid "Akismet Anti-Spam"
+msgstr ""
+
+#: includes/Actions/Akismet.php:95
+msgid "There was an error trying to send your message. Please try again later"
+msgstr ""
+
+#: includes/Actions/CollectPayment.php:46
 msgid "Collect Payment"
 msgstr ""
 
@@ -4769,6 +4791,10 @@ msgstr ""
 #: includes/Actions/SuccessMessage.php:66
 #, php-format
 msgid "Shortcodes should return and not echo, see: %s"
+msgstr ""
+
+#: includes/Admin/AddFormModal.php:90
+msgid "Insert Form"
 msgstr ""
 
 #: includes/Admin/AllFormsTable.php:27
@@ -4798,55 +4824,55 @@ msgstr ""
 msgid "Go get a life, script kiddies"
 msgstr ""
 
-#: includes/Admin/CPT/Submission.php:56
+#: includes/Admin/CPT/Submission.php:58
 msgid "Parent Item:"
 msgstr ""
 
-#: includes/Admin/CPT/Submission.php:57
+#: includes/Admin/CPT/Submission.php:59
 msgid "All Items"
 msgstr ""
 
-#: includes/Admin/CPT/Submission.php:58
+#: includes/Admin/CPT/Submission.php:60
 msgid "Add New Item"
 msgstr ""
 
-#: includes/Admin/CPT/Submission.php:60
+#: includes/Admin/CPT/Submission.php:62
 msgid "New Item"
 msgstr ""
 
-#: includes/Admin/CPT/Submission.php:61
+#: includes/Admin/CPT/Submission.php:63
 msgid "Edit Item"
 msgstr ""
 
-#: includes/Admin/CPT/Submission.php:62
+#: includes/Admin/CPT/Submission.php:64
 msgid "Update Item"
 msgstr ""
 
-#: includes/Admin/CPT/Submission.php:63
+#: includes/Admin/CPT/Submission.php:65
 msgid "View Item"
 msgstr ""
 
-#: includes/Admin/CPT/Submission.php:64
+#: includes/Admin/CPT/Submission.php:66
 msgid "Search Item"
 msgstr ""
 
-#: includes/Admin/CPT/Submission.php:66
+#: includes/Admin/CPT/Submission.php:68
 msgid "Not found in Trash"
 msgstr ""
 
-#: includes/Admin/CPT/Submission.php:69
+#: includes/Admin/CPT/Submission.php:71
 msgid "Submission"
 msgstr ""
 
-#: includes/Admin/CPT/Submission.php:70
+#: includes/Admin/CPT/Submission.php:72
 msgid "Form Submissions"
 msgstr ""
 
-#: includes/Admin/CPT/Submission.php:247
+#: includes/Admin/CPT/Submission.php:266
 msgid "Submission Info"
 msgstr ""
 
-#: includes/Admin/CPT/Submission.php:297
+#: includes/Admin/CPT/Submission.php:316
 msgid "Anonymous"
 msgstr ""
 
@@ -4863,11 +4889,11 @@ msgstr ""
 msgid "Ninja Forms"
 msgstr ""
 
-#: includes/Admin/Menus/Forms.php:165
+#: includes/Admin/Menus/Forms.php:169
 msgid "Form Template Import Error."
 msgstr ""
 
-#: includes/Admin/Menus/Forms.php:564 includes/MergeTags/Fields.php:14
+#: includes/Admin/Menus/Forms.php:568 includes/MergeTags/Fields.php:14
 msgid "Fields"
 msgstr ""
 
@@ -4879,61 +4905,61 @@ msgstr ""
 msgid "Invalid Form Upload."
 msgstr ""
 
-#: includes/Admin/Menus/ImportExport.php:145
+#: includes/Admin/Menus/ImportExport.php:152
 msgid "Import Forms"
 msgstr ""
 
-#: includes/Admin/Menus/ImportExport.php:152
+#: includes/Admin/Menus/ImportExport.php:159
 msgid "Export Forms"
 msgstr ""
 
-#: includes/Admin/Menus/ImportExport.php:236
+#: includes/Admin/Menus/ImportExport.php:262
 msgid "Equation (Advanced)"
 msgstr ""
 
-#: includes/Admin/Menus/ImportExport.php:239
+#: includes/Admin/Menus/ImportExport.php:265
 msgid "Operations and Fields (Advanced)"
 msgstr ""
 
-#: includes/Admin/Menus/ImportExport.php:242
+#: includes/Admin/Menus/ImportExport.php:268
 msgid "Auto-Total Fields"
 msgstr ""
 
-#: includes/Admin/Menus/ImportExport.php:360
+#: includes/Admin/Menus/ImportExport.php:386
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini."
 msgstr ""
 
-#: includes/Admin/Menus/ImportExport.php:363
+#: includes/Admin/Menus/ImportExport.php:389
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form."
 msgstr ""
 
-#: includes/Admin/Menus/ImportExport.php:366
+#: includes/Admin/Menus/ImportExport.php:392
 msgid "The uploaded file was only partially uploaded."
 msgstr ""
 
-#: includes/Admin/Menus/ImportExport.php:369
+#: includes/Admin/Menus/ImportExport.php:395
 msgid "No file was uploaded."
 msgstr ""
 
-#: includes/Admin/Menus/ImportExport.php:372
+#: includes/Admin/Menus/ImportExport.php:398
 msgid "Missing a temporary folder."
 msgstr ""
 
-#: includes/Admin/Menus/ImportExport.php:375
+#: includes/Admin/Menus/ImportExport.php:401
 msgid "Failed to write file to disk."
 msgstr ""
 
-#: includes/Admin/Menus/ImportExport.php:378
+#: includes/Admin/Menus/ImportExport.php:404
 msgid "File upload stopped by extension."
 msgstr ""
 
-#: includes/Admin/Menus/ImportExport.php:381
+#: includes/Admin/Menus/ImportExport.php:407
 msgid "Unknown upload error."
 msgstr ""
 
-#: includes/Admin/Menus/ImportExport.php:386
+#: includes/Admin/Menus/ImportExport.php:412
 msgid "File Upload Error"
 msgstr ""
 
@@ -4965,11 +4991,21 @@ msgstr ""
 msgid "Save Settings"
 msgstr ""
 
-#: includes/Admin/Menus/Settings.php:143
+#: includes/Admin/Menus/Settings.php:158
 msgid "Are you sure you want to rollback?"
 msgstr ""
 
-#: includes/Admin/Menus/Submissions.php:270
+#: includes/Admin/Menus/Submissions.php:88
+#: includes/Admin/Menus/Submissions.php:97
+msgid "Completed"
+msgstr ""
+
+#: includes/Admin/Menus/Submissions.php:91
+#: includes/Admin/Menus/Submissions.php:99
+msgid "Trashed"
+msgstr ""
+
+#: includes/Admin/Menus/Submissions.php:331
 msgid "button-secondary nf-download-all"
 msgstr ""
 
@@ -5006,9 +5042,30 @@ msgstr ""
 msgid "Append a Ninja Form"
 msgstr ""
 
-#: includes/Admin/Metaboxes/Calculations.php:9
+#: includes/Admin/Metaboxes/Calculations.php:12
 #: includes/Config/FormSettingsTypes.php:17 includes/MergeTags/Calcs.php:15
 msgid "Calculations"
+msgstr ""
+
+#: includes/Config/ActionAkismetSettings.php:11
+msgid "Name field"
+msgstr ""
+
+#: includes/Config/ActionAkismetSettings.php:20
+msgid "Email address field"
+msgstr ""
+
+#: includes/Config/ActionAkismetSettings.php:28
+#: includes/Config/ActionRedirectSettings.php:13
+msgid "URL"
+msgstr ""
+
+#: includes/Config/ActionAkismetSettings.php:29
+msgid "Field for a URL"
+msgstr ""
+
+#: includes/Config/ActionAkismetSettings.php:38
+msgid "Field for the message"
 msgstr ""
 
 #: includes/Config/ActionCollectPaymentSettings.php:14
@@ -5053,10 +5110,6 @@ msgstr ""
 
 #: includes/Config/ActionEmailSettings.php:180
 msgid "Attach CSV"
-msgstr ""
-
-#: includes/Config/ActionRedirectSettings.php:13
-msgid "URL"
 msgstr ""
 
 #: includes/Config/ActionSuccessMessageSettings.php:16
@@ -5182,7 +5235,7 @@ msgstr ""
 msgid "Form Default"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:58 includes/Config/FieldSettings.php:1012
+#: includes/Config/FieldSettings.php:58 includes/Config/FieldSettings.php:1027
 #: includes/Config/FormDisplaySettings.php:89
 #: includes/Database/MockData.php:376 includes/Database/MockData.php:633
 #: includes/Fields/Hidden.php:38
@@ -5234,7 +5287,7 @@ msgstr ""
 msgid "Options"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:185 includes/Config/FieldSettings.php:1043
+#: includes/Config/FieldSettings.php:185 includes/Config/FieldSettings.php:1058
 #: includes/Database/MockData.php:127
 msgid "One"
 msgstr ""
@@ -5243,7 +5296,7 @@ msgstr ""
 msgid "one"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:186 includes/Config/FieldSettings.php:1044
+#: includes/Config/FieldSettings.php:186 includes/Config/FieldSettings.php:1059
 #: includes/Database/MockData.php:134
 msgid "Two"
 msgstr ""
@@ -5252,7 +5305,7 @@ msgstr ""
 msgid "two"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:187 includes/Config/FieldSettings.php:1045
+#: includes/Config/FieldSettings.php:187 includes/Config/FieldSettings.php:1060
 #: includes/Database/MockData.php:141
 msgid "Three"
 msgstr ""
@@ -5314,257 +5367,265 @@ msgstr ""
 msgid "Character(s) left"
 msgstr ""
 
+#: includes/Config/FieldSettings.php:342
+msgid "Custom Name Attribute"
+msgstr ""
+
 #: includes/Config/FieldSettings.php:346
+msgid "This value will be used as the HTML input \"name\" attribute."
+msgstr ""
+
+#: includes/Config/FieldSettings.php:361
 msgid ""
 "Enter text you would like displayed in the field before a user enters any "
 "data."
 msgstr ""
 
-#: includes/Config/FieldSettings.php:375
+#: includes/Config/FieldSettings.php:390
 #: includes/Config/FormDisplaySettings.php:103
 msgid "Custom Class Names"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:383
+#: includes/Config/FieldSettings.php:398
 msgid "Container"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:387
+#: includes/Config/FieldSettings.php:402
 msgid "Adds an extra class to your field wrapper."
 msgstr ""
 
-#: includes/Config/FieldSettings.php:392
+#: includes/Config/FieldSettings.php:407
 #: includes/Config/FormDisplaySettings.php:119
 msgid "Element"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:397
+#: includes/Config/FieldSettings.php:412
 msgid "Adds an extra class to your field element."
 msgstr ""
 
-#: includes/Config/FieldSettings.php:418
+#: includes/Config/FieldSettings.php:433
 msgid "DD/MM/YYYY"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:422
+#: includes/Config/FieldSettings.php:437
 msgid "DD-MM-YYYY"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:426
+#: includes/Config/FieldSettings.php:441
 msgid "DD.MM.YYYY"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:430
+#: includes/Config/FieldSettings.php:445
 msgid "MM/DD/YYYY"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:434
+#: includes/Config/FieldSettings.php:449
 msgid "MM-DD-YYYY"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:438
+#: includes/Config/FieldSettings.php:453
 msgid "MM.DD.YYYY"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:442
+#: includes/Config/FieldSettings.php:457
 msgid "YYYY-MM-DD"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:446
+#: includes/Config/FieldSettings.php:461
 msgid "YYYY/MM/DD"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:450
+#: includes/Config/FieldSettings.php:465
 msgid "YYYY.MM.DD"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:454
+#: includes/Config/FieldSettings.php:469
 msgid "Friday, November 18, 2019"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:468
+#: includes/Config/FieldSettings.php:483
 msgid "Default To Current Date"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:480
+#: includes/Config/FieldSettings.php:495
 msgid "Year Range"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:487
+#: includes/Config/FieldSettings.php:502
 msgid "Start Year"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:493
+#: includes/Config/FieldSettings.php:508
 msgid "End Year"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:506
+#: includes/Config/FieldSettings.php:521
 msgid "Number of seconds for timed submit."
 msgstr ""
 
-#: includes/Config/FieldSettings.php:520
+#: includes/Config/FieldSettings.php:535
 msgid "Field Key"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:524
+#: includes/Config/FieldSettings.php:539
 msgid ""
 "Creates a unique key to identify and target your field for custom "
 "development."
 msgstr ""
 
-#: includes/Config/FieldSettings.php:538
+#: includes/Config/FieldSettings.php:553
 msgid "Label used when viewing and exporting submissions."
 msgstr ""
 
-#: includes/Config/FieldSettings.php:550
+#: includes/Config/FieldSettings.php:565
 msgid "Shown to users as a hover."
 msgstr ""
 
-#: includes/Config/FieldSettings.php:575
+#: includes/Config/FieldSettings.php:590
 msgid "Description"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:634
+#: includes/Config/FieldSettings.php:649
 msgid "Sort as Numeric"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:638
+#: includes/Config/FieldSettings.php:653
 msgid "This column in the submissions table will sort by number."
 msgstr ""
 
-#: includes/Config/FieldSettings.php:738
+#: includes/Config/FieldSettings.php:753
 msgid "Number of seconds for the countdown"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:755
+#: includes/Config/FieldSettings.php:770
 msgid ""
 "Use this as a reistration password field. If this box is check, both\n"
 "                        password and re-password textboxes will be output"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:852 includes/Database/Models/Form.php:636
+#: includes/Config/FieldSettings.php:867 includes/Database/Models/Form.php:699
 #: includes/Fields/Confirm.php:26
 msgid "Confirm"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:870
+#: includes/Config/FieldSettings.php:885
 msgid "Allows rich text input."
 msgstr ""
 
-#: includes/Config/FieldSettings.php:906
+#: includes/Config/FieldSettings.php:921
 msgid "Processing Label"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:921
+#: includes/Config/FieldSettings.php:936
 msgid "Checked Calculation Value"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:924
+#: includes/Config/FieldSettings.php:939
 msgid "This number will be used in calculations if the box is checked."
 msgstr ""
 
-#: includes/Config/FieldSettings.php:930
+#: includes/Config/FieldSettings.php:945
 msgid "Unchecked Calculation Value"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:933
+#: includes/Config/FieldSettings.php:948
 msgid "This number will be used in calculations if the box is unchecked."
 msgstr ""
 
-#: includes/Config/FieldSettings.php:944
+#: includes/Config/FieldSettings.php:959
 msgid "Display This Calculation Variable"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:950
+#: includes/Config/FieldSettings.php:965
 msgid "- Select a Variable"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:963
+#: includes/Config/FieldSettings.php:978
 msgid "Price"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:976
+#: includes/Config/FieldSettings.php:991
 msgid "Use Inline Quantity"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:980
+#: includes/Config/FieldSettings.php:995
 msgid "Allows users to choose more than one of this product."
 msgstr ""
 
-#: includes/Config/FieldSettings.php:987
+#: includes/Config/FieldSettings.php:1002
 msgid "Product Type"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:992
+#: includes/Config/FieldSettings.php:1007
 msgid "Single Product (default)"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:996
+#: includes/Config/FieldSettings.php:1011
 msgid "Multi Product - Dropdown"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:1000
+#: includes/Config/FieldSettings.php:1015
 msgid "Multi Product - Choose Many"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:1004
+#: includes/Config/FieldSettings.php:1019
 msgid "Multi Product - Choose One"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:1008
+#: includes/Config/FieldSettings.php:1023
 msgid "User Entry"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:1023
+#: includes/Config/FieldSettings.php:1038
 msgid "Cost"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:1039
+#: includes/Config/FieldSettings.php:1054
 msgid "Cost Options"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:1068
+#: includes/Config/FieldSettings.php:1083
 msgid "Single Cost"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:1072
+#: includes/Config/FieldSettings.php:1087
 msgid "Cost Dropdown"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:1076
+#: includes/Config/FieldSettings.php:1091
 msgid "Cost Type"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:1085 includes/Database/MockData.php:898
+#: includes/Config/FieldSettings.php:1100 includes/Database/MockData.php:898
 #: includes/Database/MockData.php:974 includes/Fields/Product.php:32
 msgid "Product"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:1091
+#: includes/Config/FieldSettings.php:1106
 msgid "- Select a Product"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:1108
+#: includes/Config/FieldSettings.php:1123
 msgid "Answer"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:1112
+#: includes/Config/FieldSettings.php:1127
 msgid "A case sensitive answer to help prevent spam submissions of your form."
 msgstr ""
 
-#: includes/Config/FieldSettings.php:1128
+#: includes/Config/FieldSettings.php:1143
 msgid "Taxonomy"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:1146
+#: includes/Config/FieldSettings.php:1161
 msgid "Add New Terms"
 msgstr ""
 
-#: includes/Config/FieldSettings.php:1160
+#: includes/Config/FieldSettings.php:1175
 msgid "This is a user's state."
 msgstr ""
 
-#: includes/Config/FieldSettings.php:1164
+#: includes/Config/FieldSettings.php:1179
 msgid "Used for marking a field for processing."
 msgstr ""
 
@@ -5841,51 +5902,63 @@ msgid ""
 "can add and remove fields as needed."
 msgstr ""
 
-#: includes/Config/PluginSettingsAdvanced.php:55
+#: includes/Config/PluginSettingsAdvanced.php:15
+msgid "Delete All Data"
+msgstr ""
+
+#: includes/Config/PluginSettingsAdvanced.php:17
+#, php-format
+msgid ""
+"If this button is checked, ALL Ninja Forms data will be removed from the "
+"database and the Ninja Forms plug-in will be deactivated. %sAll form and "
+"submission data will be unrecoverable.%s"
+msgstr ""
+
+#: includes/Config/PluginSettingsAdvanced.php:54
 msgid "Allow Tracking"
 msgstr ""
 
-#: includes/Config/PluginSettingsAdvanced.php:56
+#: includes/Config/PluginSettingsAdvanced.php:55
 msgid ""
 "If you opt-in, some data about your installation of Ninja Forms will be sent "
 "to NinjaForms.com (this does NOT include your submissions)."
 msgstr ""
 
-#: includes/Config/PluginSettingsAdvanced.php:68
+#: includes/Config/PluginSettingsAdvanced.php:67
 msgid "Opinionated Styles"
 msgstr ""
 
-#: includes/Config/PluginSettingsAdvanced.php:75
+#: includes/Config/PluginSettingsAdvanced.php:74
 #: includes/Config/PluginSettingsReCaptcha.php:54
 msgid "Light"
 msgstr ""
 
-#: includes/Config/PluginSettingsAdvanced.php:79
+#: includes/Config/PluginSettingsAdvanced.php:78
 #: includes/Config/PluginSettingsReCaptcha.php:55
 msgid "Dark"
 msgstr ""
 
-#: includes/Config/PluginSettingsAdvanced.php:83
+#: includes/Config/PluginSettingsAdvanced.php:82
 msgid "Use default Ninja Forms styling conventions."
 msgstr ""
 
-#: includes/Config/PluginSettingsAdvanced.php:96
+#: includes/Config/PluginSettingsAdvanced.php:95
 msgid "Rollback"
 msgstr ""
 
-#: includes/Config/PluginSettingsAdvanced.php:97
+#: includes/Config/PluginSettingsAdvanced.php:96
 msgid "Rollback to v2.9.x"
 msgstr ""
 
-#: includes/Config/PluginSettingsAdvanced.php:98
+#: includes/Config/PluginSettingsAdvanced.php:97
 msgid "Rollback to the most recent 2.9.x release."
 msgstr ""
 
-#: includes/Config/PluginSettingsAdvanced.php:98
+#: includes/Config/PluginSettingsAdvanced.php:97
 msgid "IMPORTANT: All 3.0 data will be removed."
 msgstr ""
 
-#: includes/Config/PluginSettingsAdvanced.php:98
+#: includes/Config/PluginSettingsAdvanced.php:97
 msgid ""
 "Please export any forms or submissions you do not want to be lost during "
 "this process."
@@ -6181,6 +6254,28 @@ msgstr ""
 #: includes/Config/i18nBuilder.php:72 includes/Config/i18nDashboard.php:60
 #: includes/Config/i18nFrontEnd.php:85
 msgid "Sa"
+msgstr ""
+
+#: includes/Config/i18nDashboard.php:62
+msgid "You are about to delete the form"
+msgstr ""
+
+#: includes/Config/i18nDashboard.php:63
+msgid ""
+"Once deleted, it's fields and submissions cannot be recovered. Proceed with "
+"caution."
+msgstr ""
+
+#: includes/Config/i18nDashboard.php:66
+msgid "to confirm"
+msgstr ""
+
+#: includes/Config/i18nDashboard.php:69
+msgid "Confirm Delete"
+msgstr ""
+
+#: includes/Config/i18nDashboard.php:71
+msgid "Export Submissions"
 msgstr ""
 
 #: includes/Config/i18nFrontEnd.php:15
@@ -6523,11 +6618,11 @@ msgid ""
 "Calculations are returned with the AJAX response ( response -> data -> calcs"
 msgstr ""
 
-#: includes/Database/Models/Form.php:375
+#: includes/Database/Models/Form.php:438
 msgid "Save Form"
 msgstr ""
 
-#: includes/Database/Models/Form.php:660 includes/Fields/CreditCardZip.php:23
+#: includes/Database/Models/Form.php:723 includes/Fields/CreditCardZip.php:23
 msgid "Credit Card Zip"
 msgstr ""
 
@@ -6535,7 +6630,11 @@ msgstr ""
 msgid "You must be logged in to preview a form."
 msgstr ""
 
-#: includes/Display/Render.php:135 includes/Display/Render.php:394
+#: includes/Display/Preview.php:56 includes/Display/Preview.php:62
+msgid "You must provide a valid form ID."
+msgstr ""
+
+#: includes/Display/Render.php:135 includes/Display/Render.php:399
 msgid "No Fields Found."
 msgstr ""
 
@@ -6564,11 +6663,11 @@ msgstr ""
 msgid "Single Checkbox"
 msgstr ""
 
-#: includes/Fields/Checkbox.php:152
+#: includes/Fields/Checkbox.php:152 includes/Fields/Checkbox.php:170
 msgid "checked"
 msgstr ""
 
-#: includes/Fields/Checkbox.php:153
+#: includes/Fields/Checkbox.php:153 includes/Fields/Checkbox.php:172
 msgid "unchecked"
 msgstr ""
 
@@ -6678,24 +6777,20 @@ msgstr ""
 msgid "Incorrect Answer"
 msgstr ""
 
-#: includes/Fields/StarRating.php:28
-msgid "Number of Stars"
-msgstr ""
-
 #: includes/Fields/Terms.php:31
 msgid "Terms List"
 msgstr ""
 
-#: includes/Fields/Terms.php:86
+#: includes/Fields/Terms.php:95
 #, php-format
 msgid "No available terms for this taxonomy. %sAdd a term%s"
 msgstr ""
 
-#: includes/Fields/Terms.php:101
+#: includes/Fields/Terms.php:110
 msgid "No taxonomy selected."
 msgstr ""
 
-#: includes/Fields/Terms.php:110
+#: includes/Fields/Terms.php:119
 msgid "Available Terms"
 msgstr ""
 
@@ -6730,6 +6825,63 @@ msgstr ""
 msgid "Every %d Minutes"
 msgstr ""
 
+#: includes/Libraries/Whip/NF_Whip.php:31
+msgid "Hey, we've noticed that you're running an outdated version of PHP."
+msgstr ""
+
+#: includes/Libraries/Whip/NF_Whip.php:32
+msgid ""
+"PHP is the programming language that WordPress, Ninja Forms, and themes are "
+"built on. The version that is currently used for your site is no longer "
+"supported. Newer versions of PHP are both faster and more secure. In fact, "
+"your version of PHP no longer receives security updates, which is why we're "
+"sending you to this notice."
+msgstr ""
+
+#: includes/Libraries/Whip/NF_Whip.php:33
+msgid "Your site could be faster and more secure with a newer PHP version."
+msgstr ""
+
+#: includes/Libraries/Whip/NF_Whip.php:34
+msgid ""
+"Hosts have the ability to update your PHP version, but sometimes they don't "
+"dare to do that because they're afraid they'll break your site."
+msgstr ""
+
+#: includes/Libraries/Whip/NF_Whip.php:35
+msgid "Which version should I update?"
+msgstr ""
+
+#: includes/Libraries/Whip/NF_Whip.php:36
+#, php-format
+msgid ""
+"You should update your PHP version to either 5.6 or to 7.0 or 7.1. On a "
+"normal WordPress site, switching to PHP 5.6 should never cause issues. We "
+"would however actually recommend you switch to PHP7. There are some plugins "
+"that are not ready for PHP7 though, so do some testing first. Yoast have an "
+"article on how to test whether that's an option for you %1$shere%2$s. PHP7 "
+"is much faster than PHP 5.6. It's also the only PHP version still in active "
+"development and therefore the better option for your site in the long run."
+msgstr ""
+
+#: includes/Libraries/Whip/NF_Whip.php:40
+msgid "Can't update? Ask your host!"
+msgstr ""
+
+#: includes/Libraries/Whip/NF_Whip.php:41
+#, php-format
+msgid ""
+"If you cannot upgrade your PHP version yourself, you can send an email to "
+"your host. Yoast has %1$sexamples here%2$s. If they don't want to upgrade "
+"your PHP version, we would suggest you switch hosts. Have a look at one of "
+"the recommended %3$sWordPress hosting partners%2$s."
+msgstr ""
+
+#: includes/Libraries/Whip/NF_Whip.php:48
+#, php-format
+msgid "%1$sDismiss this for 4 weeks.%2$s"
+msgstr ""
+
 #: includes/MergeTags/Other.php:13
 msgid "Other"
 msgstr ""
@@ -6738,7 +6890,7 @@ msgstr ""
 msgid "System"
 msgstr ""
 
-#: includes/MergeTags/WP.php:19
+#: includes/MergeTags/WP.php:13
 msgid "WordPress"
 msgstr ""
 
@@ -7187,7 +7339,7 @@ msgstr ""
 msgid "Import Fields"
 msgstr ""
 
-#: includes/Templates/admin-metabox-import-export-forms-export.html.php:22
+#: includes/Templates/admin-metabox-import-export-forms-export.html.php:46
 #: includes/Templates/admin-metabox-import-export-forms-import.html.php:17
 msgid "Disable UTF-8 Encoding"
 msgstr ""
@@ -7202,6 +7354,10 @@ msgstr ""
 
 #: includes/Templates/admin-metabox-sub-info.html.php:27
 msgid "Submitted by: "
+msgstr ""
+
+#: includes/Templates/admin-metabox-sub-info.html.php:34
+msgid "Move to Trash"
 msgstr ""
 
 #: includes/Templates/admin-metabox-submission-example.php:1
@@ -7296,22 +7452,22 @@ msgstr ""
 msgid "Looks Good!"
 msgstr ""
 
-#: ninja-forms.php:609
+#: ninja-forms.php:637
 msgid "Notice: JavaScript is required for this content."
 msgstr ""
 
-#: ninja-forms.php:726
+#: ninja-forms.php:752
 #, php-format
 msgid ""
 "%1$s is <strong>deprecated</strong> since Ninja Forms version %2$s! Use %3$s "
 "instead."
 msgstr ""
 
-#: ninja-forms.php:730
+#: ninja-forms.php:756
 #, php-format
 msgid "%1$s is <strong>deprecated</strong> since Ninja Forms version %2$s."
 msgstr ""
 
-#: ninja-forms.php:800
+#: ninja-forms.php:826
 msgid "Once per month"
 msgstr ""

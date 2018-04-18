@@ -128,6 +128,10 @@ final class NF_Admin_Menus_Forms extends NF_Abstracts_Menu
             wp_enqueue_script( 'nf-dashboard', Ninja_Forms::$url . 'assets/js/min/dashboard.min.js', array( 'backbone-radio', 'backbone-marionette-3' ) );
 
             wp_localize_script( 'nf-dashboard', 'nfi18n', Ninja_Forms::config( 'i18nDashboard' ) );
+            wp_localize_script( 'nf-dashboard', 'nfAdmin', array(
+                'ajaxNonce'         => wp_create_nonce( 'ninja_forms_dashboard_nonce' ),
+                'formTelemetry'     => ( get_option( 'nf_form_tel_sent' ) ) ? 0 : 1
+            ) );
 
             wp_enqueue_style( 'nf-builder', Ninja_Forms::$url . 'assets/css/builder.css' );
             wp_enqueue_style( 'nf-dashboard', Ninja_Forms::$url . 'assets/css/dashboard.min.css' );

@@ -31,6 +31,7 @@
 </div>
 
 <div id="major-publishing-actions" class="nf-sub-actions">
+    <div id="delete-action"><a class="submitdelete deletion" style="color:red;" href="<?php echo get_delete_post_link( $post->ID ); ?>"><?php _e( 'Move to Trash', 'ninja-forms' ); ?></a></div>
     <input name="save" type="submit" class="button button-primary button-large nf-sub-actions-save" id="publish" accesskey="p" value="<?php _e( 'Update', 'ninja-forms' ); ?>">
     <span class="spinner"></span>
 </div>

@@ -46,7 +46,7 @@ abstract class NF_Abstracts_Migration
         global $wpdb;
         if( ! $this->table_name ) return;
         if( 0 == $wpdb->query( $wpdb->prepare( "SHOW TABLES LIKE '%s'", $this->table_name() ) ) ) return;
-        $wpdb->query( $wpdb->prepare( "DROP TABLE %s", $this->table_name() ) );
+        $wpdb->query( "DROP TABLE " . $this->table_name() );
         return $this->drop();
     }
 

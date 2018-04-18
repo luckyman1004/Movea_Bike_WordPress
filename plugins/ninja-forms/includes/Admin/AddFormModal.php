@@ -41,9 +41,8 @@ class NF_Admin_AddFormModal {
         $html .= '<a href="#" class="button nf-insert-form"><span class="nf-insert-form dashicons dashicons-feedback"></span> ' . __( 'Add Form', 'ninja-forms' ) . '</a>';
 
         wp_enqueue_script( 'nf-combobox', Ninja_Forms::$url . 'assets/js/lib/combobox.min.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-button', 'jquery-ui-autocomplete' ) );
-        wp_enqueue_script( 'jBox', Ninja_Forms::$url . 'assets/js/lib/jBox.min.js', array( 'jquery' ) );
 
-        wp_enqueue_style( 'nf-combobox', Ninja_Forms::$url . 'assets/css/combobox.css' );
+        wp_enqueue_script( 'jBox', Ninja_Forms::$url . 'assets/js/lib/jBox.min.js', array( 'jquery' ) );
         wp_enqueue_style( 'jBox', Ninja_Forms::$url . 'assets/css/jBox.css' );
 
         // wp_enqueue_style( 'jquery-smoothness', NINJA_FORMS_URL .'css/smoothness/jquery-smoothness.css' );
