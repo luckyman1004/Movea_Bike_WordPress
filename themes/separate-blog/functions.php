@@ -309,6 +309,35 @@ add_image_size( 'separate-blog-post-thumbnail', 516, 344, true );
 add_image_size( 'separate-blog-recent-thumbnail', 38, 38, true );
 add_image_size( 'separate-blog-letest-thumbnail', 60, 60, true );
 
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Header Settings',
+		'menu_title'	=> 'Header',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Footer Settings',
+		'menu_title'	=> 'Footer',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+  
+  acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Products template Settings',
+		'menu_title'	=> 'Products',
+		'parent_slug'	=> 'theme-general-settings',
+  ));
+}
+
 /**
  * Remove admin bar
  */

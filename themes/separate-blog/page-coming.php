@@ -31,12 +31,12 @@ get_header(); ?>
 		<div class="row">
 			<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 form-wrapper">
                 <h4>Stay turned</h4>
-                <h1>Subscribe to our newsletter and be one of the first to benefit from 40% perk via Indiegogo.<br></h1>
-                <h3>The most stylish E bikes</h3>
+                <h1>We are working on the site. Will be back later today <br></h1>
+                <!-- <h3>The most stylish E bikes</h3> -->
                 <?php 
-					while ( have_posts() ) : the_post();
-						the_content(); 
-					endwhile;
+					// while ( have_posts() ) : the_post();
+					// 	the_content(); 
+					// endwhile;
                 ?>
                 <div class="copyright">
                     Copyright &copy; 2018 &nbsp;&nbsp;&middot;&nbsp;&nbsp;movea bikes
