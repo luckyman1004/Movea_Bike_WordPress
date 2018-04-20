@@ -137,7 +137,7 @@ if (typeof jQuery === 'undefined') {
             var videoID = $(this).data('youtube_id');
             var youtube = '<iframe width="1422" height="949" src="https://www.youtube.com/embed/'+videoID+'?enablejsapi=1&autohide=1&autoplay=1&loop=1&iv_load_policy=3&playlist='+videoID+'&rel=0&hd=1&showinfo=0&color=white&controls=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="youtube-video-wrapper"></iframe>';
             body.append(videoThumbnail)
-            document.getElementById('moveaVideoThumbnail').play();
+            //document.getElementById('moveaVideoThumbnail').play();
             var videoTween = new TimelineLite()
 
             videoTween.to(body, 0, {overflowX: 'hidden'})
