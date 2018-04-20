@@ -58,6 +58,15 @@ get_header(); ?>
             <?php for( $i = 1; $i < 4; $i ++) { 
                 $post_id = get_option_tree($i.'_product_featured');
                 $product = get_post($post_id);
+                $product_image1 = get_field('image1', $post_id);
+                $product_image2 = get_field('image2', $post_id);
+                $product_image3 = get_field('image3', $post_id);
+                $product_image4 = get_field('image4', $post_id);
+                $product_image5 = get_field('image5', $post_id);
+                $product_image6 = get_field('image6', $post_id);
+                $product_image7 = get_field('image7', $post_id);
+
+                //print_r($product_image['sizes']);
             ?>
             <div class="moveaSpot multiple" data-link="<?php echo esc_url(get_page_link($post_id));?>">
                 <div class="linkImg">
@@ -65,25 +74,25 @@ get_header(); ?>
                         <div class="carousel_items">        
                             <ul>
                                 <?php if(get_field('image1', $post_id) != '') { ?>
-                                <li class="carousel_item" id="item_0"><img src="<?php the_field('image1', $post_id);?>" /></li>
+                                <li class="carousel_item" id="item_0"><img src="<?php echo $product_image1['sizes']['separate-blog-post-thumbnail'];?>" /></li>
                                 <?php }?>
                                 <?php if(get_field('image2', $post_id) != '') { ?>
-                                <li class="carousel_item" id="item_1"><img src="<?php the_field('image2', $post_id);?>" /></li>
+                                <li class="carousel_item" id="item_1"><img src="<?php echo $product_image2['sizes']['separate-blog-post-thumbnail'];?>" /></li>
                                 <?php }?>
                                 <?php if(get_field('image3', $post_id) != '') { ?>
-                                <li class="carousel_item" id="item_2"><img src="<?php the_field('image3', $post_id);?>" /></li>
+                                <li class="carousel_item" id="item_2"><img src="<?php echo $product_image3['sizes']['separate-blog-post-thumbnail'];?>" /></li>
                                 <?php }?>
                                 <?php if(get_field('image4', $post_id) != '') { ?>
-                                <li class="carousel_item" id="item_3"><img src="<?php the_field('image4', $post_id);?>" /></li>
+                                <li class="carousel_item" id="item_3"><img src="<?php echo $product_image4['sizes']['separate-blog-post-thumbnail'];?>" /></li>
                                 <?php }?>
                                 <?php if(get_field('image5', $post_id) != '') { ?>
-                                <li class="carousel_item" id="item_4"><img src="<?php the_field('image5', $post_id);?>" /></li>
+                                <li class="carousel_item" id="item_4"><img src="<?php echo $product_image5['sizes']['separate-blog-post-thumbnail'];?>" /></li>
                                 <?php }?>
                                 <?php if(get_field('image6', $post_id) != '') { ?>
-                                <li class="carousel_item" id="item_5"><img src="<?php the_field('image6', $post_id);?>" /></li>
+                                <li class="carousel_item" id="item_5"><img src="<?php echo $product_image6['sizes']['separate-blog-post-thumbnail'];?>" /></li>
                                 <?php }?>
                                 <?php if(get_field('image7', $post_id) != '') { ?>
-                                <li class="carousel_item" id="item_6"><img src="<?php the_field('image7', $post_id);?>" /></li>
+                                <li class="carousel_item" id="item_6"><img src="<?php echo $product_image7['sizes']['separate-blog-post-thumbnail'];?>" /></li>
                                 <?php }?>
                             </ul>
                         </div>
@@ -321,32 +330,39 @@ get_header(); ?>
                                 while ( $product_query->have_posts() ) : $product_query->the_post();
                                     $post = get_post();
                                     $post_id = $post->ID;
+                                    $product_image1 = get_field('image1', $post_id);
+                                    $product_image2 = get_field('image2', $post_id);
+                                    $product_image3 = get_field('image3', $post_id);
+                                    $product_image4 = get_field('image4', $post_id);
+                                    $product_image5 = get_field('image5', $post_id);
+                                    $product_image6 = get_field('image6', $post_id);
+                                    $product_image7 = get_field('image7', $post_id);
                         ?>
                             <div class="moveaSpot multiple " data-link="<?php echo esc_url(get_page_link($post_id));?>">
                                 <div class="linkImg">
                                     <div class="carousel_container" id="spot_<?php echo $post_id;?>">       
                                         <div class="carousel_items">        
                                             <ul>
-                                                <?php if(get_field('image1_thumb', $post_id) != '') { ?>
-                                                <li class="carousel_item" id="item_0"><img src="<?php the_field('image1_thumb', $post_id);?>" /></li>
+                                                <?php if(get_field('image1', $post_id) != '') { ?>
+                                                <li class="carousel_item" id="item_0"><img src="<?php echo $product_image1['sizes']['medium'];?>" /></li>
                                                 <?php }?>
                                                 <?php if(get_field('image2', $post_id) != '') { ?>
-                                                <li class="carousel_item" id="item_1"><img src="<?php the_field('image2', $post_id);?>" /></li>
+                                                <li class="carousel_item" id="item_1"><img src="<?php echo $product_image2['sizes']['medium'];?>" /></li>
                                                 <?php }?>
                                                 <?php if(get_field('image3', $post_id) != '') { ?>
-                                                <li class="carousel_item" id="item_2"><img src="<?php the_field('image3', $post_id);?>" /></li>
+                                                <li class="carousel_item" id="item_2"><img src="<?php echo $product_image3['sizes']['medium'];?>" /></li>
                                                 <?php }?>
                                                 <?php if(get_field('image4', $post_id) != '') { ?>
-                                                <li class="carousel_item" id="item_3"><img src="<?php the_field('image4', $post_id);?>" /></li>
+                                                <li class="carousel_item" id="item_3"><img src="<?php echo $product_image4['sizes']['medium'];?>" /></li>
                                                 <?php }?>
                                                 <?php if(get_field('image5', $post_id) != '') { ?>
-                                                <li class="carousel_item" id="item_4"><img src="<?php the_field('image5', $post_id);?>" /></li>
+                                                <li class="carousel_item" id="item_4"><img src="<?php echo $product_image5['sizes']['medium'];?>" /></li>
                                                 <?php }?>
                                                 <?php if(get_field('image6', $post_id) != '') { ?>
-                                                <li class="carousel_item" id="item_5"><img src="<?php the_field('image6', $post_id);?>" /></li>
+                                                <li class="carousel_item" id="item_5"><img src="<?php echo $product_image6['sizes']['medium'];?>" /></li>
                                                 <?php }?>
                                                 <?php if(get_field('image7', $post_id) != '') { ?>
-                                                <li class="carousel_item" id="item_6"><img src="<?php the_field('image7', $post_id);?>" /></li>
+                                                <li class="carousel_item" id="item_6"><img src="<?php echo $product_image7['sizes']['medium'];?>" /></li>
                                                 <?php }?>
                                             </ul>
                                         </div>
