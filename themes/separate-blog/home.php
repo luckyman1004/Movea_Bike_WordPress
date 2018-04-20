@@ -328,7 +328,7 @@ get_header(); ?>
                                         <div class="carousel_items">        
                                             <ul>
                                                 <?php if(get_field('image1', $post_id) != '') { ?>
-                                                <li class="carousel_item" id="item_0"><img src="<?php the_field('image1', $post_id);?>" /></li>
+                                                <li class="carousel_item" id="item_0"><img src="<?php the_field('image1_thumb', $post_id);?>" /></li>
                                                 <?php }?>
                                                 <?php if(get_field('image2', $post_id) != '') { ?>
                                                 <li class="carousel_item" id="item_1"><img src="<?php the_field('image2', $post_id);?>" /></li>
