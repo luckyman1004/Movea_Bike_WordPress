@@ -101,7 +101,7 @@ get_header(); ?>
                                                     <span class="size-guide" style="float: left;">
                                                         <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
                                                             - Early bird € 1599<br>
-                                                            - Normal € 2799<br>
+                                                            - Normal € 2799<br><br>
                                                         <?php } else if (get_field('model_type', $post_id) == '8-speed') {?>
                                                             - Early bird € 699<br>
                                                             - Normal € 1499<br><br>
