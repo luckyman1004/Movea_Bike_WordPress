@@ -98,7 +98,16 @@ get_header(); ?>
                                                 <div class="col">
                                                     <!-- button-purchase (green version) -->
                                                     <!-- <a href="<?php the_field('indiegogo_url', $post_id);?>" class="button button-primary js-buy-button">Buy at Indiegogo</a> -->
-                                                    <span class="size-guide" style="float: left;">Buy at Indiegogo May 1st. Save up to 40%</span>
+                                                    <span class="size-guide" style="float: left;">
+                                                        <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
+                                                            - Early bird € 1599<br>
+                                                            - Normal € 2799<br>
+                                                        <?php } else if (get_field('model_type', $post_id) == '8-speed') {?>
+                                                            - Early bird € 699<br>
+                                                            - Normal € 1499<br><br>
+                                                        <?php } ?>
+                                                        Buy at Indiegogo May 1st. Save up to 40%
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
