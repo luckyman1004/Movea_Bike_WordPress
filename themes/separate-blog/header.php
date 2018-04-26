@@ -83,7 +83,7 @@ if ( basename( get_page_template() ) != 'page-coming.php') {?>
 				?>
 				<div class="navbar-text">
 					<a href="https://www.facebook.com/MoveaBikes/" target="_blank" class="nav-link main-menu-link"><i class="fa fa-facebook"></i></a>
-					<a href="https://twitter.com/designbote" target="_blank" class="nav-link main-menu-link"><i class="fa fa-twitter"></i></a>
+					<!-- <a href="https://twitter.com/designbote" target="_blank" class="nav-link main-menu-link"><i class="fa fa-twitter"></i></a> -->
 					<a href="https://www.instagram.com/moveabikes/" target="_blank" class="nav-link main-menu-link"><i class="fa fa-instagram"></i></a>
 				</div>
 			</div>

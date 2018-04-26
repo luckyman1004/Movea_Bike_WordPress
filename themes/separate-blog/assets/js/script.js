@@ -974,7 +974,48 @@ if (typeof jQuery === 'undefined') {
         $.fn.SupportVideoSection = old
         return this
     }
-}(jQuery)   
+}(jQuery)
+/**
+ *  Scroller page Plugin 
+ */
++function($) {
+    'use strict';
+    
+    var ScrollerPage = function (element, options) {
+        this.show('scrollerpage', element, options);
+    }
+
+    ScrollerPage.prototype.show = function(type, element, options){
+        $('.scroller .moduleHolder.intro .introTxt .txt div').each(function(){
+            var headerActionObj = $(this);
+            TweenLite.killTweensOf(headerActionObj);
+			TweenLite.to(headerActionObj, 1.2 + Math.random()*.4, {y:0, opacity:1, force3D:true, delay: Math.random()*.2, ease:Cubic.easeOut});
+        });
+    }
+
+    function Plugin(option) {
+        return this.each(function () {
+            var $this = $(this)
+            var data = $this.data('toothless.scrollerpage')
+            var options = typeof option == 'object' && option
+            
+            if (!data && /destory|hide/.test(option)) return
+            if(!data) $this.data('toothless.scrollerpage', (data = new ScrollerPage(this, options)))
+            if (typeof option == 'string') data[option]()
+        })
+    }
+    var old = $.fn.ScrollerPage
+    $.fn.ScrollerPage = Plugin
+    $.fn.ScrollerPage.constructor = ScrollerPage
+
+    // Split Section No Conflict
+    //============================
+
+    $.fn.ScrollerPage.noConflict = function () {
+        $.fn.ScrollerPage = old
+        return this
+    }
+}(jQuery)  
 /**
  * Main Script
  */
@@ -989,25 +1030,26 @@ $(function () {
             }
         }
         $(this).SliderSection()
-    })
+    });
     $('.moveaSplit').each(function () {
         //$(this).SplitSection()
         $(this).css('display', 'none');
-    })
+    });
     $('.moveausp').each(function() {
         $(this).AccordionSection()
-    })
+    });
     $('.moveaSupportVideo').each(function(){
         $(this).SupportVideoSection()
-    })
+    });
     $('.coming-soon').css('height', $(window).height());
-
+    $('.scroller').each(function(){
+        $(this).ScrollerPage();
+    })
    
 })
 
 jQuery(document).ready(function ( $ ) {
     'use strict';
-
     // $('[data-toggle="tooltip"]').tooltip();
 
     // ------------------------------------------------------- //
@@ -1148,9 +1190,9 @@ jQuery(document).ready(function ( $ ) {
         $('#lifestyle_gallery img').remove();
     });
     if(sessionStorage.getItem('moveaNewsletterPopState') != 'shown'){
-        $('<img/>').attr('src', 'http://movea.bike/wp-content/uploads/2018/03/front-new.jpg').on('load', function() {
+        $('<img/>').attr('src', 'https://movea.bike/wp-content/uploads/2018/03/front-new.jpg').on('load', function() {
             $(this).remove(); // prevent memory leaks as @benweet suggested
-            $('#newsletterPopup').css('background-image', 'url(http://movea.bike/wp-content/uploads/2018/03/front-new.jpg)');
+            $('#newsletterPopup').css('background-image', 'url(https://movea.bike/wp-content/uploads/2018/03/front-new.jpg)');
             $('#newsletterPopup').modal('show');
             sessionStorage.setItem('moveaNewsletterPopState','shown');
          });
