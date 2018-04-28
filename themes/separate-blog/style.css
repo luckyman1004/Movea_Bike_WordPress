@@ -2433,7 +2433,7 @@ h1 {
   bottom: 60px;
 }
 .moveaVideo[data-asTop="true"] .titletext {
-  font-size: 32px;
+  font-size:18px;
   font-family: "GothamMedium";
   text-transform: none;
   user-select: none;
