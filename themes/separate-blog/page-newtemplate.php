@@ -22,36 +22,48 @@ get_header(); ?>
         <section class="moduleHolder intro">
             <div class="module introTxt" style="visibility: visible;">
                 <div class="txt">
+                    <div>K</div>
+                    <div>I</div>
+                    <div>V</div>
+                    <div>A</div>
+                    <div>V</div>
+                    <div>O</div>
+                    <div>&nbsp;</div> 
                     <div>B</div>
-                    <div>E</div>
-                    <div>O</div>
-                    <div>P</div>
-                    <div>L</div>
-                    <div>A</div>
-                    <div>Y&nbsp;</div> 
-                    <div>P</div>
-                    <div>6</div><br>
-                    <div>M</div>
-                    <div>Y&nbsp;</div> 
-                    <div>S</div>
-                    <div>O</div>
-                    <div>U</div>
+                    <div>I</div>
+                    <div>K</div>
+                    <div>E</div><br>
                     <div>N</div>
+                    <div>E</div>
+                    <div>W&nbsp;</div> 
                     <div>D</div>
-                    <div>.&nbsp;</div> 
-                    <div>M</div>
-                    <div>Y&nbsp;</div> 
+                    <div>E</div>
                     <div>S</div>
-                    <div>P</div>
-                    <div>A</div>
+                    <div>I</div>
+                    <div>G</div>
+                    <div>N.&nbsp;</div> 
                     <div>C</div>
+                    <div>O</div>
+                    <div>M</div>
+                    <div>F</div>
+                    <div>A</div>
+                    <div>T</div>
+                    <div>A</div>
+                    <div>B</div>
+                    <div>L</div>
                     <div>E</div>
                     <div>.</div>
                 </div>
             </div>
         </section>
         <section class="moduleHolder intro">
-            <div class="module simpleimg a" data-size="1024,579,320,260" data-src="top1" data-para="100" data-zoom="10,50,100" style="height: auto; transform: translate3d(0px, 22.5233px, 0px);"><div class="imgHolder"><div class="aspectKeeper" style="padding-top: 56.543%; overflow: hidden;"><img width="1024" height="579" class="imgInner faded" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/top1_d.jpg" style="transform-origin: 50% 100% 0px; transform: translate3d(0px, 0px, 0px); opacity: 1;"></div></div></div>
+            <div class="module simpleimg a" data-size="1024,579,320,260" data-src="top1" data-para="100" data-zoom="10,50,100" style="height: auto; transform: translate3d(0px, 22.5233px, 0px);">
+                <div class="imgHolder">
+                    <div class="aspectKeeper" style="padding-top: 56.543%; overflow: hidden;">
+                        <img width="1024" height="579" class="imgInner faded" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/top1_d.jpg" style="transform-origin: 50% 100% 0px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
+                    </div>
+                </div>
+            </div>
             <div class="module simpleimg b" data-size="766,1024,479,696" data-src="top2" data-para="0" style="height: auto;">
                 
             <div class="imgHolder">
@@ -100,12 +112,22 @@ get_header(); ?>
         
         <!-- One touch section -->
         <section class="moduleHolder onetouch">
-            <div class="module videoLoop a" data-size="928,640" data-src="yellow.mp4" data-para="70" data-yt="i0egyE8Onc0" data-vcolor="#c79144" data-xanim="0" style="height: 482px; transform: translate3d(0px, 69.477px, 0px);"><video class="player" preload="meta" loop="" playsinline="true"><source type="video/mp4" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/yellow.mp4"></video><div class="playArrow"><canvas width="200" height="200" style="width: 200px; height: 200px; cursor: auto;"></canvas></div></div>
+            <div class="module videoLoop a" data-size="928,640" data-src="yellow.mp4" data-para="70" data-yt="i0egyE8Onc0" data-vcolor="#c79144" data-xanim="0" style="height: 482px; transform: translate3d(0px, 0px, 0px);">
+                <video class="player" preload="meta" loop="" playsinline="true">
+                    <source type="video/mp4" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/yellow.mp4">
+                </video>
+                <div class="playArrow">
+                    <canvas id="canvas1" width="200" height="200" style="width: 200px; height: 200px; cursor: pointer;"></canvas>
+                </div>
+            </div>
             <div class="module simpleimg" data-size="596,440,320,236" data-src="ohland_yellow" data-xanim="1" style="height: auto;"><div class="imgHolder"><div class="aspectKeeper" style="padding-top: 73.8255%;"><img width="596" height="440" class="imgInner faded" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/ohland_yellow_d.jpg" style="opacity: 1;"></div></div></div>
-            <div class="module text right paratxt" data-para="25" style="transform: translate3d(0px, 24.665px, 0px);">
+            <div class="module text right paratxt" data-para="25" style="transform: translate3d(0px, 0px, 0px);">
                 <h4 class="">One touch<br>One style</h4>
                 <p class="">Designed for simplicity, the OneTouch Button enables you to access voice assistant, accept calls and use ToneTouch presets, to adjust the P6 sound to your space. All this with a touch of a button.</p>
-                <a href="/en/products/beoplayp6#usp/features" target="_blank"><span class="label" style="opacity: 0; transform: matrix(1, 0, 0, 1, 8, 0);">Learn more</span><div class="lineBelow" style="transform-origin: 0px 0px 0px; transform: matrix(0, 0, 0, 1, 0, 0);"></div></a>
+                <a href="/en/products/beoplayp6#usp/features" target="_blank">
+                    <span class="label" style="">Learn more</span>
+                    <div class="lineBelow" style=""></div>
+                </a>
             </div>
         </section>
         <section class="moduleHolder onetouch">

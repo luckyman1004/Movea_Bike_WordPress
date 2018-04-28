@@ -16,8 +16,8 @@ get_header(); ?>
                     <div class="toptext"><?php echo get_option_tree('top_text');?></div>
                     <div class="titletext">
                         <p>
-                            <a href="#products"><?php echo get_option_tree('category_1');?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#products"><?php echo get_option_tree('category_2');?></a>
+                            <a href="#products"><?php echo get_option_tree('category_1');?></a>
+                            <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#products"><?php echo get_option_tree('category_2');?></a> -->
                         </p>
                     </div>
                 </div>

@@ -174,7 +174,7 @@ ul {
 
 section {
   padding: 100px 0;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 button,
@@ -4962,7 +4962,7 @@ cursor: -moz-grabbing;
 .module.text{font-family:"ProximaRegular";font-weight:normal;margin:0;padding:0;color:#000;box-sizing:border-box;}
 .moduleHolder h4{font-family:"GothamMedium";font-size:30px;padding:0;margin:0;letter-spacing:12px;line-height:110%;opacity:.1;transition:opacity 0s ease-out 0s;box-sizing:border-box;}
 .moduleHolder h4.in{opacity:1;transition:opacity 1.2s ease-in-out 0s;}
-.moduleHolder p{font-size:24px;letter-spacing:0px;margin:20px 0 0 0;padding:0;line-height:110%;opacity:.1;transition:opacity 0s ease-out 0s;box-sizing:border-box;}
+.moduleHolder p{font-size:24px;letter-spacing:-3px;margin:20px 0 0 0;padding:0;line-height:110%;opacity:.1;transition:opacity 0s ease-out 0s;box-sizing:border-box;}
 .moduleHolder p.in{opacity:1;transition:opacity 1.2s ease-in-out .1s;}
 .moduleHolder a{position:relative;display:inline-block;margin:25px 0 0 0;padding:0;text-decoration:none;color:inherit;line-height:inherit;font-family:inherit;font-size:24px;cursor:pointer;/*overflow:hidden;*/padding-bottom:4px;}
 .moduleHolder a .label{display:inline-block;}
@@ -4998,7 +4998,7 @@ cursor: -moz-grabbing;
   position: relative;
   transform: translate3d(0px, -100px, 0px);
 }
-.statementTxt{color:#000;text-align:center;font-family:"ProximaRegular";font-weight:normal;font-size:55px;letter-spacing:1px;line-height:110%;padding:100px 0 95px 0;visibility:hidden;}
+.statementTxt{color:#000;text-align:center;font-family:"ProximaRegular";font-weight:normal;font-size:55px;letter-spacing:-3px;line-height:110%;padding:100px 0 95px 0;visibility:hidden;}
 
 /* Intro */
 .intro .simpleimg{text-align:center;width:100%;}

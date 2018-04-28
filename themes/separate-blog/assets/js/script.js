@@ -986,13 +986,187 @@ if (typeof jQuery === 'undefined') {
     }
 
     ScrollerPage.prototype.show = function(type, element, options){
+        var $this = this;
+        $('.scroller').each(function(){
+            $this.scrollEngine($(this));
+        });
         $('.scroller .moduleHolder.intro .introTxt .txt div').each(function(){
             var headerActionObj = $(this);
-            TweenLite.killTweensOf(headerActionObj);
-			TweenLite.to(headerActionObj, 1.2 + Math.random()*.4, {y:0, opacity:1, force3D:true, delay: Math.random()*.2, ease:Cubic.easeOut});
+            $this.playTitleAction(headerActionObj, 0);
         });
+        $('.scroller .simpleimg').each(function(){
+            $this.simpleImg($(this));
+        });
+        $('.scroller .statementTxt .txt div').each(function(){
+            $this.statementTxt($(this));
+        });
+        $('.scroller .hotspots').each(function(){
+            $this.hotspots($(this));
+        });
+        $('.scroller .videoLoop').each(function(){
+            $this.videoloop($(this));
+        });
+
+        this.playArrow('.playArrow', 'canvas1');
+    }
+    ScrollerPage.prototype.scrollEngine = function(element){
+        $( window ).on( 'scroll', function () {
+            var sT = $(this).scrollTop();
+            TweenLite.to(element, 2, {y:-sT, force3D: true, ease: Power4.easeOut});
+        })
+    }
+    ScrollerPage.prototype.playTitleAction = function(element, top){
+        var eTop = 0;
+        TweenLite.killTweensOf(element);
+        TweenLite.to(element, 1.2 + Math.random()*.4, {y:0, opacity:1, force3D:true, delay: Math.random()*.2, ease:Cubic.easeOut});
+        $( window ).on( 'scroll', function () {
+            var eTop = $(this).scrollTop();
+            if (eTop == top) {
+                TweenLite.killTweensOf(element);
+                TweenLite.to(element, 1.2 + Math.random()*.4, {y:0, opacity:1, force3D:true, delay: Math.random()*.2, ease:Cubic.easeOut});
+            } else {
+                TweenLite.to(element, 3, {y:-100, opacity:0});
+            }
+        })
+    }
+    ScrollerPage.prototype.simpleImg = function(element){
+        $( window ).on( 'scroll', function () {
+            var eTop = $(this).scrollTop();
+            if(element.hasClass('a')) {
+                var aImg = element.find('.imgInner');
+                TweenLite.to(element, 2, {y:-eTop*.15, force3D:true});
+                TweenLite.to(aImg, 1, {scale: 1+eTop*0.00014, force3D:true});
+            }
+            
+        })
+    }
+    ScrollerPage.prototype.statementTxt = function(element){
+        $( window ).on( 'scroll', function () {
+            var objTop = element.offset().top;
+            var winTop = $(this).scrollTop();
+            var winH = $(this).height();
+
+            if(objTop < winTop + winH &&  objTop > winTop) {
+                TweenLite.to(element, 1, {opacity:1});  
+            } else {
+                TweenLite.to(element, 1, {opacity:.2});  
+            }
+            //TweenLite.to(element, 3, {y:-100, opacity:0});
+        })
+    }
+    ScrollerPage.prototype.hotspots = function(element){
+        $( window ).on( 'scroll', function () {
+            var objTop = element.offset().top;
+            var winTop = $(this).scrollTop();
+            var winH = $(this).height();
+
+            if(objTop < winTop + winH) {
+                element.find('.texts .text h4').addClass('in');
+                element.find('.texts .text p').addClass('in');
+            } else {
+                element.find('.texts .text h4').removeClass('in');
+                element.find('.texts .text p').removeClass('in');
+            }
+        })
+    }
+    ScrollerPage.prototype.videoloop = function(element){
+        var _count = 1;
+        $( window ).on( 'scroll', function () {
+            var objTop = element.offset().top;
+            var winTop = $(this).scrollTop();
+            var winH = $(this).height();
+
+            if(objTop < winTop + winH &&  objTop > winTop) {
+                var paddingImg = (objTop-winTop)*140/winH - 50;
+                var paddingTxt = (objTop-winTop)*60/winH - 60;
+                TweenLite.to(element, 1, {y:paddingImg, force3D:true});
+                TweenLite.to(element.parent().find('.paratxt'), 1, {y:paddingTxt, force3D:true});
+                element.parent().find('.paratxt h4').addClass('in');
+                element.parent().find('.paratxt p').addClass('in');
+                //console.log(element.parent().find('.paratxt a .lineBelow'));
+                TweenLite.to(element.parent().find('.paratxt a .label'), .8, {x:0, opacity:1, delay:.7, ease:Cubic.easeInOut, force3D:false});
+                TweenLite.to(element.parent().find('.paratxt a .lineBelow'), .8, {scaleX:1, transformOrigin:"0 0", delay:.8, ease:Cubic.easeInOut, force3D:false});
+            } else {
+                element.parent().find('.paratxt h4').removeClass('in');
+                element.parent().find('.paratxt p').removeClass('in');
+                TweenLite.set(element.parent().find('.paratxt a .label'), {x:8, opacity:0, force3D:false});
+                TweenLite.set(element.parent().find('.paratxt .lineBelow'), {scaleX:0, transformOrigin:"0 0", force3D:false});
+            }
+        });
+
+        element.parent().find('.paratxt a .label').on('mouseenter', function(){
+            _count++;
+            if (_count > 1) _count = 0;
+            TweenLite.killTweensOf($(this).parent().find('.lineBelow'));
+            if (_count == 1) TweenLite.to($(this).parent().find('.lineBelow'), .3, {scaleX:0, transformOrigin: "0 0", ease: Cubic.easeOut, force3D:false});
+            else TweenLite.to($(this).parent().find('.lineBelow'), .3, {scaleX:0, transformOrigin: "100% 0", ease: Cubic.easeOut, force3D:false});
+            TweenLite.killTweensOf($(this), false, {opacity:true});
+            TweenLite.to($(this), .5, {opacity: .2, ease:Cubic.easeOut, force3D:false});
+        });
+
+        element.parent().find('.paratxt a .label').on('mouseleave', function(){
+            TweenLite.killTweensOf($(this), false, {opacity:true});
+            TweenLite.to($(this), .5, {opacity: 1, ease:Cubic.easeOut,  delay: .5, force3D:false});
+
+            if (_count == 1) TweenLite.to($(this).parent().find('.lineBelow'), .4, {scaleX:1, transformOrigin: "100% 0", delay: .5, ease: Cubic.easeOut, force3D:false});
+            else TweenLite.to($(this).parent().find('.lineBelow'), .4, {scaleX:1, transformOrigin: "0 0", delay: .5, ease: Cubic.easeOut, force3D:false});
+            
+        });
+
     }
 
+    ScrollerPage.prototype.playArrow = function(className, id){
+        var _scale = 1;
+        var _fullW = 200*_scale, _fullH = 200*_scale;
+	    var _w = 100*_scale, _h = 124*_scale;
+
+        var _offsetX = Math.round((_fullW - _w)/1.8), _offsetY = Math.round((_fullH - _h)/2);
+        //var _offsetX = 0, _offsetY = 0;
+        var _threshold = 75*_scale;
+        var _mx = 0, _my = 0;
+        var _wasCloseEnough = false, _over = false;
+
+        var _me = document.getElementsByClassName(className);
+        var _canvas = document.getElementById(id);
+        console.log(_canvas);
+        _canvas.width = _fullW, _canvas.height = _fullH;
+        _canvas.style.width = _fullW/_scale + "px", _canvas.style.height = _fullH/_scale + "px";
+        var _ctx = _canvas.getContext("2d");
+
+        var _points = [];
+    	var _bases = [[0,0],[_w,_h*.5],[0,_h]];
+        // for(var i=0;i<3;++i) {
+        //     _points[i]['x'] = _bases[i][0];
+        //     _points[i]['y'] = _bases[i][1];
+        // }
+        //for(var i=0;i<3;++i) _points[i].render();
+		// if(!_over){
+		// 	_clockSinceHover++;
+		// 	if(_clockSinceHover > 90){
+		// 		TweenLite.ticker.removeEventListener("tick", render);
+		// 		//console.log("stop arrow render");
+		// 	}
+		// }
+		_ctx.clearRect(0,0,_fullW,_fullH);
+		_ctx.shadowBlur = 100;
+		_ctx.shadowColor= "rgba(0,0,0,.32)";
+		//Draw stroke
+		_ctx.beginPath();
+		_ctx.fillStyle = "#ffffff";
+		_ctx.moveTo(0 + _offsetX, 0 + _offsetY);
+		_ctx.lineTo(0 + _offsetX, 124 + _offsetY);
+		_ctx.lineTo(100 + _offsetX, 62 + _offsetY);
+		_ctx.closePath();
+		_ctx.fill();
+
+        $("#"+id).on('mouseenter', function(){
+            TweenLite.to($(this), .8, {scale:.8, ease: Cubic.easeOut, force3D:false});
+        })
+        $("#"+id).on('mouseleave', function(){
+            TweenLite.to($(this), .8, {scale:1, ease: Cubic.easeOut, force3D:false});
+        })
+        
+    }
     function Plugin(option) {
         return this.each(function () {
             var $this = $(this)
@@ -1089,6 +1263,9 @@ jQuery(document).ready(function ( $ ) {
             $( 'section.divider' ).css( {
                 'background-position': 'center bottom'
             } );
+        }
+        if (scroll == 0) {
+            $('.scroller').ScrollerPage();
         }
     });
 
