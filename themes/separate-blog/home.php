@@ -48,6 +48,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
+        <div class="countdowntimer" id="clock"></div>
         <div id="TextSpot2Column">
             <div class="moveaSplitText" >
                 <h2><?php echo get_option_tree('title_movea_design');?></h2>

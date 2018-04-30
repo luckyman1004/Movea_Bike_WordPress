@@ -4929,6 +4929,22 @@ cursor: -moz-grabbing;
   margin-top: 5px;
 }
 
+/*** Timer ***/
+.countdowntimer {
+  color: #fff;
+  background-color: #1d2124;
+  font-size: 62px;
+  font-weight: bold;
+  text-align: center;
+  padding: 30px 0;
+}
+.countdowntimer span {
+  padding: 0 20px;
+}
+.countdowntimer .date {
+  font-size: 16px;
+}
+
 /*** New action template ***/
 
 .footerslideover{background-color:#FFF!important;}
