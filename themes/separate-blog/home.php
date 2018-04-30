@@ -115,10 +115,10 @@ get_header(); ?>
                         <!-- <div class="price" style="color:#000;">
                             <span class="currency">USD</span><span class="amount"><?php the_field('price', $post_id);?></span>
                         </div> -->
-                        <a href="<?php echo esc_url(get_page_link($post_id));?>" class="btn" data-toggle="tooltip" data-placement="top" title="Buy 5th of May on Indiegogo   Safe up to 53%" >
+                        <a href="<?php echo esc_url(get_page_link($post_id));?>" class="btn" data-toggle="tooltip" data-placement="top" title="Buy 3rd of May on Indiegogo   Safe up to 53%" >
                             <div class="left"></div>
                             <div class="right" style="color: #000;">
-                                May 5th. Save up to 53%<br> Buy at Indiegogo
+                                May 5rd. Save up to 53%<br> Buy at Indiegogo
                             </div>
                         </a>
                     </div>
@@ -380,7 +380,7 @@ get_header(); ?>
                                             <div class="left"></div>
                                             <div class="right" style="color: #666;">
                                                 <!-- <span class="amount">Buy at Indiegogo</span> -->
-                                                May 5th. Save up to <?php the_field('save_rate', $post_id);?>%<br> Buy at Indiegogo
+                                                May 3rd. Save up to <?php the_field('save_rate', $post_id);?>%<br> Buy at Indiegogo
                                             </div>
                                         </a>
                                     </div>
