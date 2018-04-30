@@ -2431,7 +2431,7 @@ if (typeof jQuery === 'undefined') {
     MoveaCountdownTimer.prototype.run = function(deliveryDate, deliverTime, currTz) {
   
         var $clock = $('#clock'),
-        eventTime = moment.tz('01-05-2018 17:00:00', 'DD-MM-YYYY HH:mm:ss', 'Europe/Berlin').unix(),
+        eventTime = moment.tz('05-05-2018 10:00:00', 'DD-MM-YYYY HH:mm:ss', 'Europe/Berlin').unix(),
         currentTime = moment().unix(),
         diffTime = eventTime - currentTime,
         duration = moment.duration(diffTime * 1000, 'milliseconds'),

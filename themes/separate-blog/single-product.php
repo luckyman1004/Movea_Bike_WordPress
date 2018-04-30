@@ -106,7 +106,7 @@ get_header(); ?>
                                                             - Early bird € 699<br>
                                                             - Normal € 1499<br><br>
                                                         <?php } ?>
-                                                        Buy at Indiegogo May 1st. Save up to <?php the_field('save_rate', $post_id);?>%
+                                                        Buy at Indiegogo May 5th. Save up to <?php the_field('save_rate', $post_id);?>%
                                                     </span>
                                                 </div>
                                             </div>
@@ -1224,7 +1224,7 @@ get_header(); ?>
                                             <div class="left"></div>
                                             <div class="right" style="color: #666;">
                                                 <!-- <span class="amount">Buy at Indiegogo</span> -->
-                                                May 1st. Save up to <?php the_field('save_rate', $post_id);?>%<br> Buy at Indiegogo
+                                                May 5th. Save up to <?php the_field('save_rate', $post_id);?>%<br> Buy at Indiegogo
                                             </div>
                                         </a>
                                     </div>
