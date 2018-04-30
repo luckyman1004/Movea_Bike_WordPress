@@ -2480,6 +2480,8 @@ if (typeof jQuery === 'undefined') {
 
             }, interval);
 
+        } else {
+            $('<span>The kick off is running on Indiegogo already. Please check out movea bikes on there!</span>').appendTo($clock)
         }
     }
 
