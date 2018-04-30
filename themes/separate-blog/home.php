@@ -118,7 +118,7 @@ get_header(); ?>
                         <a href="<?php echo esc_url(get_page_link($post_id));?>" class="btn" data-toggle="tooltip" data-placement="top" title="Buy 3rd of May on Indiegogo   Safe up to 53%" >
                             <div class="left"></div>
                             <div class="right" style="color: #000;">
-                                May 5rd. Save up to 53%<br> Buy at Indiegogo
+                                May 3rd. Save up to 53%<br> Buy at Indiegogo
                             </div>
                         </a>
                     </div>
