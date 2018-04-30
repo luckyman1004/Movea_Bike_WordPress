@@ -380,7 +380,7 @@ get_header(); ?>
                                             <div class="left"></div>
                                             <div class="right" style="color: #666;">
                                                 <!-- <span class="amount">Buy at Indiegogo</span> -->
-                                                May 1st. Save up to 53%<br> Buy at Indiegogo
+                                                May 1st. Save up to <?php the_field('save_rate', $post_id);?>%<br> Buy at Indiegogo
                                             </div>
                                         </a>
                                     </div>
