@@ -21,7 +21,7 @@ get_header(); ?>
 		<div class="row">
 			<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 form-wrapper">
                 <h1>New danish designed E bikes</h1>
-                <h3>Get up to 40%</h3>
+                <h3>Get up to 46%</h3>
                 <h4>The New Movea bike will soon launch on Indiegogo</h4>
 				<?php 
 					while ( have_posts() ) : the_post();
