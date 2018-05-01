@@ -5087,7 +5087,7 @@ cursor: -moz-grabbing;
 .videoLoop.a{width:700px;z-index:2;}
 .videoLoop.b{max-width:1220px;}
 
-.youtubeBg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1010!important;}
+.youtubeBg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:60001!important;}
 .P6CloseBtn{position:fixed;top:0;right:0;width:100px;height:100px;z-index:1011!important;transform:rotate(45deg);border-radius:50px;cursor:pointer;-moz-user-select:none;-webkit-user-select:none;-webkit-user-drag:none;user-select:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
 .P6CloseBtn .line{position:absolute;width:40px;height:2px;background-color:#fff;left:0;top:50%;margin-left:31px;}
 .P6CloseBtn .line.b{width:2px;height:40px;margin-left:50%;top:50%;margin-top:-19px;}

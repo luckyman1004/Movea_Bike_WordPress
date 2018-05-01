@@ -117,7 +117,7 @@ get_header(); ?>
                     <source type="video/mp4" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/yellow.mp4">
                 </video>
                 <div class="playArrow">
-                    <canvas id="canvas1" width="200" height="200" style="width: 200px; height: 200px; cursor: pointer;"></canvas>
+                    <canvas id="canvas1" width="200" height="200" style="width: 200px; height: 200px; cursor: pointer;" data-youtube_id="-9jgwZbeUeA"></canvas>
                 </div>
             </div>
             <div class="module simpleimg" data-size="596,440,320,236" data-src="ohland_yellow" data-xanim="1" style="height: auto;"><div class="imgHolder"><div class="aspectKeeper" style="padding-top: 73.8255%;"><img width="596" height="440" class="imgInner faded" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/ohland_yellow_d.jpg" style="opacity: 1;"></div></div></div>
@@ -131,12 +131,15 @@ get_header(); ?>
             </div>
         </section>
         <section class="moduleHolder onetouch">
-            <div class="module simplicity" data-size="1216,680,640,800" data-src="simplicity" style="height: 857px;"><img width="1216" height="680" class="imgInner faded" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/simplicity_d.jpg" style="opacity: 1;">
+            <div class="module simplicity" data-size="1216,680,640,800" data-src="simplicity" style="height: 857px;">
+                <img width="1216" height="680" class="imgInner faded" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/simplicity_d.jpg" style="opacity: 1;">
                 <div class="text">
                     <h4 class="">Designed for<br>simplicity</h4>
                     <div class="buyBlock">
                         <div class="pricep6">USD 399</div>
-                        <a class="buyBtn" href="/products/beoplayp6"><div class="bg"></div><div class="icon"></div><div class="label">BUY BEOPLAY P6</div></a>
+                        <a class="buyBtn" href="/products/beoplayp6">
+                            <div class="bg"></div><div class="icon"></div><div class="label">BUY BEOPLAY P6</div>
+                        </a>
                     </div>
                 </div>
             <canvas class="rings" width="1354" height="857"></canvas></div>
@@ -145,11 +148,19 @@ get_header(); ?>
         
         <!-- Battery/portability section -->
         <section class="moduleHolder portability">
-            <div class="module videoLoop b" data-size="1280,720" data-src="red.mp4" data-yt="ug0L_UUQt9A" data-vcolor="#a75058" style="height: 686px;"><video class="player" preload="meta" loop="" playsinline="true"><source type="video/mp4" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/red.mp4"></video><div class="playArrow"><canvas width="200" height="200" style="width: 200px; height: 200px; cursor: auto;"></canvas></div></div>
+            <div class="module videoLoop b" data-size="1280,720" data-src="red.mp4" data-yt="ug0L_UUQt9A" data-vcolor="#a75058" style="height: 686px;">
+                <video class="player" preload="meta" loop="" playsinline="true">
+                    <source type="video/mp4" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/red.mp4">
+                </video>
+                <div class="playArrow">
+                    <canvas id="canvas2" width="200" height="200" style="width: 200px; height: 200px; cursor: auto;" data-youtube_id="-9jgwZbeUeA"></canvas>
+                </div>
+            </div>
             <div class="module text paratxt" data-para="0">
                 <h4 class="">Music for longer</h4>
                 <p class="">P6 is flexible and allows you to breathe new life into the spaces you live in.<br>And with a battery life of up to 16 hours, the power of P6 doesn’t only lie in its sound.<br>It just keeps on going.</p>
-                <a href="/en/products/beoplayp6#usp/performance" target="_blank"><span class="label" style="opacity: 0; transform: matrix(1, 0, 0, 1, 8, 0);">Learn more</span><div class="lineBelow" style="transform-origin: 0px 0px 0px; transform: matrix(0, 0, 0, 1, 0, 0);"></div></a>
+                <a href="/en/products/beoplayp6#usp/performance" target="_blank">
+                    <span class="label" style="">Learn more</span><div class="lineBelow" style="transform-origin: 0px 0px 0px; transform: matrix(0, 0, 0, 1, 0, 0);"></div></a>
             </div>
         </section>
         <section class="moduleHolder battery">
@@ -166,13 +177,20 @@ get_header(); ?>
         </section>
         <section class="moduleHolder batteryb">
             <div class="module simpleimg a" data-size="595,870,350,512" data-src="ohland_red" data-para="50" data-zoom="20,10,100" data-xanim="0" style="height: auto; transform: translate3d(0px, 49.2775px, 0px);"><div class="imgHolder"><div class="aspectKeeper" style="padding-top: 146.218%; overflow: hidden;"><img width="595" height="870" class="imgInner faded" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/ohland_red_d.jpg" style="transform-origin: 10% 100% 0px; transform: translate3d(0px, 0px, 0px); opacity: 1;"></div></div></div>
-            <div class="module simpleimg b" data-size="485,730,320,420" data-src="prod3" data-xanim="1" style="height: auto;"><div class="imgHolder"><div class="aspectKeeper" style="padding-top: 150.515%;"><img width="485" height="730" class="imgInner faded" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/prod3_d.jpg" style="opacity: 1;"></div></div></div>
+            <div class="module simpleimg b" data-size="485,730,320,420" data-src="prod3" data-xanim="1" style="height: auto;"><div class="imgHolder"><div class="aspectKeeper" style="padding-top: 150.515%;overflow: hidden;"><img width="485" height="730" class="imgInner faded" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/prod3_d.jpg" style="opacity: 1;"></div></div></div>
         </section>
         
         
         <!-- Design section -->
         <section class="moduleHolder design">
-            <div class="module videoLoop c" data-size="1280,720" data-src="blue.mp4" data-para="0" data-yt="yENUpHswLDQ" data-vcolor="#2c4060" style="height: 761px;"><video class="player" preload="meta" loop="" playsinline="true"><source type="video/mp4" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/blue.mp4"></video><div class="playArrow"><canvas width="200" height="200" style="width: 200px; height: 200px;"></canvas></div></div>
+            <div class="module videoLoop c" data-size="1280,720" data-src="blue.mp4" data-para="0" data-yt="yENUpHswLDQ" data-vcolor="#2c4060" style="height: 761px;">
+                <video class="player" preload="meta" loop="" playsinline="true">
+                    <source type="video/mp4" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/blue.mp4">
+                </video>
+                <div class="playArrow">
+                    <canvas width="200" height="200" style="width: 200px; height: 200px;" id="canvas3" data-youtube_id="-9jgwZbeUeA"></canvas>
+                </div>
+            </div>
             <div class="module text paratxt" data-para="0">
                 <h4 class="">Inspired by an icon -<br class="desktopOnly">for simplicity and precision</h4>
                 <p class="">P6 is designed with beautiful craftsmanship in mind; its buttons are inspired by an iconic Bang &amp; Olufsen sound system, the Beomaster 6000; its pearl blasted aluminium grill ensures even sound dispersion and its leather strap lets you easily take P6 from one space to another.</p>
@@ -181,7 +199,7 @@ get_header(); ?>
         </section>
         <section class="moduleHolder designb">
             <div class="module simpleimg a" data-size="416,536,160,206" data-src="ohland_blue" data-para="70" data-zoom="10,10,0" data-xanim="0" style="height: auto; transform: translate3d(0px, 62.0171px, 0px);"><div class="imgHolder"><div class="aspectKeeper" style="padding-top: 128.846%; overflow: hidden;"><img width="416" height="536" class="imgInner faded" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/ohland_blue_d.jpg" style="transform-origin: 10% 0% 0px; transform: translate3d(0px, 0px, 0px); opacity: 1;"></div></div></div>
-            <div class="module simpleimg b" data-size="700,945,480,650" data-src="prod4" data-xanim="1" style="height: auto;"><div class="imgHolder"><div class="aspectKeeper" style="padding-top: 135%;"><img width="700" height="945" class="imgInner faded" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/prod4_d.jpg" style="opacity: 1;"></div></div></div>
+            <div class="module simpleimg b" data-size="700,945,480,650" data-src="prod4" data-xanim="1" style="height: auto;"><div class="imgHolder"><div class="aspectKeeper" style="padding-top: 135%;overflow: hidden;"><img width="700" height="945" class="imgInner faded" src="https://www.beoplay.com/~/media/Landing_pages/BeoplayP6/Frontend/prod4_d.jpg" style="opacity: 1;"></div></div></div>
         </section>
         
         <!-- Microgallery -->
