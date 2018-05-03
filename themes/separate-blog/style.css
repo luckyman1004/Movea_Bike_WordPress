@@ -3162,7 +3162,7 @@ cursor: -moz-grabbing;
   background-color: #FFF;
   float: none;
   margin: 0;
-  /* z-index: 11; */
+  z-index: 11;
 }
 .moveaSpot .btn .left {
   background-image: url('./assets/images/beobasket_black.png');
