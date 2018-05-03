@@ -4945,6 +4945,7 @@ cursor: -moz-grabbing;
   font-weight: bold;
   text-align: center;
   padding: 30px 0;
+  display: none;
 }
 .countdowntimer span {
   padding: 0 20px;
