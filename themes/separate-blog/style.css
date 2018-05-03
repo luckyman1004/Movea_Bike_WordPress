@@ -4895,6 +4895,14 @@ cursor: -moz-grabbing;
   background: unset;
   color: #dcdee0;
 }
+#newsletterPopup .modal-content .left-img {
+  width: 50%;
+  float: left;
+}
+#newsletterPopup .modal-content .right-newletter {
+  width: 50%;
+  float: right;
+}
 #newsletterPopup .modal-content h1, #newsletterPopup .modal-content h3, #newsletterPopup .modal-content h4 {
   text-align: center;
 }
