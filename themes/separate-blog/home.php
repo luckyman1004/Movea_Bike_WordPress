@@ -115,7 +115,7 @@ get_header(); ?>
                         <!-- <div class="price" style="color:#000;">
                             <span class="currency">USD</span><span class="amount"><?php the_field('price', $post_id);?></span>
                         </div> -->
-                        <a href="https://www.indiegogo.com/project/preview/6e664914#/" class="btn" data-toggle="tooltip" data-placement="top" title=" May on Indiegogo   Safe up to 53%" >
+                        <a href="https://www.indiegogo.com/project/preview/6e664914#/" class="btn" data-toggle="tooltip" data-placement="top" title=" Buy on Indiegogo   Safe up to 53%" >
                             <div class="left"></div>
                             <div class="right" style="color: #000;">
                                 Buy at Indiegogo
