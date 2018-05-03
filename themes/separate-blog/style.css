@@ -3093,9 +3093,11 @@ cursor: -moz-grabbing;
 .moveaSpot .info .more-btn {
   background-color: #FFFFFF;
   color: #666;
-  font-size: 14px;
+  font-size: 13px;
   text-decoration: underline;
   padding-left: 18px;
+  font-family: "GothamMedium";
+  text-transform: uppercase;
 
 }
 .nextgenspots .moveaSpot.multiple .info .priceAndInfo p {
