@@ -116,7 +116,7 @@ get_header(); ?>
                             <span class="currency">USD</span><span class="amount"><?php the_field('price', $post_id);?></span>
                         </div> -->
                         <div>
-                            <a href="<?php echo esc_url(get_page_link($post_id));?>" style="color:#fff;text-decoration: underline;">More info</a>
+                            <a href="<?php echo esc_url(get_page_link($post_id));?>" style="color:#fff;text-decoration: underline;font-weight:100;">More info</a>
                         </div>
                         <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica" class="btn" data-toggle="tooltip" data-placement="top" title=" Buy on Indiegogo   Safe up to 53%" >
                             <div class="left"></div>
