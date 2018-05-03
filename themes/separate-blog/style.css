@@ -3085,9 +3085,18 @@ cursor: -moz-grabbing;
   padding-top: 5px;
   padding-left: 20px;
   padding-right: 20px;
-  display: table-cell;
+  /* display: table-cell; */
   vertical-align: top;
   line-height: 130%;
+  margin-bottom: 5px;
+}
+.moveaSpot .info .more-btn {
+  background-color: #FFFFFF;
+  color: #666;
+  font-size: 14px;
+  text-decoration: underline;
+  padding-left: 18px;
+
 }
 .nextgenspots .moveaSpot.multiple .info .priceAndInfo p {
   font-size: 16px;
@@ -3261,7 +3270,7 @@ cursor: -moz-grabbing;
       height: 550px;
   }
   .nextgenspots .moveaSpot.multiple .linkImg {
-      height: 340px;
+      height: 310px;
       bottom: 0px;
   }
 }
@@ -3270,7 +3279,7 @@ cursor: -moz-grabbing;
       height: 550px;
   }
   .nextgenspots .moveaSpot.multiple .linkImg {
-      height: 340px;
+      height: 310px;
       bottom: -20px;
   }
 }

@@ -2878,7 +2878,7 @@ jQuery(document).ready(function ( $ ) {
 
     // product grid click
     $('.moveaSpot.multiple').on('click', function(){
-        window.location = $(this).data('link');
+        //window.location = $(this).data('link');
     })
 
     // scroll down for # link
