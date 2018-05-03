@@ -107,8 +107,8 @@ get_header(); ?>
                                                             - Normal € 1499<br><br>
                                                         <?php } ?>
                                                     </span>
-                                                    <div class="moveaSpot">
-                                                        <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica" class="btn" style="background-color:#FFFFFF; border-bottom: 0px; display: block;">
+                                                    <div class="moveaSpot" style="background-color:#FFFFFF; border-bottom: 0px; display: block;">
+                                                        <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica" class="btn" style="background-color:#FFFFFF;">
                                                             <div class="left"></div>
                                                             <div class="right" style="color: #666;">
                                                                 <!-- <span class="amount">Buy at Indiegogo</span> -->
