@@ -16,7 +16,7 @@ get_header(); ?>
                     <div class="toptext"><?php echo get_option_tree('top_text');?></div>
                     <div class="titletext">
                         <p>
-                            <a href="https://www.indiegogo.com/projects/movea-self-charging-design-e-bike/coming_soon/hmrv"><?php echo get_option_tree('category_1');?></a>
+                            <a href="https://www.indiegogo.com/project/preview/6e664914#/"><?php echo get_option_tree('category_1');?></a>
                             <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <a href="https://www.indiegogo.com/projects/movea-self-charging-design-e-bike/coming_soon/hmrv"><?php echo get_option_tree('category_2');?></a> -->
                         </p>
@@ -29,7 +29,7 @@ get_header(); ?>
                         </div>
                         <div class="titletext">
                             <p>
-                                <a href="https://www.indiegogo.com/projects/movea-self-charging-design-e-bike/coming_soon/hmrv"><?php echo get_option_tree('category_1');?></a>
+                                <a href="https://www.indiegogo.com/project/preview/6e664914#/"><?php echo get_option_tree('category_1');?></a>
                                 <!-- <a href="#"><?php echo get_option_tree('category_2');?></a> -->
                             </p>
                         </div>
@@ -115,10 +115,10 @@ get_header(); ?>
                         <!-- <div class="price" style="color:#000;">
                             <span class="currency">USD</span><span class="amount"><?php the_field('price', $post_id);?></span>
                         </div> -->
-                        <a href="<?php echo esc_url(get_page_link($post_id));?>" class="btn" data-toggle="tooltip" data-placement="top" title="Buy 3rd of May on Indiegogo   Safe up to 53%" >
+                        <a href="https://www.indiegogo.com/project/preview/6e664914#/" class="btn" data-toggle="tooltip" data-placement="top" title=" May on Indiegogo   Safe up to 53%" >
                             <div class="left"></div>
                             <div class="right" style="color: #000;">
-                                May 3rd. Save up to <?php the_field('save_rate', $post_id);?>%<br> Buy at Indiegogo
+                                Buy at Indiegogo
                             </div>
                         </a>
                     </div>
@@ -376,11 +376,11 @@ get_header(); ?>
                                     <h4><?php the_title();?></h4>
                                     <div class="priceAndInfo">
                                         <p><?php echo $post->post_excerpt;?></p>
-                                        <a href="<?php echo esc_url(get_page_link($post_id));?>" class="btn" style="background-color:#FFFFFF;">
+                                        <a href="https://www.indiegogo.com/project/preview/6e664914#/" class="btn" style="background-color:#FFFFFF;">
                                             <div class="left"></div>
                                             <div class="right" style="color: #666;">
                                                 <!-- <span class="amount">Buy at Indiegogo</span> -->
-                                                May 3rd. Save up to <?php the_field('save_rate', $post_id);?>%<br> Buy at Indiegogo
+                                                Buy at Indiegogo
                                             </div>
                                         </a>
                                     </div>
