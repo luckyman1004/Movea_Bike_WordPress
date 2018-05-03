@@ -16,7 +16,7 @@ get_header(); ?>
                     <div class="toptext"><?php echo get_option_tree('top_text');?></div>
                     <div class="titletext">
                         <p>
-                            <a href="https://www.indiegogo.com/project/preview/6e664914#/"><?php echo get_option_tree('category_1');?></a>
+                            <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica"><?php echo get_option_tree('category_1');?></a>
                             <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <a href="https://www.indiegogo.com/projects/movea-self-charging-design-e-bike/coming_soon/hmrv"><?php echo get_option_tree('category_2');?></a> -->
                         </p>
@@ -29,7 +29,7 @@ get_header(); ?>
                         </div>
                         <div class="titletext">
                             <p>
-                                <a href="https://www.indiegogo.com/project/preview/6e664914#/"><?php echo get_option_tree('category_1');?></a>
+                                <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica"><?php echo get_option_tree('category_1');?></a>
                                 <!-- <a href="#"><?php echo get_option_tree('category_2');?></a> -->
                             </p>
                         </div>
@@ -115,7 +115,7 @@ get_header(); ?>
                         <!-- <div class="price" style="color:#000;">
                             <span class="currency">USD</span><span class="amount"><?php the_field('price', $post_id);?></span>
                         </div> -->
-                        <a href="https://www.indiegogo.com/project/preview/6e664914#/" class="btn" data-toggle="tooltip" data-placement="top" title=" Buy on Indiegogo   Safe up to 53%" >
+                        <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica" class="btn" data-toggle="tooltip" data-placement="top" title=" Buy on Indiegogo   Safe up to 53%" >
                             <div class="left"></div>
                             <div class="right" style="color: #000;">
                                 Buy at Indiegogo
@@ -376,7 +376,7 @@ get_header(); ?>
                                     <h4><?php the_title();?></h4>
                                     <div class="priceAndInfo">
                                         <p><?php echo $post->post_excerpt;?></p>
-                                        <a href="https://www.indiegogo.com/project/preview/6e664914#/" class="btn" style="background-color:#FFFFFF;">
+                                        <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica" class="btn" style="background-color:#FFFFFF;">
                                             <div class="left"></div>
                                             <div class="right" style="color: #666;">
                                                 <!-- <span class="amount">Buy at Indiegogo</span> -->
