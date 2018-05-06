@@ -2699,6 +2699,7 @@ h1 {
       height: 100%;
       object-fit: cover;
       left: 0;
+      top: 0;
   }
   .youtube-video-wrapper {
       position: absolute;
