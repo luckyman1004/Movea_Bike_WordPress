@@ -7,7 +7,7 @@
  * @package Primer
  * @since   1.0.0
  */
-
+//test
 get_header(); ?>
 
 <div id="primary" class="content-area">
