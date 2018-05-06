@@ -2553,6 +2553,7 @@ h1 {
 .moveaVideoThumbnail {
   position: absolute;
   width: 100%;
+  top: -50%;
   height: auto;
   transition: opacity .6s ease-in-out .2s;
   backface-visibility: hidden;
