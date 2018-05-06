@@ -83,7 +83,7 @@ get_header(); ?>
 										<?php the_content(); ?>										
                                     </div>
                                     <div style="padding: 15px 0;     font-family: 'ProximaThin',sans-serif;    color: #666; font-weight: 400;">
-                                        Fenders and bongee code are included<br>
+                                        Fenders and bungee cord are included<br>
                                         Size Guide: Rider's height (cm) <?php the_field('rider_height', $post_id);?>
                                     </div>
                                     <div class="ecom-buy-module-sidebar-row with-border ecom-buy-module-sidebar-prices space-large clearfix js-total-prices">
