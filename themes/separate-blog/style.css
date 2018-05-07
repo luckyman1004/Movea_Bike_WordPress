@@ -4929,6 +4929,7 @@ cursor: -moz-grabbing;
   width: 50%;
   float: left;
   height: 300px;
+  background-color: #0c0c0c;
 }
 #newsletterPopup .modal-content .right-newletter {
   width: 50%;
@@ -4951,14 +4952,14 @@ cursor: -moz-grabbing;
   border-radius: 30px;
 }
 #newsletterPopup .modal-content h1 {
-  font-size: 25px;
+  font-size: 20px;
   line-height: normal;
   margin-top: 60px;
   color: #000;
   font-weight: bold;
 }
 #newsletterPopup .modal-content h3 {
-  font-size: 18px;
+  font-size: 14px;
   color: #000;
 }
 #newsletterPopup .modal-content h1, #newsletterPopup .modal-content h3, #newsletterPopup .modal-content h4 {
@@ -4968,10 +4969,10 @@ cursor: -moz-grabbing;
   #newsletterPopup {
     z-index: 105000;
     bottom: unset;
-    top: 100px;
-    left: unset;
-    right: 0;
-    width: 375px;
+    top: 60px;
+    left: calc(50% - 150px);
+    /* right: 0; */
+    width: 300px;
   }
   #newsletterPopup .close {
     top: 0px;
@@ -4980,18 +4981,23 @@ cursor: -moz-grabbing;
     z-index: 105001;
   }
   #newsletterPopup .modal-content h1 {
-    font-size: 20px;
+    font-size: 25px;
     padding-top: 40px;
   }
   #newsletterPopup .modal-content h1 {
     margin-top: 0px;
   }
   #newsletterPopup .modal-content h3, #newsletterPopup .modal-content h4 {
-    font-size: 14px;
+    font-size: 17px;
+  }
+  #newsletterPopup .modal-content .left-img {
+    background-size: contain!important;
+    background-repeat: no-repeat!important;
   }
   #newsletterPopup .modal-content .left-img, #newsletterPopup .modal-content .right-newletter {
     height: 270px;
     width: 100%;
+    padding: 0 15px;
   }
   #newsletterPopup .modal-content .right-newletter .sign-up-btn {
     margin-top: 20px;
