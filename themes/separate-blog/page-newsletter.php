@@ -20,8 +20,8 @@ get_header(); ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 form-wrapper">
-                <h1>Want to win a Movea E-move? Sign up to our newsletter</h1>
-                <h3>Competition ends 25. June 2018. We will draw the winner at random</h3>
+                <h1>Subscribe to our newsletter and be the first to receive our offers</h1>
+                <!-- <h3>Competition ends 25. June 2018. We will draw the winner at random</h3> -->
                 <!-- <h4>The New Movea bike will soon launch on Indiegogo</h4> -->
 				<?php 
 					while ( have_posts() ) : the_post();
