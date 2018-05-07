@@ -4959,7 +4959,7 @@ cursor: -moz-grabbing;
 }
 #newsletterPopup .modal-content h3 {
   font-size: 18px;
-  color: #268bf7;
+  color: #000;
 }
 #newsletterPopup .modal-content h1, #newsletterPopup .modal-content h3, #newsletterPopup .modal-content h4 {
   text-align: center;
