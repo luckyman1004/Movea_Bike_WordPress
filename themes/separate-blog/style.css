@@ -4981,14 +4981,14 @@ cursor: -moz-grabbing;
     z-index: 105001;
   }
   #newsletterPopup .modal-content h1 {
-    font-size: 25px;
+    font-size: 16px;
     padding-top: 40px;
   }
   #newsletterPopup .modal-content h1 {
     margin-top: 0px;
   }
   #newsletterPopup .modal-content h3, #newsletterPopup .modal-content h4 {
-    font-size: 17px;
+    font-size: 12px;
   }
   #newsletterPopup .modal-content .left-img {
     background-size: contain!important;
