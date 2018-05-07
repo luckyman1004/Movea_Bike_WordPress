@@ -428,7 +428,7 @@ get_header(); ?>
                 <div class="right-newletter">
                     <h1>New danish designed E bikes</h1>
                     <h3>Save up to 53%</h3>
-                    <a href="">Sign up now</a>
+                    <div class="sign-up-btn"><a href="/newsletter">Sign up now</a></div>
                 </div>
                 <!-- <h1>New danish designed E bikes</h1>
                 <h3>Save up to 53%</h3>

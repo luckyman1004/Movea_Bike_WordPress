@@ -2933,12 +2933,12 @@ jQuery(document).ready(function ( $ ) {
         TweenLite.to($('body'), 0, {overflow: 'inherit', ease: Power2.easeOut});
         $('#lifestyle_gallery img').remove();
     });
-    // if(sessionStorage.getItem('moveaNewsletterPopState') != 'shown'){
-    //     $('<img/>').attr('src', 'https://movea.bike/wp-content/uploads/2018/03/front-new.jpg').on('load', function() {
-    //         $(this).remove(); // prevent memory leaks as @benweet suggested
-    //         $('#newsletterPopup').css('background-image', 'url(https://movea.bike/wp-content/uploads/2018/03/front-new.jpg)');
-    //         $('#newsletterPopup').modal('show');
-    //         sessionStorage.setItem('moveaNewsletterPopState','shown');
-    //      });
-    // }
+    if(sessionStorage.getItem('moveaNewsletterPopState') != 'shown'){
+        $('<img/>').attr('src', 'https://movea.bike/wp-content/uploads/2018/03/front-new.jpg').on('load', function() {
+            $(this).remove(); // prevent memory leaks as @benweet suggested
+            //$('#newsletterPopup').css('background-image', 'url(https://movea.bike/wp-content/uploads/2018/03/front-new.jpg)');
+            $('#newsletterPopup').modal('show');
+            sessionStorage.setItem('moveaNewsletterPopState','shown');
+         });
+    }
 });

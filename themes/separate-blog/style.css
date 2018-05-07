@@ -4894,43 +4894,107 @@ cursor: -moz-grabbing;
 
 #newsletterPopup {
   z-index: 105000;
-  width: 100%;
+  bottom: 0;
+  top: unset;
+  left: unset;
+  right: 0;
+  width: 800px;
 }
 #newsletterPopup .close {
-  color: #fff;
+  color: #444;
   position: absolute;
-  right: 30px;
-  top: 30px;
-  font-size: 50px;
+  left: 2px;
+  top: 14px;
   opacity: 1;
+  z-index: 2004;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  font-size: 26px;
+  border-radius: 30px;
+  line-height: 26px;
+  border: 3px solid #3d843b;
+}
+#newsletterPopup .modal-dialog {
+  max-width: 750px;
 }
 #newsletterPopup .modal-content {
   background: unset;
   color: #dcdee0;
 }
+#newsletterPopup .modal-content .modal-body {
+  padding: 0;
+}
 #newsletterPopup .modal-content .left-img {
   width: 50%;
   float: left;
+  height: 300px;
 }
 #newsletterPopup .modal-content .right-newletter {
   width: 50%;
   float: right;
+  height: 300px;
+  background: #fff;
+}
+#newsletterPopup .modal-content .right-newletter .sign-up-btn {
+  margin-top: 50px;
+}
+#newsletterPopup .modal-content .right-newletter .sign-up-btn a{
+  display: block;
+  background: #000;
+  width: 250px;
+  font-size: 22px;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 30px;
+}
+#newsletterPopup .modal-content h1 {
+  font-size: 25px;
+  line-height: normal;
+  margin-top: 60px;
+  color: #000;
+  font-weight: bold;
+}
+#newsletterPopup .modal-content h3 {
+  font-size: 18px;
+  color: #268bf7;
 }
 #newsletterPopup .modal-content h1, #newsletterPopup .modal-content h3, #newsletterPopup .modal-content h4 {
   text-align: center;
 }
 @media (max-width: 767px) {
+  #newsletterPopup {
+    z-index: 105000;
+    bottom: unset;
+    top: 100px;
+    left: unset;
+    right: 0;
+    width: 375px;
+  }
   #newsletterPopup .close {
-    top: 5px;
+    top: 0px;
     right: 5px;
     pointer-events: all;
     z-index: 105001;
   }
   #newsletterPopup .modal-content h1 {
-    font-size: 35px;
+    font-size: 25px;
+    padding-top: 40px;
+  }
+  #newsletterPopup .modal-content h1 {
+    margin-top: 0px;
   }
   #newsletterPopup .modal-content h3, #newsletterPopup .modal-content h4 {
-    font-size: 1.25rem;
+    font-size: 17px;
+  }
+  #newsletterPopup .modal-content .left-img, #newsletterPopup .modal-content .right-newletter {
+    height: 250px;
+    width: 100%;
+  }
+  #newsletterPopup .modal-content .right-newletter .sign-up-btn {
+    margin-top: 20px;
   }
   
 }
