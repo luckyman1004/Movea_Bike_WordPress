@@ -4982,7 +4982,7 @@ cursor: -moz-grabbing;
   }
   #newsletterPopup .modal-content h1 {
     font-size: 16px;
-    padding-top: 40px;
+    padding-top: 20px;
   }
   #newsletterPopup .modal-content h1 {
     margin-top: 0px;
@@ -4995,12 +4995,12 @@ cursor: -moz-grabbing;
     background-repeat: no-repeat!important;
   }
   #newsletterPopup .modal-content .left-img, #newsletterPopup .modal-content .right-newletter {
-    height: 270px;
+    height: 200px;
     width: 100%;
     padding: 0 15px;
   }
   #newsletterPopup .modal-content .right-newletter .sign-up-btn {
-    margin-top: 40px;
+    margin-top: 20px;
   }
   #newsletterPopup .modal-content .right-newletter .sign-up-btn a {
     width: 150px;
