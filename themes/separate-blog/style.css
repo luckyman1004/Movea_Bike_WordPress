@@ -4937,7 +4937,7 @@ cursor: -moz-grabbing;
   background: #fff;
 }
 #newsletterPopup .modal-content .right-newletter .sign-up-btn {
-  margin-top: 50px;
+  margin-top: 25px;
 }
 #newsletterPopup .modal-content .right-newletter .sign-up-btn a{
   display: block;
@@ -4990,7 +4990,7 @@ cursor: -moz-grabbing;
     font-size: 17px;
   }
   #newsletterPopup .modal-content .left-img, #newsletterPopup .modal-content .right-newletter {
-    height: 250px;
+    height: 270px;
     width: 100%;
   }
   #newsletterPopup .modal-content .right-newletter .sign-up-btn {
