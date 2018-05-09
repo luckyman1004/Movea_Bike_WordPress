@@ -84,7 +84,7 @@ get_header(); ?>
                                     </div>
                                     <div style="padding: 15px 0;     font-family: 'ProximaThin',sans-serif;    color: #666; font-weight: 400;">
                                         Fenders and bungee cord are included<br>
-                                        Size Guide: 24″ wheels if you are <?php the_field('rider_height', $post_id);?> cm tall
+                                        Size Guide: <?php the_field('size', $post_id);?>″ wheels if you are <?php the_field('rider_height', $post_id);?>+ cm tall
                                     </div>
                                     <div class="ecom-buy-module-sidebar-row with-border ecom-buy-module-sidebar-prices space-large clearfix js-total-prices">
                                         <div class="inner">
