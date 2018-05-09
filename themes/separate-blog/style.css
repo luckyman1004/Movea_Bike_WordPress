@@ -3009,7 +3009,7 @@ cursor: -moz-grabbing;
 }
 .moveaSpot .info {
   position: relative;
-  height: 165px;
+  height: 200px;
   color: #000;
   background-color: #FFF;
   overflow: hidden;
