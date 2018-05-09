@@ -40,7 +40,7 @@ get_header(); ?>
                         <div class="playIcon"></div>
                     </div>
                     <div class="moveaVideoThumbnail">
-                        <img class="lazyload" data-src="https://movea.bike/wp-content/uploads/2018/05/IMG_8637.jpg" style="width: 100%; "  />
+                        <img class="lazyload" data-src="https://movea.bike/wp-content/uploads/2018/04/33-1024x684.png" style="width: 100%; "  />
                     </div>
                     <!-- <video class="moveaVideoThumbnail" id="moveaVideoThumbnail" preload="auto" loop autoplay muted>
                         <source type="video/mp4" src="<?php //echo get_option_tree('banner_video');?>">
