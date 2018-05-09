@@ -1228,6 +1228,7 @@ get_header(); ?>
                                     <h4><?php the_title();?></h4>
                                     <div class="priceAndInfo">
 										<p><?php echo $post->post_excerpt;?></p>
+                                        <a class="more-btn" style="background-color:#FFFFFF;" class="more-info" href="<?php echo esc_url(get_page_link($post_id));?>">More info</a>
                                         <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica" class="btn" style="background-color:#FFFFFF;">
                                             <div class="left"></div>
                                             <div class="right" style="color: #666;">
