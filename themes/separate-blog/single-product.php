@@ -98,7 +98,7 @@ get_header(); ?>
                                                 <div class="col">
                                                     <!-- button-purchase (green version) -->
                                                     <!-- <a href="<?php the_field('indiegogo_url', $post_id);?>" class="button button-primary js-buy-button">Buy at Indiegogo</a> -->
-                                                    <span class="size-guide" style="float: left;">
+                                                    <!-- <span class="size-guide" style="float: left;">
                                                         <?php if (get_field('model_type', $post_id) == 'E-move') { ?>
                                                             - Early bird € 1599<br>
                                                             - Normal € 2799<br><br>
@@ -106,15 +106,16 @@ get_header(); ?>
                                                             - Early bird € 699<br>
                                                             - Normal € 1499<br><br>
                                                         <?php } ?>
-                                                    </span>
+                                                    </span> -->
                                                     <div class="moveaSpot" style="background-color:#FFFFFF; border-bottom: 0px; display: block;">
-                                                        <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica" class="btn" style="background-color:#FFFFFF;">
+                                                        <!-- <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica" class="btn" style="background-color:#FFFFFF;">
                                                             <div class="left"></div>
                                                             <div class="right" style="color: #666;">
-                                                                <!-- <span class="amount">Buy at Indiegogo</span> -->
+                                                                <!-- <span class="amount">Buy at Indiegogo</span> 
                                                                 Buy at Indiegogo
                                                             </div>
-                                                        </a>
+                                                        </a> -->
+                                                        <a class="soon-indiegog btn" href="javascript:;">Soon on Indiegog</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1229,13 +1230,14 @@ get_header(); ?>
                                     <div class="priceAndInfo">
 										<p><?php echo $post->post_excerpt;?></p>
                                         <a class="more-btn" style="background-color:#FFFFFF;" class="more-info" href="<?php echo esc_url(get_page_link($post_id));?>">More info</a>
-                                        <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica" class="btn" style="background-color:#FFFFFF;">
+                                        <!-- <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica" class="btn" style="background-color:#FFFFFF;">
                                             <div class="left"></div>
                                             <div class="right" style="color: #666;">
-                                                <!-- <span class="amount">Buy at Indiegogo</span> -->
+                                                <!-- <span class="amount">Buy at Indiegogo</span> 
                                                 Buy at Indiegogo
                                             </div>
-                                        </a>
+                                        </a> -->
+                                        <a class="soon-indiegog btn" href="javascript:;">Soon on Indiegog</a>
                                     </div>
                                 </div>
                                 <h2><?php the_field('model_type', $like_post_id);?></h2>

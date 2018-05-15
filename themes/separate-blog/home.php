@@ -118,12 +118,13 @@ get_header(); ?>
                         <div>
                             <a href="<?php echo esc_url(get_page_link($post_id));?>" style="color:#fff;text-decoration: underline;font-weight:100;">More info</a>
                         </div>
-                        <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica" class="btn" data-toggle="tooltip" data-placement="top" title=" Buy on Indiegogo   Safe up to 53%" >
+                        <a class="soon-indiegog btn" href="javascript:;">Soon on Indiegog</a>
+                        <!-- <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica" class="btn" data-toggle="tooltip" data-placement="top" title=" Buy on Indiegogo   Safe up to 53%" >
                             <div class="left"></div>
                             <div class="right" style="color: #000;">
                                 Buy at Indiegogo
                             </div>
-                        </a>
+                        </a> -->
                     </div>
                 </div>
             </div>
@@ -380,13 +381,14 @@ get_header(); ?>
                                     <div class="priceAndInfo">
                                         <p><?php echo $post->post_excerpt;?></p>
                                         <a class="more-btn" style="background-color:#FFFFFF;" class="more-info" href="<?php echo esc_url(get_page_link($post_id));?>">More info</a>
-                                        <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica" class="btn" style="background-color:#FFFFFF;">
+                                        <a class="soon-indiegog btn" href="javascript:;">Soon on Indiegog</a>
+                                        <!-- <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica" class="btn" style="background-color:#FFFFFF;">
                                             <div class="left"></div>
                                             <div class="right" style="color: #666;">
-                                                <!-- <span class="amount">Buy at Indiegogo</span> -->
+                                                <span class="amount">Buy at Indiegogo</span>
                                                 Buy at Indiegogo
                                             </div>
-                                        </a>
+                                        </a> -->
                                     </div>
                                 </div>
                                 <h2><?php echo the_field('model_type', $post_id);?></h2>

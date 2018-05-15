@@ -5215,7 +5215,7 @@ background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,25
 background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */}
 /*.bottomgallery .edge:hover{opacity:0;}*/
-
+.soon-indiegog {padding: 10px 25px!important;}
 @media all and (min-width:767.5px){
 	.hotspots .texts .text.hs{width:240px;transform:translateX(-50%);margin-left:-25px;visibility:hidden;opacity:0;}
 	.hotspots .texts .text.hs p{opacity:1;font-size:16px;transition:none;}
