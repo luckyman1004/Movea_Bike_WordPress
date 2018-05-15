@@ -16,7 +16,8 @@ get_header(); ?>
                     <div class="toptext"><?php echo get_option_tree('top_text');?></div>
                     <div class="titletext">
                         <p>
-                            <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica"><?php echo get_option_tree('category_1');?></a>
+                        <a href="javascript:;">Soon on Indiegog</a>
+                            <!-- <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica"><?php echo get_option_tree('category_1');?></a> -->
                             <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <a href="https://www.indiegogo.com/projects/movea-self-charging-design-e-bike/coming_soon/hmrv"><?php echo get_option_tree('category_2');?></a> -->
                         </p>
