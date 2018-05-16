@@ -16,7 +16,7 @@ get_header(); ?>
                     <div class="toptext"><?php echo get_option_tree('top_text');?></div>
                     <div class="titletext">
                         <p>
-                        <a href="javascript:;">Soon on Indiegog</a>
+                        <a href="javascript:;">Soon on Indiegogo</a>
                             <!-- <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica"><?php echo get_option_tree('category_1');?></a> -->
                             <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <a href="https://www.indiegogo.com/projects/movea-self-charging-design-e-bike/coming_soon/hmrv"><?php echo get_option_tree('category_2');?></a> -->
@@ -119,7 +119,7 @@ get_header(); ?>
                         <div>
                             <a href="<?php echo esc_url(get_page_link($post_id));?>" style="color:#fff;text-decoration: underline;font-weight:100;">More info</a>
                         </div>
-                        <a class="soon-indiegog btn" style="padding: 10px 25px!important;" href="javascript:;">Soon on Indiegog</a>
+                        <a class="soon-indiegog btn" style="padding: 10px 25px!important;" href="javascript:;">Soon on Indiegogo</a>
                         <!-- <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica" class="btn" data-toggle="tooltip" data-placement="top" title=" Buy on Indiegogo   Safe up to 53%" >
                             <div class="left"></div>
                             <div class="right" style="color: #000;">
@@ -382,7 +382,7 @@ get_header(); ?>
                                     <div class="priceAndInfo">
                                         <p><?php echo $post->post_excerpt;?></p>
                                         <a class="more-btn" style="background-color:#FFFFFF;" class="more-info" href="<?php echo esc_url(get_page_link($post_id));?>">More info</a>
-                                        <a class="soon-indiegog btn" style="padding: 10px 25px!important;" href="javascript:;">Soon on Indiegog</a>
+                                        <a class="soon-indiegog btn" style="padding: 10px 25px!important;" href="javascript:;">Soon on Indiegogo</a>
                                         <!-- <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica" class="btn" style="background-color:#FFFFFF;">
                                             <div class="left"></div>
                                             <div class="right" style="color: #666;">
