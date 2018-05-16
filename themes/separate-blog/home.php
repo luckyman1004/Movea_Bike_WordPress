@@ -13,7 +13,7 @@ get_header(); ?>
         <div id="videoSection">
             <div class="container-movea moveaVideo" data-astop="true">
                 <div class="text textCenter">
-                    <div class="toptext"><?php echo get_option_tree('top_text');?></div>
+                    <!-- <div class="toptext"><?php echo get_option_tree('top_text');?></div> -->
                     <div class="titletext">
                         <p>
                         <a href="javascript:;">Soon on Indiegogo</a>
@@ -25,12 +25,13 @@ get_header(); ?>
                 </div>
                 <div class="mobiletextWrapper">
                     <div class="mobiletext">
-                        <div class="toptext">
+                        <!-- <div class="toptext">
                             <?php echo get_option_tree('top_text');?>
-                        </div>
+                        </div> -->
                         <div class="titletext">
                             <p>
-                                <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica"><?php echo get_option_tree('category_1');?></a>
+                                <a href="javascript:;">Soon on Indiegogo</a>
+                                <!-- <a href="https://www.indiegogo.com/projects/movea-the-self-charging-design-e-bike/coming_soon/pica"><?php echo get_option_tree('category_1');?></a> -->
                                 <!-- <a href="#"><?php echo get_option_tree('category_2');?></a> -->
                             </p>
                         </div>
