@@ -431,7 +431,7 @@ get_header(); ?>
                 <div class="left-img" style="background: url(https://movea.bike/wp-content/uploads/2018/05/scriber-image.jpg); background-size: cover; background-position: center center; background-repeat:no-repeat;"></div>
                 <div class="right-newletter">
                     <h1>Win a Hövding airbag helmet, value € 299,- <br/>Sign up to our newsletter.</h1>
-                    <h3>Competition ends 25. June 2018. <br>We will draw the winner at random</h3>
+                    <h3>Competition ends 15. July 2018.<br/>We´ll draw 2 winners at random.</h3>
                     <div class="sign-up-btn"><a href="/newsletter">Sign up now</a></div>
                 </div>
                 <!-- <h1>New danish designed E bikes</h1>
