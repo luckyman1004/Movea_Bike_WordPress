@@ -428,10 +428,10 @@ get_header(); ?>
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <div class="left-img" style="background: url(https://movea.bike/wp-content/uploads/2018/03/movea-model-e-24-men-1-516x344.png)#0c0c0c; background-size: contain; background-position: center center; background-repeat:no-repeat;"></div>
+                <div class="left-img" style="background: url(https://movea.bike/wp-content/uploads/2018/05/scriber-image.jpg); background-size: cover; background-position: center center; background-repeat:no-repeat;"></div>
                 <div class="right-newletter">
-                    <h1>Subscribe to our newsletter and be the first to receive our offers</h1>
-                    <!-- <h3>Competition ends 25. June 2018. <br>We will draw the winner at random</h3> -->
+                    <h1>Win a Hövding airbag helmet, value € 299,- <br/>Sign up to our newsletter.</h1>
+                    <h3>Competition ends 25. June 2018. <br>We will draw the winner at random</h3>
                     <div class="sign-up-btn"><a href="/newsletter">Sign up now</a></div>
                 </div>
                 <!-- <h1>New danish designed E bikes</h1>
