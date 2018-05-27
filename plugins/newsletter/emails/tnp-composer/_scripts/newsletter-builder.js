@@ -404,7 +404,12 @@ jQuery(function () {
     });
 
     jQuery("#tnpc-block-options .tnpc-edit-box-buttons-save").click(function () {
-        //alert(target.data('options'));
+        
+        // fix for Codemirror
+        if (typeof templateEditor !== 'undefined') { templateEditor.save(); };
+        
+//        console.log(target.data('options'));
+        
         jQuery(this).parent().parent().parent().fadeOut(500)
         jQuery(this).parent().parent().slideUp(500)
 
@@ -436,11 +441,11 @@ function tnp_mobile_preview() {
     var d = document.getElementById("tnp-mobile-preview").contentWindow.document;
     d.open();
 
-    d.write("<!DOCTYPE html><html><head>");
+    d.write("<!DOCTYPE html>\n<html>\n<head>\n");
     d.write("<link rel='stylesheet' href='" + TNP_HOME_URL + "?na=emails-composer-css&ver=" + Math.random() + "' type='text/css'");
-    d.write("</head><body style='margin: 0; padding: 0;'><div style='width: 320px!important'>");
+    d.write("</head>\n<body style='margin: 0; padding: 0;'><div style='width: 320px!important'>");
     d.write(jQuery("#newsletter-builder-area-center-frame-content").html());
-    d.write("</div></body></html>");
+    d.write("</div>\n</body>\n</html>");
     d.close();
 }
 
@@ -460,12 +465,12 @@ function create() {
         jQuery("#tnpc-form").submit();
     } else {
             jQuery.get(TNP_HOME_URL + "?na=emails-composer-css&ver=" + Math.random(), {action: "tnpc_css"}, function (data) {
-            export_content = '<!DOCTYPE html><html><head><title>Newsletter</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge" />';
+            export_content = '<!DOCTYPE html>\n<html>\n<head>\n<title>Newsletter</title>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta http-equiv="X-UA-Compatible" content="IE=edge">\n';
             export_content += '<style type="text/css">' + data + '</style>';
-            export_content += '<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css">';
-            export_content += '</head><body style="margin: 0; padding: 0;">';
+            //export_content += '\n<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic" rel="stylesheet" type="text/css">';
+            export_content += '</head>\n<body style="margin: 0; padding: 0;">\n';
             export_content += preload_export_html;
-            export_content += '</body></html>';
+            export_content += '\n</body>\n</html>';
             jQuery("#tnpc-edit-export .text").val(export_content);
             jQuery('#tnpc-form input[name="options[body]"]').attr('value', export_content);
             jQuery("#tnpc-form").submit();

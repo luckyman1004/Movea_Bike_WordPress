@@ -142,6 +142,11 @@ if ( ! class_exists( 'WpSmush' ) ) {
 			//Register Function for sending unsmushed image count to hub
 			add_filter( 'wdp_register_hub_action', array( $this, 'smush_stats' ) );
 
+			/**
+			 * Add information to privacy policy page (only during creation).
+			 */
+			add_filter( 'wp_get_default_privacy_policy_content', array( $this, 'add_policy' ) );
+
 		}
 
 		/**
@@ -2409,6 +2414,27 @@ if ( ! class_exists( 'WpSmush' ) ) {
 				'status'    => 'show'
 			);
 			update_site_option( WP_SMUSH_PREFIX . 'api_message', $message );
+		}
+
+		/**
+		 * Add Smush Policy to "Privace Policy" page during creation.
+		 *
+		 */
+		public function add_policy( $content ) {
+			$dir_path = get_plugin_dir();
+
+			$content .= '<h3>' . __( 'Plugin: Smush', 'wp-smushit' ) . '</h3>';
+			$content .=
+				'<p>'.__( 'Note: Smush does not interact with end users on your website. The only input option Smush has is to a newsletter subscription for site admins only. If you would like to notify your users of this in your privacy policy, you can use the information below.', 'wp-smushit' ) . '</p>';
+			$content .=
+				'<p>'. __( 'Smush sends images to the WPMU DEV servers to optimize them for web use. This includes the transfer of EXIF data. The EXIF data will either be stripped or returned as it is. It is not stored on the WPMU DEV servers.', 'wp-smushit' ) . '</p>';
+
+			if ( strpos( $dir_path, 'wp-smushit' ) !== false ) {
+				//Only for wordpress.org members
+				$content .=
+					'<p>' . __( 'Smush uses a third-party email service (Drip) to send informational emails to the site administrator. The administrator\'s email address is sent to Drip and a cookie is set by the service. Only administrator information is collected by Drip.', 'wp-smushit' ) . '</p>';
+			}
+			return $content;
 		}
 	}
 

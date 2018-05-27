@@ -2,6 +2,7 @@
 if (!defined('ABSPATH'))
     exit;
 
+
 @include_once NEWSLETTER_INCLUDES_DIR . '/controls.php';
 $module = Newsletter::instance();
 $controls = new NewsletterControls();
@@ -732,22 +733,22 @@ $options = $module->get_options('status');
                                 Send details
                             </td>
                             <td>
-                            <?php if ($send_mean > 1) { ?>
-                                <span class="tnp-ko">KO</span>
-                            <?php } else { ?>
-                                <span class="tnp-ok">OK</span>
-                            <?php } ?>
+                                <?php if ($send_mean > 1) { ?>
+                                    <span class="tnp-ko">KO</span>
+                                <?php } else { ?>
+                                    <span class="tnp-ok">OK</span>
+                                <?php } ?>
                             </td>
                             <td>
                                 <?php if ($send_mean > 1) { ?>
-                                <strong>Sending an email is taking more than 1 second, rather slow.</strong>
-                                <a href="https://www.thenewsletterplugin.com/documentation/status-panel#status-performance" target="_blank">Read more</a>.
+                                    <strong>Sending an email is taking more than 1 second, rather slow.</strong>
+                                    <a href="https://www.thenewsletterplugin.com/documentation/status-panel#status-performance" target="_blank">Read more</a>.
                                 <?php } ?>
                                 Average time to send an email: <?php echo sprintf("%.2f", $send_mean) ?> seconds<br>
                                 <?php if ($send_mean > 0) { ?>
-                                Max speed: <?php echo sprintf("%.2f", 1.0/$send_mean*3600) ?> emails per hour<br>
+                                    Max speed: <?php echo sprintf("%.2f", 1.0 / $send_mean * 3600) ?> emails per hour<br>
                                 <?php } ?>
-                                
+
                                 Max mean time measured: <?php echo sprintf("%.2f", $send_max) ?> seconds<br>
                                 Min mean time measured: <?php echo sprintf("%.2f", $send_min) ?> seconds<br>
                                 Total email in the sample: <?php echo $send_total_emails ?><br>
@@ -781,7 +782,7 @@ $options = $module->get_options('status');
 
 
 
-                    <?php
+                    <?php /*
                     $memory = intval(WP_MEMORY_LIMIT);
                     if (false !== strpos(WP_MEMORY_LIMIT, 'G'))
                         $memory *= 1024;
@@ -792,7 +793,7 @@ $options = $module->get_options('status');
                         </td>
                         <td>
                             <?php if ($memory < 64) { ?>
-                                <span class="tnp-ko">KO</span>
+                                <span class="tnp-ko">MAYBE</span>
                             <?php } else if ($memory < 128) { ?>
                                 <span class="tnp-maybe">MAYBE</span>
                             <?php } else { ?>
@@ -800,7 +801,9 @@ $options = $module->get_options('status');
                             <?php } ?>    
                         </td>
                         <td>
-                            Your memory limit is set to <?php echo $memory ?> megabyte<br>
+                            WordPress WP_MEMORY_LIMIT is set to <?php echo $memory ?> megabyte but your PHP setting could allow more than that.
+                            Anyway we suggest to set the value to at least 64M.
+                            <a href="https://www.thenewsletterplugin.com/documentation/status-panel#status-memory" target="_blank">Read more</a>.
                             <?php if ($memory < 64) { ?>
                                 This value is too low you should increase it adding <code>define('WP_MEMORY_LIMIT', '64M');</code> to your <code>wp-config.php</code>.
                                 <a href="https://www.thenewsletterplugin.com/documentation/status-panel#status-memory" target="_blank">Read more</a>.
@@ -815,7 +818,8 @@ $options = $module->get_options('status');
 
                         </td>
                     </tr>
-
+                     */ ?>
+                    
                     <?php
                     $ip = gethostbyname($_SERVER['HTTP_HOST']);
                     $name = gethostbyaddr($ip);

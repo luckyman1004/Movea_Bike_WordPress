@@ -224,7 +224,7 @@ $controls = new NewsletterControls();
                                 <td><?php echo $female_count->bounced; ?></td>
                             </tr>
                             <tr>
-                                <td><?php _e('Female', 'newsletter')?></td>
+                                <td><?php _e('Male', 'newsletter')?></td>
                                 <td><?php echo $male_count->confirmed; ?></td>
                                 <td><?php echo $male_count->unconfirmed; ?></td>
                                 <td><?php echo $male_count->unsubscribed; ?></td>

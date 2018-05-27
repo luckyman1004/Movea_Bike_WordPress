@@ -162,8 +162,9 @@ class NewsletterModule {
      */
     function get_options($sub = '') {
         $options = get_option($this->get_prefix($sub), array());
-        if (!is_array($options))
+        if (!is_array($options)) {
             return array();
+        }
         return $options;
     }
 
@@ -668,7 +669,13 @@ class NewsletterModule {
     }
 
     function delete_email($id) {
-        return $this->store->delete(NEWSLETTER_EMAILS_TABLE, $id);
+        global $wpdb;
+        $r = $this->store->delete(NEWSLETTER_EMAILS_TABLE, $id);
+        if ($r !== false) {
+            $wpdb->delete(NEWSLETTER_STATS_TABLE, array('email_id' => $id));
+            $wpdb->delete(NEWSLETTER_SENT_TABLE, array('email_id' => $id));
+        }
+        return $r;
     }
 
     function get_email_field($id, $field_name) {
@@ -814,11 +821,13 @@ class NewsletterModule {
     function get_list($id) {
         global $wpdb;
         $id = (int) $id;
-        if (!$id) return null;
+        if (!$id)
+            return null;
         $list = get_option('newsletter_list_' . $id, array());
         $profile = get_option('newsletter_profile');
         $list['name'] = $profile['list_' . $id];
         $list['subscriber_count'] = $wpdb->get_var("select count(*) from " . NEWSLETTER_USERS_TABLE . " where status='C' and list_" . $id . "=1");
+        $list['status'] = (int) $profile['list_' . $id . '_status'];
         return $list;
     }
 
@@ -865,6 +874,7 @@ class NewsletterModule {
                 $value = trim($rules[2][$i]);
                 $value = preg_replace('|\s+|', ' ', $value);
                 $content = str_replace('class="' . $class . '"', 'class="' . $class . '" style="' . $value . '"', $content);
+                $content = str_replace('inline-class="' . $class . '"', 'style="' . $value . '"', $content);
             }
         }
 
@@ -888,8 +898,39 @@ class NewsletterModule {
         $r = $this->store->delete(NEWSLETTER_USERS_TABLE, $id);
         if ($r !== false) {
             $wpdb->delete(NEWSLETTER_STATS_TABLE, array('user_id' => $id));
+            $wpdb->delete(NEWSLETTER_SENT_TABLE, array('user_id' => $id));
         }
     }
+    
+    function anonymize_ip($ip) {
+        if (empty($ip)) return $ip;
+        $parts = explode('.', $ip);
+        array_pop($parts);
+        return implode('.', $parts);
+    }
+    
+    function anonymize_user($id) {
+        global $wpdb;
+        $user = $this->get_user($id);
+        if (!$user) return null;
+        
+        $user->name = '';
+        $user->surname = '';
+        $user->ip = $this->anonymize_ip($user->ip);
+        
+        for ($i=1; $i<=NEWSLETTER_PROFILE_MAX; $i++) {
+            $field = 'profile_' . $i;
+            $user->$field = '';
+        }
+        
+        // [TODO] Status?
+        $user->status = 'U';
+        $user->email = $user->id . '@anonymi.zed';
+        
+        $user = $this->save_user($user);
+        
+        return $user;
+    }    
 
     /**
      *
@@ -915,6 +956,14 @@ class NewsletterModule {
             return false;
         }
         return $r;
+    }
+
+    function set_user_list($user, $list, $value) {
+        global $wpdb;
+
+        $list = (int) $list;
+        $value = $value ? 0 : 1;
+        $wpdb->update(NEWSLETTER_USERS_TABLE, array('list_' . $list => $value), array('id' => $user->id));
     }
 
     function set_user_field($id, $field, $value) {
@@ -1033,10 +1082,11 @@ class NewsletterModule {
             $options_subscription = NewsletterSubscription::instance()->options;
 
             $home_url = home_url('/');
-            
+
             $nek = false;
             if ($email) {
                 $text = str_replace('{email_id}', $email->id, $text);
+                $text = str_replace('{email_key}', $email->id . '-' . $email->token, $text);
                 $text = str_replace('{email_subject}', $email->subject, $text);
                 $text = $this->replace_url($text, 'EMAIL_URL', $home_url . '?na=v&id=' . $email->id . '&amp;nk=' . $nk);
                 $nek = $email->id . '-' . $email->token;
@@ -1055,13 +1105,17 @@ class NewsletterModule {
             $text = $this->replace_url($text, 'FEED_SUBSCRIPTION_URL', self::add_qs($base, 'nm=es' . $id_token));
             $text = $this->replace_url($text, 'FEED_UNSUBSCRIPTION_URL', self::add_qs($base, 'nm=eu' . $id_token));
 
-            if (empty($options_profile['profile_url']))
-                $text = $this->replace_url($text, 'PROFILE_URL', $home_url . '?na=p&nk=' . $nk);
-            else
-                $text = $this->replace_url($text, 'PROFILE_URL', self::add_qs($options_profile['profile_url'], 'ni=' . $user->id . '&amp;nt=' . $user->token));
+
+            if (empty($options_profile['profile_url'])) {
+                $profile_url = $home_url . '?na=p&nk=' . $nk;
+            } else {
+                $profile_url = self::add_qs($options_profile['profile_url'], 'nk=' . $nk);
+            }
+
+            $profile_url = apply_filters('newsletter_profile_url', $profile_url, $user);
+            $text = $this->replace_url($text, 'PROFILE_URL', $profile_url);
 
             $text = $this->replace_url($text, 'UNLOCK_URL', $home_url . '?na=ul&nk=' . $nk);
-            
         } else {
             $text = $this->replace_url($text, 'SUBSCRIPTION_CONFIRM_URL', '#');
             $text = $this->replace_url($text, 'ACTIVATION_URL', '#');
@@ -1102,6 +1156,8 @@ class NewsletterModule {
     function replace_url($text, $tag, $url) {
         $home = trailingslashit(home_url());
         $tag_lower = strtolower($tag);
+        $text = str_replace('http://{' . $tag_lower . '}', $url, $text);
+        $text = str_replace('https://{' . $tag_lower . '}', $url, $text);
         $text = str_replace($home . '{' . $tag_lower . '}', $url, $text);
         $text = str_replace($home . '%7B' . $tag_lower . '%7D', $url, $text);
         $text = str_replace('{' . $tag_lower . '}', $url, $text);
@@ -1116,23 +1172,51 @@ class NewsletterModule {
         return $text;
     }
 
-    public static function antibot_form_check() {
-        return strtolower($_SERVER['REQUEST_METHOD']) == 'post' && isset($_POST['ts']) && time() - $_POST['ts'] < 30;
+    public static function antibot_form_check($captcha = false) {
+        if (strtolower($_SERVER['REQUEST_METHOD']) != 'post') return false;
+        
+        if (!isset($_POST['ts']) || time() - $_POST['ts'] > 60) {
+            return false;
+        }
+        if ($captcha) {
+            $n1 = (int) $_POST['n1'];
+            if (empty($n1)) {
+                return false;
+            }
+            $n2 = (int) $_POST['n2'];
+            if (empty($n2)) {
+                return false;
+            }
+            $n3 = (int) $_POST['n3'];
+            if ($n1 + $n2 != $n3) {
+                return false;
+            }
+        }
+        
+        return true;
     }
 
-    public static function request_to_antibot_form($submit_label = 'Continue...') {
+    public static function request_to_antibot_form($submit_label = 'Continue...', $captcha = false) {
         header('Content-Type: text/html;charset=UTF-8');
         header('X-Robots-Tag: noindex,nofollow,noarchive');
         header('Cache-Control: no-cache,no-store,private');
         echo "<!DOCTYPE html>\n";
-        echo '<html><head></head><body>';
-        echo '<form method="post" action="' . home_url('/') . '" id="form">';
+        echo '<html><head>'
+        . '<style type="text/css">'
+        . 'form {margin: 200px auto 0 auto !important; width: 350px !important; padding: 10px !important; font-family: "Open Sans", sans-serif; background: #ECF0F1; border-radius: 5px; padding: 50px !important; border: none !important;}'
+        . 'p {text-align: center; padding: 10px; color: #7F8C8D;}'
+        . 'input[type=text] {width: 50px; padding: 10px 10px; border: none; border-radius: 2px; margin: 0px 5px;}'
+        . 'input[type=submit] {text-align: center; border: none; padding: 10px 15px; font-family: "Open Sans", sans-serif; background-color: #27AE60; color: white; cursor: pointer;}'
+        . '</style>'
+        . '</head><body>';
+        echo '<form method="post" action="https://www.domain.tld" id="form">';
+        echo '<div style="width: 1px; height: 1px; overflow: hidden">';
         foreach ($_REQUEST as $name => $value) {
             if ($name == 'submit')
                 continue;
             if (is_array($value)) {
                 foreach ($value as $element) {
-                    echo '<input type="hidden" name="';
+                    echo '<input type="text" name="';
                     echo esc_attr($name);
                     echo '[]" value="';
                     echo esc_attr(stripslashes($element));
@@ -1151,10 +1235,25 @@ class NewsletterModule {
             echo '<input type="hidden" name="nhr" value="' . esc_attr($_SERVER['HTTP_REFERER']) . '">';
         }
         echo '<input type="hidden" name="ts" value="' . time() . '">';
+        echo '</div>';
+        if ($captcha) {
+            echo '<p>Math question</p>';
+            echo '<input type="text" name="n1" value="' . rand(1, 9) . '" readonly style="width: 50px">';
+            echo '+';
+            echo '<input type="text" name="n2" value="' . rand(1, 9) . '" readonly style="width: 50px">';
+            echo '=';
+            echo '<input type="text" name="n3" value="?" style="width: 50px">';
+            echo '&nbsp;<input type="submit" value="', esc_attr($submit_label), '">';
+        }
         echo '<noscript><input type="submit" value="';
         echo esc_attr($submit_label);
         echo '"></noscript></form>';
-        echo '<script>document.getElementById("form").submit();</script>';
+        echo '<script>';
+        echo 'document.getElementById("form").action="' . home_url('/') . '";';
+        if (!$captcha) {
+            echo 'document.getElementById("form").submit();';
+        }
+        echo '</script>';
         echo '</body></html>';
         die();
     }
@@ -1192,6 +1291,16 @@ class NewsletterModule {
             return (int) $var['id'];
         }
         return (int) $var;
+    }
+
+    static function sanitize_ip($ip) {
+        if (empty($ip))
+            return '';
+        return preg_replace('/[^0-9a-fA-F:., ]/', '', $ip);
+    }
+
+    static function get_remote_ip() {
+        return self::sanitize_ip($_SERVER['REMOTE_ADDR']);
     }
 
 }

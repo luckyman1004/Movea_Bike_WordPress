@@ -14,7 +14,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/hint/xml-hint.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/addon/hint/html-hint.js"></script>
 <script>
-    
     var templateEditor;
     jQuery(function () {
         templateEditor = CodeMirror.fromTextArea(document.getElementById("options-message"), {

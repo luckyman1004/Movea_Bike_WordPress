@@ -111,7 +111,12 @@ $emails = Newsletter::instance()->get_emails('message');
                             <td><?php if ($email->status == 'sent' || $email->status == 'sending') echo $email->sent . ' ' . __('of', 'newsletter') . ' ' . $email->total; ?></td>
                             <td><?php if ($email->status == 'sent' || $email->status == 'sending') echo $module->format_date($email->send_on); ?></td>
                             <td><?php echo $email->track == 1 ? __('Yes', 'newsletter') : __('No', 'newsletter'); ?></td>
-                            <td><a class="button-primary" href="<?php echo $module->get_admin_page_url($composer ? 'composer' : 'edit'); ?>&amp;id=<?php echo $email->id; ?>"><i class="fa fa-<?php echo $composer ? 'th-large' : 'pencil' ?>"></i> <?php _e('Edit', 'newsletter') ?></a></td>
+                            
+                            <td><a class="button-primary"
+                                   href="<?php echo $module->get_admin_page_url($email->status == 'new' && $composer ? 'composer' : 'edit') ?>&amp;id=<?php echo $email->id; ?>">
+                                    <i class="fa fa-<?php echo $composer ? 'th-large' : 'pencil' ?>"></i> <?php _e('Edit', 'newsletter') ?>
+                                </a></td>
+                            
                             <td>
                                 <a class="button-primary" href="<?php echo NewsletterStatistics::instance()->get_statistics_url($email->id); ?>"><i class="fa fa-bar-chart"></i> <?php _e('Statistics', 'newsletter') ?></a>
                             </td>

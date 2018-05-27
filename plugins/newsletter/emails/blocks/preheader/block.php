@@ -9,24 +9,36 @@
 /* @var $options array */
 /* @var $wpdb wpdb */
 
+$default_options = array(
+    'view'=>'View online',
+    'text'=>'Few words summary',
+    'block_background'=>'#ffffff',
+    'font_family'=>$font_family,
+    'font_size'=>13,
+    'color'=>'#999999'
+);
 
+$options = array_merge($default_options, $options);
 
-if (empty($options['view'])) {
-    $options['view'] = 'View online';
-}
-if (empty($options['text'])) {
-    $options['text'] = 'Few words summary';
-}
 ?>
+<style>
+    .preheader-link {
+        padding: 20px; 
+        text-align: center; 
+        font-size: <?php echo $options['font_size'] ?>px; 
+        font-family: <?php echo $options['font_family'] ?>; 
+        color: <?php echo $options['color'] ?>;
+    }
+</style>
 
-
-<table border="0" cellpadding="0" cellspacing="0" width="750" class="responsive-table" style="max-width: 100%!important">
+<table width="100%" border="0" cellpadding="0" align="center" cellspacing="0">
     <tr>
-        <td style="padding: 20px; text-align: center; font-size: 13px!important; color: #444;" width="50%" valign="top" align="center">
-            <?php echo $options['text']?>
+        <td class="preheader-link" width="50%" valign="top" align="center">
+            <?php echo $options['text'] ?>
         </td>
-        <td style="padding: 20px; text-align: center;" width="50%" valign="top" align="center">
-            <a href="{email_url}" target="_blank" rel="noopener" style="text-decoration: none; color: #444; font-size: 13px!important;"><?php echo $options['view']?></a>
+        <td class="preheader-link" width="50%" valign="top" align="center">
+            <a href="{email_url}" target="_blank" rel="noopener" style="text-decoration: none; font-size: <?php echo $options['font_size'] ?>px; font-family: <?php echo $options['font_family'] ?>; color: <?php echo $options['color'] ?>"><?php echo $options['view'] ?></a>
         </td>
     </tr>
 </table>
+

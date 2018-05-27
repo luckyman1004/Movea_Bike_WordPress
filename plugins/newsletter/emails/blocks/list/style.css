@@ -1,0 +1,6 @@
+@media all and (max-width: 480px) {
+    .list-text .mobile {
+        font-size: 20px;
+    }
+}
+

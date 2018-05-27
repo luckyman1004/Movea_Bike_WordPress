@@ -631,7 +631,7 @@ if ( 'cli' !== php_sapi_name() && ! $oc_logged_in && ! $oc_blocked_page && wpaas
 			}
 		}
 
-		public function incr( $key, $offset = 1, $group = 'default' ) {
+		public function incr2( $key, $offset = 1, $group = 'default' ) {
 			if ( $offset < 0 ) {
 				return $this->decr( $key, abs( $offset ), $group );
 			}

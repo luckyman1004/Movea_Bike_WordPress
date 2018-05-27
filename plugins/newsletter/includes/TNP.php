@@ -32,17 +32,9 @@ class TNP {
 
         // Form field configuration
         $options_profile = get_option('newsletter_profile', array());
-
-        $optin = (int) $newsletter->options['noconfirmation']; // 0 - double, 1 - single
-        if (isset($params['optin'])) {
-            switch ($params['optin']) {
-                case 'single': $optin = 1;
-                    break;
-                case 'double': $optin = 0;
-                    break;
-            }
-        }
-
+        
+        $optin = (int) $options['noconfirmation']; // 0 - double, 1 - single
+        
         $email = $newsletter->normalize_email(stripslashes($params['email']));
 
         // Should never reach this point without a valid email address
@@ -51,7 +43,7 @@ class TNP {
         }
 
         $user = $newsletter->get_user($email);
-
+        
         if ($user != null) {
             
             $newsletter->logger->info('Subscription of an address with status ' . $user->status);
@@ -96,9 +88,14 @@ class TNP {
             $user = array('id' => $user->id);
         } else {
             $newsletter->logger->info("New email address");
-            $user = array('email' => $email);
         }
 
+        if ($optin) {
+            $params['status'] = 'C';
+        } else {
+            $params['status'] = 'S';
+        }
+        
         $user = TNP::add_subscriber($params);
 
 //        TODO: decidere se applicare i filtri sulle API
@@ -120,12 +117,12 @@ class TNP {
         }
 
         $prefix = ($user->status == 'C') ? 'confirmed_' : 'confirmation_';
-
+        
         if (empty($options[$prefix . 'disabled'])) {
             $message = $options[$prefix . 'message'];
 
             if ($user->status == 'S') {
-                $message = $newsletter->add_microdata($message);
+                $message = $subscription->add_microdata($message);
             }
 
             // TODO: This is always empty!
@@ -198,7 +195,7 @@ class TNP {
         }
 
         if (!empty($params['gender'])) {
-            $user['gender'] = $newsletter->normalize_sex($params['gender']);
+            $user['sex'] = $newsletter->normalize_sex($params['gender']);
         }
 
         if (is_array($params['profile'])) {
@@ -219,6 +216,25 @@ class TNP {
         $user = $newsletter->save_user($user);
 
         return $user;
+    }
+    
+    /*
+     * Subscribers list
+     */
+
+    public static function subscribers($params) {
+
+        global $wpdb;
+        $newsletter = Newsletter::instance();
+        
+        $items_per_page = 20;
+        $where = "";
+        
+        $query = "select name, email from " . NEWSLETTER_USERS_TABLE . ' ' . $where . " order by id desc";
+        $query .= " limit 0," . $items_per_page;
+        $list = $wpdb->get_results($query);
+
+        return $list;
     }
 
     /*
@@ -242,6 +258,29 @@ class TNP {
             $newsletter->logger->debug($wpdb->last_query);
             return new WP_Error('-1', $wpdb->last_error, array('status' => 400));
         }
+    }
+    
+    /*
+     * Newsletters list
+     */
+
+    public static function newsletters($params) {
+
+        global $wpdb;
+        
+        $list = $wpdb->get_results("SELECT id, subject, created, status, total, sent, send_on FROM " . NEWSLETTER_EMAILS_TABLE . " ORDER BY id DESC LIMIT 10", OBJECT);
+        
+        if ($wpdb->last_error) {
+            $this->logger->error($wpdb->last_error);
+            return false;
+        }
+        
+        if (empty($list)) {
+            return array();
+        }
+        
+        return $list;
+        
     }
 
 }

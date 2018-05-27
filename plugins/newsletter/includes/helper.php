@@ -7,13 +7,20 @@ function tnp_post_thumbnail_src($post, $size = 'thumbnail', $alternative = '') {
     if (is_object($post)) {
         $post = $post->ID;
     }
-    
+
     if (is_array($size)) {
         $media_id = get_post_thumbnail_id($post);
-        if (!$media_id) return $alternative;
-        return tnp_media_resize($media_id, $size);
+        if (!$media_id) {
+            return $alternative;
+        }
+        $src = tnp_media_resize($media_id, $size);
+        if (is_wp_error($src)) {
+            Newsletter::instance()->logger->error($src);
+        } else {
+            return $src;
+        }
     }
-    
+
     $media = wp_get_attachment_image_src(get_post_thumbnail_id($post), $size);
     if (strpos($media[0], 'http') !== 0) {
         $media[0] = 'http:' . $media[0];
@@ -73,21 +80,22 @@ function tnp_media_resize($media_id, $size) {
 
         $editor = wp_get_image_editor($absolute_file);
         if (is_wp_error($editor)) {
-            //echo 'error 1';
-            return $uploads['baseurl'] . '/' . $relative_file;
+            return $editor;
+            //return $uploads['baseurl'] . '/' . $relative_file;
         }
 
         $editor->set_quality(80);
         $resized = $editor->resize($width, $height, $crop);
 
         if (is_wp_error($resized)) {
-            //echo 'error 2';
-            return $uploads['baseurl'] . '/' . $relative_file;
+            return $resized;
+            //return $uploads['baseurl'] . '/' . $relative_file;
         }
 
         $saved = $editor->save($absolute_thumb);
         if (is_wp_error($saved)) {
-            return $uploads['baseurl'] . '/' . $relative_file;
+            return $saved;
+            //return $uploads['baseurl'] . '/' . $relative_file;
         }
     }
 

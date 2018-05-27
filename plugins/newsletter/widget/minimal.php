@@ -1,6 +1,8 @@
 <?php
-if (!defined('ABSPATH')) exit;
-if (version_compare(phpversion(), '5.3', '<')) return;
+if (!defined('ABSPATH'))
+    exit;
+if (version_compare(phpversion(), '5.3', '<'))
+    return;
 
 class NewsletterWidgetMinimal extends WP_Widget {
 
@@ -9,7 +11,9 @@ class NewsletterWidgetMinimal extends WP_Widget {
     }
 
     function widget($args, $instance) {
-        global $newsletter;
+
+        $newsletter = Newsletter::instance();
+
         extract($args);
 
         echo $before_widget;
@@ -28,7 +32,7 @@ class NewsletterWidgetMinimal extends WP_Widget {
         }
 
         $options_profile = get_option('newsletter_profile');
-        
+
 
         $form = '<div class="tnp tnp-widget-minimal">';
         $form .= '<form action="' . esc_attr(home_url('/')) . '?na=s" method="post" onsubmit="return newsletter_check(this)">';
@@ -59,7 +63,7 @@ class NewsletterWidgetMinimal extends WP_Widget {
             $instance = array();
         }
         $profile_options = NewsletterSubscription::instance()->get_options('profile');
-        $instance = array_merge(array('title' => '', 'text' => '', 'button'=>$profile_options['subscribe'], 'nl'=>array()), $instance);
+        $instance = array_merge(array('title' => '', 'text' => '', 'button' => $profile_options['subscribe'], 'nl' => array()), $instance);
         $options_profile = get_option('newsletter_profile');
         if (!is_array($instance['nl'])) {
             $instance['nl'] = array();
@@ -99,5 +103,7 @@ class NewsletterWidgetMinimal extends WP_Widget {
 
 }
 
-add_action('widgets_init', function() {return register_widget("NewsletterWidgetMinimal");});
+add_action('widgets_init', function() {
+    return register_widget("NewsletterWidgetMinimal");
+});
 ?>

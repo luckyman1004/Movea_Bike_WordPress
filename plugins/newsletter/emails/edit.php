@@ -23,8 +23,8 @@ if ($composer) {
     wp_enqueue_style('tnpc-style', plugins_url('/tnp-composer/_css/newsletter-builder.css', __FILE__));
 }
 
-// Preferences conversions
 if (!$controls->is_action()) {
+// Preferences conversions
     if (!isset($email['options']['lists'])) {
 
         $options_profile = get_option('newsletter_profile');

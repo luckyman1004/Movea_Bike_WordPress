@@ -1,12 +1,12 @@
 <?php 
 $social_icon_url = plugins_url('newsletter') . '/emails/themes/default/images'; 
 ?>
-<!-- SOCIAL -->
-<table border="0" cellpadding="0" cellspacing="0" width="100%" class="tnpc-row" data-id="footer-03">
+<?php echo $wrapper_open ?>
+<table border="0" cellpadding="0" align="center" cellspacing="0" width="100%" style="width: 100%!important; max-width: <?php echo $width ?>px!important">
     <tr>
-        <td bgcolor="#ffffff" align="center" style="padding: 20px 0px;" class="edit-block">
+        <td bgcolor="#ffffff" align="center" style="padding: 20px 15px 20px 15px;" class="section-padding edit-block">
 
-            <table width="500" border="0" cellspacing="0" cellpadding="0" align="center" class="responsive-table">
+            <table border="0" cellspacing="0" cellpadding="0" align="center" class="responsive-table">
                 <tr>
                     <td align="center" style="font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;">
                         <?php if (!empty($block_options['facebook_url'])) { $configured = true; ?>
@@ -66,7 +66,8 @@ $social_icon_url = plugins_url('newsletter') . '/emails/themes/default/images';
                     </td>
                 </tr>
             </table>
+        </td>
     </tr>
 </table>
-<!-- /SOCIAL -->
+<?php echo $wrapper_close ?>
 

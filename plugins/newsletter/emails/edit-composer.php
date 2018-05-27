@@ -12,7 +12,7 @@
 
     <!-- Flat Mobile Browser -->
     <div class="fake-mobile-browser-ui">
-        <iframe id="tnpc-preview-mobile" src="" width="250" height="445" alt="Test" frameborder="0"></iframe>
+        <iframe id="tnpc-preview-mobile" src="" width="320" height="445" alt="Test" frameborder="0"></iframe>
         <div class="frame">
             <span class="bt-4"></span>
         </div>

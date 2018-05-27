@@ -1,8 +1,8 @@
 === Newsletter ===
 Tags: newsletter,email,subscription,mass mail,list build,email marketing,direct mailing,automation,automated
 Requires at least: 3.4.0
-Tested up to: 4.9.4
-Stable tag: 5.2.5
+Tested up to: 4.9.5
+Stable tag: 5.4.2
 Contributors: satollo,webagile,michael-travan
 
 Add a real newsletter system to your blog. For free. With unlimited newsletters and subscribers.
@@ -14,6 +14,8 @@ send and track e-mails, headache-free. It just works out of box!
 
 = Main Features =
 
+* Subscription spam check with domain/ip black lists, Akismet, captcha
+* GDPR ready 
 * **Responsive email Drag & Drop composer**
 * **Unlimited subscribers** with statistics 
 * **Unlimited newsletter** with tracking
@@ -87,6 +89,93 @@ Thank you, The Newsletter Team
 3. The Reports extension
 
 == Changelog ==
+
+= 5.4.2 =
+
+* SVN Deleted files fix
+
+= 5.4.1 =
+
+* Fixed debug notice in the standard widget
+* Gender label fix
+* Fixed the global variable conflict on widget (rare case)
+* CSS fix on widget list field
+
+= 5.4.0 =
+
+* Fix lists as dropdown in the widget
+
+= 5.3.9 =
+
+* Version number fix
+
+= 5.3.8 =
+
+* Fixed failed insert on ip null
+
+= 5.3.7 =
+
+* Fixed the newsletter deletion with clean up of log tables
+
+= 5.3.6 =
+
+* Fixed composer block background editing
+* Fixed API functions
+* Minor fixes
+
+= 5.3.5 =
+
+* Fixed error notice on profile.php
+
+= 5.3.4 =
+
+* GDPR ready
+* Maintenance option to add all subscriber without a list to a specified list
+* Dismissed the tabled subscription form
+* Fixed privacy checkbox label for field shortcode
+* Logs of lists change
+* Last activity tracking
+* Retargeting/deletion of inactive subscribers
+* Privacy checkbox without the checkbox (option)
+* Personal data export
+* Improved subscriber deletion with cleanup of log tables
+
+= 5.3.3 =
+
+* Added GIPHY composer block
+* Added raw HTML composer block
+* API: Newsletters and subscribers lists
+
+= 5.3.2 =
+
+* Security panel reorganized
+* Added Akismet spam check 
+
+= 5.3.1 = 
+
+* Name and last name check for spam
+* 404 responses on error condition
+* jQuery fix
+* Email cleanup on admin edit panel
+* Name check for spam on subscription
+
+= 5.3.0 =
+
+* CAPTCHA system
+* IP black list
+* Email address black list
+
+= 5.2.8 =
+
+* Redirect fix
+
+= 5.2.7 =
+
+* Improved block layout
+* Added filter on profile url
+* Removed old obsolete query
+* Improved the antibot
+* Antiflood configurable to 30 minutes
 
 = 5.2.6 =
 

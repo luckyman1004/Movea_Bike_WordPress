@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Smush\n"
-"POT-Creation-Date: 2018-02-12 12:34+0530\n"
-"PO-Revision-Date: 2018-02-12 12:33+0530\n"
+"POT-Creation-Date: 2018-05-24 11:13+0530\n"
+"PO-Revision-Date: 2018-05-24 11:12+0530\n"
 "Last-Translator: Umesh <umeshsingla05@gmail.com>\n"
 "Language-Team: Umesh <umeshsingla05@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -36,113 +36,8 @@ msgstr ""
 msgid "Saving"
 msgstr ""
 
-#: assets/shared-ui/plugin-ui.php:301
-#: extras/dash-notice/wpmudev-dash-notification.php:248
-#: extras/dash-notice/wpmudev-dash-notification.php:289
-#: lib/class-wp-smush-ui.php:1007
+#: assets/shared-ui/plugin-ui.php:301 lib/class-wp-smush-ui.php:1007
 msgid "Dismiss"
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:223
-msgid "install"
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:230
-#, php-format
-msgid ""
-"Important updates are available for <strong>%s</strong>. Install the free "
-"WPMU DEV Dashboard plugin now for updates and support!"
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:232
-#, php-format
-msgid ""
-"<strong>%s</strong> is almost ready - install the free WPMU DEV Dashboard "
-"plugin for updates and support!"
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:236
-msgid ""
-"Important updates are available for your WPMU DEV plugins/themes. Install "
-"the free WPMU DEV Dashboard plugin now for updates and support!"
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:238
-msgid ""
-"Almost ready - install the free WPMU DEV Dashboard plugin for updates and "
-"support!"
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:244
-msgid "Install Plugin"
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:247
-#: extras/dash-notice/wpmudev-dash-notification.php:288
-msgid "Saving..."
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:264
-msgid "activate"
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:271
-#, php-format
-msgid ""
-"Important updates are available for <strong>%s</strong>. Activate the WPMU "
-"DEV Dashboard to update now!"
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:273
-#, php-format
-msgid ""
-"Just one more step to enable updates and support for <strong>%s</strong>!"
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:277
-msgid ""
-"Important updates are available for your WPMU DEV plugins/themes. Activate "
-"the WPMU DEV Dashboard to update now!"
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:279
-msgid ""
-"Just one more step - activate the WPMU DEV Dashboard plugin and you're all "
-"done!"
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:285
-msgid "Activate WPMU DEV Dashboard"
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:952
-msgid "We did not find any data for this plugin or theme..."
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:1131
-#, php-format
-msgid "%s changelog"
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:1161
-msgid "Current"
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:1167
-msgid "New"
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:1184
-#, php-format
-msgid "Version %s"
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:1202
-msgid "Show all changes"
-msgstr ""
-
-#: extras/dash-notice/wpmudev-dash-notification.php:1203
-msgid "Hide details"
 msgstr ""
 
 #: extras/free-dashboard/module.php:377
@@ -293,7 +188,7 @@ msgid ""
 "JPEG will further reduce its size."
 msgstr ""
 
-#: lib/class-wp-smush-admin.php:395 lib/class-wp-smush.php:1086
+#: lib/class-wp-smush-admin.php:395 lib/class-wp-smush.php:1091
 #: lib/nextgen-integration/class-wp-smush-nextgen-admin.php:159
 #: lib/nextgen-integration/class-wp-smush-nextgen-stats.php:274
 msgid "Super-Smush"
@@ -351,8 +246,8 @@ msgstr ""
 msgid "images could not be smushed."
 msgstr ""
 
-#: lib/class-wp-smush-admin.php:408 lib/class-wp-smush.php:1001
-#: lib/class-wp-smush.php:1008
+#: lib/class-wp-smush-admin.php:408 lib/class-wp-smush.php:1006
+#: lib/class-wp-smush.php:1013
 #: lib/nextgen-integration/class-wp-smush-nextgen-stats.php:193
 #: lib/nextgen-integration/class-wp-smush-nextgen-stats.php:196
 msgid "Already Optimized"
@@ -420,11 +315,11 @@ msgstr ""
 msgid "<strong>%d of %d images</strong> were sent for smushing:"
 msgstr ""
 
-#: lib/class-wp-smush-admin.php:1154 lib/class-wp-smush.php:1092
+#: lib/class-wp-smush-admin.php:1154 lib/class-wp-smush.php:1097
 msgid "Smushing in progress.."
 msgstr ""
 
-#: lib/class-wp-smush-admin.php:1160 lib/class-wp-smush.php:1111
+#: lib/class-wp-smush-admin.php:1160 lib/class-wp-smush.php:1116
 #: lib/nextgen-integration/class-wp-smush-nextgen-admin.php:269
 msgid "Smush Now!"
 msgstr ""
@@ -1201,93 +1096,93 @@ msgid ""
 "more as part of a WPMU DEV membership."
 msgstr ""
 
-#: lib/class-wp-smush.php:198
+#: lib/class-wp-smush.php:203
 msgid "File path is empty"
 msgstr ""
 
-#: lib/class-wp-smush.php:201
+#: lib/class-wp-smush.php:206
 #, php-format
 msgid "Could not find %s"
 msgstr ""
 
-#: lib/class-wp-smush.php:204
+#: lib/class-wp-smush.php:209
 #, php-format
 msgid "%s is not writable"
 msgstr ""
 
-#: lib/class-wp-smush.php:214
+#: lib/class-wp-smush.php:219
 #, php-format
 msgid "Skipped (%s), image not found. Attachment: %s"
 msgstr ""
 
-#: lib/class-wp-smush.php:217
+#: lib/class-wp-smush.php:222
 #, php-format
 msgid "Skipped (%s), size limit exceeded. Attachment: %s"
 msgstr ""
 
-#: lib/class-wp-smush.php:235
+#: lib/class-wp-smush.php:240
 msgid "Unknown API error"
 msgstr ""
 
-#: lib/class-wp-smush.php:717
+#: lib/class-wp-smush.php:722
 msgid ""
 "Skipped due to a timeout error. You can increase the request timeout to make "
 "sure Smush has enough time to process larger files. "
 "`define('WP_SMUSH_API_TIMEOUT', 150);`."
 msgstr ""
 
-#: lib/class-wp-smush.php:720
+#: lib/class-wp-smush.php:725
 #, php-format
 msgid "Error posting to API: %s"
 msgstr ""
 
-#: lib/class-wp-smush.php:727
+#: lib/class-wp-smush.php:732
 #, php-format
 msgid "Error posting to API: %s %s"
 msgstr ""
 
-#: lib/class-wp-smush.php:744
+#: lib/class-wp-smush.php:749
 msgid "Smush data corrupted, try again."
 msgstr ""
 
-#: lib/class-wp-smush.php:770
+#: lib/class-wp-smush.php:775
 msgid "Image couldn't be smushed"
 msgstr ""
 
-#: lib/class-wp-smush.php:1015
+#: lib/class-wp-smush.php:1020
 #, php-format
 msgid "%d images reduced "
 msgstr ""
 
-#: lib/class-wp-smush.php:1015
+#: lib/class-wp-smush.php:1020
 msgid "Reduced "
 msgstr ""
 
-#: lib/class-wp-smush.php:1019
+#: lib/class-wp-smush.php:1024
 #, php-format
 msgid "by %s %s"
 msgstr ""
 
-#: lib/class-wp-smush.php:1025
+#: lib/class-wp-smush.php:1030
 #, php-format
 msgid "<br /> Image Size: %s"
 msgstr ""
 
-#: lib/class-wp-smush.php:1061
+#: lib/class-wp-smush.php:1066
 msgid "Detailed stats for all the image sizes"
 msgstr ""
 
-#: lib/class-wp-smush.php:1061
+#: lib/class-wp-smush.php:1066
 #: lib/nextgen-integration/class-wp-smush-nextgen-stats.php:236
 msgid "Smush stats"
 msgstr ""
 
-#: lib/class-wp-smush.php:1105
+#: lib/class-wp-smush.php:1110
 #: lib/nextgen-integration/class-wp-smush-nextgen-admin.php:263
 msgid "Not processed"
 msgstr ""
 
-#: lib/class-wp-smush.php:1420
+#: lib/class-wp-smush.php:1425
 #, php-format
 msgid ""
 "When you upload an image to WordPress it automatically creates %s thumbnail "
@@ -1296,40 +1191,67 @@ msgid ""
 "site we don’t Smush them. Pro users can override this."
 msgstr ""
 
-#: lib/class-wp-smush.php:1423
+#: lib/class-wp-smush.php:1428
 msgid ""
 "Image couldn't be smushed as it exceeded the 1Mb size limit, Pro users can "
 "smush images with size up to 32Mb."
 msgstr ""
 
-#: lib/class-wp-smush.php:1425
+#: lib/class-wp-smush.php:1430
 msgid " Skipped"
 msgstr ""
 
-#: lib/class-wp-smush.php:1447
+#: lib/class-wp-smush.php:1452
 #: lib/nextgen-integration/class-wp-smush-nextgen-stats.php:439
 msgid "Image size"
 msgstr ""
 
-#: lib/class-wp-smush.php:1448
+#: lib/class-wp-smush.php:1453
 #: lib/nextgen-integration/class-wp-smush-nextgen-stats.php:440
 msgid "Savings"
 msgstr ""
 
-#: lib/class-wp-smush.php:1696
+#: lib/class-wp-smush.php:1701
 msgid "Restore original image."
 msgstr ""
 
-#: lib/class-wp-smush.php:1696
+#: lib/class-wp-smush.php:1701
 msgid "Restore image"
 msgstr ""
 
-#: lib/class-wp-smush.php:1744
+#: lib/class-wp-smush.php:1749
 msgid "Smush image including original file."
 msgstr ""
 
-#: lib/class-wp-smush.php:1744
+#: lib/class-wp-smush.php:1749
 msgid "Resmush image"
+msgstr ""
+
+#: lib/class-wp-smush.php:2426
+msgid "Plugin: Smush"
+msgstr ""
+
+#: lib/class-wp-smush.php:2428
+msgid ""
+"Note: Smush does not interact with end users on your website. The only input "
+"option Smush has is to a newsletter subscription for site admins only. If "
+"you would like to notify your users of this in your privacy policy, you can "
+"use the information below."
+msgstr ""
+
+#: lib/class-wp-smush.php:2430
+msgid ""
+"Smush sends images to the WPMU DEV servers to optimize them for web use. "
+"This includes the transfer of EXIF data. The EXIF data will either be "
+"stripped or returned as it is. It is not stored on the WPMU DEV servers."
+msgstr ""
+
+#: lib/class-wp-smush.php:2435
+msgid ""
+"Smush uses a third-party email service (Drip) to send informational emails "
+"to the site administrator. The administrator's email address is sent to Drip "
+"and a cookie is set by the service. Only administrator information is "
+"collected by Drip."
 msgstr ""
 
 #: lib/nextgen-integration/class-wp-smush-nextgen-admin.php:71

@@ -278,7 +278,7 @@
     max-width: 200px;
     color: #000000;
     background-color: #ECF0F1;
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 #tnp-body .form-table th small {
@@ -1029,6 +1029,14 @@ p.description {
     font-family: 'Montserrat',sans-serif;
     margin: 0px 2px;
     width: auto;
+}
+
+.wp-core-ui .button-secondary, .wp-core-ui .button, .wp-core-ui .button-primary {
+    background-color: #3498db;
+    box-shadow: none;
+    color: #fff;
+    font-family: 'Montserrat',sans-serif;
+    margin: 0px 2px;
 }
 
 .wp-core-ui .button-secondary:hover, .wp-core-ui .button:hover, .wp-core-ui .button-primary:hover {

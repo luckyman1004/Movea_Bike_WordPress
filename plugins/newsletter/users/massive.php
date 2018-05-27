@@ -1,6 +1,7 @@
 <?php
-if (!defined('ABSPATH'))
-    exit;
+/* @var $wpdb wpdb */
+
+defined('ABSPATH') || exit;
 
 @include_once NEWSLETTER_INCLUDES_DIR . '/controls.php';
 
@@ -57,7 +58,10 @@ if ($controls->is_action('list_remove')) {
 }
 
 if ($controls->is_action('list_delete')) {
-    $wpdb->query("delete from " . NEWSLETTER_USERS_TABLE . " where list_" . ((int) $controls->data['list']) . "<>0");
+    $count = $wpdb->query("delete from " . NEWSLETTER_USERS_TABLE . " where list_" . ((int) $controls->data['list']) . "<>0");
+    $wpdb->query("delete s from `{$wpdb->prefix}newsletter_sent` s left join `{$wpdb->prefix}newsletter` u on s.user_id=u.id where u.id is null");
+    $wpdb->query("delete s from `{$wpdb->prefix}newsletter_stats` s left join `{$wpdb->prefix}newsletter` u on s.user_id=u.id where u.id is null");
+    $controls->messages = $count . ' ' . __('deleted', 'newsletter');
 }
 
 if ($controls->is_action('list_manage')) {
@@ -70,6 +74,30 @@ if ($controls->is_action('list_manage')) {
         $wpdb->query("update " . NEWSLETTER_USERS_TABLE . ' set list_' . ((int) $controls->data['list_2']) . '=1' .
                 ' where list_' . $controls->data['list_1'] . '=1');
     }
+}
+
+if ($controls->is_action('list_none')) {
+    $where = '1=1';
+
+    for ($i = 1; $i <= NEWSLETTER_LIST_MAX; $i++) {
+        $where .= ' and list_' . $i . '=0';
+    }
+
+    $count = $wpdb->query("update " . NEWSLETTER_USERS_TABLE . ' set list_' . ((int) $controls->data['list_3']) . '=1' .
+            ' where ' . $where);
+    $controls->messages = $count . ' subscribers updated';
+}
+
+if ($controls->is_action('update_inactive')) {
+    $wpdb->query("update `{$wpdb->prefix}newsletter` n join (select user_id, max(s.time) as max_time from `{$wpdb->prefix}newsletter_sent` s where s.open>0 group by user_id) as ss
+        on n.id=ss.user_id set last_activity=ss.max_time");
+    
+    $inactive_time = (int) $controls->data['inactive_time'];
+
+    $where = 'last_activity > 0 and last_activity<' . (time() - $inactive_time * 30 * 24 * 3600);
+
+    $count = $wpdb->query("update " . NEWSLETTER_USERS_TABLE . ' set list_' . ((int) $controls->data['list_inactive']) . '=1 where ' . $where);
+    $controls->messages = $count . ' subscribers updated';
 }
 
 if ($controls->is_action('bounces')) {
@@ -157,7 +185,7 @@ if ($controls->is_action('bounces')) {
                 </ul>
 
                 <div id="tabs-1">
-                    <table class="widefat">
+                    <table class="widefat" style="width: auto">
                         <thead>
                             <tr>
                                 <th><?php _e('Status', 'newsletter') ?></th>
@@ -215,9 +243,35 @@ if ($controls->is_action('bounces')) {
                                 <?php $controls->button_confirm('remove_bounced', __('Delete all bounced', 'newsletter'), __('Are you sure?', 'newsletter')); ?>
                             </td>
                         </tr>
+                        <tr>
+                            <td><?php _e('Inactive since', 'newsletter') ?></td>
+                            <td>
+                                <?php
+                                $controls->select('inactive_time', array(
+                                    '6' => '6 ' . __('months', 'newsletter'),
+                                    '12' => '1 ' . __('year', 'newsletter'),
+                                    '24' => '2 ' . __('years', 'newsletter'),
+                                    '36' => '3 ' . __('years', 'newsletter'),
+                                    '48' => '4 ' . __('years', 'newsletter'),
+                                    '60' => '5 ' . __('years', 'newsletter'),
+                                    '72' => '6 ' . __('years', 'newsletter'),
+                                    '84' => '7 ' . __('years', 'newsletter'),
+                                    '96' => '8 ' . __('years', 'newsletter'),
+                                    '108' => '9 ' . __('years', 'newsletter'),
+                                    '120' => '10 ' . __('years', 'newsletter')
+                                ))
+                                ?> 
+                                to
+                                <?php $controls->select('list_inactive', $lists); ?>
+                                
+                            </td>
+                            <td>
+                                <?php $controls->button_confirm('update_inactive', __('Update', 'newsletter'), __('Are you sure?', 'newsletter')); ?>
+                            </td>
+                        </tr>
                     </table>
 
-                   
+
                 </div>
 
 
@@ -227,20 +281,32 @@ if ($controls->is_action('bounces')) {
                             <th>&nbsp;</th>
                             <td>
                                 <?php $controls->select('list', $lists) ?>:
-                                <?php $controls->button_confirm('list_add', 'Add it to every user', __('Are you sure?', 'newsletter')); ?>
-                                <?php $controls->button_confirm('list_remove', 'Remove it from every user', __('Are you sure?', 'newsletter')); ?>
-                                <?php $controls->button_confirm('list_delete', 'Delete subscribers of it', __('Are you sure?', 'newsletter')); ?>
-                                <br><br>
-                                <?php $controls->select('list_action', array('move' => 'Change', 'add' => 'Add')); ?>
-                                <?php _e('all subscribers in', 'newsletter')?> <?php $controls->select('list_1', $lists); ?>
-                                <?php _e('to', 'newsletter')?> <?php $controls->select('list_2', $lists); ?>
-                                <?php $controls->button_confirm('list_manage', 'Go!', 'Are you sure?'); ?>
+                                <?php $controls->button_confirm('list_add', 'Activate for everyone', __('Are you sure?', 'newsletter')); ?>
+                                <?php $controls->button_confirm('list_remove', 'Deactivate for everyone', __('Are you sure?', 'newsletter')); ?>
+                                <?php $controls->button_confirm('list_delete', 'Delete everyone in that list', __('Are you sure?', 'newsletter')); ?>
                                 <p class="description">
                                     If you choose to <strong>delete</strong> users in a list, they will be
                                     <strong>physically deleted</strong> from the database (no way back).
                                 </p>
                             </td>
                         </tr>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <td>
+                                <?php $controls->select('list_action', array('move' => 'Move', 'add' => 'Add')); ?>
+                                <?php _e('all subscribers in', 'newsletter') ?> <?php $controls->select('list_1', $lists); ?>
+                                <?php _e('to', 'newsletter') ?> <?php $controls->select('list_2', $lists); ?>
+                                <?php $controls->button_confirm('list_manage', 'Go!', 'Are you sure?'); ?>   
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <td>
+                                <?php _e('Add to', 'newsletter') ?>
+                                <?php $controls->select('list_3', $lists) ?> <?php _e('subscribers without a list', 'newsletter') ?> <?php $controls->button_confirm('list_none', '&raquo;', __('Are you sure?', 'newsletter')); ?>
+                            </td>
+                        </tr>
+
                     </table>
                 </div>
 

@@ -1,7 +1,7 @@
 <!-- FOOTER -->
-<table border="0" cellpadding="0" cellspacing="0" width="100%" class="tnpc-row" data-id="footer-02">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
     <tr>
-        <td bgcolor="#ffffff" align="center" style="padding: 20px 0px;" class="edit-block">
+        <td align="center" style="padding: 20px 0px;">
 
             <table width="500" border="0" cellspacing="0" cellpadding="0" align="center" class="responsive-table">
                 <tr>

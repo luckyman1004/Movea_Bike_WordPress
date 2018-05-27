@@ -1,8 +1,18 @@
-<!-- HEADER -->
-<table border="0" cellpadding="0" cellspacing="0" width="100%" data-id="header-01" class="tnpc-row" data-id="header-01">
+<?php
+if (!empty($block_options['header_logo']['url'])) { 
+    $logo_url = $block_options['header_logo']['url'];
+} else {
+    $logo_url = 'https://placehold.it/180x100&text=' . urlencode($block_options['header_title']);
+}
+$logo_alt = $block_options['header_title'];
+$options['block_background'] = '#333333';
+?>
+
+
+<table border="0" cellpadding="0" align="center" cellspacing="0" width="100%">
     <tr>
-        <td bgcolor="#333333" class="edit-block">
-            <div align="center" style="padding: 0px 15px 0px 15px;">
+        <td align="center" style="padding: 0px 15px 0px 15px;">
+            
                 <table border="0" cellpadding="0" cellspacing="0" width="500" class="wrapper">
                     <!-- LOGO/PREHEADER TEXT -->
                     <tr>
@@ -11,11 +21,7 @@
                                 <tr>
                                     <td width="100" align="left" class="tnpc-row-edit" data-type="image">
                                         <a href="#" target="_blank">
-                                            <?php if (!empty($block_options['header_logo']['url'])) { ?>
-                                                <img alt="<?php echo esc_attr($block_options['header_title']) ?>" src="<?php echo $block_options['header_logo']['url'] ?>" style="display: block; width: 180px;" border="0">
-                                            <?php } else { ?>
-                                                <img alt="<?php echo esc_attr($block_options['header_title']) ?>" src="https://placehold.it/180x100&text=<?php echo esc_attr($block_options['header_title']) ?>" style="display: block; width: 180px;" border="0">
-                                            <?php } ?>
+                                            <img alt="<?php echo esc_attr($logo_alt) ?>" src="<?php echo $logo_url ?>" style="display: block; width: 180px;" border="0">
                                         </a>
                                     </td>
                                     <td width="400" align="right" class="mobile-hide">
@@ -32,7 +38,7 @@
                         </td>
                     </tr>
                 </table>
-            </div>
+           
         </td>
     </tr>
 </table>

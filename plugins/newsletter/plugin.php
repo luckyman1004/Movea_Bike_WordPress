@@ -4,7 +4,7 @@
   Plugin Name: Newsletter
   Plugin URI: https://www.thenewsletterplugin.com/plugins/newsletter
   Description: Newsletter is a cool plugin to create your own subscriber list, to send newsletters, to build your business. <strong>Before update give a look to <a href="https://www.thenewsletterplugin.com/category/release">this page</a> to know what's changed.</strong>
-  Version: 5.2.6
+  Version: 5.4.2
   Author: Stefano Lissa & The Newsletter Team
   Author URI: https://www.thenewsletterplugin.com
   Disclaimer: Use at your own risk. No warranty expressed or implied is provided.
@@ -14,7 +14,7 @@
  */
 
 // Used as dummy parameter on css and js links
-define('NEWSLETTER_VERSION', '5.2.6');
+define('NEWSLETTER_VERSION', '5.4.2');
 
 global $wpdb, $newsletter;
 
@@ -66,6 +66,7 @@ require_once NEWSLETTER_INCLUDES_DIR . '/logger.php';
 require_once NEWSLETTER_INCLUDES_DIR . '/store.php';
 require_once NEWSLETTER_INCLUDES_DIR . '/module.php';
 require_once NEWSLETTER_INCLUDES_DIR . '/themes.php';
+require_once NEWSLETTER_INCLUDES_DIR . '/TNP.php';
 
 class Newsletter extends NewsletterModule {
 
@@ -398,6 +399,9 @@ class Newsletter extends NewsletterModule {
                 wp_enqueue_media();
                 wp_enqueue_style('tnp-admin', plugins_url('newsletter') . '/admin.css', array(), filemtime(NEWSLETTER_DIR . '/admin.css'));
                 wp_enqueue_script('tnp-admin', plugins_url('newsletter') . '/admin.js', array('jquery'), time());
+                
+                wp_enqueue_style('wp-color-picker');
+                wp_enqueue_script('wp-color-picker');
 
                 wp_enqueue_style('tnp-select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css');
                 wp_enqueue_script('tnp-select2', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js');
@@ -537,8 +541,9 @@ class Newsletter extends NewsletterModule {
         if ($users == null) {
 
             $skip_this_run = apply_filters('newsletter_send_skip', false, $email);
-            if ($skip_this_run)
+            if ($skip_this_run) {
                 return false;
+            }
 
             if (empty($email->query)) {
                 $email->query = "select * from " . NEWSLETTER_USERS_TABLE . " where status='C'";
@@ -1209,6 +1214,7 @@ class Newsletter extends NewsletterModule {
 $newsletter = Newsletter::instance();
 
 require_once NEWSLETTER_DIR . '/subscription/subscription.php';
+require_once NEWSLETTER_DIR . '/profile/profile.php';
 require_once NEWSLETTER_DIR . '/emails/emails.php';
 require_once NEWSLETTER_DIR . '/users/users.php';
 require_once NEWSLETTER_DIR . '/statistics/statistics.php';

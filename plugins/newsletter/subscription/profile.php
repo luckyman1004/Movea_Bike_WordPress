@@ -129,6 +129,8 @@ $rules = array(0 => 'Optional', 1 => 'Required');
                                 <table class="newsletter-option-grid">
                                     <tr><th>Subscribe button</th><td><?php $controls->text('subscribe'); ?></td></tr>
                                     <tr><th>Save button</th><td><?php $controls->text('save'); ?> (on profile page)</td></tr>
+                                    <tr><th>Export button/link</th><td><?php $controls->text('profile_export'); ?></td></tr>
+                                    <tr><th>Profile editing link</th><td><?php $controls->text('profile_edit'); ?></td></tr>
                                 </table>
                                 <p class="description">
                                     For "subscribe" insert an URL to an image (http://...) to use it as a graphical button.
@@ -137,10 +139,10 @@ $rules = array(0 => 'Optional', 1 => 'Required');
                         </tr>
 
                         <tr>
-                            <th>Privacy check box</th>
+                            <th>Privacy checkbox/notice</th>
                             <td>
                                 <table class="newsletter-option-grid">
-                                    <tr><th>Enabled?</th><td><?php $controls->yesno('privacy_status'); ?></td></tr>
+                                    <tr><th>Enabled?</th><td><?php $controls->select('privacy_status', array(0=>'No', 1=>'Yes', 2=>'Only the notice')); ?></td></tr>
                                     <tr><th>Label</th><td><?php $controls->text('privacy', 50); ?></td></tr>
                                     <tr><th>Privacy URL</th><td><?php $controls->text('privacy_url', 50); ?></td></tr>
                                     <tr><th>Error message</th><td><?php $controls->text('privacy_error', 50); ?></td></tr>

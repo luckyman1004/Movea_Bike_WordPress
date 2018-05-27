@@ -299,7 +299,7 @@ $labels = array_reverse($labels);
                                                 ?>
                                             </td>
                                             <td style="white-space:nowrap">
-                                                <a class="button-primary tnp-button-white" title="<?php _e('Edit', 'newsletter') ?>" href="<?php echo $emails_module->get_admin_page_url(is_array($email_options) && array_key_exists('composer', $email_options) && $email_options['composer'] ? 'composer' : 'edit'); ?>&amp;id=<?php echo $email->id; ?>"><i class="fa fa-pencil"></i></a>
+                                                <a class="button-primary tnp-button-white" title="<?php _e('Edit', 'newsletter') ?>" href="<?php echo $emails_module->get_admin_page_url(is_array($email_options) && array_key_exists('composer', $email_options) && $email_options['composer'] && $email->status == 'new' ? 'composer' : 'edit'); ?>&amp;id=<?php echo $email->id; ?>"><i class="fa fa-pencil"></i></a>
                                                 <a class="button-primary tnp-button-white" title="<?php _e('Statistics', 'newsletter') ?>" href="<?php echo NewsletterStatistics::instance()->get_statistics_url($email->id); ?>"><i class="fa fa-bar-chart"></i></a>
                                             </td>
                                         </tr>

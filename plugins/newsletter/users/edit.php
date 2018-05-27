@@ -13,7 +13,10 @@ if ($controls->is_action('save')) {
     $email = $module->normalize_email($controls->data['email']);
     if (empty($email)) {
         $controls->errors = __('Wrong email address', 'newsletter');
+    } else {
+        $controls->data['email'] = $email;    
     }
+    
 
     if (empty($controls->errors)) {
         $user = $module->get_user($controls->data['email']);
@@ -104,6 +107,7 @@ function percentValue($value, $total) {
                     <li><a href="#tabs-profile">Profile</a></li>
                     <li><a href="#tabs-other">Other</a></li>
                     <li><a href="#tabs-newsletters">Newsletters</a></li>
+                    <li><a href="#tabs-history">History</a></li>
 
                 </ul>
 
@@ -210,7 +214,13 @@ function percentValue($value, $total) {
                         <tr>
                             <th><?php _e('Created', 'newsletter') ?></th>
                             <td>
-                                <?php $controls->value('created'); ?>
+                                <?php echo $controls->print_date(strtotime($controls->data['created'])); ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><?php _e('Last activity', 'newsletter') ?></th>
+                            <td>
+                                <?php echo $controls->print_date($controls->data['last_activity']); ?>
                             </td>
                         </tr>
                         <tr>
@@ -253,6 +263,51 @@ function percentValue($value, $total) {
                         do_action('newsletter_users_edit_newsletters', $id);
                     }
                     ?>
+                </div>
+                
+                <div id="tabs-history" class="tnp-tab">
+                    <?php
+                    $logs = $wpdb->get_results($wpdb->prepare("select * from {$wpdb->prefix}newsletter_user_logs where user_id=%d order by id desc", $id));
+                    ?>
+                    <?php if (empty($logs)) { ?>
+                    <p>No logs available</p>;
+                    <?php } else { ?>
+                    <table class="widefat" style="width: auto">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Old data</th>
+                                <th>New data</th>
+                            </tr>
+                            
+                        <tbody>
+                            <?php foreach ($logs as $log) { ?>
+                            <?php
+                                $data = json_decode($log->data, ARRAY_A);
+                            ?>
+                            <tr>
+                                <td><?php echo $controls->print_date($log->created)?></td>
+                                <td>
+                                    <?php
+                                    foreach ($data['old'] as $key=>$value) {
+                                        echo esc_html(str_replace('_', ' ', $key)), ': ', esc_html($value) . '<br>';
+                                    }
+                                    ?>
+                                </td>
+                                <td><?php
+                                    foreach ($data['new'] as $key=>$value) {
+                                        echo esc_html(str_replace('_', ' ', $key)), ': ', esc_html($value) . '<br>';
+                                    }
+                                    ?>
+                                </td>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                        
+                    </table>
+                    <?php } ?>
+                    
+                    
                 </div>
 
                 <?php

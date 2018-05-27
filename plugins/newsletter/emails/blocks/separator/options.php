@@ -1,6 +1,8 @@
 <?php
-/* @var $options array contains all the options the current block we're ediging contains */
-/* @var $controls NewsletterControls */
+/* 
+ * @var $options array contains all the options the current block we're ediging contains
+ * @var $controls NewsletterControls 
+ */
 ?>
 
 <table class="form-table">
@@ -11,14 +13,6 @@
             <?php $controls->color('color') ?>
         </td>
     </tr>
-    <!--
-    <tr>
-        <th>Link to</th>
-        <td>
-            <?php $controls->text('url', 50, 'https://...') ?>
-        </td>
-    </tr>
-    -->
     <tr>
         <th><?php _e('Height', 'newsletter')?></th>
         <td>

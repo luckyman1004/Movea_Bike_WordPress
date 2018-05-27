@@ -184,8 +184,8 @@ if (empty($controls->data['page'])) {
                 <ul>
                     <li><a href="#tabs-general"><?php _e('General', 'newsletter') ?></a></li>
                     <li><a href="#tabs-2"><?php _e('Subscription', 'newsletter') ?></a></li>
-                    <li><a href="#tabs-3"><?php _e('Activation', 'newsletter') ?></a></li>
                     <li><a href="#tabs-4"><?php _e('Welcome', 'newsletter') ?></a></li>
+                    <li><a href="#tabs-3"><?php _e('Activation', 'newsletter') ?></a></li>
                     <li><a href="#tabs-9"><?php _e('Profile', 'newsletter') ?></a></li>
                 </ul>
 
@@ -253,33 +253,6 @@ if (empty($controls->data['page'])) {
                                 <?php $controls->preferences(); ?>
                             </td>
                         </tr>
-                        <tr>
-                            <th><?php _e('Disable antibot/antispam?', 'newsletter') ?></th>
-                            <td>
-                                <?php $controls->yesno('antibot_disable'); ?>
-                                <p class="description">
-                                    <?php _e ('Disable for ajax form submission', 'newsletter'); ?>
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th><?php _e('Antiflood', 'newsletter') ?></th>
-                            <td>
-                                <?php
-                                $controls->select('antiflood', array(
-                                    0 => __('Disabled', 'newsletter'),
-                                    5 => '5 ' . __('seconds', 'newsletter'),
-                                    10 => '10 ' . __('seconds', 'newsletter'),
-                                    15 => '15 ' . __('seconds', 'newsletter'),
-                                    30 => '30 ' . __('seconds', 'newsletter'),
-                                    60 => '1 ' . __('minute', 'newsletter'),
-                                    120 => '2 ' . __('minutes', 'newsletter'),
-                                    300 => '5 ' . __('minutes', 'newsletter')
-                                ));
-                                ?>
-                                <?php $controls->help('https://www.thenewsletterplugin.com/documentation/antiflood') ?>
-                            </td>
-                        </tr>
                     </table>
 
                     <h3>Special cases</h3>
@@ -310,10 +283,10 @@ if (empty($controls->data['page'])) {
 
 
                 <div id="tabs-3">
-                    
+
                     <p><?php _e('Only for double opt-in mode.', 'newsletter') ?></p>
                     <?php $controls->panel_help('https://www.thenewsletterplugin.com/documentation/subscription#activation') ?>
-                    
+
                     <table class="form-table">
                         <tr>
                             <th><?php _e('Activation message', 'newsletter') ?></th>
@@ -323,7 +296,7 @@ if (empty($controls->data['page'])) {
                         </tr>
 
                         <tr>
-                            <th><?php _e ('Alternative activation page', 'newsletter'); ?></th>
+                            <th><?php _e('Alternative activation page', 'newsletter'); ?></th>
                             <td>
                                 <?php $controls->text('confirmation_url', 70, 'https://...'); ?>
                             </td>
@@ -364,7 +337,7 @@ if (empty($controls->data['page'])) {
 
                         <tr>
                             <th><?php _e('Conversion tracking code', 'newsletter') ?>
-                            <?php $controls->help('https://www.thenewsletterplugin.com/documentation/subscription#conversion') ?></th>
+                                <?php $controls->help('https://www.thenewsletterplugin.com/documentation/subscription#conversion') ?></th>
                             <td>
                                 <?php $controls->textarea('confirmed_tracking'); ?>
                             </td>

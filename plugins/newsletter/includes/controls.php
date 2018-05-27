@@ -814,6 +814,9 @@ class NewsletterControls {
 
     function textarea($name, $width = '100%', $height = '50') {
         $value = $this->get_value($name);
+        if (is_array($value)) {
+            $value = implode("\n", $value);
+        }
         echo '<textarea id="options-' . esc_attr($name) . '" class="dynamic" name="options[' . esc_attr($name) . ']" wrap="off" style="width:' . esc_attr($width) . ';height:' . esc_attr($height) . '">';
         echo esc_html($value);
         echo '</textarea>';
@@ -935,7 +938,12 @@ class NewsletterControls {
     }
 
     function color($name) {
-        echo $this->text($name, 10);
+        
+        $value = $this->get_value($name);
+        echo '<input id="options-', esc_attr($name), '" class="tnp-controls-color" name="options[' . $name . ']" type="text" size="' . $size . '" value="';
+        echo esc_attr($value);
+        echo '">';
+       
     }
 
     /** Creates a set of checkbox named $name_[category id] (so they are posted with distinct names).
@@ -1181,6 +1189,7 @@ class NewsletterControls {
         }
         echo '<script type="text/javascript">
     jQuery(document).ready(function(){
+    jQuery(".tnp-controls-color").wpColorPicker();
         jQuery("textarea.dynamic").focus(function() {
             jQuery("textarea.dynamic").css("height", "50px");
             jQuery(this).css("height", "400px");

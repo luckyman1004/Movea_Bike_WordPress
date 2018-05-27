@@ -54,14 +54,21 @@ $block_options = get_option('newsletter_main');
         <div id="newsletter-builder-area-center-frame-content">
 
             <?php
-            if (isset($email)) {
+            if (isset($email) && !$controls->is_action('reset')) {
                 echo NewsletterModule::extract_body($body);
             } else {
-                include __DIR__ . '/blocks/header-01-header.block.php';
-                include __DIR__ . '/blocks/content-05-image.block.php';
-                include __DIR__ . '/blocks/content-01-hero.block.php';
-                include __DIR__ . '/blocks/footer-01-footer.block.php';
-                include __DIR__ . '/blocks/footer-02-canspam.block.php';
+                NewsletterEmails::instance()->render_block('preheader', true, array());
+                NewsletterEmails::instance()->render_block('header-01-header.block', true, array());
+                NewsletterEmails::instance()->render_block('content-01-hero.block', true, array());
+                NewsletterEmails::instance()->render_block('footer-02-canspam.block', true, array());
+                NewsletterEmails::instance()->render_block('footer-01-footer.block', true, array());
+                //NewsletterEmails::instance()->render_block('footer-01-footer.block', true, array());
+                //NewsletterEmails::instance()->render_block('footer-02-canspam.block', true, array());
+                //include __DIR__ . '/blocks/header-01-header.block.php';
+                //include __DIR__ . '/blocks/content-05-image.block.php';
+                //include __DIR__ . '/blocks/content-01-hero.block.php';
+                //include __DIR__ . '/blocks/footer-01-footer.block.php';
+                //include __DIR__ . '/blocks/footer-02-canspam.block.php';
             }
             ?>
 
@@ -92,7 +99,7 @@ $block_options = get_option('newsletter_main');
     TNP_HOME_URL = "<?php echo home_url('/', is_ssl() ? 'https' : 'http') ?>";
 </script>
 <script type="text/javascript" src="<?php echo plugins_url('newsletter'); ?>/emails/tnp-composer/_scripts/newsletter-builder.js?ver=<?php echo time() ?>"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.3/tinymce.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.7.3/tinymce.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.6.8-fix/jquery.nicescroll.min.js"></script>
 <script>
     jQuery(function () {

@@ -1,4 +1,4 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.3/tinymce.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.7.3/tinymce.min.js"></script>
 <script type="text/javascript">
 
     // https://www.tinymce.com/docs/advanced/editor-control-identifiers/#toolbarcontrols

@@ -20,7 +20,7 @@ class NewsletterUsers extends NewsletterModule {
     }
 
     function __construct() {
-        parent::__construct('users', '1.1.4');
+        parent::__construct('users', '1.1.5');
         add_action('init', array($this, 'hook_init'));
     }
 
@@ -59,6 +59,7 @@ class NewsletterUsers extends NewsletterModule {
   `profile` mediumtext,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated` int(11) NOT NULL DEFAULT '0',
+  `last_activity` int(11) NOT NULL DEFAULT '0',
   `followup_step` tinyint(4) NOT NULL DEFAULT '0',
   `followup_time` bigint(20) NOT NULL DEFAULT '0',
   `followup` tinyint(4) NOT NULL DEFAULT '0',
@@ -91,6 +92,7 @@ class NewsletterUsers extends NewsletterModule {
 
         dbDelta($sql);
         $this->upgrade_query("alter table " . NEWSLETTER_USERS_TABLE . " convert to character set $charset_collate");
+        
     }
 
     function admin_menu() {

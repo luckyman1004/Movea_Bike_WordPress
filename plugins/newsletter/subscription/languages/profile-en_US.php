@@ -22,6 +22,8 @@ $options['privacy_url'] = '';
 
 $options['subscribe'] = 'Subscribe';
 $options['save'] = 'Save';
+$options['profile_export'] = 'Export your data';
+$options['profile_edit'] = 'Change your profile';
 
 $options['title_female'] = 'Mrs.';
 $options['title_male'] = 'Mr.';
