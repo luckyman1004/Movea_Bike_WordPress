@@ -115,7 +115,7 @@ get_header(); ?>
                                                                 Buy at Indiegogo
                                                             </div>
                                                         </a> -->
-                                                        <a class="soon-indiegog btn" style="padding: 10px 25px!important;" href="javascript:;">Soon on Indiegogo</a>
+                                                        <!-- <a class="soon-indiegog btn" style="padding: 10px 25px!important;" href="javascript:;">Soon on Indiegogo</a> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -1237,7 +1237,7 @@ get_header(); ?>
                                                 Buy at Indiegogo
                                             </div>
                                         </a> -->
-                                        <a class="soon-indiegog btn" style="padding: 10px 25px!important;" href="javascript:;">Soon on Indiegogo</a>
+                                        <!-- <a class="soon-indiegog btn" style="padding: 10px 25px!important;" href="javascript:;">Soon on Indiegogo</a> -->
                                     </div>
                                 </div>
                                 <h2><?php the_field('model_type', $like_post_id);?></h2>
