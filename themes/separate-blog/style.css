@@ -2899,8 +2899,9 @@ background-color: #000;
 
 .nav_dots
 {
-  position: relative;
-  bottom: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   margin-left: auto;
   margin-right: auto;
   z-index: 50001;
@@ -4773,7 +4774,7 @@ cursor: -moz-grabbing;
     width: 100%; 
   }
   .moveaGallery .MobileGrid  .carousel_container .nav_dots {
-    bottom: 40px;
+    bottom: 10px;
   }
 }
 
@@ -4800,7 +4801,7 @@ cursor: -moz-grabbing;
   /* margin-top: 10%; */
 }
 .ind-gallery .gallery-container .nav_dots {
-  bottom: 70px;
+  bottom: 10px;
 }
 .lifestyle-gallery img {
   left: 50%;
