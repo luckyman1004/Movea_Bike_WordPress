@@ -2985,7 +2985,7 @@ cursor: -moz-grabbing;
 .nextgenspots .moveaSpot.multiple .linkImg {
   position: absolute;
   top: auto;
-  bottom: 40px;
+  bottom: 10px;
   width: 100%;
   height: 450px;
   background: 0;
